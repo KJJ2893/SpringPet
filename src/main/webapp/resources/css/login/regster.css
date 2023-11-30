@@ -57,7 +57,7 @@ body{
 
 
 
-.id_input #userEmail{ /* email 입력 */
+.id_input #userEmail, #userNname{ /* email 입력 */
 	width: 77%;
     height: 48px;
     padding: 0 10px;
@@ -67,7 +67,7 @@ body{
     background-color: #E7DAFF; /* 입력창 색 */
 }
 
-.id_input #check_id{ /* 중복체크 버튼 */
+.id_input #check_id, #check_nName{ /* 중복체크 버튼 */
 	width: 20%;
     height: 48px;
     padding: 0 auto;

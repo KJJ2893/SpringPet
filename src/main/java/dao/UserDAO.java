@@ -27,6 +27,11 @@ public class UserDAO {
 		return sqlSession.selectOne("u.idCheck", userEmail);
 	}
 	
+	// 회원가입 닉네임 중복 검사
+	public int nNameCheck(String userNickName) {
+		return sqlSession.selectOne("u.nNameCheck", userNickName);
+	}
+	
 	// 유저 추가(회원가입)
 	public int insert_user(UserVO vo) {
 		return sqlSession.insert("u.insertU", vo);

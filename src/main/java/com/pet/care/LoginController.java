@@ -91,6 +91,21 @@ public class LoginController {
 		
 	}
 	
+	// 닉네임 중복확인
+	@RequestMapping("nNameCheck.do")
+	@ResponseBody
+	public String nNameCheck(String userNickName) {
+		
+		int res = user_dao.nNameCheck(userNickName);
+		
+		if(res == 0) {
+			return "[{'res':'yes'}]"; //중복된 아이디 없음
+		} else {
+			return "[{'res':'no'}]"; // 중복된 아이디 있음
+		}
+		
+	}
+	
 	// 유저 추가하기
 	@RequestMapping("insert_user.do")
 	public String insert_user(UserVO vo) {

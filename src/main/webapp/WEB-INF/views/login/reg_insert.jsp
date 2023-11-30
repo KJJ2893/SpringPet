@@ -11,6 +11,7 @@
 <script type="text/javascript">
 
 	var b_idCheck = false;
+	var b_NnameCheck = false;
 	
 	function send(f){
 		var userNickName = f.userNickName.value.trim(); // 닉네임
@@ -52,6 +53,11 @@
 			alert('아이디 중복체크 필요');
 			return;
 		}
+		
+		if(!b_NnameCheck){
+			alert('닉네임 중복체크 필요');
+			return;
+		}
 		/////////////
 		
 		f.action = "insert_user.do";
@@ -62,6 +68,40 @@
 		
 	}
 	
+	// 닉네임 중복체크
+	function nNameCheck(){
+		var userNickName = document.getElementById("userNname").value.trim();
+		
+		if(userNickName == ''){
+			alert('사용하실 닉네임을 입력해주세요.');
+			return;
+		}
+		
+		var url = "nNameCheck.do";
+		var param = "userNickName="+encodeURIComponent(userNickName);
+		
+		sendRequest(url, param, resultFn2, "POST");
+	}
+	
+	// 콜백
+	function resultFn2(){
+		if(xhr.readyState == 4 && xhr.status == 200){
+
+			var data = xhr.responseText;
+			var json = (new Function('return'+data))();
+			
+			if(json[0].res == 'no'){
+				alert('이미 사용중인 닉네임입니다.');
+				return;
+			} else{
+				alert('사용 가능한 닉네임입니다.');
+				b_NnameCheck = true;
+			}
+			
+		}
+	} // ResultFn2()
+	
+	// 아이디 중복체크
 	function idCheck(){
 		var userEmail = document.getElementById("userEmail").value.trim();
 		
@@ -98,6 +138,7 @@
 	function che() {
 		b_idCheck = false;
 	} // che()
+	
 
 </script>
 </head>
@@ -113,7 +154,10 @@
 		<div class="reg_wrapper"> <!-- 값 받기 -->
 			<h2>Sign Up</h2>
 			<form id="reg_form">
-				<input type="text" name="userNickName" placeholder="NickName"> 
+				<div class="id_input">
+					<input type="text" id="userNname" name="userNickName" placeholder="NickName"> 
+					<input type="button" id="check_nName" value="중복확인" onclick="nNameCheck(this.form)">
+				</div>
 				<input type="text" name="userName" placeholder="Name">
 				<div class="id_input">
 					<input type="text" id="userEmail" name="userEmail" placeholder="Email" onchange="che()"> 
