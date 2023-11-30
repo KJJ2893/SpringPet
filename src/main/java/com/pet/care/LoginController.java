@@ -36,10 +36,10 @@ public class LoginController {
 	// 로그인
 	@RequestMapping("login.do")
 	@ResponseBody
-	public String login(String userEmail, String userPwd) {
+	public String login(String u_email, String u_pwd) {
 		
 		// id의 존재여부 검증
-		UserVO vo = user_dao.loginCheck(userEmail);
+		UserVO vo = user_dao.loginCheck(u_email);
 		
 		// id 없는 경우
 		if(vo == null) {
@@ -47,7 +47,7 @@ public class LoginController {
 		}
 		
 		// 비밀번호가 일치하지 않는 경우
-		if(!vo.getUserPwd().equals(userPwd)) {
+		if(!vo.getU_pwd().equals(u_pwd)) {
 			return "[{'param':'no_pwd'}]";
 		}
 		
@@ -63,7 +63,7 @@ public class LoginController {
 	@RequestMapping("logout.do")
 	public String logout() {
 		session.removeAttribute("id");
-		session.removeAttribute("userEmail");
+		session.removeAttribute("u_email");
 		
 		return "redirect:main_home.do";
 	} 
@@ -79,9 +79,9 @@ public class LoginController {
 	// 아이디 중복확인
 	@RequestMapping("idCheck.do")
 	@ResponseBody
-	public String id_check(String userEmail) {
+	public String id_check(String u_email) {
 
-		int res = user_dao.idCheck(userEmail);
+		int res = user_dao.idCheck(u_email);
 		
 		if(res == 0) {
 			return "[{'res':'yes'}]"; //중복된 아이디 없음
@@ -94,9 +94,9 @@ public class LoginController {
 	// 닉네임 중복확인
 	@RequestMapping("nNameCheck.do")
 	@ResponseBody
-	public String nNameCheck(String userNickName) {
+	public String nNameCheck(String u_nickName) {
 		
-		int res = user_dao.nNameCheck(userNickName);
+		int res = user_dao.nNameCheck(u_nickName);
 		
 		if(res == 0) {
 			return "[{'res':'yes'}]"; //중복된 닉네임 없음
@@ -130,17 +130,17 @@ public class LoginController {
 	// 아이디 찾기
 	@RequestMapping("select_email.do")
 	@ResponseBody
-	public String findId(String userTel) {
+	public String findId(String u_tel) {
 		
-		UserVO vo = user_dao.select_email(userTel);
+		UserVO vo = user_dao.select_email(u_tel);
 		
 		if(vo == null) {
 			return "[{'res':'no'}]";
 		}
 			
-		session.setAttribute("userEmail", vo.getUserEmail());
+		session.setAttribute("u_email", vo.getU_email());
 		
-		System.out.println(vo.getUserEmail());
+		System.out.println(vo.getU_email());
 		return "[{'res':'yes'}]";
 		
 	}

@@ -28,8 +28,8 @@
 		<div class="find_wrapper"> <!-- 값 받기 -->
 			<h2>Forget Your Password?</h2>
 			<form id="find_form">
-				<input type="text" name="name" placeholder="Name">
-				<input type="text" name="email" placeholder="Email">
+				<input type="text" name="u_name" placeholder="Name">
+				<input type="text" name="u_email" placeholder="Email">
 				<input type="button" value="Find!!" onclick="send(this.form)">
 			</form>
 		</div>

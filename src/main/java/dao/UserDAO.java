@@ -13,23 +13,23 @@ public class UserDAO {
 	}
 	
 	// 아이디 존재여부
-	public UserVO loginCheck(String userEmail) {
-		return sqlSession.selectOne("u.loginCheck", userEmail);
+	public UserVO loginCheck(String u_email) {
+		return sqlSession.selectOne("u.loginCheck", u_email);
 	}
 	
 	// 아이디 찾기
-	public UserVO select_email(String userTel) {
-		return sqlSession.selectOne("u.select_email", userTel);
+	public UserVO select_email(String u_tel) {
+		return sqlSession.selectOne("u.select_email", u_tel);
 	}
 	
 	// 회원가입 아이디 중복 검사
-	public int idCheck(String userEmail) {
-		return sqlSession.selectOne("u.idCheck", userEmail);
+	public int idCheck(String u_email) {
+		return sqlSession.selectOne("u.idCheck", u_email);
 	}
 	
 	// 회원가입 닉네임 중복 검사
-	public int nNameCheck(String userNickName) {
-		return sqlSession.selectOne("u.nNameCheck", userNickName);
+	public int nNameCheck(String u_nickName) {
+		return sqlSession.selectOne("u.nNameCheck", u_nickName);
 	}
 	
 	// 유저 추가(회원가입)

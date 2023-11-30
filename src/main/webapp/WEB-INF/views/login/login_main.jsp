@@ -11,22 +11,22 @@
 <script src="resources/js/httpRequest.js"></script>
 <script type="text/javascript">
 	function send(f){
-		var userEmail = f.userEmail.value.trim();
-		var userPwd = f.userPwd.value.trim();
+		var u_email = f.u_email.value.trim();
+		var u_pwd = f.u_pwd.value.trim();
 		
 		// 유효성
-		if(userEmail == ''){
+		if(u_email == ''){
 			alert('아이디를 입력해주세요.');
 			return;
 		}
 		
-		if(userPwd == ''){
+		if(u_pwd == ''){
 			alert('비밀번호를 입력해 주세요');
 			return;
 		}
 		
 		var url = "login.do";
-		var param = "userEmail="+encodeURIComponent(userEmail)+"&userPwd="+encodeURIComponent(userPwd);
+		var param = "u_email="+encodeURIComponent(u_email)+"&u_pwd="+encodeURIComponent(u_pwd);
 		
 		sendRequest(url, param, myCheck, "POST");
 		
@@ -63,15 +63,15 @@
 			<h2>Login</h2>
 			<form id="login-form">
 				<c:choose>
-					<c:when test="${empty userEmail}">
-						<input type="text" name="userEmail" placeholder="Email"> 
+					<c:when test="${empty u_email}">
+						<input type="text" name="u_email" placeholder="Email"> 
 					</c:when>
-					<c:when test="${not empty userEmail}">
-						<input type="text" name="userEmail" value="${userEmail}" placeholder="Email"> 
+					<c:when test="${not empty u_email}">
+						<input type="text" name="u_email" value="${u_email}" placeholder="Email"> 
 					</c:when>
 				</c:choose>
 				
-				<input type="password" name="userPwd" placeholder="Password"> 
+				<input type="password" name="u_pwd" placeholder="Password"> 
 			<!-- 	<label for="remember-check"> 
 					<input type="checkbox" id="remember-check">
 					아이디 저장하기

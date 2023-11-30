@@ -7,34 +7,34 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	
 	<!-- 로그인시 아이디 존재여부 -->
 	<select id="loginCheck" resultType="vo.UserVO" parameterType="String">
-		SELECT * FROM USERINFO WHERE USEREMAIL = #{userEmail}
+		SELECT * FROM USERINFO WHERE U_EMAIL = #{u_email}
 	</select>
 	
 	<!-- 아이디 중복조회 -->
  	<select id="idCheck" resultType="int" parameterType="String">
-		SELECT count(*) FROM USERINFO WHERE USEREMAIL=#{userEmail}
+		SELECT count(*) FROM USERINFO WHERE U_EMAIL=#{u_email}
 	</select>
 	
 	<select id="nNameCheck" resultType="int" parameterType="String">
-		SELECT count(*) FROM USERINFO WHERE USERNICKNAME=#{userNickName}
+		SELECT count(*) FROM USERINFO WHERE U_NICKNAME=#{u_nickName}
 	</select>
 	
 	
 	<!-- 이메일 찾기 -->
 	<select id="select_email" resultType="vo.UserVO" parameterType="String">
-	 	SELECT * FROM USERINFO WHERE USERPHONENUM = #{userTel}
+	 	SELECT * FROM USERINFO WHERE U_TEL = #{u_tel}
 	</select>
 	
 	<!-- 회원가입(유저추가) -->
 	<insert id="insertU" parameterType="vo.UserVO">
 		INSERT INTO USERINFO VALUES(
 			SEQ_USER_IDX.NEXTVAL,
-            #{userNickName},
-            #{userEmail}, 
-            #{userPwd}, 
-            #{userName}, 
-            #{userTel}, 
-            #{userAddr}, 
+            #{u_nickName},
+            #{u_email}, 
+            #{u_pwd}, 
+            #{u_name}, 
+            #{u_tel}, 
+            #{u_addr}, 
             SYSDATE, 
             1
 		)

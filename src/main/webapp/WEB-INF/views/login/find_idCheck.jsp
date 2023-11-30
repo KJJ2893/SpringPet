@@ -26,7 +26,7 @@
 			<form id="id_form">
 			<!-- <input type="hidden" name="email" value="${finded_email}">  -->
 				<h3 align="center">이 계정이 맞나요??</h3>
-				<h3 align="center">${userEmail}</h3>
+				<h3 align="center">${u_email}</h3>
 				<input type="button" value="로그인 하러가기" onclick="location.href='login_main.do'">
 			</form>
 		</div>

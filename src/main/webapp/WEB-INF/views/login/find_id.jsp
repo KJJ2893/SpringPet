@@ -11,22 +11,22 @@
 <script src="resources/js/httpRequest.js"></script>
 <script type="text/javascript">
 	function send(f){
-		var userName = f.userName.value.trim();
-		var userTel = f.userTel.value.trim();
+		var u_name = f.u_name.value.trim();
+		var u_tel = f.u_tel.value.trim();
 		
 		// 유효성
-		if(userName == ''){
+		if(u_name== ''){
 			alert('이름을 입력해주세요.');
 			return;
 		}
 		
-		if(userTel == ''){
+		if(u_tel == ''){
 			alert('전화번호를 입력해 주세요.');
 			return;
 		}
 		
 		var url = "select_email.do";
-		var param = "userTel="+encodeURIComponent(userTel);
+		var param = "u_tel="+encodeURIComponent(u_tel);
 		
 		sendRequest(url, param, resultFn, "POST");
 		
@@ -65,8 +65,8 @@
 		<div class="find_wrapper"> <!-- 값 받기 -->
 			<h2>Forget Your ID?</h2>
 			<form id="find_form">
-				<input type="text" name="userName" placeholder="Name"> 
-				<input type="text" name="userTel" placeholder="Tel">
+				<input type="text" name="u_name" placeholder="Name"> 
+				<input type="text" name="u_tel" placeholder="Tel">
 				<input type="button" value="Find!!" onclick="send(this.form)">
 			</form>
 		</div>
