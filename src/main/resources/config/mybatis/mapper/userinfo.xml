@@ -15,6 +15,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		SELECT count(*) FROM USERINFO WHERE U_EMAIL=#{u_email}
 	</select>
 	
+	<!-- 닉네임 중복검사 -->
 	<select id="nNameCheck" resultType="int" parameterType="String">
 		SELECT count(*) FROM USERINFO WHERE U_NICKNAME=#{u_nickName}
 	</select>
@@ -40,6 +41,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		)
 	</insert>
 	
-	
+	<!-- 비밀번호 찾기 -->
+	<select id="select_pwd" resultType="vo.UserVO" parameterType="String"> 
+		SELECT * FROM USERINFO WHERE U_EMAIL = #{u_email}
+	</select>
 
 </mapper>

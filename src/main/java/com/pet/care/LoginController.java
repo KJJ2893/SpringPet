@@ -64,6 +64,7 @@ public class LoginController {
 	public String logout() {
 		session.removeAttribute("id");
 		session.removeAttribute("u_email");
+		session.removeAttribute("u_pwd");
 		
 		return "redirect:main_home.do";
 	} 
@@ -159,6 +160,29 @@ public class LoginController {
 		return VIEW_PATH + "find_pwd.jsp";
 	}
 
+	// 비밀번호 찾기
+	@RequestMapping("select_pwd.do")
+	@ResponseBody
+	public String findPwd(String u_email) {
+		
+		UserVO vo = user_dao.select_pwd(u_email);
+		
+		if(vo == null) { // 비밀번호 X
+			return "[{'res':'no'}]";
+		}
+		
+		session.setAttribute("u_pwd", vo.getU_pwd());
+		
+		System.out.println(vo.getU_pwd()); // 확인용
+		return "[{'res':'yes'}]";
+		
+	}
+	
+	// 비밀번호 확인창
+	@RequestMapping("find_pwd2.do")
+	public String find_pwd2() {
+		return VIEW_PATH + "find_pwdCheck.jsp";
+	}
 	
 	
 

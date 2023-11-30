@@ -37,4 +37,9 @@ public class UserDAO {
 		return sqlSession.insert("u.insertU", vo);
 	}
 	
+	// 비밀번호 찾기
+	public UserVO select_pwd(String u_email) {
+		return sqlSession.selectOne("u.select_pwd", u_email);
+	}
+	
 }
