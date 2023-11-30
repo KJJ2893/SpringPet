@@ -99,9 +99,9 @@ public class LoginController {
 		int res = user_dao.nNameCheck(userNickName);
 		
 		if(res == 0) {
-			return "[{'res':'yes'}]"; //중복된 아이디 없음
+			return "[{'res':'yes'}]"; //중복된 닉네임 없음
 		} else {
-			return "[{'res':'no'}]"; // 중복된 아이디 있음
+			return "[{'res':'no'}]"; // 중복된 닉네임 있음
 		}
 		
 	}

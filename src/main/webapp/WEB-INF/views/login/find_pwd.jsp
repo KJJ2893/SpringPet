@@ -9,7 +9,11 @@
 	href="${pageContext.request.contextPath}/resources/css/login/find_pwd.css">
 <script src="resources/js/httpRequest.js"></script>
 <script type="text/javascript">
-
+	function send(f){
+		
+		
+	}
+	
 </script>
 </head>
 <body>

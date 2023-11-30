@@ -39,11 +39,11 @@
 			var json = (new Function('return'+data))();
 			
 			if(json[0].res == "no"){
-				alert('아이디 없음');
+				alert('가입내역이 존재하지 않습니다.');
 				return;
 			} else {
-				alert('아이디 찾음?');
-				resEmail = json[0].res;
+				// alert('아이디 찾음?');
+				resEmail = json[0].res; // ?
 				location.href="find_id2.do";
 			}
 
