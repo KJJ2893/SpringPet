@@ -139,6 +139,12 @@
 		b_idCheck = false;
 	} // che()
 	
+	// 닉네임 중복체크용
+	function che2() {
+		b_NnameCheck = false;
+	} // che()
+	
+	
 
 </script>
 </head>
@@ -155,7 +161,7 @@
 			<h2>Sign Up</h2>
 			<form id="reg_form">
 				<div class="id_input">
-					<input type="text" id="u_Nname" name="u_nickName" placeholder="NickName"> 
+					<input type="text" id="u_Nname" name="u_nickName" placeholder="NickName" onchange="che2()"> 
 					<input type="button" id="check_nName" value="중복확인" onclick="nNameCheck(this.form)">
 				</div>
 				<input type="text" name="u_name" placeholder="Name">
