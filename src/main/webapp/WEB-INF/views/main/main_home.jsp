@@ -23,7 +23,7 @@
 </div>
 	
 	<div class="top">
-	<input type="button" value="소개"  class="button" onclick="">
+	<input type="button" value="소개"  class="button" onclick="location.href='info_main.do'">
 	<input type="button" value="공지" class="button"  onclick="">
 	<input type="button" value="리뷰" class="button"  onclick="">
 	<input type="button" value="QNA" class="button"  onclick="">
@@ -39,14 +39,6 @@
 			</c:when>
 		</c:choose>
 	</div>
-	
-
-	
-	
-
-
-
-
 
 	<div class="sns">
 	<a href="https://www.instagram.com"
@@ -84,11 +76,6 @@
 <label for="tab03"></label>
 </div>
 </div>
-    
-
-    
-    
-    
 
 </body>
 </html>
