@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -94,6 +95,14 @@ background:red;}
     
 <link rel="stylesheet"
 	href="${pageContext.request.contextPath}/resources/css/main/main.css">
+<script type="text/javascript">
+	function go_pet(){
+		alert('로그인 필요');
+		location.href="login_main.do";
+	} // go_pet()
+	
+	
+</script>
 </head>
 
 <body class="body"  style="background-image:url('resources/img/ground.jpg')">
@@ -103,12 +112,21 @@ xx병원
 </div>
 	
 	<div class="top">
-	<input type="button" value="소개"  class="button" onclick="">
+	<input type="button" value="소개"  class="button" onclick="location.href='info_main.do'">
 	<input type="button" value="공지" class="button"  onclick="">
 	<input type="button" value="리뷰" class="button"  onclick="">
 	<input type="button" value="QNA" class="button"  onclick="">
 	<input type="button" value="예약" class="button"  onclick="">
-	<input type="button" value="로그인" class="button"  onclick="location.href='login_main.do'">
+	<c:choose>
+			<c:when test="${empty id}">
+				<input type="button" value="로그인" onclick="location.href='login_main.do'">
+				<input type="button" value="펫 등록" onclick="go_pet()">
+			</c:when>
+			<c:when test="${not empty id}">
+				<input type="button" value="로그아웃" onclick="location.href='logout.do'">
+				<input type="button" value="펫 등록" onclick="location.href='pet_main.do'">
+			</c:when>
+		</c:choose>
 	</div>
 	
 
