@@ -1,5 +1,7 @@
 package dao;
 
+import java.util.HashMap;
+
 import org.apache.ibatis.session.SqlSession;
 
 import vo.UserVO;
@@ -18,8 +20,8 @@ public class UserDAO {
 	}
 	
 	// 아이디 찾기
-	public UserVO select_email(String u_tel) {
-		return sqlSession.selectOne("u.select_email", u_tel);
+	public UserVO select_email(HashMap<String, String> map) {
+		return sqlSession.selectOne("u.select_email", map);
 	}
 	
 	// 회원가입 아이디 중복 검사

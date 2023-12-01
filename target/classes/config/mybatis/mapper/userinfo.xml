@@ -22,8 +22,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	
 	
 	<!-- 이메일 찾기 -->
-	<select id="select_email" resultType="vo.UserVO" parameterType="String">
-	 	SELECT * FROM USERINFO WHERE U_TEL = #{u_tel}
+	<select id="select_email" resultType="vo.UserVO" parameterType="java.util.HashMap">
+	 	SELECT * FROM USERINFO WHERE U_NAME = #{u_name} AND U_TEL = #{u_tel}
 	</select>
 	
 	<!-- 회원가입(유저추가) -->

@@ -1,5 +1,7 @@
 package com.pet.care;
 
+import java.util.HashMap;
+
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -131,14 +133,18 @@ public class LoginController {
 	// 아이디 찾기
 	@RequestMapping("select_email.do")
 	@ResponseBody
-	public String findId(String u_tel) {
+	public String findId(String u_name, String u_tel) {
 		
-		UserVO vo = user_dao.select_email(u_tel);
+		HashMap<String, String> map = new HashMap<String, String>();
+		map.put("u_name", u_name);
+		map.put("u_tel", u_tel);
+		
+		UserVO vo = user_dao.select_email(map);
 		
 		if(vo == null) {
 			return "[{'res':'no'}]";
-		}
-			
+		} 
+		
 		session.setAttribute("u_email", vo.getU_email());
 		
 		System.out.println(vo.getU_email());

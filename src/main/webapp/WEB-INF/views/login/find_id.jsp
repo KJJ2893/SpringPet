@@ -26,7 +26,7 @@
 		}
 		
 		var url = "select_email.do";
-		var param = "u_tel="+encodeURIComponent(u_tel);
+		var param = "u_name="+encodeURIComponent(u_name)+"&u_tel="+encodeURIComponent(u_tel);
 		
 		sendRequest(url, param, resultFn, "POST");
 		
@@ -41,7 +41,7 @@
 			if(json[0].res == "no"){
 				alert('가입 내역이 존재하지 않습니다.');
 				return;
-			} else {
+			}  else {
 				// alert('아이디 찾음?');
 				location.href="find_id2.do";
 			}
