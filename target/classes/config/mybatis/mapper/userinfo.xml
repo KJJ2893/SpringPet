@@ -42,8 +42,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</insert>
 	
 	<!-- 비밀번호 찾기 -->
-	<select id="select_pwd" resultType="vo.UserVO" parameterType="String"> 
-		SELECT * FROM USERINFO WHERE U_EMAIL = #{u_email}
+	<select id="select_pwd" resultType="vo.UserVO" parameterType="java.util.HashMap"> 
+		SELECT * FROM USERINFO WHERE U_NAME = #{u_name} and U_EMAIL = #{u_email}
 	</select>
 
 </mapper>

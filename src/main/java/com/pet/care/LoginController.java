@@ -169,9 +169,13 @@ public class LoginController {
 	// 비밀번호 찾기
 	@RequestMapping("select_pwd.do")
 	@ResponseBody
-	public String findPwd(String u_email) {
+	public String findPwd(String u_name, String u_email) {
+		HashMap<String, String> map = new HashMap<String, String>();
 		
-		UserVO vo = user_dao.select_pwd(u_email);
+		map.put("u_name", u_name);
+		map.put("u_email", u_email);
+		
+		UserVO vo = user_dao.select_pwd(map);
 		
 		if(vo == null) { // 비밀번호 X
 			return "[{'res':'no'}]";

@@ -40,8 +40,8 @@ public class UserDAO {
 	}
 	
 	// 비밀번호 찾기
-	public UserVO select_pwd(String u_email) {
-		return sqlSession.selectOne("u.select_pwd", u_email);
+	public UserVO select_pwd(HashMap<String, String> map) {
+		return sqlSession.selectOne("u.select_pwd", map);
 	}
 	
 }

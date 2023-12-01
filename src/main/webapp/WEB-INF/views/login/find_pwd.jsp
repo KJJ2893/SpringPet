@@ -23,7 +23,7 @@
 		}
 		
 		var url = "select_pwd.do";
-		var param = "u_email="+encodeURIComponent(u_email);
+		var param = "u_name="+encodeURIComponent(u_name)+"&u_email="+encodeURIComponent(u_email);
 		
 		sendRequest(url, param, resultFn, "POST");
 
@@ -36,7 +36,7 @@
 			var json = (new Function('return'+data))();
 			
 			if(json[0].res == "no"){
-				alert('가입 내역이 존재하지 않습니다. 이메일이 맞는지 확인해 주세요');
+				alert('가입 내역이 존재하지 않습니다. 입력한정보가 맞는지 확인해 주세요');
 				return;
 			} else {
 				 alert('비번 찾음?');
