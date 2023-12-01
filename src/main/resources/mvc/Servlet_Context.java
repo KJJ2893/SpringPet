@@ -6,6 +6,7 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
+import com.pet.care.InfoController;
 import com.pet.care.LoginController;
 import com.pet.care.MainController;
 
@@ -38,13 +39,18 @@ public class Servlet_Context implements WebMvcConfigurer {
 //	  resolver.setSuffix(".jsp"); return resolver; }
 
 	@Bean
-	public MainController mainController(UserDAO user_dao) {
-		return new MainController(user_dao);
+	public MainController mainController() {
+		return new MainController();
 	}
 	
 	@Bean
 	public LoginController loginController(UserDAO user_dao) {
 		return new LoginController(user_dao);
+	}
+	
+	@Bean
+	public InfoController infoController() {
+		return new InfoController();
 	}
 	
 }

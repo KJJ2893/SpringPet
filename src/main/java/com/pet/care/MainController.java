@@ -10,10 +10,9 @@ public class MainController {
 	
 	public final static String VIEW_PATH = "/WEB-INF/views/main/";
 	
-	UserDAO user_dao;
 	
-	public MainController(UserDAO user_dao) {
-		this.user_dao = user_dao;
+	public MainController() {
+		System.out.println("메인 컨트롤러 생성자");
 	}
 	
 	// 메인페이지
