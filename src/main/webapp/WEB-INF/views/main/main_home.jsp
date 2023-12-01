@@ -7,51 +7,7 @@
 <title>Insert title here</title>
  <style>
  
-input[type="radio"]{
-display:none;
-}
-.conbox{
-width:1500px;
-height:500px;
-background:#aaa;
-display:none;
-position:absolute;
-top:200px;
-left:200px;}
 
-.btn {
-padding:10px;
-text-align:center;
-position:absolute;
-top:700px;
-left:800px;
-}
-
-label[for*="tab"]{
-display:inline-block;
-padding:10px;
-background:#ccc;
-margin:5px;
-cursor:pointer;
-
-border-radius:100%;}
-
-input[id="tab01"]:checked ~ .con1{
-display:block;}
-input[id="tab02"]:checked ~ .con2{
-display:block;}
-input[id="tab03"]:checked ~ .con3{
-display:block;}
-
-input[id="tab01"]:checked ~ .btn >label[for="tab01"]{
-background:red;}
-input[id="tab02"]:checked ~ .btn >label[for="tab02"]{
-background:red;}
-input[id="tab03"]:checked ~ .btn >label[for="tab03"]{
-background:red;}
-
-
-}
 
 
     </style>
@@ -62,7 +18,7 @@ background:red;}
 
 <body class="body" >
 <div >
-xx병원
+	xx병원
 </div>
 	
 	<div class="top">
