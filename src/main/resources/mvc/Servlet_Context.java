@@ -9,6 +9,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import com.pet.care.InfoController;
 import com.pet.care.LoginController;
 import com.pet.care.MainController;
+import com.pet.care.QnAController;
 
 import dao.UserDAO;
 
@@ -51,6 +52,11 @@ public class Servlet_Context implements WebMvcConfigurer {
 	@Bean
 	public InfoController infoController() {
 		return new InfoController();
+	}
+	
+	@Bean
+	public QnAController qnAController() {
+		return new QnAController();
 	}
 	
 }
