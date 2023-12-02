@@ -26,7 +26,7 @@
 	<input type="button" value="소개"  class="button" onclick="location.href='info_main.do'">
 	<input type="button" value="공지" class="button"  onclick="">
 	<input type="button" value="리뷰" class="button"  onclick="">
-	<input type="button" value="QNA" class="button"  onclick="location.href='qna_form.do'">
+	<input type="button" value="QNA" class="button"  onclick="location.href='qna_main.do'">
 	<input type="button" value="예약" class="button"  onclick="">
 	<c:choose>
 			<c:when test="${empty id}">

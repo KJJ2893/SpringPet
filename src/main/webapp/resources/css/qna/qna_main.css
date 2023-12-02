@@ -1,0 +1,76 @@
+@charset "UTF-8";
+
+@media (max-width: 768px){
+
+}
+
+* {
+	box-sizing: inherit;
+}
+
+body, html {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	width: 100%;
+	heigth: 100%;
+	font-family:Noto Sans CJK KR;
+}
+
+div {
+	display: block;
+}
+
+/* .qna_main_wrapper {
+	grid-template-columns: repeat(1,1fr);
+	display: grid;
+	grid-row-gap: 30px;
+	row-gap: 30px;
+	grid-column-gap: 30px;
+	column-gap: 30px;
+}
+
+.contentBox {
+	position: relative;
+	cursor: pointer;
+}
+
+.textBox {
+	padding:0 5px;
+	margin-top: 15px;
+}
+
+.content_title {
+	font-size: 18px;
+	display: -webkit-box;
+	text-align: left;
+	color: black;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	
+} */
+
+
+.flex_container {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	background-color: black;
+}
+
+.item_inner {
+	flex-direction: column;
+}
+
+.img {
+	color: black;
+}
+
+.title {
+	color: orange;
+}
+
+.writer {
+	color: blue;
+}

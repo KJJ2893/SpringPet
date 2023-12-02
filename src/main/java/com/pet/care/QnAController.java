@@ -13,4 +13,10 @@ public class QnAController {
 		
 		return VIEW_PATH + "qna_form.jsp";
 	}
+	
+	@RequestMapping("qna_main.do")
+	public String qna_main() {
+		
+		return VIEW_PATH + "qna_main.jsp";
+	}
 }
