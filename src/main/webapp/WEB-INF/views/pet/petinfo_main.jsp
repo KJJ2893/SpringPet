@@ -9,24 +9,25 @@
 </head>
 <body>
      <form>
-     <h1>마이 펫 리스트</h1>
-         <table border="1" align="left">
+     <h1 align="center">마이 펫 리스트</h1>
+         <table border="1" align="center">
              <tr>
-                <th>반려동물 번호</th>
                 <th>반려동물 이름</th>
                 <th>반려동물 종류</th>
                 <th>반려동물 나이</th>
+                <th>반려동물 성별</th>
              </tr>
              <c:forEach var="vo" items="${list }">
              <tr>
-                <td>${vo.p_idx }</td>
                 <td>${vo.p_name }</td>
                 <td>${vo.p_type }</td>
                 <td>${vo.p_age }</td>
+                <td>${vo.p_gender }</td>
              </tr>
              </c:forEach>
           </table>
            <input type="button" value="펫 정보수정하기" onclick="location.href='petinfo_retouch.do'">
+           <input type="button" value="마이 펫 등록하기" onclick="location.href='petinfo_insert.do'">
      </form>
 </body>
 </html>

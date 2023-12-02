@@ -37,5 +37,11 @@ public class PetController {
 		return VIEW_PATH + "petinfo_retouch.jsp";
 	}
 	
+	// 펫 정보 등록 화면
+	@RequestMapping("petinfo_insert.do")
+	public String petinfo_insert() {
+		return VIEW_PATH + "petinfo_insert.jsp";
+	}
+	
 
 }
