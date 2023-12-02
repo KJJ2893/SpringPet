@@ -9,7 +9,9 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import com.pet.care.InfoController;
 import com.pet.care.LoginController;
 import com.pet.care.MainController;
+import com.pet.care.PetController;
 
+import dao.PetDAO;
 import dao.UserDAO;
 
 //어노테이션에도 상속관계가 있다
@@ -51,6 +53,11 @@ public class Servlet_Context implements WebMvcConfigurer {
 	@Bean
 	public InfoController infoController() {
 		return new InfoController();
+	}
+	
+	@Bean
+	public PetController petController(PetDAO pet_dao) {
+		return new PetController(pet_dao);
 	}
 	
 }

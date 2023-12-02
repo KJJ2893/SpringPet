@@ -124,7 +124,7 @@ xx병원
 			</c:when>
 			<c:when test="${not empty id}">
 				<input type="button" value="로그아웃" onclick="location.href='logout.do'">
-				<input type="button" value="펫 등록" onclick="location.href='pet_main.do'">
+				<input type="button" value="펫 등록" onclick="location.href='petinfo_main.do'">
 			</c:when>
 		</c:choose>
 	</div>
@@ -151,7 +151,7 @@ xx병원
 	ⓒ2023.hospital name All rights reserved.
 </div>
 <div class="footer1">
-	<li>대표자: 김재준</li>
+	<li>대표자: 김이이유</li>
 	<li>대표자 전화번호:000-0000-0000</li>
 	<li>사업자 등록번호:000-00-00000</li>
 </div>
