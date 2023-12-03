@@ -20,6 +20,9 @@ public class PetDAO {
 			return list;
 	}
 	
+	// 펫 등록하기
+	
+	
 	
 	
 

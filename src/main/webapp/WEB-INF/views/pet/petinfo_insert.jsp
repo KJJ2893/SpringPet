@@ -6,7 +6,41 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 	<script type="text/javascript">
-		function
+		function insert_send(f){
+			var name = f.p_name.value;
+			var type = f.p_type.value;
+			var age = f.p_age.value;
+			var gender = f.p_gender.value;
+			
+			// 유효성 검사
+			if(name == ''){
+				alert('이름을 입력하세요');
+				return;
+			}
+			if(type == ''){
+				alert('반려동물 종을 선택해주세요');
+				return;
+			}
+			if(age == ''){
+				alert('나이를 입력해주세요');
+				return;
+			}
+			
+			var intAge = parseInt(age);
+			
+			if(isNaN(intAge)){
+				alert('나이는 숫자로만 입력이 가능합니다.');
+				return;
+			}
+			
+			if(gender == ''){
+				alert('성별을 선택해주세요');
+				return;
+			}
+			
+			f.action = "pet_insert.do";
+			f.submit();
+		}
 	</script>
 </head>
 <body>
@@ -22,7 +56,7 @@
 			<tr>
 			 	<th>종</th>
 			 	<td>
-			 		<select>
+			 		<select name="p_type">
 			 			<option></option>
 			 			<option>강아지</option>
 			 			<option>고양이</option>
@@ -38,8 +72,8 @@
 			<tr>
 				<th>성별</th>
 				<td>
-					<input type="radio" name="p_gender_m"> 남
-					<input type="radio" name="p_gender_m"> 여
+					<input type="radio" name="p_gender"> 남
+					<input type="radio" name="p_gender"> 여
 				</td>
 			</tr>
 			<tr>
@@ -48,8 +82,8 @@
 			</tr>	
 			<tr>
 			   <td colspan="2" align="center">
-			      <input type="button" value="등록하기" onclick="send(this.form)">
-			      <input type="button" value="등록취소" onclick="send(this.form)">
+			      <input type="button" value="등록하기" onclick="insert_send(this.form)">
+			      <input type="button" value="등록취소" onclick="cancel_send(this.form)">
 			   </td>
 			</tr>
 		</table>
