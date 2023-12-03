@@ -33,6 +33,11 @@
 				return;
 			}
 			
+			if(intAge >= 30){
+				alert('1 ~ 30 사이의 숫자를 입력해주세요');
+				return;
+			}
+			
 			if(gender == ''){
 				alert('성별을 선택해주세요');
 				return;
@@ -40,6 +45,13 @@
 			
 			f.action = "pet_insert.do";
 			f.submit();
+		}
+		
+		function cancel_send(f){
+			var insertConfirm = confirm("등록을 취소하시겠습니까?");
+			if(insertConfirm){
+				window.location.href = "petinfo_main.do";
+			}
 		}
 	</script>
 </head>

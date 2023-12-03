@@ -112,11 +112,16 @@ xx병원
 </div>
 	
 	<div class="top">
-	<input type="button" value="소개"  class="button" onclick="location.href='info_main.do'">
-	<input type="button" value="공지" class="button"  onclick="">
-	<input type="button" value="리뷰" class="button"  onclick="">
-	<input type="button" value="QNA" class="button"  onclick="">
-	<input type="button" value="예약" class="button"  onclick="">
+	<input type="button" value="소개"  class="button" onclick="location.href='info_main.do'"
+	       style="cursor: pointer">
+	<input type="button" value="공지" class="button"  onclick=""
+	       style="cursor: pointer">
+	<input type="button" value="리뷰" class="button"  onclick=""
+	       style="cursor: pointer">
+	<input type="button" value="QNA" class="button"  onclick=""
+	       style="cursor: pointer">
+	<input type="button" value="예약" class="button"  onclick=""
+	       style="cursor: pointer">
 	<c:choose>
 			<c:when test="${empty id}">
 				<input type="button" value="로그인" onclick="location.href='login_main.do'">

@@ -11,37 +11,41 @@ import vo.PetVO;
 
 @Controller
 public class PetController {
-	
-	
+
 	public final static String VIEW_PATH = "/WEB-INF/views/pet/";
-	
+
 	PetDAO pet_dao;
-	
+
 	public PetController(PetDAO pet_dao) {
 		this.pet_dao = pet_dao;
 		System.out.println("petController 생성자");
 	}
-	
+
 	// 펫 정보 메인 화면 펫 리스트 보임
-	@RequestMapping(value={"petinfo_main.do"})
+	@RequestMapping(value = { "petinfo_main.do" })
 	public String list(Model model) {
 		List<PetVO> list = pet_dao.selectList();
-		
-		model.addAttribute("list", list);		
+
+		model.addAttribute("list", list);
 		return VIEW_PATH + "petinfo_main.jsp";
 	}
+
+	// 펫 리스트 화면
+	@RequestMapping("petinfo_insert.do")
+	public String petinfo_main() {
+		return VIEW_PATH + "petinfo_insert.jsp";
+	}
 	
+	// 펫 등록하기
+//	@RequestMapping("pet_insert.do")
+//	public String pet_insert(PetVO vo) {
+//		String p_name 
+//	}
+
 	// 펫 정보 수정 화면
 	@RequestMapping("petinfo_retouch.do")
 	public String petinfo_retouch() {
 		return VIEW_PATH + "petinfo_retouch.jsp";
 	}
-	
-	// 펫 정보 등록 화면
-	@RequestMapping("petinfo_insert.do")
-	public String petinfo_insert() {
-		return VIEW_PATH + "petinfo_insert.jsp";
-	}
-	
 
 }

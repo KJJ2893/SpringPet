@@ -9,5 +9,17 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<select id="petinfo_list" resultType="vo.PetVO">
 		select * from pet
 	</select>
+	
+	<!-- 반려동물 등록 -->
+	<select id="petinfo_insert" parameterType="vo.PetVO">
+		INSERT INTO PET VALUES(
+			SEQ_P_IDX.NEXTVAL,
+			#{p_name},
+			#{p_type},
+			#{p_age},
+			#{p_gender},
+			#{filename}
+		)
+	</select>
 
 </mapper>

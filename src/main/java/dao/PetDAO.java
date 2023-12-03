@@ -21,6 +21,9 @@ public class PetDAO {
 	}
 	
 	// 펫 등록하기
+	public int insert(PetVO vo) {
+		return sqlSession.insert("p.petinfo_insert", vo);
+	}
 	
 	
 	

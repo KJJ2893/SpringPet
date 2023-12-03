@@ -28,6 +28,7 @@
           </table>
            <input type="button" value="펫 정보수정하기" onclick="location.href='petinfo_retouch.do'">
            <input type="button" value="마이 펫 등록하기" onclick="location.href='petinfo_insert.do'">
+           <input type="button" value="메인으로 가기" onclick="location.href='main_home.do'">
      </form>
 </body>
 </html>
