@@ -63,9 +63,6 @@
 		f.action = "insert_user.do";
 		f.submit();
 		
-		
-		
-		
 	}
 	
 	// 닉네임 중복체크
@@ -161,17 +158,23 @@
 			<h2>Sign Up</h2>
 			<form id="reg_form">
 				<div class="id_input">
+					<h3>NickName</h3>
 					<input type="text" id="u_Nname" name="u_nickName" placeholder="NickName" onchange="che2()"> 
 					<input type="button" id="check_nName" value="중복확인" onclick="nNameCheck(this.form)">
 				</div>
+				<h3>Name</h3>
 				<input type="text" name="u_name" placeholder="Name">
 				<div class="id_input">
+					<h3>Email</h3>
 					<input type="text" id="u_email" name="u_email" placeholder="Email" onchange="che()"> 
 					<input type="button" id="check_id" value="Check ID" onclick="idCheck(this.form)">
 				</div>
+				<h3>Password</h3>
 				<input type="password" name="u_pwd" placeholder="Password">
 				<input type="password" name="pwd2" placeholder="Password Check">
+				<h3>Tel</h3>
 				<input type="text" name="u_tel" placeholder="Tel">
+				<h3>Address</h3>
 				<input type="text" name="u_addr" placeholder="Address">
 				
 				<input type="button" value="Sign Up" onclick="send(this.form)">

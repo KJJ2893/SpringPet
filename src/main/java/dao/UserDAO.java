@@ -14,6 +14,11 @@ public class UserDAO {
 		this.sqlSession = sqlSession;
 	}
 	
+	// 유저 정보 조회
+	public UserVO select_info(int u_idx) {
+		return sqlSession.selectOne("u.select_info", u_idx);
+	}
+	
 	// 아이디 존재여부
 	public UserVO loginCheck(String u_email) {
 		return sqlSession.selectOne("u.loginCheck", u_email);
@@ -42,6 +47,11 @@ public class UserDAO {
 	// 비밀번호 찾기
 	public UserVO select_pwd(HashMap<String, String> map) {
 		return sqlSession.selectOne("u.select_pwd", map);
+	}
+	
+	// 닉네임 변경
+	public int update_Nname(HashMap<String, String> map) {
+		return sqlSession.update("u.upNname", map);
 	}
 	
 }
