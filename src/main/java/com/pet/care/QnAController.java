@@ -8,6 +8,10 @@ public class QnAController {
 
 	public final static String VIEW_PATH = "/WEB-INF/views/qna/";
 	
+	public QnAController() {
+		
+	}
+	
 	@RequestMapping("qna_form.do")
 	public String qna_form() {
 		
