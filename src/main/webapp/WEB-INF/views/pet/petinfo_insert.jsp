@@ -5,12 +5,14 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<script src="resources/js/httpRequest.js"></script>
 	<script type="text/javascript">
 		function insert_send(f){
 			var name = f.p_name.value;
 			var type = f.p_type.value;
 			var age = f.p_age.value;
 			var gender = f.p_gender.value;
+
 			
 			// 유효성 검사
 			if(name == ''){
@@ -56,7 +58,7 @@
 	</script>
 </head>
 <body>
-	<form>
+	<form method="POST" enctype="multipart/form-data">
 		<table border="1" align="center">
 			<caption>마이 펫 등록하기</caption>
 			<tr>
@@ -90,7 +92,7 @@
 			</tr>
 			<tr>
 				<th>이미지 첨부</th>
-				<td><input type="file" name="photo"></td>
+				<td><input type="file" name="filename"></td>
 			</tr>	
 			<tr>
 			   <td colspan="2" align="center">
