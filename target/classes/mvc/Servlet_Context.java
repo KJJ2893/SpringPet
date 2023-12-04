@@ -10,6 +10,7 @@ import com.pet.care.InfoController;
 import com.pet.care.LoginController;
 import com.pet.care.MainController;
 import com.pet.care.PetController;
+import com.pet.care.QnAController;
 
 import dao.PetDAO;
 import dao.UserDAO;
@@ -58,6 +59,11 @@ public class Servlet_Context implements WebMvcConfigurer {
 	@Bean
 	public PetController petController(PetDAO pet_dao) {
 		return new PetController(pet_dao);
+	}
+	
+	@Bean
+	public QnAController qnaController() {
+		return new QnAController();
 	}
 	
 }
