@@ -68,7 +68,10 @@ public class PetController {
 	}
 	
 	// 펫 정보 삭제하기
-	@RequestMapping("pet_del.do")
-	public String delete(int p_idx)
+	@RequestMapping("petinfo_del.do")
+	public String delete(int p_idx) {
+		return null;
+		
+	}
 
 }

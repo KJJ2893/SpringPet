@@ -25,6 +25,11 @@ public class PetDAO {
 		return sqlSession.insert("p.petinfo_insert", vo);
 	}
 	
+	// 펫 정보 삭제
+	public int delete(PetVO vo) {
+		return sqlSession.delete("p.petinfo_delete", vo);
+	}
+	
 	
 	
 	

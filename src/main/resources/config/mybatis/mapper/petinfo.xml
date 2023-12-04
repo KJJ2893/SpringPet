@@ -23,5 +23,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</insert>
 	
 	<!-- 반려동물 정보 삭제 -->
+	<delete id="petinfo_delete" parameterType="vo.PetVO">
+		DELETE FROM PET WHERE P_IDX=#{p_idx}
+	</delete>
 
 </mapper>

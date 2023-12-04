@@ -12,7 +12,7 @@
 				return;
 			}
 			
-			var url = ""
+			action = 
 		}
 	</script>
 </head>
@@ -36,7 +36,7 @@
                 <td>${vo.p_age }</td>
                 <td>${vo.p_gender }</td>
                 <td>
-                	<input type="button" value="펫 정보수정하기" 
+                	<input type="button" value="수정하기" 
                 		onclick="location.href='petinfo_retouch.do'">
                 	<input type="button" value="삭제하기" 
                 		onclick="petinfo_del()">
