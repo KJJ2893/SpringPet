@@ -1,5 +1,7 @@
 package vo;
 
+import org.springframework.web.multipart.MultipartFile;
+
 import lombok.Getter;
 import lombok.Setter;
 
@@ -11,5 +13,7 @@ public class PetVO {
 	private String p_name;
 	private String p_type;
 	private int p_age;
+	private String p_gender;
+	private MultipartFile photo;
 
 }
