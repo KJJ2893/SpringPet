@@ -139,7 +139,7 @@
 		<div>
 			CEO. 김이이유 <br> Addr. 인천광역시 부평구 시장로 7 5층
 			Fax/Tel. <br> 00 - 0000 - 0000 <br> 
-			ALL RIGHT RESERVED.
+			
 		</div>
 	</div>
 </body>

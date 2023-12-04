@@ -19,14 +19,10 @@ public class PetController {
 	public final static String VIEW_PATH = "/WEB-INF/views/pet/";
 
 	PetDAO pet_dao;
-<<<<<<< HEAD
 
-=======
-	
 	@Autowired
 	HttpServletRequest request;
 	
->>>>>>> dbc59445513019c83d31a582e6551a624e628bdb
 	public PetController(PetDAO pet_dao) {
 		this.pet_dao = pet_dao;
 		System.out.println("petController 생성자");
@@ -35,16 +31,12 @@ public class PetController {
 	// 펫 정보 메인 화면 펫 리스트 보임
 	@RequestMapping(value = { "petinfo_main.do" })
 	public String list(Model model) {
-<<<<<<< HEAD
-		List<PetVO> list = pet_dao.selectList();
 
-		model.addAttribute("list", list);
-=======
 		int idx = (((UserVO)request.getSession().getAttribute("id")).getU_idx());
 		List<PetVO> list = pet_dao.selectList(idx);
 		
 		model.addAttribute("list", list);		
->>>>>>> dbc59445513019c83d31a582e6551a624e628bdb
+
 		return VIEW_PATH + "petinfo_main.jsp";
 	}
 
