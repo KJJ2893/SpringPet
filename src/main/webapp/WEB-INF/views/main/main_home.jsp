@@ -89,7 +89,10 @@ background:red;}
         @keyframes rollingleft2 {
             0% { transition: translateX(0); }
             100% { transform: translateX(-200%); }
+            
+            
         }
+
 
     </style>
     
@@ -111,7 +114,7 @@ xx병원
 <img  id="logo1" src="resources/img/hos logo.jpg" width="60px;" height="60px"; >
 </div>
 	
-	<div class="top">
+	<div class="top" id="top">
 	<input type="button" value="소개"  class="button" onclick="location.href='info_main.do'">
 	<input type="button" value="공지" class="button"  onclick="">
 	<input type="button" value="리뷰" class="button"  onclick="">
@@ -124,19 +127,11 @@ xx병원
 			</c:when>
 			<c:when test="${not empty id}">
 				<input type="button" value="로그아웃" onclick="location.href='logout.do'">
-				<input type="button" value="펫 등록" onclick="location.href='pet_main.do'">
+				<input type="button" value="펫 등록" onclick="location.href='petinfo_main.do'">
 			</c:when>
 		</c:choose>
 	</div>
 	
-
-	
-	
-
-
-
-
-
 	<div class="sns">
 	<a href="https://www.instagram.com">
 	<img src="resources/img/insta.jpg" width="100px"; height="100px"; >
@@ -151,7 +146,7 @@ xx병원
 	ⓒ2023.hospital name All rights reserved.
 </div>
 <div class="footer1">
-	<li>대표자: 김재준</li>
+	<li>대표자: 김이이유</li>
 	<li>대표자 전화번호:000-0000-0000</li>
 	<li>사업자 등록번호:000-00-00000</li>
 </div>

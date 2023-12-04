@@ -125,10 +125,14 @@
 		<ul>
 			<li>
 				<div>
-					<h1>CONTACT</h1>
+					<h1>INSTARGRAM</h1>
 				</div>
-				<div>우리에게 파트너십을 신청하거나, 고객이 되어주세요</div>
-				<div class="more2">더 알아보기</div>
+				<div>문의사항은 DM부탁드려요.</div>
+				<div class="more2">
+					<a href="https://www.instagram.com">
+						INSTARGRAM
+					</a>
+				</div>
 			</li>
 			<li></li>
 		</ul>

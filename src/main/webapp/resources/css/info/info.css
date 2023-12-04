@@ -190,7 +190,8 @@ h1 {
 
 /* main_text2 */
 .main_text2 {
-	width: 100%;
+	margin : 0 auto;
+	width: 418px;
 	height: 418px;
 	background-image: url("image/contact.png");
 }

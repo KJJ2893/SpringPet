@@ -15,5 +15,6 @@ public class PetVO {
 	private int p_age;
 	private String p_gender;
 	private MultipartFile photo;
+	private String fileName;
 
 }
