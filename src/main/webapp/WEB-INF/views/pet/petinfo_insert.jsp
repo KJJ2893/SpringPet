@@ -12,7 +12,8 @@
 			var type = f.p_type.value;
 			var age = f.p_age.value;
 			var gender = f.p_gender.value;
-
+			var filename = f.filename.value;
+			var u_idx = f.u_idx.value;
 			
 			// 유효성 검사
 			if(name == ''){
@@ -45,8 +46,13 @@
 				return;
 			}
 			
-			f.action = "pet_insert.do";
-			f.submit();
+			location.href="pet_insert.do?p_name="+name
+					+"&p_type="+type
+					+"&p_age="+age
+					+"&p_gender="+gender
+					+"&filename="+filename
+					+"&u_idx="+u_idx;
+			/* f.submit(); */
 		}
 		
 		function cancel_send(f){
@@ -86,8 +92,8 @@
 			<tr>
 				<th>성별</th>
 				<td>
-					<input type="radio" name="p_gender"> 남
-					<input type="radio" name="p_gender"> 여
+					<input type="radio" name="p_gender" value="남"> 남
+					<input type="radio" name="p_gender" value="여"> 여
 				</td>
 			</tr>
 			<tr>
@@ -96,6 +102,7 @@
 			</tr>	
 			<tr>
 			   <td colspan="2" align="center">
+             	<input name="u_idx" type="hidden" value="${id.u_idx}">
 			      <input type="button" value="등록하기" onclick="insert_send(this.form)">
 			      <input type="button" value="등록취소" onclick="cancel_send(this.form)">
 			   </td>

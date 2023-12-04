@@ -1,7 +1,5 @@
 package com.pet.care;
 
-import java.io.File;
-import java.io.IOException;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -10,7 +8,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.multipart.MultipartFile;
 
 import dao.PetDAO;
 import vo.PetVO;
@@ -56,7 +53,7 @@ public class PetController {
 		int res = pet_dao.insert(vo);
 		
 		if(res > 0) {
-			return "redirect:petinfo_insert.do";
+			return "petinfo_main.do";
 		}
 			return null;
 	}
@@ -70,7 +67,10 @@ public class PetController {
 	// 펫 정보 삭제하기
 	@RequestMapping("petinfo_del.do")
 	public String delete(int p_idx) {
-		return null;
+		PetVO vo = new PetVO();
+		vo.setP_idx(p_idx);
+		pet_dao.delete(vo);
+		return "redirect:petinfo_main.do";
 		
 	}
 
