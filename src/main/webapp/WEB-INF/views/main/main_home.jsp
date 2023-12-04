@@ -32,10 +32,12 @@
 			<c:when test="${empty id}">
 				<input type="button" value="로그인" onclick="location.href='login_main.do'">
 				<input type="button" value="펫 등록" onclick="go_pet()">
+				<input type="button" value="내 정보" onclick="go_pet()"> <!-- 로그인 시키기 -->
 			</c:when>
 			<c:when test="${not empty id}">
 				<input type="button" value="로그아웃" onclick="location.href='logout.do'">
 				<input type="button" value="펫 등록" onclick="location.href='pet_main.do'">
+				<input type="button" value="내 정보" onclick="location.href='mypage.do'">
 			</c:when>
 		</c:choose>
 	</div>

@@ -1,39 +1,144 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link rel="stylesheet"
-	href="${pageContext.request.contextPath}/resources/css/login/info_main.css">
+	href="${pageContext.request.contextPath}/resources/css/info/info.css">
 </head>
 <body>
-	<div calss="headerWapper">
-		<h2 align="left">LOGO OR TITLE</h2><br>
-	</div>
-	<div class="mainWapper">
-		<div class="content1" align="center">
-			<h2 align="center">병원 소개</h2><br>
-			
-			<p>환자를 우선으로 생각하는 따뜻한 마음과 전문적인 수의의료서비스로<br>
-			 리브동물의료센터?는 인천지역 서구권에서 가장 신뢰받는 병원이 되겠습니다.</p>
+	<div class="wrap">
+		<div class="intro_bg">
+			<div class="header">
+				<a href="main_home.do" class="logo">
+						<h1>MY PET DOC</h1>
+					</a>
+				<ul class="nav">
+					<li><a href="#">HOME</a></li>
+					<li><a href="#">REVIEWS</a></li>
+					<li><a href="#">QNA</a></li>
+					<li><a href="#">RESERVATION</a></li>
+				</ul>
+			</div>
+			<div class="intro_text">
+				<h1>병원 소개</h1>
+				<h4 class="contents1">
+					환자를 우선으로 생각하는 따뜻한 마음과 <br>
+					전문적인 수의의료서비스로 리브동물의료센터는 경인지역 서부권에서 가장 신뢰받는 병원이 되겠습니다.</h4>
+			</div>
 		</div>
-		<div class="content2" align="center">
-			<h2 align="center">리브 동물의료센터를 찾아주신 반려동물 보호자님께 감사의 말씀을 전합니다.</h2><br>
-			<p>리브 동물의료센터를 찾아주신 반려동물 보호자님께 감사의 말씀을 전합니다.<br>
-			리브 동물의료센터는 과별 분과 진료와 첨단 장비를 통한 정확한 진단 그리고 본원만의 진료 및 치료 노하우로 반려동물과 보호자님께
-			최고의 수의 의료서비스를 제공하기 위하여 최선을 다하고 있습니다.<br>
-			검단사거리에 위치한 리브 동물의료센터는 경인지역 서부권 중심병원으로 성장하기 위하여 부단히 노력하고 있습니다.<br>
-			마음이 따뜻하고 실력 있는 의료진들이 여러분의 소중한 반려동물과 함께 하겠습니다.<br>
-			앞으로도 많은 응원과 성원 부탁드리며 최고의 결과를 만들어 행복을 지킬 수 있도록 노력하겠습니다. 감사합니다.<br>
-		
-			리브동물의료센터 전직원 일동</p>
+	</div>
+	<!-- intro end-->
+	<!-- <ul class="amount">
+		<li>
+			<div>
+				<div class="contents1">지금까지 해먹은 돈</div>
+				<div class="result">$128,021</div>
+			</div>
+		</li>
+		<li>
+			<div>
+				<div class="contents1">씨를 말린 오징어 마릿수</div>
+				<div class="result">93,234</div>
+			</div>
+		</li>
+		<li>
+			<div>
+				<div class="contents1">최종 목표 마릿수</div>
+				<div class="result">100,000+</div>
+			</div>
+		</li>
+		<li>
+			<div>
+				<div class="contents1">와사비 간장</div>
+				<div class="result">57,221,084</div>
+			</div>
+		</li>
+	</ul> -->
+	<!-- amount end -->
+
+	<!-- <div class="main_text0">
+		<h1>ABOUT</h1>
+		<div class="contents1">우리는 재규어처럼 재빠르게, 남들과는 다르게 오징어를 낚아챕니다.</div>
+
+		<ul class="icons">
+			<li>
+				<div class="icon_img">
+					 <img src="image/icon2.svg">
+				</div>
+				<div class="contents1_bold">치밀한 계획</div>
+				<div class="contents2">우리는 계획적으로 단속을 피해서 치밀하게 일을 처리합니다</div>
+				<div class="more">MORE</div>
+			</li>
+
+			<li>
+				<div class="icon_img">
+					 <img src="image/icon0.svg">
+				</div>
+				<div class="contents1_bold">은신 기술자 확보</div>
+				<div class="contents2">우리는 언제든지 환술에 걸린것처럼 순식간에 시야에서 사라질 수 있습니다
+				</div>
+				<div class="more">MORE</div>
+			</li>
+
+			<li>
+				<div class="icon_img">
+					     <img src="image/icon1.svg">
+				</div>
+				<div class="contents1_bold">한번에 쓸어담기</div>
+				<div class="contents2">다량의 오징어를 한번에 싹쓸이 하여 시중에 유통할 수 있는 기술력이
+					있습니다</div>
+				<div class="more">MORE</div>
+			</li>
+		</ul>
+	</div> -->
+
+	<div class="main_text1">
+		<h1>SERVICE</h1>
+		<div class="contents1">
+			저희 동물의료센터를 찾아주신 반려동물 보호자님께 감사의 말씀을 전합니다.
+		</div>
+		<div class="service">
+			<div class="food_photo">
+				<img src="img/puppy.png">
+				사진
+			</div>
+			<div class="contents2">
+				<h2>이것이 오징어야, 문어야?</h2>
+				이것이 오징어인지 문어인지 헷갈리시는 분들도 있을거에요. <br> 왜냐면 이것은 그냥 Pixabay에서 오징어라고
+				검색했더니 나온 이미지인데 <br> 오징어 같은 아무것이나 검색이 된것 같아요. <br>
+				<br> 총알오징어는, 사실 어떤 특정한 품종을 가진 게 아니랍니다. <br> 우리가 사먹지 말아야
+				한다는 것이죠. <br> 불과 약 5년전만 해도 시장에 가면 냉동오징어 한마리에 천원이면 샀는데, <br>
+				이젠 두마리에 7~8천원씩 하니, 더이상 서민음식이 아니게 된거죠. <br>
+				<br> 얼마전에는 가격을 비교해 보았더니 마른오징어를 기준으로 <br> 같은 그람수에 같은 가격이 나올
+				정도로 천정부지로 오징어값이 치솟았답니다. <br> 그런 오징어, 못생겼다고 놀리지 말고 <br> 이제
+				소중하게 대해주어야 하지 않을까요?<br>
+			</div>
 		</div>
 	</div>
-	<div class="footerWraaper">
-		하단하단
+
+	<div class="main_text2">
+		<ul>
+			<li>
+				<div>
+					<h1>CONTACT</h1>
+				</div>
+				<div>우리에게 파트너십을 신청하거나, 고객이 되어주세요</div>
+				<div class="more2">더 알아보기</div>
+			</li>
+			<li></li>
+		</ul>
 	</div>
-	
+
+	<div class="footer">
+		<div>LOGO</div>
+		<div>
+			CEO. 타모디자인 <br> Addr. 서울특별시 금천구 가산1로 280-3 우림하이엔드타워 6차 14F 고객상담실
+			Fax/Tel. <br> 02 - 223 -2912~5 <br> COPYRIGHT 2019. TAMO.
+			ALL RIGHT RESERVED.
+		</div>
+	</div>
 </body>
 </html>
