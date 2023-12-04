@@ -15,8 +15,8 @@ public class PetDAO {
 	}
 	
 	// 펫 리스트
-	public List<PetVO> selectList(){
-		List<PetVO> list = sqlSession.selectList("p.petinfo_list");
+	public List<PetVO> selectList(int idx){
+		List<PetVO> list = sqlSession.selectList("p.petinfo_list",idx);
 			return list;
 	}
 	

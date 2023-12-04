@@ -6,8 +6,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<!-- mapper : DB에 쿼리문을 요청하고 결과를 돌려받는 속성파일 -->
 	
 	<!-- 반려동물 리스트 -->
-	<select id="petinfo_list" resultType="vo.PetVO">
-		select * from pet
+	<select id="petinfo_list" resultType="vo.PetVO" parameterType="int">
+		select * from pet where U_IDX=#{idx}
 	</select>
 	
 	<!-- 반려동물 등록 -->
