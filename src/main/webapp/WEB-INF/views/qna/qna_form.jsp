@@ -7,10 +7,38 @@
 <title>Insert title here</title>
 <link href="${pageContext.request.contextPath}/resources/css/qna/qna_form.css" rel="stylesheet">
 <script type="text/javascript">
-	function send(f){
-		f.action="qna_form.do";
+	function send_check(){
+		const f = document.f;
+		
+		if(f.subject.value == ''){
+			alert('제목을 입력하세요');
+			f.subject.focus();
+			return;
+		}
+		
+		if(f.name.value == ''){
+			alert('작성자를 입력하세요');
+			f.name.focus();
+			return;
+		}
+		
+		if(f.content.value.trim() == ''){
+			alert('한글자 이상 입력하세요');
+			f.content.focus();
+			return;
+		}
+		
+		if(f.pwd.value == ''){
+			alert('비밀번호를 입력하세요');
+			f.pwd.focus();
+			return;
+		}
+		
+		f.action=""
 		f.submit();
-}
+			
+	}
+
 </script>
 </head>
 <body>
@@ -18,9 +46,12 @@
 	<div class="qna_wrapperBox">
 		<span class="qna_category">Q&A 카테고리</span>	
 		<div class="qna_category">
-			<div>
-				<input type="button" value="자주 묻는 질문" class="inputBtn">
-			</div>
+			<span>
+				<input type="button" value="자주 묻는 질문" class="inputBtn" onclick="#">
+			</span>
+			<span>
+				<input type="button" value="메인으로 돌아가기" class="inputBtn" onclick="location.href='qan_main.do'">
+			</span>
 		</div>
 	</div> <!-- qna_wrapperBox -->
 	
@@ -29,13 +60,19 @@
 			자주 묻는 질문 작성하기
 		</span>
 	</div>	
-	<div class="qna_wrapperBox">
-		<input class="titleBox" placeholder="제목을 입력해 주세요">
-	<div class="qna_space"></div>
-	<div class="qna_upload_text">
-		<textarea class="titleBox_long" placeholder="5자 이상 내용을 입력해주세요"></textarea>
-		<div class="qna_space"></div>
-	</div>
+		<div class="qna_wrapperBox">
+			<input type="text" value="${id.u_nickName}" > <!-- 작성자 hidden -->
+			<div class="qna_space"></div>
+		</div>
+		
+		<div class="qna_wrapperBox">
+			<input class="titleBox" placeholder="제목을 입력해 주세요">
+			<div class="qna_space"></div>
+			
+		<div class="qna_upload_text">
+			<textarea class="titleBox_long" placeholder="5자 이상 내용을 입력해주세요"></textarea>
+			<div class="qna_space"></div>
+		</div>
 	</div>
 	
 	<div class="qna_wrapperBox"> 
@@ -64,7 +101,12 @@
 		</div>
 		
 		<div class="qna_wrapperBox">
-			<input type="button" value="글 등록하기" class="inputBtn" onclick="send(this.form)">
+			<span>
+				<input type="button" value="글 등록하기" class="inputBtn" onclick="send_check();">
+			</span>
+			<span>
+				<input type="button" value="취소하기" class="inputBtn" onclick="location.href='qan_main.do'">
+			</span>
 		</div>
 	</form> <!-- 사진, 동영상 첨부파일 업로드 폼 -->
 	

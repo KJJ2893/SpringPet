@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="q">
+
+	<insert id="qna_insert" parameterType="vo.QnaVO">
+		INSERT INTO QNA VALUES(
+			SEQ_QNA_IDX.NEXTVAL,
+			1,
+			'제목 테스트 1',
+			'내용 테스트 1',
+			SYSDATE,
+			'사진이미지 제목'
+		)
+	</insert>	
+	
+
+</mapper>
