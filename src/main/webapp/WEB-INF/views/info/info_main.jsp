@@ -16,7 +16,7 @@
 						<h1>MY PET DOC</h1>
 					</a>
 				<ul class="nav">
-					<li><a href="#">HOME</a></li>
+					<li><a href="main_home.do">HOME</a></li>
 					<li><a href="#">REVIEWS</a></li>
 					<li><a href="#">QNA</a></li>
 					<li><a href="#">RESERVATION</a></li>
@@ -125,10 +125,10 @@
 		<ul>
 			<li>
 				<div>
-					<h1>CONTACT</h1>
+					<h1>INSTARGRAM</h1>
 				</div>
-				<div>우리에게 파트너십을 신청하거나, 고객이 되어주세요</div>
-				<div class="more2">더 알아보기</div>
+				<div>궁금한건 DM부탁드립니다.</div>
+				<div class="more2">INSTARGRAM</div>
 			</li>
 			<li></li>
 		</ul>
