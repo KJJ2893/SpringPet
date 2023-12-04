@@ -11,20 +11,10 @@
 	position:absolute;
 	top:20px;
 	left:400px;
-	margin-left: 100px;
+	
 	 
 }
 
-.button{
-		margin-right:150px;
-		 /* border: 1px solid skyblue;
-            background-color: rgba(0,0,0,0);
-            color: skyblue;
-            padding: 5px; */
-          
-
-	
-}
 
 
 
@@ -66,10 +56,5 @@
 	top:1500px;
 	left:500px;
 }
-.footer2{
-	position:absolute;
-	top:1500px;
-	left:1000px;
-	
-}
+
 --------------------------------

@@ -65,10 +65,7 @@ public class PetController {
 	@RequestMapping("petinfo_retouch.do")
 	public String petinfo_retouch() {
 		return VIEW_PATH + "petinfo_retouch.jsp";
-	}
+	};
 	
-	// 펫 정보 삭제하기
-	@RequestMapping("pet_del.do")
-	public String delete(int p_idx)
 
 }
