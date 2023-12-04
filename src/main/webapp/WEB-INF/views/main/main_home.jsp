@@ -11,15 +11,17 @@
 input[type="radio"]{
 display:none;
 }
+/*슬라이드 배너 css */
 .conbox{
 width:1500px;
 height:500px;
-background:#aaa;
+background:#ffa500;
 display:none;
 position:absolute;
 top:200px;
 left:200px;}
 
+/* 체크버튼 css */
 .btn {
 padding:10px;
 text-align:center;
@@ -44,12 +46,13 @@ display:block;}
 input[id="tab03"]:checked ~ .con3{
 display:block;}
 
+/* 체크하는곳 체크시 색상지정*/
 input[id="tab01"]:checked ~ .btn >label[for="tab01"]{
-background:red;}
+background:blue;}
 input[id="tab02"]:checked ~ .btn >label[for="tab02"]{
-background:red;}
+background:blue;}
 input[id="tab03"]:checked ~ .btn >label[for="tab03"]{
-background:red;}
+background:blue;}
 
 
 }
@@ -105,10 +108,13 @@ background:red;}
 </script>
 </head>
 
-<body class="body"  style="background-image:url('resources/img/ground.jpg')">
+<body class="body"  style="background-image:url('resources/img/ground.jpg');
+					background-repeat: no-repeat;
+					background-size:100%;
+					background-color:lime">
 <div class="logo">
 xx병원
-<img  id="logo1" src="resources/img/hos logo.jpg" width="60px;" height="60px"; >
+<img  id="logo1" src="resources/img/hos logo.jpg" width="60px" height="60px"  >
 </div>
 	
 	<div class="top">
@@ -119,27 +125,19 @@ xx병원
 	<input type="button" value="예약" class="button"  onclick=""  style="cursor:pointer">
 	<c:choose>
 			<c:when test="${empty id}">
-				<input type="button" value="로그인" onclick="location.href='login_main.do'">
-				<input type="button" value="펫 등록" onclick="go_pet()">
+				<input type="button" value="로그인"   class="button" onclick="location.href='login_main.do'">
+				<input type="button" value="펫 등록"  class="button"  onclick="go_pet()">
 			</c:when>
 			<c:when test="${not empty id}">
-				<input type="button" value="로그아웃" onclick="location.href='logout.do'">
-				<input type="button" value="펫 등록" onclick="location.href='pet_main.do'">
+				<input type="button" value="로그아웃"   class="button" onclick="location.href='logout.do'">
+				<input type="button" value="펫 등록"   class="button" onclick="location.href='pet_main.do'">
 			</c:when>
 		</c:choose>
 	</div>
-	
-
-	
-	
-
-
-
-
 
 	<div class="sns">
 	<a href="https://www.instagram.com">
-	<img src="resources/img/insta.jpg" width="100px"; height="100px"; >
+	<img src="resources/img/insta.jpg" width="100px" height="100px" >
 	</a>
 	</div>
 	
@@ -158,7 +156,7 @@ xx병원
 	<div class="footer2">
 	<!-- <img src="" width="30%" heigh="20%">  로고사진 들어가야함-->
 	</div>
-	
+	</div>
   <div class="tab_content">
 <input type="radio" name="tabmenu" id="tab01" checked>
 <input type="radio" name="tabmenu" id="tab02" >
@@ -173,7 +171,7 @@ xx병원
 <label for="tab02"></label>
 <label for="tab03"></label>
 </div>
-</div>
+
     
 <!-- 자동롤링배너 -->
 <div class="wrap"> <!-- 배너표시영역 -->
