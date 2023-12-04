@@ -130,23 +130,11 @@ xx병원
 			</c:when>
 			<c:when test="${not empty id}">
 				<input type="button" value="로그아웃" onclick="location.href='logout.do'">
-<<<<<<< HEAD
-				<input type="button" value="펫 등록" onclick="location.href='pet_main.do'">
-				<input type="button" value="내 정보" onclick="location.href='mypage.do'">
-=======
 				<input type="button" value="펫 등록" onclick="location.href='petinfo_main.do'">
->>>>>>> 7933d3549b57294491dd1b2a524899c4eedeb0ee
+				<input type="button" value="내 정보" onclick="location.href='mypage.do'">
 			</c:when>
 		</c:choose>
 	</div>
-	
-
-	
-	
-
-
-
-
 
 	<div class="sns">
 	<a href="https://www.instagram.com">

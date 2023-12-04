@@ -20,7 +20,7 @@ h1 {
 }
 
 .contents2 {
-	font-size: 18px;
+	font-size: 20px;
 }
 
 .contents3 {
@@ -173,6 +173,7 @@ h1 {
 }
 
 .service {
+	align-self: center;
 	width: 1280px;
 	display: flex;
 	margin: 49px auto;
