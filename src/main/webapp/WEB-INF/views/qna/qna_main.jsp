@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,7 +9,7 @@
 <link href="${pageContext.request.contextPath}/resources/css/qna/qna_main.css" rel="stylesheet">
 </head>
 <body>
-<!-- Q&A 게시판 Main -->
+<!-- <!-- Q&A 게시판 Main 
 	<div class="qna_main_wrapper" border="1">
 		<div class="contentBox">
 			<div>
@@ -92,7 +93,7 @@
 				</div>
 			</div>
 		</div>  contentBox 끝 	
-	</div> <!-- qna_main_wrapper 끝 -->-->
+	</div> qna_main_wrapper 끝
 	
 	
 <div class="flex_container">
@@ -111,7 +112,24 @@
 	<div class="flex-item">content4</div>
 	<div class="flex-item">content5</div>
 	<div class="flex-item">content6</div>
-</div>
+</div> -->
+
+<table>
+	<tr>
+		<th>순서</th>
+		<th>제목</th>
+		<th>내용</th>
+	</tr>
+	
+	<c:forEach var="qna" items="${list }">
+		<tr>
+			<td>${qna.q_idx }</td>
+			<td>${qna.q_title }</td>
+			<td>${qna.q_content }</td>
+		</tr>
+	</c:forEach>
+</table>
+
 이곳은  qna main
 </body>
 </html>

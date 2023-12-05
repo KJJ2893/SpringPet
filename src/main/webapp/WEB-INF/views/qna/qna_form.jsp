@@ -34,14 +34,40 @@
 			return;
 		}
 		
-		f.action=""
+		f.action="qna_insert.do"
 		f.submit();
 			
+	}
+	
+	function send(f){
+		var q_title = f.q_title.value;
+		if(q_title == ''){
+			alert("적어");
+			return;
+		}
+		
+		f.method="GET";
+		f.action="qna_insert"
+		f.submit();
 	}
 
 </script>
 </head>
 <body>
+
+	<form>
+		<table>
+			<tr>
+				<th>제목</th>
+				<td><input type="text" name="q_title"></td>
+			</tr>
+			<tr>
+				<th>내용</th>
+				<td><textarea name="q_content"></textarea></td>
+			</tr>
+		</table>
+		<input type="button" value="전송" onclick="send(this.form)">
+	</form>
 	<!-- Q&A 글쓰기 -->
 	<div class="qna_wrapperBox">
 		<span class="qna_category">Q&A 카테고리</span>	
