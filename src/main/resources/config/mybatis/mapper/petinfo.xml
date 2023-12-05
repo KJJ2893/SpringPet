@@ -7,7 +7,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	
 	<!-- 반려동물 리스트 -->
 	<select id="petinfo_list" resultType="vo.PetVO" parameterType="int">
-		select * from pet where U_IDX=#{idx}
+		select * from pet where U_IDX=#{idx} order by P_IDX desc 
 	</select>
 	
 	<!-- 반려동물 등록 -->
@@ -19,7 +19,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 			#{p_type},
 			#{p_age},
 			#{p_gender},
-			#{filename}
+			#{p_photo}
 		)
 	</insert>
 	

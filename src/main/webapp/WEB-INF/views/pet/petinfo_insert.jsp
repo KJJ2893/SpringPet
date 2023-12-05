@@ -12,7 +12,7 @@
 			var p_type = f.p_type.value;
 			var p_age = f.p_age.value.trim();
 			var p_gender = f.p_gender.value;
-			var filename = f.filename.value;
+			/* var p_photo = f.p_photo.value; */
 			var u_idx = f.u_idx.value;
 			
 			// 유효성 검사
@@ -46,13 +46,8 @@
 				return;
 			}
 			
-			location.href="pet_insert.do?p_name="+p_name
-					     +"&p_type="+p_type
-					     +"&p_age="+p_age
-					     +"&p_gender="+p_gender
-					     +"&filename="+filename
-					     +"&u_idx="+u_idx; 
-			/* f.submit(); */
+			f.action = "pet_insert.do"
+			f.submit();
 		}
 		
 		function cancel_send(f){
@@ -68,10 +63,10 @@
 		<table border="1" align="center">
 			<caption>마이 펫 등록하기</caption>
 			<tr>
-			   <th>이름</th>
-			   <td>
-			   	<input name="p_name">
-			   </td>
+				<th>이름</th>
+				<td>
+					<input name="p_name">
+				</td>
 			</tr>
 			<tr>
 			 	<th>종</th>
@@ -98,7 +93,7 @@
 			</tr>
 			<tr>
 				<th>이미지 첨부</th>
-				<td><input type="file" name="filename"></td>
+				<td><input type="file" name="photo"></td>
 			</tr>	
 			<tr>
 			   <td colspan="2" align="center">
