@@ -4,7 +4,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="r">
 <!-- 예약리스트 불러오기 -->
-<select id="select_rev" resultType="vo.RevVO">
+<select id="rev_list" resultType="vo.RevVO">
 SELECT * FROM RESERVATION
 </select>
 

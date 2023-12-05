@@ -1,7 +1,5 @@
 package com.pet.care;
 
-import java.io.File;
-import java.io.IOException;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -10,7 +8,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.multipart.MultipartFile;
 
 import dao.PetDAO;
 import vo.PetVO;
@@ -89,16 +86,7 @@ public class PetController {
 	public String petinfo_retouch() {
 		return VIEW_PATH + "petinfo_retouch.jsp";
 	};
-	
-	// 펫 정보 삭제하기
-    @RequestMapping("petinfo_del.do")
-    public String delete(int p_idx) {
-        PetVO vo = new PetVO();
-        vo.setP_idx(p_idx);
-        pet_dao.delete(vo);
-        return "redirect:petinfo_main.do";
-
-    }
 }
+
 
 	

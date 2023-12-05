@@ -17,7 +17,12 @@
 <th>예약날짜</th>
 </tr>
 
-
+<tr>
+<td>${vo.u_name }</td>
+<td>${vo.u_tel }</td>
+<td>${vo.rv_time }</td>
+<td>${vo.rv_day }</td>
+</tr>
 </table>
 </form>
 </body>
