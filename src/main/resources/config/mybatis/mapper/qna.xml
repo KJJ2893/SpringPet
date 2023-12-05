@@ -15,5 +15,14 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		)
 	</insert>	
 	
+	<delete id="qna_delete" parameterType="int">
+		DELETE QNA WHERE Q_IDX=#{q_idx}
+	</delete>
+	
+	<select id="qna_select_list" resultType="vo.QnaVO">
+		SELECT * FROM QNA
+	</select>
+	
+	
 
 </mapper>

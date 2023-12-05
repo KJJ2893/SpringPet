@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -113,5 +114,16 @@
 	<div class="flex-item">content6</div>
 </div>
 이곳은  qna main
+<table border="1">
+	<c:forEach var="qna" items="${qna_list }">
+	<tr>
+		<td>${qna.q_idx } </td>
+		<td>${qna.u_idx } </td>
+		<td>${qna.q_content } </td>
+	</tr>
+	</c:forEach>
+</table>
+
+
 </body>
 </html>
