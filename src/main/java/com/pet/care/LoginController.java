@@ -25,8 +25,6 @@ public class LoginController {
 	@Autowired
 	HttpSession session;
 	
-
-	
 	public LoginController(UserDAO user_dao) {
 		this.user_dao = user_dao;
 		System.out.println("loginCotroller 생성자");
@@ -112,6 +110,21 @@ public class LoginController {
 		}
 		
 	}
+	
+	// 전화번호 중복확인
+	@RequestMapping("telCheck.do")
+	@ResponseBody
+	public String telCheck(String u_tel) {
+		int res = user_dao.telCheck(u_tel);
+		
+		if(res == 0) {
+			return "[{'res':'yes'}]"; //중복된 번호 없음
+		} else {
+			return "[{'res':'no'}]"; // 중복된 전호 있음
+		}
+		
+	}
+	
 	
 	// 유저 추가하기
 	@RequestMapping("insert_user.do")
@@ -232,6 +245,7 @@ public class LoginController {
 		return VIEW_PATH + "updateNname.jsp";
 	}
 	
+	// 닉네임 수정
 	@RequestMapping("update_Nname.do")
 	public String update_Nname(String u_nickName, String nickName) {
 		
@@ -250,4 +264,24 @@ public class LoginController {
 	
 	/////////////////////////////////////
 
+	// 이름 변경
+	@RequestMapping("updateName.do")
+	public String updateName() {
+		return VIEW_PATH+"updateName.jsp";
+	}
+
+	@RequestMapping("update_name.do")
+	public String update_name(String u_name, String u_tel) {
+HashMap<String, String> map = new HashMap<String, String>();
+		
+		map.put("u_name", u_name);
+		map.put("u_tel", u_tel);
+		
+		int res = user_dao.update_name(map);
+		
+		if(res == 1) {
+			return VIEW_PATH+"close.jsp";
+		}		
+		return null;
+	}
 }

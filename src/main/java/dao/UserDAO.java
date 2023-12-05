@@ -14,6 +14,7 @@ public class UserDAO {
 		this.sqlSession = sqlSession;
 	}
 	
+	/////////////////////////////////////////////////////
 	// 유저 정보 조회
 	public UserVO select_info(int u_idx) {
 		return sqlSession.selectOne("u.select_info", u_idx);
@@ -39,6 +40,11 @@ public class UserDAO {
 		return sqlSession.selectOne("u.nNameCheck", u_nickName);
 	}
 	
+	// 전화번호 중복 검사
+	public int telCheck(String u_tel) {
+		return sqlSession.selectOne("u.telCheck", u_tel);
+	}
+	
 	// 유저 추가(회원가입)
 	public int insert_user(UserVO vo) {
 		return sqlSession.insert("u.insertU", vo);
@@ -52,6 +58,11 @@ public class UserDAO {
 	// 닉네임 변경
 	public int update_Nname(HashMap<String, String> map) {
 		return sqlSession.update("u.upNname", map);
+	}
+	
+	// 이름 변경
+	public int update_name(HashMap<String, String> map) {
+		return sqlSession.update("u.update_name", map);
 	}
 	
 }

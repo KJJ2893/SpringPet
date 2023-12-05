@@ -26,6 +26,10 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		SELECT count(*) FROM USERINFO WHERE U_NICKNAME=#{u_nickName}
 	</select>
 	
+	<!-- 전화번호 중복검사 -->
+	<select id="telCheck" resultType="int" parameterType="String">
+		SELECT count(*) FROM USERINFO WHERE U_TEL=#{u_tel}
+	</select>
 	
 	<!-- 이메일 찾기 -->
 	<select id="select_email" resultType="vo.UserVO" parameterType="java.util.HashMap">
@@ -52,8 +56,13 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		SELECT * FROM USERINFO WHERE U_NAME = #{u_name} and U_EMAIL = #{u_email}
 	</select>
 	
+	<!-- 닉네임 추가 -->
 	<update id="upNname" parameterType="java.util.HashMap">
 		UPDATE USERINFO SET U_NICKNAME = #{u_nickName} WHERE U_NICKNAME = #{nickName}
+	</update>
+	
+	<update id="update_name" parameterType="java.util.HashMap">
+		UPDATE USERINFO SET U_NAME = #{u_name} WHERE U_TEL = #{u_tel}
 	</update>
 
 </mapper>
