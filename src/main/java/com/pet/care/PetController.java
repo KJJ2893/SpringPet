@@ -1,5 +1,7 @@
 package com.pet.care;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -8,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.multipart.MultipartFile;
 
 import dao.PetDAO;
 import vo.PetVO;
@@ -49,6 +52,41 @@ public class PetController {
 	// 펫 등록하기
 	@RequestMapping("pet_insert.do")
 	public String pet_insert(PetVO vo) {
+		
+//		System.out.println("파일업로드안?돼? 왜? 진짜? 왜?");
+//		
+//		String webPath = "/resources/petImage";
+//		String savePath = request.getServletContext().getRealPath(webPath);
+//		System.out.println(savePath);
+//		
+//		MultipartFile photo = vo.getPhoto();
+//		
+//		String filename = "no_file";
+//		
+//		if(!photo.isEmpty()) {
+//			filename = photo.getOriginalFilename();
+//			
+//			File saveFile = new File(savePath, filename);
+//			
+//			if(!saveFile.exists()) {
+//				saveFile.getParentFile().mkdirs();
+//			} else {
+//				long time = System.currentTimeMillis();
+//				filename = String.format("%d_%s", time, filename);
+//				saveFile = new File(savePath, filename);
+//			}
+//			
+//			try {
+//				photo.transferTo(saveFile);
+//			} catch (IllegalStateException e) {
+//				e.printStackTrace();
+//			} catch (IOException e) {
+//				e.printStackTrace();
+//			}
+//			
+//		}
+//		
+//		vo.setFilename(filename);
 	
 		int res = pet_dao.insert(vo);
 		

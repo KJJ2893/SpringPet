@@ -21,9 +21,22 @@
 		var url = "updateName.do";
 		var size = "width=450px;, height=500px;, scrollbars=no;";
 		
-		window.open(url, '닉네임변경', size);
+		window.open(url, '이름변경', size);
 	}
-
+	
+	function upEmail(){
+		var url = "updateEmail.do";
+		var size = "width=450px;, height=500px;, scrollbars=no;";
+		
+		window.open(url, '이메일변경', size);
+	}
+	
+	function upPwd(){
+		var url = "updatePwd.do";
+		var size = "width=450px;, height=500px;, scrollbars=no;";
+		
+		window.open(url, '비밀번호변경', size);
+	}
 
 
 </script>
@@ -51,11 +64,11 @@
 					
 					<h3>Email</h3>
 					<input id="u_email" value="${id.u_email }" readOnly>
-					<input type="button" value="수정">
+					<input type="button" value="수정" onclick="upEmail()">
 
 					<h3>Password</h3>
-					<input type="password" name="u_pwd" id="u_pwd" placeholder="Password" value="${id.u_email }">
-					<input type="button" value="수정">
+					<input type="password" value="${id.u_pwd }" readOnly>
+					<input type="button" value="수정" onclick="upPwd()">
 					
 					<h3>Tel</h3>
 					<input id="u_tel" value="${id.u_tel }" readOnly>

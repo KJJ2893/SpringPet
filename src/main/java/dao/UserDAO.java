@@ -65,4 +65,8 @@ public class UserDAO {
 		return sqlSession.update("u.update_name", map);
 	}
 	
+	// 이메일 변경
+	public int update_email(HashMap<String, String> map) {
+		return sqlSession.update("u.update_email", map);
+	}
 }
