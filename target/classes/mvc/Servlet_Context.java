@@ -11,6 +11,7 @@ import com.pet.care.LoginController;
 import com.pet.care.MainController;
 import com.pet.care.PetController;
 import com.pet.care.QnAController;
+import com.pet.care.RevController;
 
 import dao.PetDAO;
 import dao.UserDAO;
@@ -64,5 +65,9 @@ public class Servlet_Context implements WebMvcConfigurer {
 	@Bean
 	public QnAController qnaController() {
 		return new QnAController();
+	}
+	@Bean
+	public RevController revController() {
+		return new RevController();
 	}
 }
