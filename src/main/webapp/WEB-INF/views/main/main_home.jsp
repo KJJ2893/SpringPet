@@ -136,10 +136,13 @@ xx병원
 			<c:when test="${empty id}">
 				<input type="button" value="로그인"class="btn1"   onclick="location.href='login_main.do'">
 				<input type="button" value="펫 등록" class="btn1"  onclick="go_pet()">
+				<input type="button" value="정보수정" class="btn1"  onclick="go_pet()">
+				
 			</c:when>
 			<c:when test="${not empty id}">
 				<input type="button" value="로그아웃" class="btn1"   onclick="location.href='logout.do'">
 				<input type="button" value="펫 등록" class="btn1"  onclick="location.href='petinfo_main.do'">
+				<input type="button" value="정보수정" class="btn1"  onclick="location.href='updateInfo.do'">
 			</c:when>
 		</c:choose>
 	</div>
@@ -157,6 +160,7 @@ xx병원
 	<li> 이메일:email@naver.com</li>
 	ⓒ2023.hospital name All rights reserved.
 </div>
+
 <div class="footer1">
 	<li>대표자: 김재준</li>
 	<li>대표자 전화번호:000-0000-0000</li>

@@ -7,8 +7,24 @@
 <title>Insert title here</title>
 <link rel="stylesheet"
 	href="${pageContext.request.contextPath}/resources/css/login/update.css">
+<script src="resources/js/httpRequest.js"></script>
 <script type="text/javascript">
+	function upNname(){
+		
+		var url = "updateNname.do";
+		var size = "width=450px;, height=500px;, scrollbars=no;";
+		
+		window.open(url, '닉네임변경', size);
+	}
 	
+	function upName(){
+		var url = "updateName.do";
+		var size = "width=450px;, height=500px;, scrollbars=no;";
+		
+		window.open(url, '닉네임변경', size);
+	}
+
+
 
 </script>
 </head>
@@ -27,12 +43,11 @@
 				<div class="update">
 					<h3>NickName</h3>
 					<input id="u_Nname" value="${id.u_nickName }" readOnly>
-					<input type="button" value="수정" 
-						onclick="window.open('updateNname.do', '팝업창 이름', 'width=450px;, height=500px;')">
+					<input type="button" value="수정" onclick="upNname()">
 				
 					<h3>Name</h3>
 					<input id="u_name" value="${id.u_name }" readOnly>
-					<input type="button" value="수정">
+					<input type="button" value="수정" onclick="upName()">
 					
 					<h3>Email</h3>
 					<input id="u_email" value="${id.u_email }" readOnly>
