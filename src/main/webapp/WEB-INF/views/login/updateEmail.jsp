@@ -61,9 +61,9 @@
 			}
 			
 		}
-	} // resultFn2()
+	} // resultFn()
 	
-	// 닉네임 중복체크용
+	// 이메일 중복체크용
 	function che() {
 		b_emailCheck = false;
 	} // che()
