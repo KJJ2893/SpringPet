@@ -94,6 +94,14 @@ background:blue;}
             100% { transform: translateX(-200%); }
         }
 
+.btn1{
+    background-color: #A582CF; 
+    cursor:pointer;
+    margin-left:100px;
+    width:60px;
+    height:30px;
+}
+
     </style>
     
 <link rel="stylesheet"
@@ -108,23 +116,25 @@ background:blue;}
 </script>
 </head>
 
-<body class="body"  style="background-image:url('resources/img/ground.jpg');
+<body class="body"  style="background-image:url('resources/img/back.jpg');
 					background-repeat: no-repeat;
 					background-size:100%;
-					background-color:lime">
+					background-color:fuchsia;
+					">
 <div class="logo">
 xx병원
 <img  id="logo1" src="resources/img/hos logo.jpg" width="60px" height="60px"  >
 </div>
 	
 	<div class="top">
-	<input type="button" value="소개"  class="button" onclick="location.href='info_main.do'"  style="cursor:pointer">
-	<input type="button" value="공지" class="button"  onclick=""  style="cursor:pointer">
-	<input type="button" value="리뷰" class="button"  onclick=""  style="cursor:pointer">
-	<input type="button" value="QNA" class="button"  onclick="location.href='qna_form.do'"  style="cursor:pointer">
-	<input type="button" value="예약" class="button"  onclick=""  style="cursor:pointer">
+	<input type="button" value="소개" class="btn1"  onclick="location.href='info_main.do'"  >
+	<input type="button" value="공지" class="btn1" onclick=""  >
+	<input type="button" value="리뷰" class="btn1" onclick=""  >
+	<input type="button" value="QNA"  class="btn1" onclick="location.href='qna_form.do'"  >
+	<input type="button" value="예약"  class="btn1" onclick="location.href='rev_main.do'"  >
 	<c:choose>
 			<c:when test="${empty id}">
+<<<<<<< HEAD
 <<<<<<< HEAD
 				<input type="button" value="로그인"   class="button" onclick="location.href='login_main.do'">
 				<input type="button" value="펫 등록"  class="button"  onclick="go_pet()">
@@ -142,10 +152,18 @@ xx병원
 				<input type="button" value="펫 등록" onclick="location.href='pet_main.do'">
 				<input type="button" value="내정보" onclick="location.href='check_up.do'">
 >>>>>>> 611ef7a6d115b0b1d674d4a601541612f1bdb243
+=======
+				<input type="button" value="로그인"class="btn1"   onclick="location.href='login_main.do'">
+				<input type="button" value="펫 등록" class="btn1"  onclick="go_pet()">
+			</c:when>
+			<c:when test="${not empty id}">
+				<input type="button" value="로그아웃" class="btn1"   onclick="location.href='logout.do'">
+				<input type="button" value="펫 등록" class="btn1"  onclick="location.href='petinfo_main.do'">
+>>>>>>> 48bf6adcbe9c0f218b30318de2529a4e2564b66f
 			</c:when>
 		</c:choose>
 	</div>
-
+<div class="footerall">
 	<div class="sns">
 	<a href="https://www.instagram.com">
 	<img src="resources/img/insta.jpg" width="100px" height="100px" >
@@ -164,9 +182,6 @@ xx병원
 	<li>대표자 전화번호:000-0000-0000</li>
 	<li>사업자 등록번호:000-00-00000</li>
 </div>
-	<div class="footer2">
-	<!-- <img src="" width="30%" heigh="20%">  로고사진 들어가야함-->
-	</div>
 	</div>
   <div class="tab_content">
 <input type="radio" name="tabmenu" id="tab01" checked>
