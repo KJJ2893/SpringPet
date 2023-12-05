@@ -142,7 +142,7 @@ xx병원
 			<c:when test="${not empty id}">
 				<input type="button" value="로그아웃" class="btn1"   onclick="location.href='logout.do'">
 				<input type="button" value="펫 등록" class="btn1"  onclick="location.href='petinfo_main.do'">
-				<input type="button" value="정보수정" class="btn1"  onclick="location.href='updateInfo.do'">
+				<input type="button" value="정보수정" class="btn1"  onclick="location.href='check_up.do'">
 			</c:when>
 		</c:choose>
 	</div>

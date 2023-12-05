@@ -50,7 +50,7 @@
 				<input type="button" value="자주 묻는 질문" class="inputBtn" onclick="#">
 			</span>
 			<span>
-				<input type="button" value="메인으로 돌아가기" class="inputBtn" onclick="location.href='qan_main.do'">
+				<input type="button" value="메인으로 돌아가기" class="inputBtn" onclick="location.href='qna_main.do'">
 			</span>
 		</div>
 	</div> <!-- qna_wrapperBox -->
@@ -105,7 +105,7 @@
 				<input type="button" value="글 등록하기" class="inputBtn" onclick="send_check();">
 			</span>
 			<span>
-				<input type="button" value="취소하기" class="inputBtn" onclick="location.href='qan_main.do'">
+				<input type="button" value="취소하기" class="inputBtn" onclick="location.href='qna_main.do'">
 			</span>
 		</div>
 	</form> <!-- 사진, 동영상 첨부파일 업로드 폼 -->
