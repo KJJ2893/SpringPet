@@ -12,6 +12,9 @@
 				return;
 			}
 			
+			var p_idx = f.p_idx.value;
+			var u_idx = f.u_idx.value;
+			
 			f.action = "petinfo_del.do";
 			f.method = "GET";
 			f.submit();
@@ -38,7 +41,10 @@
                 <td>${vo.p_age }</td>
                 <td>${vo.p_gender }</td>
                 <td>
-             	
+                <input type="hidden" name="p_idx" value="${vo.p_idx }">
+                <input type="hidden" name="u_idx" value="${vo.u_idx }">	
+                </td>
+                <td>
                 	<input type="button" value="수정하기" 
                 		onclick="location.href='petinfo_retouch.do'">
                 	<input type="button" value="삭제하기" 

@@ -26,8 +26,8 @@ public class PetDAO {
 	}
 	
 	// 펫 정보 삭제
-	public int delete(PetVO vo) {
-		return sqlSession.delete("p.petinfo_delete", vo);
+	public int delete(int p_idx) {
+		return sqlSession.delete("p.petinfo_delete", p_idx);
 	}
 	
 	

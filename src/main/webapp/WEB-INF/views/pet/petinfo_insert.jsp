@@ -8,28 +8,28 @@
 <script src="resources/js/httpRequest.js"></script>
 	<script type="text/javascript">
 		function insert_send(f){
-			var name = f.p_name.value;
-			var type = f.p_type.value;
-			var age = f.p_age.value;
-			var gender = f.p_gender.value;
+			var p_name = f.p_name.value.trim();
+			var p_type = f.p_type.value;
+			var p_age = f.p_age.value.trim();
+			var p_gender = f.p_gender.value;
 			var filename = f.filename.value;
 			var u_idx = f.u_idx.value;
 			
 			// 유효성 검사
-			if(name == ''){
+			if(p_name == ''){
 				alert('이름을 입력하세요');
 				return;
 			}
-			if(type == ''){
+			if(p_type == ''){
 				alert('반려동물 종을 선택해주세요');
 				return;
 			}
-			if(age == ''){
+			if(p_age == ''){
 				alert('나이를 입력해주세요');
 				return;
 			}
 			
-			var intAge = parseInt(age);
+			var intAge = parseInt(p_age);
 			
 			if(isNaN(intAge)){
 				alert('나이는 숫자로만 입력이 가능합니다.');
@@ -41,18 +41,18 @@
 				return;
 			}
 			
-			if(gender == ''){
+			if(p_gender == ''){
 				alert('성별을 선택해주세요');
 				return;
 			}
 			
-			location.href="pet_insert.do?p_name="+name
-					+"&p_type="+type
-					+"&p_age="+age
-					+"&p_gender="+gender
+			location.href="pet_insert.do?p_name="+p_name
+					+"&p_type="+p_type
+					+"&p_age="+p_age
+					+"&p_gender="+p_gender
 					+"&filename="+filename
 					+"&u_idx="+u_idx;
-			/* f.submit(); */
+			f.submit();
 		}
 		
 		function cancel_send(f){
