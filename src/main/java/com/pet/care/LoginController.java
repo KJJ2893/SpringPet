@@ -1,6 +1,5 @@
 package com.pet.care;
 
-import java.net.IDN;
 import java.util.HashMap;
 
 import javax.servlet.http.HttpSession;
@@ -270,6 +269,7 @@ public class LoginController {
 		return VIEW_PATH+"updateName.jsp";
 	}
 
+	// 이름 수정
 	@RequestMapping("update_name.do")
 	public String update_name(String u_name, String u_tel) {
 HashMap<String, String> map = new HashMap<String, String>();
@@ -284,4 +284,6 @@ HashMap<String, String> map = new HashMap<String, String>();
 		}		
 		return null;
 	}
+	
+	
 }

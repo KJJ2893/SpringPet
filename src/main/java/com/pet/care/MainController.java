@@ -3,8 +3,6 @@ package com.pet.care;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import dao.UserDAO;
-
 @Controller
 public class MainController {
 	
