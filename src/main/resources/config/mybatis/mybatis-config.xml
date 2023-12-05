@@ -14,5 +14,6 @@
 		<mapper resource="config/mybatis/mapper/userinfo.xml" />
 		<mapper resource="config/mybatis/mapper/petinfo.xml" />
 		<mapper resource="config/mybatis/mapper/qna.xml" />
+		<mapper resource="config/mybatis/mapper/rev.xml" />
 	</mappers>
 </configuration>

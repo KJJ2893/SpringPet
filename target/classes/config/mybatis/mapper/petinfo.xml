@@ -18,8 +18,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 			#{p_name},
 			#{p_type},
 			#{p_age},
-			#{p_gender},
-			#{filename}
+			
+			
 		)
 	</insert>
 	
