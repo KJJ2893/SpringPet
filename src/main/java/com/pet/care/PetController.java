@@ -53,6 +53,14 @@ public class PetController {
 	@RequestMapping("pet_insert.do")
 	public String pet_insert(PetVO vo) {
 
+		System.out.println(vo.getP_idx());
+		System.out.println(vo.getU_idx());
+		System.out.println(vo.getP_name());
+		System.out.println(vo.getP_type());
+		System.out.println(vo.getP_age());
+		System.out.println(vo.getP_gender());
+		System.out.println(vo.getFilename());
+	
 		int res = pet_dao.insert(vo);
 		
 		if(res > 0) {
@@ -60,6 +68,21 @@ public class PetController {
 		}
 			return null;
 	}
+	
+	// 펫 정보 삭제하기
+    @RequestMapping("petinfo_del.do")
+    public String delete(int p_idx) {
+        System.out.println(p_idx);
+        
+       int res = pet_dao.delete(p_idx);
+       
+       if(res == 0) {
+    	   System.out.println("실패");
+    	   return null;
+       }
+        return "redirect:petinfo_main.do";
+
+    }
 
 	// 펫 정보 수정 화면
 	@RequestMapping("petinfo_retouch.do")

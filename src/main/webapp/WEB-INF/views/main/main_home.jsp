@@ -130,7 +130,7 @@ xx병원
 	<input type="button" value="소개" class="btn1"  onclick="location.href='info_main.do'"  >
 	<input type="button" value="공지" class="btn1" onclick=""  >
 	<input type="button" value="리뷰" class="btn1" onclick=""  >
-	<input type="button" value="QNA"  class="btn1" onclick="location.href='qna_form.do'"  >
+	<input type="button" value="QNA"  class="btn1" onclick="location.href='qna_main.do'"  >
 	<input type="button" value="예약"  class="btn1" onclick="location.href='rev_main.do'"  >
 	<c:choose>
 			<c:when test="${empty id}">
