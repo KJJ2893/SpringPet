@@ -9,7 +9,7 @@
 </head>
 <body>
 <!-- Q&A 게시판 Main -->
-<!-- 	<div class="qna_main_wrapper" border="1">
+	<div class="qna_main_wrapper" border="1">
 		<div class="contentBox">
 			<div>
 				<div class="ImgBox">

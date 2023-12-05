@@ -67,5 +67,15 @@ public class PetController {
 		return VIEW_PATH + "petinfo_retouch.jsp";
 	};
 	
+	// 펫 정보 삭제하기
+    @RequestMapping("petinfo_del.do")
+    public String delete(int p_idx) {
+        PetVO vo = new PetVO();
+        vo.setP_idx(p_idx);
+        pet_dao.delete(vo);
+        return "redirect:petinfo_main.do";
 
+    }
 }
+
+	

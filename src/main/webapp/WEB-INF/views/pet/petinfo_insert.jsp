@@ -45,7 +45,7 @@
 				alert('성별을 선택해주세요');
 				return;
 			}
-			
+		
 			location.href="pet_insert.do?p_name="+name
 					+"&p_type="+type
 					+"&p_age="+age

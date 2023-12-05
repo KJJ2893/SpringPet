@@ -7,6 +7,16 @@
 <title>Insert title here</title>
 </head>
 <body>
-아
+<form>
+<table border="1" align="center">
+<caption>예약 리스트</caption>
+<tr>
+<th>예약자명</th>
+<th>전화번호</th>
+<th>예약시간</th>
+<th>예약날짜</th>
+</tr>
+</table>
+</form>
 </body>
 </html>

@@ -50,7 +50,10 @@
 				<input type="button" value="자주 묻는 질문" class="inputBtn" onclick="#">
 			</span>
 			<span>
-				<input type="button" value="메인으로 돌아가기" class="inputBtn" onclick="location.href='qna_main.do'">
+				<input type="button" value="메인으로 돌아가기" class="inputBtn" onclick="location.href='main_home.do'">
+			</span>
+			<span>
+				<input type="button" value="QNA홈으로" class="inputBtn" onclick="location.href='qna_main.do'">
 			</span>
 		</div>
 	</div> <!-- qna_wrapperBox -->
