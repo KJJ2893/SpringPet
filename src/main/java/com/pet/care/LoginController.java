@@ -272,7 +272,7 @@ public class LoginController {
 	// 이름 수정
 	@RequestMapping("update_name.do")
 	public String update_name(String u_name, String u_tel) {
-HashMap<String, String> map = new HashMap<String, String>();
+		HashMap<String, String> map = new HashMap<String, String>();
 		
 		map.put("u_name", u_name);
 		map.put("u_tel", u_tel);
@@ -285,5 +285,35 @@ HashMap<String, String> map = new HashMap<String, String>();
 		return null;
 	}
 	
+	///////////////////////////////////////
+	// 이메일 변겅
+	@RequestMapping("updateEmail.do")
+	public String updateEmail() {
+		return VIEW_PATH+"updateEmail.jsp";
+	}
+	
+	@RequestMapping("update_email.do")
+	public String update_email(String email, String u_email) {
+	HashMap<String, String> map = new HashMap<String, String>();
+	
+	map.put("email", email);
+	map.put("u_email", u_email);
+	
+	int res = user_dao.update_email(map);
+	
+	if(res == 1) {
+		return VIEW_PATH+"close.jsp";
+	}
+	
+	return null;
+	
+	}
+	
+	///////////////////////////////////////
+	
+	@RequestMapping("updatePwd.do")
+	public String updatePwd() {
+		return VIEW_PATH+"updatePwd.jsp";
+	}
 	
 }
