@@ -45,31 +45,14 @@
 				alert('성별을 선택해주세요');
 				return;
 			}
-<<<<<<< HEAD
-		
-			location.href="pet_insert.do?p_name="+name
-					+"&p_type="+type
-					+"&p_age="+age
-					+"&p_gender="+gender
-=======
 			
 			location.href="pet_insert.do?p_name="+p_name
-<<<<<<< HEAD
 					     +"&p_type="+p_type
 					     +"&p_age="+p_age
 					     +"&p_gender="+p_gender
 					     +"&filename="+filename
 					     +"&u_idx="+u_idx; 
 			/* f.submit(); */
-=======
-					+"&p_type="+p_type
-					+"&p_age="+p_age
-					+"&p_gender="+p_gender
->>>>>>> d08c7458c9870b05abdb3b4262265ab2a52eae34
-					+"&filename="+filename
-					+"&u_idx="+u_idx;
-			f.submit();
->>>>>>> 781c2d25a1537bb6b1961ab7df1c6e090d95c966
 		}
 		
 		function cancel_send(f){
