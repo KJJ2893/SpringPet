@@ -93,6 +93,6 @@
 			<input type="button" value="완료" onclick="done(this.form)">
 		</form>
 		</div>
-	</div>
+
 </body>
 </html>

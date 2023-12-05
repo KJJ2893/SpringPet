@@ -345,6 +345,25 @@ public class LoginController {
 		return VIEW_PATH +"updateTel.jsp";
 	}
 	
+	@RequestMapping("update_tel.do")
+	public String update_tel(String tel, String u_tel) {
+		HashMap<String, String> map = new HashMap<String, String>();
+		
+		map.put("tel", tel);
+		map.put("u_tel", u_tel);
+		
+		int res = user_dao.update_tel(map);
+		
+		if(res == 1) {
+			return VIEW_PATH+"close.jsp";
+		}
+		
+		return null;
+		
+	}
+	
+	/////////////////////////////////////////////
+	
 	
 	
 }

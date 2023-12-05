@@ -74,4 +74,9 @@ public class UserDAO {
 	public int update_pwd(HashMap<String, String> map) {
 		return sqlSession.update("u.update_pwd", map);
 	}
+
+// 비밀번호 변경
+	public int update_tel(HashMap<String, String> map) {
+		return sqlSession.update("u.update_tel", map);
+	}
 }
