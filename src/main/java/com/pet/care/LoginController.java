@@ -345,6 +345,7 @@ public class LoginController {
 		return VIEW_PATH +"updateTel.jsp";
 	}
 	
+	// 전화번호 변경
 	@RequestMapping("update_tel.do")
 	public String update_tel(String tel, String u_tel) {
 		HashMap<String, String> map = new HashMap<String, String>();
@@ -364,6 +365,27 @@ public class LoginController {
 	
 	/////////////////////////////////////////////
 	
+	// 주소 변경 팝업
+	@RequestMapping("updateAddr.do")
+	public String updateAddr() {
+		return VIEW_PATH +"updateAddr.jsp";
+	}
 	
+	// 주소변경
+	@RequestMapping("update_addr.do")
+	public String update_addr(String u_email, String u_addr) {
+		HashMap<String, String> map = new HashMap<String, String>();
+		
+		map.put("u_email", u_email);
+		map.put("u_addr", u_addr);
+		
+		int res = user_dao.update_addr(map);
+		
+		if(res == 1) {
+			return VIEW_PATH+"close.jsp";
+		}
+		
+		return null;
+	}
 	
 }

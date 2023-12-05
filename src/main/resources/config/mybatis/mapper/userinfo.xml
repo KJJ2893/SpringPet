@@ -81,5 +81,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		UPDATE USERINFO SET U_TEL = #{u_tel} WHERE U_TEL = #{tel}
 	</update>
 	
+	<!-- 주소 변경 -->
+	<update id="update_addr" parameterType="java.util.HashMap">
+		UPDATE USERINFO SET U_ADDR = #{u_addr} WHERE U_EMAIL = #{u_email}
+	</update>
 	
 </mapper>
