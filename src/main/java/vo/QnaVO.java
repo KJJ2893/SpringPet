@@ -7,6 +7,6 @@ import lombok.Setter;
 @Getter
 public class QnaVO {
 
-	private int Q_IDX, U_IDX;
-	private String Q_TITLE, Q_CONTENT, Q_REGDATE, Q_PHOTO;
+	private int q_idx, u_idx;
+	private String q_title, q_content, q_regdate, q_photo;
 }
