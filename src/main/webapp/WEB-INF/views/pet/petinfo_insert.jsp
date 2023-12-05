@@ -47,12 +47,12 @@
 			}
 			
 			location.href="pet_insert.do?p_name="+p_name
-					+"&p_type="+p_type
-					+"&p_age="+p_age
-					+"&p_gender="+p_gender
-					+"&filename="+filename
-					+"&u_idx="+u_idx;
-			f.submit();
+					     +"&p_type="+p_type
+					     +"&p_age="+p_age
+					     +"&p_gender="+p_gender
+					     +"&filename="+filename
+					     +"&u_idx="+u_idx; 
+			/* f.submit(); */
 		}
 		
 		function cancel_send(f){

@@ -1,7 +1,5 @@
 package com.pet.care;
 
-import java.io.File;
-import java.io.IOException;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -10,7 +8,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.multipart.MultipartFile;
 
 import dao.PetDAO;
 import vo.PetVO;
@@ -52,19 +49,11 @@ public class PetController {
 	// 펫 등록하기
 	@RequestMapping("pet_insert.do")
 	public String pet_insert(PetVO vo) {
-
-		System.out.println(vo.getP_idx());
-		System.out.println(vo.getU_idx());
-		System.out.println(vo.getP_name());
-		System.out.println(vo.getP_type());
-		System.out.println(vo.getP_age());
-		System.out.println(vo.getP_gender());
-		System.out.println(vo.getFilename());
 	
 		int res = pet_dao.insert(vo);
 		
 		if(res > 0) {
-			return "redirect:petinfo_insert.do";
+			return "redirect:petinfo_main.do";
 		}
 			return null;
 	}

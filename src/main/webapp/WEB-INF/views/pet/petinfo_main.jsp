@@ -31,7 +31,6 @@
                 <th>반려동물 종류</th>
                 <th>반려동물 나이</th>
                 <th>반려동물 성별</th>
-                <th>비고</th>
              </tr>
              <c:forEach var="vo" items="${list }">
              <tr>
@@ -43,9 +42,7 @@
                 <td>
                 <input type="hidden" name="p_idx" value="${vo.p_idx }">
                 <input type="hidden" name="u_idx" value="${vo.u_idx }">	
-                </td>
-                <td>
-                	<input type="button" value="수정하기" 
+                <input type="button" value="수정하기" 
                 		onclick="location.href='petinfo_retouch.do'">
                 	<input type="button" value="삭제하기" 
                 		onclick="petinfo_del(this.form)">
