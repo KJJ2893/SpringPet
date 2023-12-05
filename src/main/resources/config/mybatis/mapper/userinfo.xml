@@ -5,6 +5,12 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 <mapper namespace="u">
 	<!-- mapper : DB에 쿼리문을 요청하고 결과를 돌려받는 속성파일 -->
 	
+	<!-- 유저 정보 조회 -->
+	<select id="select_info" resultType="vo.UserVO" parameterType="int">
+		SELECT * FROM USERINFO WHERE U_IDX = #{u_idx}
+	</select>
+	
+	
 	<!-- 로그인시 아이디 존재여부 -->
 	<select id="loginCheck" resultType="vo.UserVO" parameterType="String">
 		SELECT * FROM USERINFO WHERE U_EMAIL = #{u_email}
@@ -20,6 +26,10 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		SELECT count(*) FROM USERINFO WHERE U_NICKNAME=#{u_nickName}
 	</select>
 	
+	<!-- 전화번호 중복검사 -->
+	<select id="telCheck" resultType="int" parameterType="String">
+		SELECT count(*) FROM USERINFO WHERE U_TEL=#{u_tel}
+	</select>
 	
 	<!-- 이메일 찾기 -->
 	<select id="select_email" resultType="vo.UserVO" parameterType="java.util.HashMap">
@@ -45,5 +55,14 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<select id="select_pwd" resultType="vo.UserVO" parameterType="java.util.HashMap"> 
 		SELECT * FROM USERINFO WHERE U_NAME = #{u_name} and U_EMAIL = #{u_email}
 	</select>
+	
+	<!-- 닉네임 추가 -->
+	<update id="upNname" parameterType="java.util.HashMap">
+		UPDATE USERINFO SET U_NICKNAME = #{u_nickName} WHERE U_NICKNAME = #{nickName}
+	</update>
+	
+	<update id="update_name" parameterType="java.util.HashMap">
+		UPDATE USERINFO SET U_NAME = #{u_name} WHERE U_TEL = #{u_tel}
+	</update>
 
 </mapper>

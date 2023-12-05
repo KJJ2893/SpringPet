@@ -125,12 +125,23 @@ xx병원
 	<input type="button" value="예약" class="button"  onclick=""  style="cursor:pointer">
 	<c:choose>
 			<c:when test="${empty id}">
+<<<<<<< HEAD
 				<input type="button" value="로그인"   class="button" onclick="location.href='login_main.do'">
 				<input type="button" value="펫 등록"  class="button"  onclick="go_pet()">
 			</c:when>
 			<c:when test="${not empty id}">
 				<input type="button" value="로그아웃"   class="button" onclick="location.href='logout.do'">
 				<input type="button" value="펫 등록"   class="button" onclick="location.href='petinfo_main.do'">
+=======
+				<input type="button" value="로그인" onclick="location.href='login_main.do'">
+				<input type="button" value="펫 등록" onclick="go_pet()">
+				<input type="button" value="내정보" onclick="go_pet()">
+			</c:when>
+			<c:when test="${not empty id}">
+				<input type="button" value="로그아웃" onclick="location.href='logout.do'">
+				<input type="button" value="펫 등록" onclick="location.href='pet_main.do'">
+				<input type="button" value="내정보" onclick="location.href='check_up.do'">
+>>>>>>> 611ef7a6d115b0b1d674d4a601541612f1bdb243
 			</c:when>
 		</c:choose>
 	</div>

@@ -12,6 +12,7 @@
 
 	var b_idCheck = false;
 	var b_NnameCheck = false;
+	var b_telCheck = false;
 	
 	function send(f){
 		var u_nickName = f.u_nickName.value.trim(); // 닉네임
@@ -58,13 +59,15 @@
 			alert('닉네임 중복체크 필요');
 			return;
 		}
+		
+		if(!b_telCheck){
+			alert('전화번호 확인 필요');
+			return;
+		}
 		/////////////
 		
 		f.action = "insert_user.do";
 		f.submit();
-		
-		
-		
 		
 	}
 	
@@ -134,6 +137,44 @@
 		}
 	} // resultFn()
 	
+	// 전화번호 중복체크
+	function telCheck(){
+		var u_tel = document.getElementById("u_tel").value.trim();
+		
+		if(u_tel == ''){
+			alert('전화번호를 입력해주세요.');
+			return;
+		}
+		
+		var url = "telCheck.do";
+		var param = "u_tel="+encodeURIComponent(u_tel);
+		
+		sendRequest(url, param, resultFn3, "POST");
+	}
+	
+	// 콜백
+	function resultFn3(){
+		if(xhr.readyState == 4 && xhr.status == 200){
+
+			var data = xhr.responseText;
+			var json = (new Function('return'+data))();
+			
+			if(json[0].res == 'no'){
+				alert('이미 가입된 전화번호입니다.');
+				return;
+			} else{
+				alert('사용가능한 번호입니다.');
+				b_telCheck = true;
+			}
+			
+		}
+	} // resultFn()
+	
+	// 전화번호 중복체크용
+	function che() {
+		b_telCheck = false;
+	} // che()
+	
 	// 중복체크용
 	function che() {
 		b_idCheck = false;
@@ -161,17 +202,30 @@
 			<h2>Sign Up</h2>
 			<form id="reg_form">
 				<div class="id_input">
+					<h3>NickName</h3>
 					<input type="text" id="u_Nname" name="u_nickName" placeholder="NickName" onchange="che2()"> 
 					<input type="button" id="check_nName" value="중복확인" onclick="nNameCheck(this.form)">
 				</div>
+				
+				<h3>Name</h3>
 				<input type="text" name="u_name" placeholder="Name">
+				
 				<div class="id_input">
+					<h3>Email</h3>
 					<input type="text" id="u_email" name="u_email" placeholder="Email" onchange="che()"> 
 					<input type="button" id="check_id" value="Check ID" onclick="idCheck(this.form)">
 				</div>
+				
+				<h3>Password</h3>
 				<input type="password" name="u_pwd" placeholder="Password">
 				<input type="password" name="pwd2" placeholder="Password Check">
-				<input type="text" name="u_tel" placeholder="Tel">
+				
+				<div class="id_input">
+					<h3>Tel</h3>
+					<input id="u_tel" name="u_tel" placeholder="Tel" onchange="che3()">
+					<input type="button" id="check_tel" value="Check Tel" onclick="telCheck(this.form)">
+				</div>
+				<h3>Address</h3>
 				<input type="text" name="u_addr" placeholder="Address">
 				
 				<input type="button" value="Sign Up" onclick="send(this.form)">
