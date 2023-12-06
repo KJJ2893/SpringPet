@@ -17,10 +17,10 @@
 						<h1>MY PET DOC</h1>
 					</a>
 				<ul class="nav">
-					<li><a href="#">HOME</a></li>
-					<li><a href="#">REVIEWS</a></li>
-					<li><a href="#">QNA</a></li>
-					<li><a href="#">RESERVATION</a></li>
+					<li><a href="check_up.do">Info</a></li>
+					<li><a href="review_main.do">REVIEWS</a></li>
+					<li><a href="qna_form.do">QNA</a></li>
+					<li><a href="rev_main.do">RESERVATION</a></li>
 				</ul>
 			</div>
 			<div class="intro_text">

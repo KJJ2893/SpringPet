@@ -23,8 +23,11 @@
 <body class="body" 
 style="background-image:url('resources/img/petback.jpg');
 					background-repeat: no-repeat;
-					background-size:100%;">
+					background-size:100%;
+					background-color:lime;">
 					
+					
+					<a href="main_home.do"><img src="resources/img/hos logo.jpg" width="80px" height="80px"> </a>
 					
 					<div class="leftimg">
 					<img src="${pageContext.request.contextPath}/resources/img/cat.jpg">
@@ -48,7 +51,7 @@ style="background-image:url('resources/img/petback.jpg');
        <input type="button"  class="btn" value="메인으로 가기" onclick="location.href='main_home.do'">
            	
           
-          </div>
+          </div >
           		
          <table  align="center">
              <tr>
@@ -76,6 +79,7 @@ style="background-image:url('resources/img/petback.jpg');
 	             </tr>
              </c:forEach>
           </table> 
+          
      </form>
 </body>
 </html>

@@ -2,7 +2,12 @@
 
 .body{
 	overflow:scroll;
+	
 }
+*{
+	font-family:serif;
+}
+
 
 .btn{
 	background-color: #deb887;
@@ -12,12 +17,13 @@
 .btn2{
 	position:absolute;
 	left:1090px;
-	top:30px;
+	top:70px;
 
 }
 table, th, td { border: 2px solid orange; }
-table { border-collapse: collapse; }
-
+table { border-collapse: collapse; 
+		background-color:yellow;}
+		
  th {
      text-align: center;
 }
