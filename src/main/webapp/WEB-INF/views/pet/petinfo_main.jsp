@@ -17,7 +17,7 @@
 		}
 		
 		function openImage(imageSrc){
-			window.open(imageSrc, '_blank', 'width=800, height=600');
+			window.open(imageSrc, '_blank', 'width=1000, height=800');
 		}
 	</script>
 </head>
