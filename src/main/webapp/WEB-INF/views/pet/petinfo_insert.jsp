@@ -14,12 +14,19 @@
 			var p_gender = f.p_gender.value;
 			/* var p_photo = f.p_photo.value; */
 			var u_idx = f.u_idx.value;
+			var photoInput = f.photo; // 파일 입력 요소에 대한 참조
 			
 			// 유효성 검사
 			if(p_name == ''){
 				alert('이름을 입력하세요');
 				return;
 			}
+			
+			if(p_name.length > 15){
+				alert('이름은 15글자 미만으로 입력해주세요');
+				return;
+			}
+			
 			if(p_type == ''){
 				alert('반려동물 종을 선택해주세요');
 				return;
@@ -46,6 +53,11 @@
 				return;
 			}
 			
+			if(!isImageFile(photoInput)){
+				alert('이미지 파일만 첨부 가능합니다.');
+				return;
+			} 	
+			
 			f.action = "pet_insert.do"
 			f.submit();
 		}
@@ -55,6 +67,12 @@
 			if(insertConfirm){
 				window.location.href = "petinfo_main.do";
 			}
+		}
+		
+		// 이미지 파일인지 확인하는 함수
+		function isImageFile(input){
+			var allowedTypes = ['image/jpeg', 'image/png', 'image/gif'];
+			return input.files.length > 0 && allowedTypes.includes(input.files[0].type);
 		}
 	</script>
 </head>

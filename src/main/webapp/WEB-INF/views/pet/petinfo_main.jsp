@@ -7,14 +7,13 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 	<script type="text/javascript">
-		function petinfo_del(f){
+		function petinfo_del(p_idx){
 			if(!confirm("반려동물 정보를 삭제하시겠습니까?")){
 				return;
 			}
 			
-			f.action = "petinfo_del.do";
-			f.method = "POST";
-			f.submit();
+			 location.href ="petinfo_del.do?p_idx="+p_idx;
+			
 		}
 	</script>
 </head>
@@ -41,7 +40,8 @@
              <c:forEach var="vo" items="${list }">
 	             <tr>	             
 	             	<td><img src="${pageContext.request.contextPath}/resources/petImg/${vo.p_photo}"
-	             	         width="100" height="100"></td>
+	             	         width="100" height="100">
+	             	</td>
 	                <td>${vo.p_name }</td>
 	                <td>${vo.p_type }</td>
 	                <td>${vo.p_age }</td>
@@ -50,7 +50,7 @@
 	                <input type="hidden" name="p_idx" value="${vo.p_idx }">
 	                <input type="hidden" name="u_idx" value="${vo.u_idx }">	
 	                <input type="button" value="수정하기" onclick="location.href='petinfo_retouch.do'">
-	                <input type="button" value="삭제하기" onclick="petinfo_del(this.form)">
+	                <input type="button" value="삭제하기" onclick="petinfo_del(${vo.p_idx })">
 	                </td>
 	             </tr>
              </c:forEach>
