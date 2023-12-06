@@ -69,4 +69,19 @@ public class UserDAO {
 	public int update_email(HashMap<String, String> map) {
 		return sqlSession.update("u.update_email", map);
 	}
+	
+	// 비밀번호 변경
+	public int update_pwd(HashMap<String, String> map) {
+		return sqlSession.update("u.update_pwd", map);
+	}
+
+	// 전화번호 변경
+	public int update_tel(HashMap<String, String> map) {
+		return sqlSession.update("u.update_tel", map);
+	}
+	
+	// 주소 변경
+	public int update_addr(HashMap<String, String> map) {
+		return sqlSession.update("u.update_addr", map);
+	}
 }

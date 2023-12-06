@@ -12,28 +12,23 @@
 	var b_telCheck = false;
 	
 	function done(f){
-		var name = f.name.value;
-		var u_name = f.u_name.value.trim();
+		var tel = f.tel.value;
+		var u_tel = f.u_tel.value.trim();
 		
-		if(u_name == ''){
-			alert('사용할 이름을 입력해주세요.');
+		if(u_tel == ''){
+			alert('사용할 전화번호를 입력하세요');
 			return;
 		}
 		
 		if(!b_telCheck){
 			alert('전화번호 확인 필요!');
 			return;
-		}
+		}	
 		
-		if(u_name == name){
-			alert('기존에 사용하던 이름과 같습니다.');
-			return;
-		}
-		
-		f.action = "update_name.do";
+		f.action = "update_tel.do";
 		f.submit();
-		
 	}
+	
 	
 	// 전화번호 중복체크
 	function telCheck(){
@@ -58,13 +53,13 @@
 			var json = (new Function('return'+data))();
 			
 			if(json[0].res == 'no'){
-				alert('전화번호 확인 완료');
-				b_telCheck = true;
-			} else{
-				alert('가입 정보가 없습니다.');
+				alert('이미 가입된 번호입니다.');
 				return;
+			} else{
+				alert('사용 가능한 번호입니다.');
+				b_telCheck = true;
 			}
-			
+					
 		}
 	} // resultFn()
 	
@@ -72,27 +67,23 @@
 	function che() {
 		b_telCheck = false;
 	} // che()
+
 </script>
 </head>
 <body>
-	
 	<div class="update_wrapper"> <!-- 값 받기 -->
-		<h2>이름 변경</h2>
+		<h2>전화번호 변경</h2>
 		<form id="update_form">
 			<div class="update">
-				<h3>사용중인 이름</h3>
-				<input name="name" value="${id.u_name}" readonly> 
+				<h3>사용중인 전화번호</h3>
+				<input name="tel" value="${id.u_tel}" readonly> 
 				
-				<h3>새로운 이름을 입력해주세요.</h3>
-				<input id="u_name" name="u_name" placeholder="Name"> 
-				
-				<h3>가입에 사용한 전화번호를 입력해주세요.</h3>
-				<input id="u_tel" name="u_tel" placeholder="tel" onchange="che()">
-				<input type="button" id="check_name" value="중복확인" onclick="telCheck(this.form)">
+				<h3>새로운 전화번호를 입력해주세요.</h3>
+				<input id="u_tel" name="u_tel" placeholder="Tel" onchange="che()"> 
+				<input type="button" id="check_tel" value="전화번호 확인" onclick="telCheck(this.form)">
 			</div>
 			<input type="button" value="완료" onclick="done(this.form)">
 		</form>
 		</div>
-
 </body>
 </html>

@@ -37,6 +37,20 @@
 		
 		window.open(url, '비밀번호변경', size);
 	}
+	
+	function upTel(){
+		var url = "updateTel.do";
+		var size = "width=450px;, height=500px;, scrollbars=no;";
+		
+		window.open(url, '전화번호변경', size);
+	}
+	
+	function upAddr(){
+		var url = "updateAddr.do";
+		var size = "width=450px;, height=500px;, scrollbars=no;";
+		
+		window.open(url, '주소변경', size);
+	}
 
 
 </script>
@@ -72,11 +86,11 @@
 					
 					<h3>Tel</h3>
 					<input id="u_tel" value="${id.u_tel }" readOnly>
-					<input type="button" value="수정">
+					<input type="button" value="수정" onclick="upTel()">
 					
 					<h3>Address</h3>
 					<input id="u_addr" value="${id.u_addr }" readOnly>
-					<input type="button" value="수정">
+					<input type="button" value="수정" onclick="upAddr()">
 				</div>
 				<input type="button" value="완료" onclick="location.href='main_home.do'">
 			</form>

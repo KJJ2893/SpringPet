@@ -238,13 +238,13 @@ public class LoginController {
 	
 	////////////////////////////////////
 	
-	// 닉네임 수정할 페이지
+	// 닉네임 변경 팝업
 	@RequestMapping("updateNname.do")
 	public String updateNname() {
 		return VIEW_PATH + "updateNname.jsp";
 	}
 	
-	// 닉네임 수정
+	// 닉네임 변경
 	@RequestMapping("update_Nname.do")
 	public String update_Nname(String u_nickName, String nickName) {
 		
@@ -263,13 +263,13 @@ public class LoginController {
 	
 	/////////////////////////////////////
 
-	// 이름 변경
+	// 이름 변경 팝업
 	@RequestMapping("updateName.do")
 	public String updateName() {
 		return VIEW_PATH+"updateName.jsp";
 	}
 
-	// 이름 수정
+	// 이름 변경
 	@RequestMapping("update_name.do")
 	public String update_name(String u_name, String u_tel) {
 		HashMap<String, String> map = new HashMap<String, String>();
@@ -286,12 +286,14 @@ public class LoginController {
 	}
 	
 	///////////////////////////////////////
-	// 이메일 변겅
+	
+	// 이메일 변겅 팝업
 	@RequestMapping("updateEmail.do")
 	public String updateEmail() {
 		return VIEW_PATH+"updateEmail.jsp";
 	}
 	
+	// 이메일 변경
 	@RequestMapping("update_email.do")
 	public String update_email(String email, String u_email) {
 	HashMap<String, String> map = new HashMap<String, String>();
@@ -311,9 +313,79 @@ public class LoginController {
 	
 	///////////////////////////////////////
 	
+	// 비밀번호 변경 팝업
 	@RequestMapping("updatePwd.do")
 	public String updatePwd() {
 		return VIEW_PATH+"updatePwd.jsp";
+	}
+	
+	// 비밀번호 변경
+	@RequestMapping("update_pwd.do")
+	public String update_pwd(String u_email, String u_pwd) {
+		HashMap<String, String> map = new HashMap<String, String>();
+		
+		map.put("u_email", u_email);
+		map.put("u_pwd", u_pwd);
+		
+		int res = user_dao.update_pwd(map);
+		
+		if(res == 1) {
+			return VIEW_PATH+"close.jsp";
+		}
+		
+		return null;
+		
+		}
+	
+	//////////////////////////////////////
+	
+	// 전화번호 변경 팝업
+	@RequestMapping("updateTel.do")
+	public String updateTel() {
+		return VIEW_PATH +"updateTel.jsp";
+	}
+	
+	// 전화번호 변경
+	@RequestMapping("update_tel.do")
+	public String update_tel(String tel, String u_tel) {
+		HashMap<String, String> map = new HashMap<String, String>();
+		
+		map.put("tel", tel);
+		map.put("u_tel", u_tel);
+		
+		int res = user_dao.update_tel(map);
+		
+		if(res == 1) {
+			return VIEW_PATH+"close.jsp";
+		}
+		
+		return null;
+		
+	}
+	
+	/////////////////////////////////////////////
+	
+	// 주소 변경 팝업
+	@RequestMapping("updateAddr.do")
+	public String updateAddr() {
+		return VIEW_PATH +"updateAddr.jsp";
+	}
+	
+	// 주소변경
+	@RequestMapping("update_addr.do")
+	public String update_addr(String u_email, String u_addr) {
+		HashMap<String, String> map = new HashMap<String, String>();
+		
+		map.put("u_email", u_email);
+		map.put("u_addr", u_addr);
+		
+		int res = user_dao.update_addr(map);
+		
+		if(res == 1) {
+			return VIEW_PATH+"close.jsp";
+		}
+		
+		return null;
 	}
 	
 }
