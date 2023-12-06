@@ -6,6 +6,8 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/resources/css/pet/pet.css">
 	<script type="text/javascript">
 		function petinfo_del(f){
 			if(!confirm("반려동물 정보를 삭제하시겠습니까?")){
@@ -18,18 +20,37 @@
 		}
 	</script>
 </head>
-<body>
+<body class="body" 
+style="background-image:url('resources/img/petback.jpg');
+					background-repeat: no-repeat;
+					background-size:100%;">
+					
+					
+					<div class="leftimg">
+					<img src="${pageContext.request.contextPath}/resources/img/cat.jpg">
+					</div>
+					<div class="leftimg1">
+					<img src="${pageContext.request.contextPath}/resources/img/cat1.jpg">
+					</div>
+					<div class="rightimg">
+					<img src="${pageContext.request.contextPath}/resources/img/dog.jpg">
+					</div>
+					<div class="rightimg1" >
+					<img src="${pageContext.request.contextPath}/resources/img/dog1.jpg">
+					</div>
+				
      <form>
      <h1 align="center">마이 펫 리스트</h1>
-     	<table align="center">
-             <tr>
-          		<td>
-           	       <input type="button" value="마이 펫 등록하기" onclick="location.href='petinfo_insert.do'">
-           	       <input type="button" value="메인으로 가기" onclick="location.href='main_home.do'">
-           		</td>
-          	</tr>
-          </table>
-         <table border="1" align="center">
+     	
+            <div class="btn2">
+          		
+       <input type="button"  class="btn" value="마이 펫 등록하기" onclick="location.href='petinfo_insert.do'">
+       <input type="button"  class="btn" value="메인으로 가기" onclick="location.href='main_home.do'">
+           	
+          
+          </div>
+          		
+         <table  align="center">
              <tr>
              	<th>반려동물 사진</th>
                 <th>반려동물 이름</th>
@@ -49,8 +70,8 @@
 	                <td>
 	                <input type="hidden" name="p_idx" value="${vo.p_idx }">
 	                <input type="hidden" name="u_idx" value="${vo.u_idx }">	
-	                <input type="button" value="수정하기" onclick="location.href='petinfo_retouch.do'">
-	                <input type="button" value="삭제하기" onclick="petinfo_del(this.form)">
+	                <input type="button" class="btn" value="수정하기" onclick="location.href='petinfo_retouch.do'">
+	                <input type="button"  class="btn"value="삭제하기" onclick="petinfo_del(this.form)">
 	                </td>
 	             </tr>
              </c:forEach>

@@ -6,6 +6,7 @@ import org.springframework.context.annotation.Configuration;
 
 import dao.PetDAO;
 import dao.QnaDAO;
+import dao.RevDAO;
 import dao.UserDAO;
 
 @Configuration
@@ -25,6 +26,9 @@ public class Context_3_dao {
 	public QnaDAO qna_dao(SqlSession sqlSession) {
 		return new QnaDAO(sqlSession);
 	}
-
+	@Bean
+	public RevDAO rev_dao(SqlSession sqlSession) {
+		return new RevDAO(sqlSession);
+	}
 	
 }
