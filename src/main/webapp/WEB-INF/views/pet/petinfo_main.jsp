@@ -15,6 +15,10 @@
 			 location.href ="petinfo_del.do?p_idx="+p_idx;
 			
 		}
+		
+		function openImage(imageSrc){
+			window.open(imageSrc, '_blank', 'width=800, height=600');
+		}
 	</script>
 </head>
 <body>
@@ -40,7 +44,8 @@
              <c:forEach var="vo" items="${list }">
 	             <tr>	             
 	             	<td><img src="${pageContext.request.contextPath}/resources/petImg/${vo.p_photo}"
-	             	         width="100" height="100">
+	             	         width="100" height="100" onclick="openImage('${pageContext.request.contextPath}/resources/petImg/${vo.p_photo}')"
+	             	         style="cursor: pointer;">
 	             	</td>
 	                <td>${vo.p_name }</td>
 	                <td>${vo.p_type }</td>
