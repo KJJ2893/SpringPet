@@ -12,7 +12,7 @@
 			var p_type = f.p_type.value;
 			var p_age = f.p_age.value.trim();
 			var p_gender = f.p_gender.value;
-			var filename = f.filename.value;
+			/* var p_photo = f.p_photo.value; */
 			var u_idx = f.u_idx.value;
 			
 			// 유효성 검사
@@ -45,31 +45,9 @@
 				alert('성별을 선택해주세요');
 				return;
 			}
-<<<<<<< HEAD
-		
-			location.href="pet_insert.do?p_name="+name
-					+"&p_type="+type
-					+"&p_age="+age
-					+"&p_gender="+gender
-=======
 			
-			location.href="pet_insert.do?p_name="+p_name
-<<<<<<< HEAD
-					     +"&p_type="+p_type
-					     +"&p_age="+p_age
-					     +"&p_gender="+p_gender
-					     +"&filename="+filename
-					     +"&u_idx="+u_idx; 
-			/* f.submit(); */
-=======
-					+"&p_type="+p_type
-					+"&p_age="+p_age
-					+"&p_gender="+p_gender
->>>>>>> d08c7458c9870b05abdb3b4262265ab2a52eae34
-					+"&filename="+filename
-					+"&u_idx="+u_idx;
+			f.action = "pet_insert.do"
 			f.submit();
->>>>>>> 781c2d25a1537bb6b1961ab7df1c6e090d95c966
 		}
 		
 		function cancel_send(f){
@@ -85,10 +63,10 @@
 		<table border="1" align="center">
 			<caption>마이 펫 등록하기</caption>
 			<tr>
-			   <th>이름</th>
-			   <td>
-			   	<input name="p_name">
-			   </td>
+				<th>이름</th>
+				<td>
+					<input name="p_name">
+				</td>
 			</tr>
 			<tr>
 			 	<th>종</th>
@@ -115,7 +93,7 @@
 			</tr>
 			<tr>
 				<th>이미지 첨부</th>
-				<td><input type="file" name="filename"></td>
+				<td><input type="file" name="photo"></td>
 			</tr>	
 			<tr>
 			   <td colspan="2" align="center">
