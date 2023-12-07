@@ -78,7 +78,7 @@ style="background-image:url('resources/img/petback.jpg');
 	                <td>
 	                <input type="hidden" name="p_idx" value="${vo.p_idx }">
 	                <input type="hidden" name="u_idx" value="${vo.u_idx }">	
-                    <input type="button" class="btn" value="수정하기" onclick="location.href='petinfo_retouch.do'">
+                    <input type="button" class="btn" value="수정하기" onclick="location.href='petinfo_update.do'">
 	                <input type="button" class="btn" value="삭제하기" onclick="petinfo_del(${vo.p_idx })"> 
 	                </td>
 	             </tr>
