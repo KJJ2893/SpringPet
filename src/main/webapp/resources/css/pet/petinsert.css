@@ -4,8 +4,13 @@
 .btn{
 	background-color: #deb887;
 	cursor:pointer;
+	border-radius:10px;
+  	text-align: center;
+
 
 }
+
+
 
 table, th, td { border: solid orange; }
 

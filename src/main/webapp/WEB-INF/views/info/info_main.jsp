@@ -15,6 +15,7 @@
 			<div class="header">
 	  		<a href="main_home.do" class="logo">
 						<h1>MY PET DOC</h1>
+						<img src="resources/img/hos logo.jpg" width="100px" height="100px">
 					</a>
 				<ul class="nav">
 					<li><a href="check_up.do">Info</a></li>
@@ -39,7 +40,7 @@
 		</div>
 		<div class="service">
 			<div class="food_photo">
-				<img src="${pageContext.request.contextPath}/resources/img/puppy.png">
+				<img src="${pageContext.request.contextPath}/resources/img/puppy.jpg">
 			</div>
 			<div class="contents2">
 				<h2>우리 동물병원은</h2>
