@@ -10,4 +10,43 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		INNER JOIN USERINFO U ON U.U_IDX = R.U_IDX
 	</select>
 
+	<!-- 리뷰 추가 -->
+	<insert id="insert" parameterType="vo.ReviewVO">
+		INSERT INTO REVIEW VALUES(
+			SEQ_REVIEW_IDX.NEXTVAL,
+			#{u_idx},
+			#{r_content},
+			 TO_DATE('2023-11-30', 'YYYY-MM-DD'),
+			#{r_photo}
+		)
+	</insert>
+	
+	<!-- 내가 쓴 글 -->
+	<select id="selectM" resultType="vo.ReviewVO" parameterType="int">
+		SELECT R.*, U.U_NICKNAME FROM REVIEW R 
+		INNER JOIN USERINFO U ON U.U_IDX = R.U_IDX 
+		WHERE R.U_IDX = #{u_idx}
+	</select>
+	
+	<!-- 리뷰 삭제 -->
+	<delete id="delReviw" parameterType="int">
+		DELETE FROM REVIEW WHERE R_IDX = #{r_idx}
+	</delete>
+	
+	<!-- 한건 조회 -->
+	<select id="selectOne" resultType="vo.ReviewVO" parameterType="int">
+		SELECT R.*, U.U_NICKNAME FROM REVIEW R 
+		INNER JOIN USERINFO U ON U.U_IDX = R.U_IDX 
+		WHERE R.R_IDX = #{r_idx}
+	</select>
+	
+	<!-- 수정 -->
+	<update id="update" parameterType="vo.ReviewVO">
+		UPDATE REVIEW SET
+					R_CONTENT = #{r_content},
+					R_REGDATE = SYSDATE,
+					R_PHOTO = #{r_photo}
+					WHERE R_IDX = #{r_idx} AND U_IDX = #{u_idx}
+	</update>
+	
 </mapper>

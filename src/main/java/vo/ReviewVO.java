@@ -1,5 +1,7 @@
 package vo;
 
+import org.springframework.web.multipart.MultipartFile;
+
 import lombok.Getter;
 import lombok.Setter;
 
@@ -12,5 +14,7 @@ public class ReviewVO {
 	private String r_regdate; // 작성일
 	private String r_photo; // 사진
 	
+	private MultipartFile photo;
 	private String u_nickName;
+
 }
