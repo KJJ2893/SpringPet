@@ -18,5 +18,5 @@ SqlSession sqlSession;
 	public List<RevVO> rev_selectList(){
 		return sqlSession.selectList("r.rev_list");
 	
-}
+	}
 }

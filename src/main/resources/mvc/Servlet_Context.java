@@ -12,10 +12,12 @@ import com.pet.care.MainController;
 import com.pet.care.PetController;
 import com.pet.care.QnAController;
 import com.pet.care.RevController;
+import com.pet.care.ReviewController;
 
 import dao.PetDAO;
 import dao.QnaDAO;
 import dao.RevDAO;
+import dao.ReviewDAO;
 import dao.UserDAO;
 
 //어노테이션에도 상속관계가 있다
@@ -71,5 +73,10 @@ public class Servlet_Context implements WebMvcConfigurer {
 	@Bean
 	public RevController revController(RevDAO rev_dao) {
 		return new RevController(rev_dao);
+	}
+	
+	@Bean
+	public ReviewController reviewController(ReviewDAO review_dao) {
+		return new ReviewController(review_dao);
 	}
 }
