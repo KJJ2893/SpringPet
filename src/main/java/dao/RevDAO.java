@@ -16,7 +16,7 @@ SqlSession sqlSession;
 	}
 	//예약리스트
 	public List<RevVO> rev_selectList(){
-		return sqlSession.selectList("r.rev_List");
+		return sqlSession.selectList("r.rev_list");
 	
 }
 }

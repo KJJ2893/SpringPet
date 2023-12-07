@@ -14,15 +14,15 @@
 <tr>
 <th>예약번호</th>
 <th>예약자명</th>
-<th>예약시간</th>
 <th>예약날짜</th>
+<th>예약시간</th>
 </tr>
 <c:forEach var="vo" items="${list }">
 <tr>
 <td>${vo.rv_idx }</td>
 <td>${vo.u_idx }</td>
-<td>${vo.rv_time }</td>
 <td>${vo.rv_day }</td>
+<td>${vo.rv_time }</td>
 </tr>
 </c:forEach>
 </table>
