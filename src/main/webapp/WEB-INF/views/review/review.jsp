@@ -24,15 +24,15 @@
 			<table border="1">
 				<caption>:::리뷰:::</caption>
 				<c:forEach var="vo" items="${list }">
-				<tr>
-				<th>작성자 : ${vo.u_nickName }</th>
-				<th>작성일 : ${vo.r_regdate }</th>
-				</tr>
-				<tr>
-				<td id="photo"><img src="resources/img/hos logo.jpg"></td>
-				<td><textarea class="col-auto form-control" id="reviewContents"
-				  placeholder="새로운 리뷰 ${vo.r_content }" readonly></textarea></td>
-				</tr>
+					<tr>
+					<th>작성자 : ${vo.u_nickName }</th>
+					<th>작성일 : ${vo.r_regdate }</th>
+					</tr>
+					<tr>
+					<td id="photo"><img src="resources/img/hos logo.jpg"></td>
+					<td><textarea class="col-auto form-control" id="reviewContents"
+					  placeholder="새로운 리뷰 ${vo.r_content }" readonly></textarea></td>
+					</tr>
 				</c:forEach>
 			</table>
 		</div>

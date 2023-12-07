@@ -3,6 +3,7 @@ package com.pet.care;
 import java.util.List;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import dao.ReviewDAO;
@@ -20,9 +21,11 @@ public class ReviewController {
 	}
 	
 	@RequestMapping("review_main.do")
-	public String review_main() {
+	public String review_main(Model model) {
 		
-		List<ReviewVO> vo = review_dao.selectList();
+		List<ReviewVO> list = review_dao.selectReviews();
+		
+		model.addAttribute("list", list);
 		
 		return VIEW_PATH+"review.jsp";
 	}

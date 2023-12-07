@@ -6,7 +6,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	
 	<!-- 리뷰 목록 -->
 	<select id="selectList" resultType="vo.ReviewVO">
-		SELECT * FROM REVIEW
+		SELECT R.*, U.U_NICKNAME FROM REVIEW R
+		INNER JOIN USERINFO U ON U.U_IDX = R.U_IDX
 	</select>
 
 </mapper>
