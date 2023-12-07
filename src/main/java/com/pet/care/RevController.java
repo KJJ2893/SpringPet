@@ -10,6 +10,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import dao.RevDAO;
+import vo.PetVO;
+import vo.QnaVO;
 import vo.RevVO;
 import vo.UserVO;
 
@@ -20,8 +22,11 @@ public class RevController {
 	
 	RevDAO rev_dao;
 	
+	 @Autowired
+	    HttpServletRequest request;
 
-	public RevController() {
+	
+	public RevController(RevDAO rev_dao) {
 		this.rev_dao = rev_dao;
 		System.out.println("예약컨트롤러");
 	}
@@ -31,5 +36,13 @@ public class RevController {
 		return VIEW_PATH + "rev_main.jsp";
 	}
 	
+	@RequestMapping("rev_list.do")
+	public String rev_list(Model model) {
+		List<RevVO> list =rev_dao.rev_selectList();
+		model.addAttribute("list", list);
+		return VIEW_PATH + "rev_main.jsp";
+	}
 
-}
+    }
+
+

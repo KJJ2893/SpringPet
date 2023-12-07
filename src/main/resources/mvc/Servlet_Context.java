@@ -15,6 +15,7 @@ import com.pet.care.RevController;
 
 import dao.PetDAO;
 import dao.QnaDAO;
+import dao.RevDAO;
 import dao.UserDAO;
 
 //어노테이션에도 상속관계가 있다
@@ -68,7 +69,7 @@ public class Servlet_Context implements WebMvcConfigurer {
 		return new QnAController(qna_dao);
 	}
 	@Bean
-	public RevController revController() {
-		return new RevController();
+	public RevController revController(RevDAO rev_dao) {
+		return new RevController(rev_dao);
 	}
 }

@@ -1,0 +1,15 @@
+@charset "UTF-8";
+
+
+.btn{
+	background-color: #deb887;
+	cursor:pointer;
+
+}
+
+table, th, td { border: solid orange; }
+
+table { border-collapse: collapse; 
+		width:500px;
+		height:400px;
+		background-color:yellow;}

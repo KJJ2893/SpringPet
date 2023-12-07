@@ -5,7 +5,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 <mapper namespace="r">
 <!-- 예약리스트 불러오기 -->
 <select id="rev_list" resultType="vo.RevVO">
-SELECT * FROM RESERVATION
+select * from reservation
 </select>
 
 

@@ -5,6 +5,8 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/resources/css/pet/petinsert.css">
 <script src="resources/js/httpRequest.js"></script>
 	<script type="text/javascript">
 		function insert_send(f){
@@ -77,10 +79,13 @@
 		}
 	</script>
 </head>
-<body>
+<body class="body" 
+style="background-image:url('resources/img/petback.jpg');
+					background-repeat: no-repeat;
+					background-size:100%;">
 	<form method="POST" enctype="multipart/form-data">
 		<table border="1" align="center">
-			<caption>마이 펫 등록하기</caption>
+			<caption><h2>마이 펫 등록하기</h2></caption>
 			<tr>
 				<th>이름</th>
 				<td>
@@ -112,13 +117,13 @@
 			</tr>
 			<tr>
 				<th>이미지 첨부</th>
-				<td><input type="file" name="photo"></td>
+				<td><input type="file" name="photo"  ></td>
 			</tr>	
 			<tr>
 			   <td colspan="2" align="center">
              	<input name="u_idx" type="hidden" value="${id.u_idx}">
-			      <input type="button" value="등록하기" onclick="insert_send(this.form)">
-			      <input type="button" value="등록취소" onclick="cancel_send(this.form)">
+			      <input type="button" class="btn" value="등록하기" onclick="insert_send(this.form)">
+			      <input type="button" class="btn" value="등록취소" onclick="cancel_send(this.form)">
 			   </td>
 			</tr>
 		</table>

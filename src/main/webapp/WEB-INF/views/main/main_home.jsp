@@ -122,8 +122,7 @@ background:blue;}
 					background-color:fuchsia;
 					">
 <div class="logo">
-xx병원
-<img  id="logo1" src="resources/img/hos logo.jpg" width="60px" height="60px"  >
+<a href="main_home.do"><img src="resources/img/hos logo.jpg" width="100px" height="100px"> </a>
 </div>
 	
 	<div class="top">
