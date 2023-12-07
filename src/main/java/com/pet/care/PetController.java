@@ -118,11 +118,14 @@ public class PetController {
 
     }
 
-	// 펫 정보 수정 화면
-	@RequestMapping("petinfo_retouch.do")
-	public String petinfo_retouch() {
-		return VIEW_PATH + "petinfo_retouch.jsp";
-	};
+//	// 펫 정보 수정 화면
+//	@RequestMapping("petinfo_update.do")
+//	public String petinfo_retouch(Model model, int idx) {
+//		
+//		PetVO vo = pet_dao.selectList(idx);
+//		
+//		return VIEW_PATH + "petinfo_update.jsp";
+//	};
 }
 
 

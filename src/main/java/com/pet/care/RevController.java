@@ -27,13 +27,13 @@ public class RevController {
 		this.rev_dao = rev_dao;
 		System.out.println("예약컨트롤러");
 	}
-	@RequestMapping("rev_main.do")
-	public String rev_main() {
-		
-		return VIEW_PATH + "rev_main.jsp";
-	}
+	/*
+	 * @RequestMapping("rev_main.do") public String rev_main() {
+	 * 
+	 * return VIEW_PATH + "rev_main.jsp"; }
+	 */
 	
-	@RequestMapping("rev_list.do")
+	@RequestMapping("rev_main.do")
 	public String rev_list(Model model) {
 		List<RevVO> list = rev_dao.rev_selectList();
 		model.addAttribute("list", list);

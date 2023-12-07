@@ -55,10 +55,11 @@
 				return;
 			}
 			
-			// 이미지 파일 첨부 여부
-			if(!isImageFile(photoInput)){
-				alert('이미지 파일만 첨부 가능합니다.');
-				
+			if(photoInput.files.length > 0){
+				if(!isImageFile(photoInput)){
+					alert('이미지 파일만 첨부 가능합니다.');
+					return;
+				}
 			}
 			
 			f.action = "pet_insert.do"

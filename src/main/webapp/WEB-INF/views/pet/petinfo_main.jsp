@@ -43,8 +43,8 @@ style="background-image:url('resources/img/petback.jpg');
 					</div>
 					<div class="rightimg1" >
 					<img src="${pageContext.request.contextPath}/resources/img/dog1.jpg">
-					</div>
-				
+					
+				</div>
      <form>
      <h1 align="center">마이 펫 리스트</h1>
      	
@@ -71,14 +71,14 @@ style="background-image:url('resources/img/petback.jpg');
 	             	         width="100" height="100" onclick="openImage('${pageContext.request.contextPath}/resources/petImg/${vo.p_photo}')"
 	             	         style="cursor: pointer;">
 	             	</td>
-	                <td>${vo.p_name }</td>
-	                <td>${vo.p_type }</td>
-	                <td>${vo.p_age }</td>
-	                <td>${vo.p_gender }</td>
+	                <td><h5>${vo.p_name }</h5></td>
+	                <td><h5>${vo.p_type }</h5></td>
+	                <td><h5>${vo.p_age }</h5></td>
+	                <td><h5>${vo.p_gender }</h5></td>
 	                <td>
 	                <input type="hidden" name="p_idx" value="${vo.p_idx }">
 	                <input type="hidden" name="u_idx" value="${vo.u_idx }">	
-                    <input type="button" class="btn" value="수정하기" onclick="location.href='petinfo_retouch.do'">
+                    <input type="button" class="btn" value="수정하기" onclick="location.href='petinfo_update.do'">
 	                <input type="button" class="btn" value="삭제하기" onclick="petinfo_del(${vo.p_idx })"> 
 	                </td>
 	             </tr>
@@ -86,5 +86,7 @@ style="background-image:url('resources/img/petback.jpg');
           </table> 
           
      </form>
+     
+     
 </body>
 </html>

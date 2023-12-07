@@ -13,11 +13,18 @@
 	background-color: #deb887;
 	cursor:pointer;
 	height:50px;
+	border-radius:10px;
+  	text-align: center;
+	
+}
+.btn:hover{
+	background-color:orange;
 }
 .btn2{
 	position:absolute;
 	left:1090px;
 	top:70px;
+	
 
 }
 table, th, td { border: 2px solid orange; }

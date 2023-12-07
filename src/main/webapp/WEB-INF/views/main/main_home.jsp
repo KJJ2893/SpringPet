@@ -98,10 +98,18 @@ background:blue;}
     background-color: #A582CF; 
     cursor:pointer;
     margin-left:100px;
-    width:60px;
+    width:70px;
     height:30px;
+    color: #fff;
+    border-radius:10px;
+  	text-align: center;
+	border-color:blue;
 }
-
+.btn1:hover {
+            border-color: aqua;
+            color: white;
+            box-shadow: 0 0.5em 0.5em -0.4em yellow;
+        }
     </style>
     
 <link rel="stylesheet"
@@ -133,22 +141,27 @@ background:blue;}
 	<input type="button" value="예약"  class="btn1" onclick="location.href='rev_main.do'"  >
 	<c:choose>
 			<c:when test="${empty id}">
-				<input type="button" value="로그인"class="btn1"   onclick="location.href='login_main.do'">
+				
 				<input type="button" value="펫 등록" class="btn1"  onclick="go_pet()">
 				<input type="button" value="정보수정" class="btn1"  onclick="go_pet()">
+				<input type="button" value="로그인"class="btn1"   onclick="location.href='login_main.do'">
 				
 			</c:when>
 			<c:when test="${not empty id}">
-				<input type="button" value="로그아웃" class="btn1"   onclick="location.href='logout.do'">
+				
 				<input type="button" value="펫 등록" class="btn1"  onclick="location.href='petinfo_main.do'">
 				<input type="button" value="정보수정" class="btn1"  onclick="location.href='check_up.do'">
+				<input type="button" value="로그아웃" class="btn1"   onclick="location.href='logout.do'">
 			</c:when>
 		</c:choose>
 	</div>
-<div class="footerall">
+	
+	
+	
+	<div>
 	<div class="sns">
 	<a href="https://www.instagram.com">
-	<img src="resources/img/insta.jpg" width="100px" height="100px" >
+	<img src="resources/img/insta.jpg" width="100px" height="100px">
 	</a>
 	</div>
 	
@@ -164,7 +177,7 @@ background:blue;}
 	<li>대표자: 김재준</li>
 	<li>대표자 전화번호:000-0000-0000</li>
 	<li>사업자 등록번호:000-00-00000</li>
-</div>
+	</div>
 	</div>
   <div class="tab_content">
 <input type="radio" name="tabmenu" id="tab01" checked>
@@ -172,8 +185,14 @@ background:blue;}
 <input type="radio" name="tabmenu" id="tab03" >
 
 <div class="conbox con1"><li>사람</li></div> 
+
+
 <div class="conbox con2"><li>나무</li></div>
+
+
 <div class="conbox con3"><li>집</li></div>
+
+
 
 <div class="btn">
 <label for="tab01"></label>
