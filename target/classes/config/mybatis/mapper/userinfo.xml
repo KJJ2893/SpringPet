@@ -86,4 +86,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		UPDATE USERINFO SET U_ADDR = #{u_addr} WHERE U_EMAIL = #{u_email}
 	</update>
 	
+	<!-- 유저 삭제 -->
+	<delete id="delete" parameterType="String">
+		DELETE FROM USERINFO WHERE U_IDX = #{u_idx}
+	</delete>
+	
 </mapper>

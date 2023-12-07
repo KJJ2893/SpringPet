@@ -66,6 +66,7 @@
 		</div> <!-- 헤더 -->
 		<div class="update_wrapper"> <!-- 값 받기 -->
 			<h2>내정보</h2>
+			<h4 align="right"><a href="deleteInfo.do" >탈퇴하기</a></h4>
 			<form id="update_form">
 				<div class="update">
 					<h3>NickName</h3>
@@ -91,6 +92,8 @@
 					<h3>Address</h3>
 					<input id="u_addr" value="${id.u_addr }" readOnly>
 					<input type="button" value="수정" onclick="upAddr()">
+					
+					
 				</div>
 				<input type="button" value="완료" onclick="location.href='main_home.do'">
 			</form>

@@ -37,11 +37,17 @@
 	
 	// 전화번호 중복체크
 	function telCheck(){
+		var ori_tel = document.getElementById("ori_tel").value;
 		var u_tel = document.getElementById("u_tel").value.trim();
 		
 		if(u_tel == ''){
 			alert('전화번호를 입력해주세요.');
 			return;
+		}
+		
+		if(u_tel != ori_tel){
+		alert('가입된 정보와 다릅니다.');
+		return;
 		}
 		
 		var url = "telCheck.do";
@@ -80,6 +86,7 @@
 		<h2>이름 변경</h2>
 		<form id="update_form">
 			<div class="update">
+				<input type="hidden" id="ori_tel" value="${id.u_tel }">
 				<h3>사용중인 이름</h3>
 				<input name="name" value="${id.u_name}" readonly> 
 				

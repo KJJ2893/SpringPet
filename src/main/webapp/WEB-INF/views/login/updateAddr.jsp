@@ -42,10 +42,16 @@
 
 	// 이메일 중복체크
 	function emailCheck(){
+		var ori_email = document.getElementById("ori_email").value;
 		var u_email = document.getElementById("u_email").value.trim();
 		
 		if(u_email == ''){
 			alert('사용하실 이메일을 입력해주세요.');
+			return;
+		}
+		
+		if(u_email != ori_email){
+			alert('계정정보가 다릅니다.');
 			return;
 		}
 		
@@ -84,6 +90,7 @@
 	<div class="update_wrapper"> <!-- 값 받기 -->
 		<h2>주소 변경</h2>
 		<form id="update_form">
+			<input type="hidden" id="ori_email" value="${id.u_email}">
 			<div class="update">
 				<h3>주소</h3>
 				<input name="addr" value="${id.u_addr}" readonly> 

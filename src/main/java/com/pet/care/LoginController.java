@@ -388,4 +388,22 @@ public class LoginController {
 		return null;
 	}
 	
+	
+	/////////////////////////////////////
+	// 탈퇴하기
+	@RequestMapping("deleteInfo.do")
+	public String deleteInfo() {
+		return VIEW_PATH + "delete.jsp";
+	}
+	
+	@RequestMapping("delete_info.do")
+	public String delete_info(String u_idx) {
+		int res = user_dao.deleteUser(u_idx);
+		
+		if(res == 1) {
+			session.removeAttribute("id");
+			return "redirect:main_home.do";
+		}
+		return null;
+	}
 }
