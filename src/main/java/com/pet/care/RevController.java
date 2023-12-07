@@ -10,10 +10,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import dao.RevDAO;
-import vo.PetVO;
-import vo.QnaVO;
 import vo.RevVO;
-import vo.UserVO;
 
 @Controller
 public class RevController {
@@ -38,7 +35,7 @@ public class RevController {
 	
 	@RequestMapping("rev_list.do")
 	public String rev_list(Model model) {
-		List<RevVO> list =rev_dao.rev_selectList();
+		List<RevVO> list = rev_dao.rev_selectList();
 		model.addAttribute("list", list);
 		return VIEW_PATH + "rev_main.jsp";
 	}
