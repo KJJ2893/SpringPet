@@ -17,60 +17,33 @@ body, html {
 	font-family:Noto Sans CJK KR;
 }
 
+input,button,textarea{
+	border:none;
+	font-family:Noto Sans CJK KR;
+}
+
 div {
 	display: block;
 }
 
-/* .qna_main_wrapper {
-	grid-template-columns: repeat(1,1fr);
-	display: grid;
-	grid-row-gap: 30px;
-	row-gap: 30px;
-	grid-column-gap: 30px;
-	column-gap: 30px;
+a {
+	text-decoration: none;
 }
 
-.contentBox {
-	position: relative;
-	cursor: pointer;
+table {
+	border-collapse: collapse;
 }
 
-.textBox {
-	padding:0 5px;
-	margin-top: 15px;
+.qna_wrapperBox {
+	min-width: 360px;
+	max-width: 1024px;
+	padding: 10px 16px;
+	margin: 0 auto;
 }
 
-.content_title {
-	font-size: 18px;
-	display: -webkit-box;
-	text-align: left;
-	color: black;
-	overflow: hidden;
-	text-overflow: ellipsis;
-	
-} */
-
-
-.flex_container {
-	display: flex;
-	flex-direction: row;
-	flex-wrap: wrap;
-	justify-content: space-between;
-	background-color: black;
-}
-
-.item_inner {
-	flex-direction: column;
-}
-
-.img {
-	color: black;
-}
-
-.title {
-	color: orange;
-}
-
-.writer {
-	color: blue;
+.qna_category {
+	font-weight: 600;
+	font-size: 20px;
+	line-height: inherit;
+	margin: 10px 0 30px;	
 }

@@ -22,4 +22,18 @@ public class QnaDAO {
 		return sqlSession.selectList("q.qna_selectList");
 	}
 
+	public int insert_qna1(QnaVO qnaVO) {
+		return sqlSession.insert("q.insert_qna2", qnaVO);
+	}
+	
+	public List<QnaVO> select_qnaList(){
+		return sqlSession.selectList("q.select_qnaList");
+	}
+	
+	public QnaVO qna_view(int q_idx) {
+		return sqlSession.selectOne("q.qna_view", q_idx);
+		
+	}
+	
+
 }

@@ -7,16 +7,37 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<insert id="qna_insert" parameterType="vo.QnaVO">
 		INSERT INTO QNA VALUES(
 			SEQ_QNA_IDX.NEXTVAL,
-			1,
-			'제목 테스트 1',
-			'내용 테스트 1',
-			SYSDATE,
-			'사진이미지 제목'
+			#{u_idx},
+			#{q_title},
+			#{q_content},
+			sysdate,
+			#{q_filename},
+			#{q_moviename}
 		)
 	</insert>	
 
 	<select id="qna_selectList" resultType="vo.QnaVO">
-		SELECT * FROM QNA
+		SELECT * FROM QNA ORDER BY q_regdate DESC
+	</select>
+	
+	<insert id="insert_qna2" parameterType="vo.QnaVO">
+		INSERT INTO qna VALUES (
+			seq_qna_idx.nextval,
+			#{u_idx},
+			#{q_title},
+			#{q_content},
+			sysdate,
+			#{q_filename},
+			#{q_moviename}
+		)
+	</insert>
+	
+	<select id="select_qnaList" resultType="vo.QnaVO">
+		select * from qna
+	</select>
+	
+	<select id="qna_view" parameterType="int" resultType="vo.QnaVO">
+		select * from qna where q_idx=#{q_idx}
 	</select>
 
 </mapper>
