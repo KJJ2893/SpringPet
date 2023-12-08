@@ -5,27 +5,9 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<style>
-.btn{
-    background-color: #A582CF; 
-    cursor:pointer;
-    margin-left:200px;
-    margin-top:20px;
-    width:70px;
-    height:30px;
-    color: #fff;
-    border-radius:10px;
-  	text-align: center;
-	border-color:blue;
-}
-.btn:hover {
-            border-color: aqua;
-            color: white;
-            box-shadow: 0 0.5em 0.5em -0.4em yellow;
-        }
-</style>
+
 <link rel="stylesheet"
-	href="${pageContext.request.contextPath}/resources/css/info/info.css">
+	href="${pageContext.request.contextPath}/resources/css/info/info.css?after">
 </head>
 <body style="background-image:url('resources/img/infoimg.jpg')">
 	<div class="wrap">

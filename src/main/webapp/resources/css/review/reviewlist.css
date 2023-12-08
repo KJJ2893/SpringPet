@@ -1,52 +1,20 @@
 @charset "UTF-8";
-*{
-	font-family:Roboto Mono;
-}
-
-.top {
-	position:absolute;
-	top:20px;
-	left:300px;
-	
-	 
-}
 table, th, td { border: solid orange; }
 
 table { border-collapse: collapse; 
-		width:750px;
-	
+		width:850px;
+		height:400px;
 		background-color:yellow;}
-
-.list{
-	
-	margin: 0 auto;
-	
-	width: 750px;
-	
-	
-}
-
-.list #photo{
-	width: 200px;
-	height: 200px;
-}
-
-.list #reviewContents{
-	width: 600px;
-	height: 200px;
-	
-}
-/* 리뷰버튼 */
-.bt1{
+	.bt1{
 	position:absolute;
-	left:1170px;
-	top:45px;
+	left:500px;
+	top:150px;
 	background-color: #A582CF; 
     cursor:pointer;
     color: #fff;
     border-radius:10px;
 	border-color:blue;
-	margin:70px;
+	margin-left:70px;
 	width:100px;
 	height:30px;
 }
@@ -58,11 +26,20 @@ table { border-collapse: collapse;
             color: white;
             box-shadow: 0 0.5em 0.5em -0.4em yellow;
         }
-
-.bt{
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	/* -------------------- */	
+		.bt2{
 	position:absolute;
-	left:1060px;
-	top:45px;
+	left:1170px;
+	top:80px;
 	background-color: #A582CF; 
     cursor:pointer;
     color: #fff;
@@ -75,25 +52,14 @@ table { border-collapse: collapse;
 
 
 
-.bt:hover {
+.bt2:hover {
             border-color: aqua;
             color: white;
             box-shadow: 0 0.5em 0.5em -0.4em yellow;
         }
-        /* 상단 버튼 */
-.btn1{
-    background-color: #A582CF; 
-    cursor:pointer;
-    margin-left:100px;
-    width:70px;
-    height:30px;
-    color: #fff;
-    border-radius:10px;
-  	text-align: center;
-	border-color:blue;
-}
-.btn1:hover {
-            border-color: aqua;
-            color: white;
-            box-shadow: 0 0.5em 0.5em -0.4em yellow;
+        
+        textarea{
+        width:600px;
+        height:100px;
         }
+		

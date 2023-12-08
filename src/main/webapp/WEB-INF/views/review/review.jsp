@@ -7,7 +7,7 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link rel="stylesheet"
-	href="${pageContext.request.contextPath}/resources/css/review/review.css">
+	href="${pageContext.request.contextPath}/resources/css/review/review.css?after">
 <script src="resources/js/httpRequest.js"></script>
 <script type="text/javascript">
 	function go(f) {
@@ -40,18 +40,40 @@
 	 } */
 </script>
 </head>
-<body>
+<body style="background-image:url('resources/img/review.jpg')">
 	<div class="logo">
 		<a href="main_home.do"><img src="resources/img/hos logo.jpg"
 			width="100px" height="100px"> </a>
 	</div>
+	
 	<div class="top">
+	<input type="button" value="소개" class="btn1"  onclick="location.href='info_main.do'"  >
+	<input type="button" value="공지" class="btn1" onclick=""  >
+	<input type="button" value="리뷰" class="btn1" onclick="location.href='review_main.do'"  >
+	<input type="button" value="QNA"  class="btn1" onclick="location.href='qna_form.do'"  >
+	<input type="button" value="예약"  class="btn1" onclick="location.href='rev_main.do'"  >
+	<c:choose>
+			<c:when test="${empty id}">
+				
+				<input type="button" value="펫 등록" class="btn1"  onclick="go_pet()">
+				<input type="button" value="정보수정" class="btn1"  onclick="go_pet()">
+				<input type="button" value="로그인"class="btn1"   onclick="location.href='login_main.do'">
+				
+			</c:when>
+			<c:when test="${not empty id}">
+				
+				<input type="button" value="펫 등록" class="btn1"  onclick="location.href='petinfo_main.do'">
+				<input type="button" value="정보수정" class="btn1"  onclick="location.href='check_up.do'">
+				<input type="button" value="로그아웃" class="btn1"   onclick="location.href='logout.do'">
+			</c:when>
+		</c:choose>
+	</div>
+	<div class="post">
 		<form>
 			<input type="hidden" name="u_idx" value="${id.u_idx}">
 			<div class="r_bt">
-				<input id="bt" type="button" value="리뷰쓰기" onclick="go(this.form)">
-				<input id="bt" type="button" value="내 가 쓴 글"
-					onclick="go2(this.form)">
+				<input class="bt1" type="button" value="리뷰쓰기" onclick="go(this.form)">
+				<input class="bt" type="button" value="내 가 쓴 글" onclick="go2(this.form)">
 			</div>
 			<div class="list">
 				<table border="1">
@@ -60,7 +82,7 @@
 							<h2>작성된 리뷰가 없습니다.</h2>
 						</c:when>
 						<c:when test="${not empty list }">
-							<caption>:::리뷰:::</caption>
+							<caption><h2>리뷰목록</h2></caption>
 							<c:forEach var="vo" items="${list }">
 								<tr>
 									<th>작성자 : ${vo.u_nickName }</th>
