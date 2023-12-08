@@ -29,18 +29,18 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</delete>
 	
 	<!-- 반려동물 정보 조회 -->
-	<select id="petinfo_check" resultType="vo.PetVO" parameterType="vo.PetVO">
+	<select id="petinfo_check" resultType="vo.PetVO" parameterType="int">
 		SELECT * FROM PET WHERE P_IDX=#{p_idx}
 	</select>
 	
 	<!-- 반려동물 정보 수정 -->
 	<update id="petinfo_update" parameterType="vo.PetVO">
 		UPDATE PET SET
-					P_NAME=#{p_name},
 					P_TYPE=#{p_type},
+					P_NAME=#{p_name},
 					P_AGE=#{p_age},
 					P_GENDER=#{p_gender},
-					P_PHOTO=#{p_photo},
+					P_PHOTO=#{p_photo}
 					WHERE P_IDX=#{p_idx}
 	</update>
 

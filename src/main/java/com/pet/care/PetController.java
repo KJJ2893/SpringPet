@@ -117,15 +117,79 @@ public class PetController {
         return "redirect:petinfo_main.do";
 
     }
-
-//	// 펫 정보 수정 화면
-//	@RequestMapping("petinfo_update.do")
-//	public String petinfo_retouch(Model model, int idx) {
-//		
-//		PetVO vo = pet_dao.selectList(idx);
-//		
-//		return VIEW_PATH + "petinfo_update.jsp";
-//	};
+    
+    // 펫 정보수정 화면으로 이동
+    @RequestMapping("petinfo_updateForm.do")
+    public String updateForm(Model model, String p_idx) {
+    	System.out.println("p_idx : "+p_idx);
+    	int pet_idx = 1;
+    	if(p_idx!=null && !p_idx.isEmpty()) {
+    		pet_idx = Integer.parseInt(p_idx);
+    		PetVO vo = pet_dao.selectOne(pet_idx);
+    		model.addAttribute("vo", vo);
+    	}
+    	
+    	return VIEW_PATH+"petinfo_updateForm.jsp";
+    }
+    
+    // 펫 정보수정
+    @RequestMapping("petinfo_update.do")
+    public String petinfo_update(PetVO vo) {
+    	UserVO userVO = (UserVO)request.getSession().getAttribute("id");
+    	
+    	if(userVO==null) {
+    		return "redirect:/";
+    	}
+    	
+    	if(vo.getPhoto() != null) {
+    		String webPath = "/resources/petImg";
+    		String savePath = request.getServletContext().getRealPath(webPath);
+    		System.out.println(savePath);
+    		
+    		MultipartFile photo = vo.getPhoto();
+    		
+    		System.out.println(photo);
+    		
+    		String filename = "no_file";
+    		
+    		if((!photo.isEmpty()) && (photo != null)) {
+    			filename = photo.getOriginalFilename();
+    			
+    			File saveFile = new File(savePath, filename);
+    			
+    			if(!saveFile.exists()) {
+    				saveFile.getParentFile().mkdirs();
+    			} else {
+    				long time = System.currentTimeMillis();
+    				filename = String.format("%d_%s", time, filename);
+    				saveFile = new File(savePath, filename);
+    			}
+    			
+    			try {
+    				photo.transferTo(saveFile);
+    			} catch (IllegalStateException e) {
+    				e.printStackTrace();
+    			} catch (IOException e) {
+    				e.printStackTrace();
+    			}
+    		}
+    		
+    		vo.setP_photo(filename);
+    		
+    	}
+    	System.out.println(vo);
+    	
+    	int res = pet_dao.update(vo);
+    	
+    	if(res > 0) {
+    		return "redirect:petinfo_main.do";
+    	}
+    	
+    	return null;
+    	
+    }
+    
+    
 }
 
 

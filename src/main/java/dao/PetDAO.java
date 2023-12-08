@@ -30,14 +30,14 @@ public class PetDAO {
 		return sqlSession.delete("p.petinfo_delete", p_idx);
 	}
 	
-//	// 펫 정보 조회 및 수정화면
-//	public PetVO selectOne(int idx) {
-//		return sqlSession.selectOne("p.")
-//	}
+	// 펫 정보 조회 및 수정화면
+	public PetVO selectOne(int p_idx) {
+		return sqlSession.selectOne("p.petinfo_check", p_idx);
+	}
 	
 	// 펫 정보 수정
 	public int update(PetVO vo) {
-		return sqlSession.update("p.petinfo_update");
+		return sqlSession.update("p.petinfo_update", vo);
 	}
 	
 	
