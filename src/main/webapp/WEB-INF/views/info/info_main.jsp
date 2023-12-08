@@ -5,7 +5,25 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-
+<style>
+.btn{
+    background-color: #A582CF; 
+    cursor:pointer;
+    margin-left:200px;
+    margin-top:20px;
+    width:70px;
+    height:30px;
+    color: #fff;
+    border-radius:10px;
+  	text-align: center;
+	border-color:blue;
+}
+.btn:hover {
+            border-color: aqua;
+            color: white;
+            box-shadow: 0 0.5em 0.5em -0.4em yellow;
+        }
+</style>
 <link rel="stylesheet"
 	href="${pageContext.request.contextPath}/resources/css/info/info.css">
 </head>
@@ -15,20 +33,26 @@
 			<div class="header">
 	  		<a href="main_home.do" class="logo">
 						<h1>MY PET DOC</h1>
+						<img src="resources/img/hos logo.jpg" width="100px" height="100px">
 					</a>
-				<ul class="nav">
-					<li><a href="#">HOME</a></li>
-					<li><a href="#">REVIEWS</a></li>
-					<li><a href="#">QNA</a></li>
-					<li><a href="#">RESERVATION</a></li>
-				</ul>
+				<div >
+				<input type="button"  class="btn" value="정보수정" onclick="check_up.do">
+					<input type="button" class="btn" value="리뷰" onclick="review_main.do">
+					<input type="button" class="btn" value="QNA" onclick="qna_form.do">
+					<input type="button" class="btn" value="예약" onclick="rev_main.do">
+				</div>
 			</div>
 			<div class="intro_text">
 				<h1>병원 소개</h1>
 				<h3 class="contents1">
 					환자를 우선으로 생각하는 따뜻한 마음<br>
 					전문적인 수의의료서비스<br>
-					경인지역 서부권에서 가장 신뢰받는 병원</h3>
+					경인지역 서부권에서 가장 신뢰받는 병원
+					지역주민을 위한 봉사활동<br>
+					다년간 축적된 노하우<br>
+					끊임없이 연구하는 최상의 치료방법<br>
+					
+					</h3>
 			</div>
 		</div>
 	</div>
@@ -39,7 +63,7 @@
 		</div>
 		<div class="service">
 			<div class="food_photo">
-				<img src="${pageContext.request.contextPath}/resources/img/puppy.png">
+				<img src="${pageContext.request.contextPath}/resources/img/puppy.jpg">
 			</div>
 			<div class="contents2">
 				<h2>우리 동물병원은</h2>

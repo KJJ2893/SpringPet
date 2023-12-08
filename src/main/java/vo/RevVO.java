@@ -9,7 +9,6 @@ public class RevVO {
 	private int u_idx;
 	private String rv_time;
 	private String rv_day;
-	private String u_tel;
-	private String u_name;
+	
 	
 }

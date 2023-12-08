@@ -1,11 +1,4 @@
 @charset "UTF-8";
-
-.logo{
-	
-	
-}
-
-
 .top {
 	position:absolute;
 	top:20px;
@@ -24,13 +17,7 @@
 	
 	
 }
-.sns{
-	position:absolute;
-	top:1500px;
-	left:800px;
-	
-	
-}
+
 .warp {
 	position:absolute;
 	top:1100px;
@@ -45,15 +32,5 @@
 	
 }
 
-.footer{
-	position:absolute;
-	top:1500px;
-	
-}
-.footer1{
-	position:absolute;
-	top:1500px;
-	left:500px;
-}
 
---------------------------------
+

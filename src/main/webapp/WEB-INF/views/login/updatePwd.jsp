@@ -57,10 +57,16 @@
 	
 	// 이메일 중복체크
 	function emailCheck(){
+		var ori_email = document.getElementById("ori_email").value;
 		var u_email = document.getElementById("u_email").value.trim();
 		
 		if(u_email == ''){
 			alert('사용하실 이메일을 입력해주세요.');
+			return;
+		}
+		
+		if(u_email != ori_email){
+			alert('계정정보가 다릅니다.');
 			return;
 		}
 		
@@ -99,6 +105,7 @@
 	<div class="update_wrapper"> 
 		<h2>비밀번호 변경</h2>
 		<form id="update_form">
+			<input type="hidden" id="ori_email" value="${id.u_email}">
 			<div class="update">
 				<h3>사용중인 비밀번호</h3>
 				<input name="pwd" value="${id.u_pwd}" readonly>

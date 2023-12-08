@@ -84,4 +84,9 @@ public class UserDAO {
 	public int update_addr(HashMap<String, String> map) {
 		return sqlSession.update("u.update_addr", map);
 	}
+	
+	// 유저 삭제하기
+	public int deleteUser(String u_idx) {
+		return sqlSession.delete("u.delete", u_idx);
+	}
 }

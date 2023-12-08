@@ -1,0 +1,35 @@
+@charset "UTF-8";
+
+*{
+	padding: 0;
+	margin: 0;
+	border: none;
+}
+
+.list{
+	background-color: yellow;
+	margin: 0 auto;
+	padding: 20px;
+	width: 900px;
+	
+}
+
+.list #photo{
+	width: 200px;
+	height: 200px;
+}
+
+.list #reviewContents{
+	width: 600px;
+	height: 200px;
+	
+}
+
+.top{
+	margin: 0 auto;
+	width: 100%;
+}
+
+.r_bt{
+	
+}

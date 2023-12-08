@@ -5,6 +5,8 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/resources/css/pet/petinsert.css">
 <script src="resources/js/httpRequest.js"></script>
 	<script type="text/javascript">
 		function insert_send(f){
@@ -14,12 +16,19 @@
 			var p_gender = f.p_gender.value;
 			/* var p_photo = f.p_photo.value; */
 			var u_idx = f.u_idx.value;
+			var photoInput = f.photo; // 파일 입력 요소에 대한 참조
 			
 			// 유효성 검사
 			if(p_name == ''){
 				alert('이름을 입력하세요');
 				return;
 			}
+			
+			if(p_name.length > 15){
+				alert('이름은 15글자 미만으로 입력해주세요');
+				return;
+			}
+			
 			if(p_type == ''){
 				alert('반려동물 종을 선택해주세요');
 				return;
@@ -46,6 +55,13 @@
 				return;
 			}
 			
+			if(photoInput.files.length > 0){
+				if(!isImageFile(photoInput)){
+					alert('이미지 파일만 첨부 가능합니다.');
+					return;
+				}
+			}
+			
 			f.action = "pet_insert.do"
 			f.submit();
 		}
@@ -56,12 +72,21 @@
 				window.location.href = "petinfo_main.do";
 			}
 		}
+		
+		// 이미지 파일인지 확인하는 함수
+		function isImageFile(input){
+			var allowedTypes = ['image/jpeg', 'image/png', 'image/gif'];
+			return input.files.length > 0 && allowedTypes.includes(input.files[0].type);
+		}
 	</script>
 </head>
-<body>
+<body class="body" 
+style="background-image:url('resources/img/petback.jpg');
+					background-repeat: no-repeat;
+					background-size:100%;">
 	<form method="POST" enctype="multipart/form-data">
 		<table border="1" align="center">
-			<caption>마이 펫 등록하기</caption>
+			<caption><h2>마이 펫 등록하기</h2></caption>
 			<tr>
 				<th>이름</th>
 				<td>
@@ -93,13 +118,13 @@
 			</tr>
 			<tr>
 				<th>이미지 첨부</th>
-				<td><input type="file" name="photo"></td>
+				<td><input type="file" name="photo"  ></td>
 			</tr>	
 			<tr>
 			   <td colspan="2" align="center">
              	<input name="u_idx" type="hidden" value="${id.u_idx}">
-			      <input type="button" value="등록하기" onclick="insert_send(this.form)">
-			      <input type="button" value="등록취소" onclick="cancel_send(this.form)">
+			      <input type="button" class="btn" value="등록하기" onclick="insert_send(this.form)">
+			      <input type="button" class="btn" value="등록취소" onclick="cancel_send(this.form)">
 			   </td>
 			</tr>
 		</table>

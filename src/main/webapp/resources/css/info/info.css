@@ -53,17 +53,7 @@
 	height: 86px;
 }
 
-.nav {
-	display: flex;
-	justify-content: flex-end;
-	width: calc(1280px - 300px);
-	line-height: 86px;
-	
-}
 
-.nav>li {
-	margin-left: 150px;
-}
 
 /* .nav > li > a {
 
