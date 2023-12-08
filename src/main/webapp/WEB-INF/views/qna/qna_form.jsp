@@ -21,9 +21,6 @@
 			return;
 		}
 		
-		console.log("here")
-		alert("here again")
-		
 		f.method="POST";
 		f.action="qna_insert.do";
 		f.submit();
@@ -37,15 +34,10 @@
 	<div class="qna_wrapperBox">
 		<span class="qna_category">Q&A 카테고리</span>	
 		<div class="qna_category">
-			<span>
-				<input type="button" value="자주 묻는 질문" class="inputBtn" onclick="#">
-			</span>
-			<span>
-				<input type="button" value="메인으로 돌아가기" class="inputBtn" onclick="location.href='main_home.do'">
-			</span>
-			<span>
-				<input type="button" value="QNA홈으로" class="inputBtn" onclick="location.href='qna_main.do'">
-			</span>
+			<input type="button" value="자주 묻는 질문" class="inputBtn" onclick="#">
+			<input type="button" value="메인으로 돌아가기" class="inputBtn" onclick="location.href='main_home.do'">
+			<input type="button" value="QNA홈으로" class="inputBtn" onclick="location.href='qna_main.do'">
+			
 		</div>
 	</div> <!-- qna_wrapperBox -->
 	
@@ -56,10 +48,9 @@
 	</div>	
 	<div class="qna_wrapperBox">
 		<input type="text" value="${id.u_nickName}" > <!-- 작성자 hidden -->
-		<div class="qna_space"></div>
 	</div>
-
-	<form method="POST" enctype="multipart/form-data">
+	
+	<form enctype="mulipart/form-data">
 		<div class="qna_wrapperBox">
 			<input class="titleBox" name="q_title" placeholder="제목을 입력해 주세요">
 			<div class="qna_space"></div>

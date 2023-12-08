@@ -1,36 +1,33 @@
 @charset "UTF-8";
 .top {
-	position:absolute;
-	top:20px;
-	left:400px;
-	
-	 
+    position:absolute;
+    top:20px;
+    left:400px;
+
+
 }
 
 
 
 
 .body{
-	object-fit:none;
-	background-size:100%
-	overflow:scroll;
-	
-	
+    object-fit:none;
+    background-size:100%
+    overflow:scroll;
+
+
 }
 
 .warp {
-	position:absolute;
-	top:1100px;
-	left:800px;
-	
+    position:absolute;
+    top:1100px;
+    left:800px;
+
 
 }
-.rolling-list{      
-	position:absolute;
-	top:1100px;
-	left:1500px;
-	
+.rolling-list{
+    position:absolute;
+    top:1100px;
+    left:1500px;
+
 }
-
-
-
