@@ -9,6 +9,7 @@
 </head>
 <body>
 <form>
+<input type="button" value="등록하기" onclick="location.href='rev_insert.do'">
 <table border="1" align="center">
 <caption>예약 리스트</caption>
 <tr>

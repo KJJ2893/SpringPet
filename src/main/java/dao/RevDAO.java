@@ -19,4 +19,8 @@ SqlSession sqlSession;
 		return sqlSession.selectList("r.rev_list");
 	
 	}
+	// 예약 등록하기
+		public int rev_insert(RevVO vo) {
+			return sqlSession.insert("r.rev_insert", vo);
+		}
 }

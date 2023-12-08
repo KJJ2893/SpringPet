@@ -52,15 +52,15 @@
 				</tr>
 				<tr>
 					<th>리뷰 내용 작성</th>
-					<td><textarea name="r_content" rows="10" cols="50"></textarea></td>	
+					<td><textarea  name="r_content" class="text" rows="10" cols="50"></textarea></td>	
 				<tr>
 					<th>이미지 첨부</th>
 					<td><input type="file" name="photo"></td>
 				</tr>
 				<tr>
 					<td colspan="2" align="right">
-					<input type="button" class="bt" value="취소하기" onclick="location.href='review_main.do'">
-					<input type="button" class="bt" value="작성하기" onclick="send(this.form)"></td>
+					<input type="button" class="bt1" value="취소하기" onclick="location.href='review_main.do'">
+					<input type="button" class="bt1" value="작성하기" onclick="send(this.form)"></td>
 				</tr>
 			</table>
 		</form>
