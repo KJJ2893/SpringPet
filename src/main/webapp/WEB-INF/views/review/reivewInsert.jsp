@@ -5,21 +5,11 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<style type="text/css">
-*{
-	margin: 0px;
-	padding: 0px;
-}
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/resources/css/review/reviewinsert.css?after">
 
 
-	.top{
-		margin: 0 auto;
-		padding:100px;
-		width: 50%;
-		height: 400px;
-		background-color: yellow;
-	}
-</style>
+
 <script src="resources/js/httpRequest.js"></script>
 <script type="text/javascript">
 
@@ -51,7 +41,7 @@
 		}
 </script>
 </head>
-<body>
+<body style="background-image:url('resources/img/review.jpg')">
 	<div class="top">
 		<form method="POST" enctype="multipart/form-data">
 			<input type="hidden" name="u_idx" value="${id.u_idx}">
@@ -69,8 +59,8 @@
 				</tr>
 				<tr>
 					<td colspan="2" align="right">
-					<input type="button" value="취소하기" onclick="location.href='review_main.do'">
-					<input type="button" value="작성하기" onclick="send(this.form)"></td>
+					<input type="button" class="bt" value="취소하기" onclick="location.href='review_main.do'">
+					<input type="button" class="bt" value="작성하기" onclick="send(this.form)"></td>
 				</tr>
 			</table>
 		</form>

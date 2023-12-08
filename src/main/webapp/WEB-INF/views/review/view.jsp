@@ -6,7 +6,7 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link rel="stylesheet"
-	href="${pageContext.request.contextPath}/resources/css/review/review.css">
+	href="${pageContext.request.contextPath}/resources/css/review/view.css?after">
 <script type="text/javascript">
 	
 	function del(f){
@@ -55,7 +55,7 @@
 	}
 </script>
 </head>
-<body>
+<body style="background-image:url('resources/img/review.jpg')">
 	<div class="logo">
 		<a href="main_home.do"><img src="resources/img/hos logo.jpg"
 			width="100px" height="100px"> </a>
@@ -65,8 +65,8 @@
 			<input type="hidden" value="${vo.u_idx}" name="u_idx">
 			<input type="hidden" value="${vo.r_idx}" name="r_idx">
 			<div class="list">
-				<table border="1">
-					<caption>:::리뷰:::</caption>
+				<table border="1" align="center">
+					<caption><h2>리뷰</h2></caption>
 					<tr>
 						<th>작성자 : ${vo.u_nickName }</th>
 						<th>작성일 : ${vo.r_regdate }</th>
@@ -75,7 +75,7 @@
 						<td>
 							<img
 							src="${pageContext.request.contextPath}/resources/reviewImg/${vo.r_photo}"
-							width="100" height="100"
+							width="150" height="200"
 							onclick="openImage('${pageContext.request.contextPath}/resources/reviewImg/${vo.r_photo}')"
 							style="cursor: pointer;">
 						</td>
