@@ -42,6 +42,9 @@
 </script>
 </head>
 <body style="background-image:url('resources/img/review.jpg')">
+<a href="main_home.do">
+<img src="resources/img/hos logo.jpg" width="100px" height="100px">
+</a>
 	<div class="top">
 		<form method="POST" enctype="multipart/form-data">
 			<input type="hidden" name="u_idx" value="${id.u_idx}">
