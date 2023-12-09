@@ -1,10 +1,12 @@
 package dao;
 
+import java.util.HashMap;
 import java.util.List;
 
 import org.apache.ibatis.session.SqlSession;
 
 import vo.PetVO;
+import vo.UserVO;
 
 public class PetDAO {
 	
@@ -39,6 +41,26 @@ public class PetDAO {
 	public int update(PetVO vo) {
 		return sqlSession.update("p.petinfo_update", vo);
 	}
+	
+	// 유저 펫 리스트 개수 조회
+	public int userPetListCount(UserVO vo) {
+		return sqlSession.selectOne("p.petinfo_List",vo);
+	}
+	
+	// 로그인 유저 펫 리스트 데이터 조회
+//	nowpage = 현재페이지인덱스    onepageview= 한페이지당 띄울 상품개수 user_idx= 유저인덱스
+	public List<PetVO> loginUserPetList(HashMap<String, Integer> pagingData){
+
+		int minPage = pagingData.get("OnepageView") *(pagingData.get("nowpage") -1)+1;
+		int maxPage = pagingData.get("nowpage")*pagingData.get("OnepageView");
+		
+		HashMap<String, Integer> realData = new HashMap<String, Integer>();
+		realData.put("user_idx", pagingData.get("user_idx"));
+		realData.put("minPage", minPage);
+		realData.put("maxPage", maxPage);
+		return sqlSession.selectList("p.petinfo_ListCheck",realData);
+	}
+	
 	
 	
 	

@@ -65,7 +65,7 @@ style="background-image:url('resources/img/petback.jpg');
                 <th>반려동물 성별</th>
                 <th>비고</th>
              </tr>
-             <c:forEach var="vo" items="${list }">
+             <c:forEach var="vo" items="${list}">
 	             <tr>	             
 	             	<td><img src="${pageContext.request.contextPath}/resources/petImg/${vo.p_photo}"
 	             	         width="100" height="100" onclick="openImage('${pageContext.request.contextPath}/resources/petImg/${vo.p_photo}')"
@@ -79,13 +79,50 @@ style="background-image:url('resources/img/petback.jpg');
 	                <input type="hidden" name="p_idx" value="${vo.p_idx}">
 	                <input type="hidden" name="u_idx" value="${vo.u_idx }">	
                     <input type="button" class="btn" value="수정하기" onclick="location.href='petinfo_updateForm.do?p_idx=${vo.p_idx}'">
-	                <input type="button" class="btn" value="삭제하기" onclick="petinfo_del(${vo.p_idx })"> 
+	                <input type="button" class="btn" value="삭제하기" onclick="petinfo_del(${vo.p_idx})"> 
 	                </td>
 	             </tr>
              </c:forEach>
+             <tr>
+             <td colspan="6">
+               <div class="paging">
+					<c:if test="${nowpage!=1}">
+						<c:choose>
+							<c:when test="${nowpage>jumpgingPage}">
+								<a href="petinfo_main.do?page=${nowpage-jumpgingPage}">◀</a>
+							</c:when>
+							<c:otherwise>
+								<a href="petinfo_main.do?page=1">◀</a>
+							</c:otherwise>
+						</c:choose>
+					</c:if>
+					<c:forEach var="index" begin="${minpage}" end="${maxpage}" step="1">
+						<c:choose>
+							<c:when test="${index==nowpage}">
+								<a href="petinfo_main.do?page=${index}" class="bolder">${index}</a>
+							</c:when>
+							<c:otherwise>
+								<a href="petinfo_main.do?page=${index}">${index}</a>
+							</c:otherwise>
+						</c:choose>
+					</c:forEach>
+					<c:if test="${nowpage!=maxpage}">
+						<c:choose>
+							<c:when test="${nowpage<pagingCount-jumpgingPage}">
+								<a href="petinfo_main.do?page=${nowpage+jumpgingPage}">▶</a>
+							</c:when>
+							<c:otherwise>
+								<a href="petinfo_main.do?page=${pagingCount}">▶</a>
+							</c:otherwise>
+						</c:choose>
+					</c:if>
+				</div>	
+             </td>
+             </tr>
           </table> 
           
      </form>
+   
      
      
 </body>

@@ -2,6 +2,7 @@ package com.pet.care;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.multipart.MultipartFile;
 
 import dao.PetDAO;
+import util.PetListPaging;
 import vo.PetVO;
 import vo.UserVO;
 
@@ -33,14 +35,27 @@ public class PetController {
 
 	// 펫 정보 메인 화면 펫 리스트 보임
 	@RequestMapping(value = { "petinfo_main.do" })
-	public String list(Model model) {
-
-		int idx = (((UserVO)request.getSession().getAttribute("id")).getU_idx());
-		List<PetVO> list = pet_dao.selectList(idx);
+	public String list(Model model,String page) {
+		UserVO userInfo =(UserVO)request.getSession().getAttribute("id");
+		HashMap<String, Object> map = PetListPaging.getPaging(3, page, pet_dao,userInfo);
 		
-		model.addAttribute("list", list);		
+		
+
+//		int idx = (((UserVO)request.getSession().getAttribute("id")).getU_idx());
+//		List<PetVO> list = pet_dao.selectList(idx);
+		
+//		List<PetVO> vo =()map.get("list");
+		model.addAttribute("list",map.get("list"));
+        model.addAttribute("pagingCount", map.get("pagingCount"));
+        model.addAttribute("minpage", map.get("minpage"));
+        model.addAttribute("nowpage", map.get("nowpage"));
+        model.addAttribute("maxpage", map.get("maxpage"));
+        model.addAttribute("jumpgingPage", map.get("jumpgingPage"));
+//		model.addAttribute("list", list);		
 
 		return VIEW_PATH + "petinfo_main.jsp";
+		
+		
 	}
 
 	// 펫 리스트 화면

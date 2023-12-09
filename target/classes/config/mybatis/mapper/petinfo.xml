@@ -43,5 +43,16 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 					P_PHOTO=#{p_photo}
 					WHERE P_IDX=#{p_idx}
 	</update>
+	
+	<!-- 반려동물 마리 수 조회 -->
+	<select id="petinfo_List" parameterType="vo.UserVO" resultType="int">
+		SELECT COUNT(*) FROM PET WHERE U_IDX = #{u_idx}
+	</select>
+	
+	<select id="petinfo_ListCheck" resultType="vo.PetVO" parameterType="java.util.HashMap">
+		SELECT U_IDX,P_IDX,P_NAME,P_TYPE,P_AGE,P_GENDER,P_PHOTO FROM (SELECT *
+		FROM (SELECT p.*, RANK() OVER(ORDER BY p.P_IDX ASC) AS "RANK" FROM PET p)
+		WHERE U_IDX = #{user_idx}) WHERE "RANK" BETWEEN #{minPage} AND #{maxPage}
+	</select>
 
 </mapper>
