@@ -26,6 +26,10 @@
 		f.submit();
 			
 	}
+	
+	function refresh(){
+		location.reload();
+	}
 
 </script>
 </head>
@@ -34,7 +38,7 @@
 	<div class="qna_wrapperBox">
 		<span class="qna_category">Q&A 카테고리</span>	
 		<div class="qna_category">
-			<input type="button" value="자주 묻는 질문" class="inputBtn" onclick="#">
+			<input type="button" value="자주 묻는 질문" class="inputBtn" onclick="location.reload()">
 			<input type="button" value="메인으로 돌아가기" class="inputBtn" onclick="location.href='main_home.do'">
 			<input type="button" value="QNA홈으로" class="inputBtn" onclick="location.href='qna_main.do'">
 			
