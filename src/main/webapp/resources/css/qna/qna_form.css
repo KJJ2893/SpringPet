@@ -50,6 +50,11 @@ p {
 	padding: 10px 20px;
 }
 
+.inputBtn:hover{
+	background: tomato;
+	color: white;
+}
+
 .qna_wrapperBox {
 	min-width: 360px;
 	max-width: 1024px;

@@ -38,16 +38,16 @@ public class QnAController {
 		return VIEW_PATH + "qna_form.jsp";
 	}
 	
-	@RequestMapping("qna_form2.do")
-	public String qna_form2() {		
-		return VIEW_PATH + "qna_form2.jsp";
-	}
-	
 	@RequestMapping("qna_main.do")
 	public String qna_main(Model model) {
 		List<QnaVO> list = qna_dao.select_qnaList();
 		model.addAttribute("list", list);
 		return VIEW_PATH + "qna_main.jsp";
+	}
+	
+	@RequestMapping("qna_view.do")
+	public String qna_view() {
+		return VIEW_PATH + "qna_view.jsp";
 	}
 	
 	@RequestMapping("qna_insert.do")
@@ -120,12 +120,4 @@ public class QnAController {
 			return null;
 		}
 	}
-	
-	@RequestMapping("qna_view.do")
-	public String qna_view(Model model, int q_idx) {
-		QnaVO qnavo = qna_dao.qna_view(q_idx);
-		
-		return VIEW_PATH + "qna_view.jsp";
-	}
-	
 }

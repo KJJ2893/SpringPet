@@ -5,21 +5,11 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<style type="text/css">
-*{
-	margin: 0px;
-	padding: 0px;
-}
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/resources/css/review/reviewinsert.css?after">
 
 
-	.top{
-		margin: 0 auto;
-		padding:100px;
-		width: 50%;
-		height: 400px;
-		background-color: yellow;
-	}
-</style>
+
 <script src="resources/js/httpRequest.js"></script>
 <script type="text/javascript">
 
@@ -51,7 +41,10 @@
 		}
 </script>
 </head>
-<body>
+<body style="background-image:url('resources/img/review.jpg')">
+<a href="main_home.do">
+<img src="resources/img/hos logo.jpg" width="100px" height="100px">
+</a>
 	<div class="top">
 		<form method="POST" enctype="multipart/form-data">
 			<input type="hidden" name="u_idx" value="${id.u_idx}">
@@ -62,15 +55,15 @@
 				</tr>
 				<tr>
 					<th>리뷰 내용 작성</th>
-					<td><textarea name="r_content" rows="10" cols="50"></textarea></td>	
+					<td><textarea  name="r_content" class="text" rows="10" cols="50"></textarea></td>	
 				<tr>
 					<th>이미지 첨부</th>
 					<td><input type="file" name="photo"></td>
 				</tr>
 				<tr>
 					<td colspan="2" align="right">
-					<input type="button" value="취소하기" onclick="location.href='review_main.do'">
-					<input type="button" value="작성하기" onclick="send(this.form)"></td>
+					<input type="button" class="bt1" value="취소하기" onclick="location.href='review_main.do'">
+					<input type="button" class="bt1" value="작성하기" onclick="send(this.form)"></td>
 				</tr>
 			</table>
 		</form>

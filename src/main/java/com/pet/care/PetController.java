@@ -2,6 +2,7 @@ package com.pet.care;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.multipart.MultipartFile;
 
 import dao.PetDAO;
+import util.PetListPaging;
 import vo.PetVO;
 import vo.UserVO;
 
@@ -33,14 +35,27 @@ public class PetController {
 
 	// 펫 정보 메인 화면 펫 리스트 보임
 	@RequestMapping(value = { "petinfo_main.do" })
-	public String list(Model model) {
-
-		int idx = (((UserVO)request.getSession().getAttribute("id")).getU_idx());
-		List<PetVO> list = pet_dao.selectList(idx);
+	public String list(Model model,String page) {
+		UserVO userInfo =(UserVO)request.getSession().getAttribute("id");
+		HashMap<String, Object> map = PetListPaging.getPaging(3, page, pet_dao,userInfo);
 		
-		model.addAttribute("list", list);		
+		
+
+//		int idx = (((UserVO)request.getSession().getAttribute("id")).getU_idx());
+//		List<PetVO> list = pet_dao.selectList(idx);
+		
+//		List<PetVO> vo =()map.get("list");
+		model.addAttribute("list",map.get("list"));
+        model.addAttribute("pagingCount", map.get("pagingCount"));
+        model.addAttribute("minpage", map.get("minpage"));
+        model.addAttribute("nowpage", map.get("nowpage"));
+        model.addAttribute("maxpage", map.get("maxpage"));
+        model.addAttribute("jumpgingPage", map.get("jumpgingPage"));
+//		model.addAttribute("list", list);		
 
 		return VIEW_PATH + "petinfo_main.jsp";
+		
+		
 	}
 
 	// 펫 리스트 화면
@@ -117,15 +132,79 @@ public class PetController {
         return "redirect:petinfo_main.do";
 
     }
-
-//	// 펫 정보 수정 화면
-//	@RequestMapping("petinfo_update.do")
-//	public String petinfo_retouch(Model model, int idx) {
-//		
-//		PetVO vo = pet_dao.selectList(idx);
-//		
-//		return VIEW_PATH + "petinfo_update.jsp";
-//	};
+    
+    // 펫 정보수정 화면으로 이동
+    @RequestMapping("petinfo_updateForm.do")
+    public String updateForm(Model model, String p_idx) {
+    	System.out.println("p_idx : "+p_idx);
+    	int pet_idx = 1;
+    	if(p_idx!=null && !p_idx.isEmpty()) {
+    		pet_idx = Integer.parseInt(p_idx);
+    		PetVO vo = pet_dao.selectOne(pet_idx);
+    		model.addAttribute("vo", vo);
+    	}
+    	
+    	return VIEW_PATH+"petinfo_updateForm.jsp";
+    }
+    
+    // 펫 정보수정
+    @RequestMapping("petinfo_update.do")
+    public String petinfo_update(PetVO vo) {
+    	UserVO userVO = (UserVO)request.getSession().getAttribute("id");
+    	
+    	if(userVO==null) {
+    		return "redirect:/";
+    	}
+    	
+    	if(vo.getPhoto() != null) {
+    		String webPath = "/resources/petImg";
+    		String savePath = request.getServletContext().getRealPath(webPath);
+    		System.out.println(savePath);
+    		
+    		MultipartFile photo = vo.getPhoto();
+    		
+    		System.out.println(photo);
+    		
+    		String filename = "no_file";
+    		
+    		if((!photo.isEmpty()) && (photo != null)) {
+    			filename = photo.getOriginalFilename();
+    			
+    			File saveFile = new File(savePath, filename);
+    			
+    			if(!saveFile.exists()) {
+    				saveFile.getParentFile().mkdirs();
+    			} else {
+    				long time = System.currentTimeMillis();
+    				filename = String.format("%d_%s", time, filename);
+    				saveFile = new File(savePath, filename);
+    			}
+    			
+    			try {
+    				photo.transferTo(saveFile);
+    			} catch (IllegalStateException e) {
+    				e.printStackTrace();
+    			} catch (IOException e) {
+    				e.printStackTrace();
+    			}
+    		}
+    		
+    		vo.setP_photo(filename);
+    		
+    	}
+    	System.out.println(vo);
+    	
+    	int res = pet_dao.update(vo);
+    	
+    	if(res > 0) {
+    		return "redirect:petinfo_main.do";
+    	}
+    	
+    	return null;
+    	
+    }
+    
+    
 }
 
 

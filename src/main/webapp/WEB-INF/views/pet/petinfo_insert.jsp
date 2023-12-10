@@ -62,7 +62,7 @@
 				}
 			}
 			
-			f.action = "pet_insert.do"
+			f.action = "pet_insert.do";
 			f.submit();
 		}
 		

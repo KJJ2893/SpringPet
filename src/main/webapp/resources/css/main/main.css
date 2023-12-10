@@ -6,7 +6,20 @@
 
 
 }
-
+ .footer{
+        position:absolute;
+        top:1400px;}
+        .sns{
+        position:absolute;
+        top:1400px;
+        left:650px;
+        			}
+       .footer1{
+       position:absolute;
+       top:1400px;
+       left:400px;}
+	
+}
 
 
 
@@ -25,9 +38,112 @@
 
 
 }
+
 .rolling-list{
     position:absolute;
     top:1100px;
     left:1500px;
+}
 
+input[type="radio"]{
+display:none;
+}
+/*슬라이드 배너 css */
+.conbox{
+width:1500px;
+height:500px;
+background:#ffa500;
+display:none;
+position:absolute;
+top:200px;
+left:200px;}
+
+/* 체크버튼 css */
+.btn {
+padding:10px;
+text-align:center;
+position:absolute;
+top:700px;
+left:800px;
+}
+
+label[for*="tab"]{
+display:inline-block;
+padding:10px;
+background:#ccc;
+margin:5px;
+cursor:pointer;
+
+border-radius:100%;}
+
+input[id="tab01"]:checked ~ .con1{
+display:block;}
+input[id="tab02"]:checked ~ .con2{
+display:block;}
+input[id="tab03"]:checked ~ .con3{
+display:block;}
+
+/* 체크하는곳 체크시 색상지정*/
+input[id="tab01"]:checked ~ .btn >label[for="tab01"]{
+background:blue;}
+input[id="tab02"]:checked ~ .btn >label[for="tab02"]{
+background:blue;}
+input[id="tab03"]:checked ~ .btn >label[for="tab03"]{
+background:blue;}
+
+}
+
+/* 자동롤링배너 */
+.wrap {
+            border: 1px solid;
+            display: flex; 
+            overflow: hidden;
+        }
+        .wrap .rolling-list ul {
+            padding : 0px;
+            display: flex;
+        }
+        .wrap .rolling-list ul li { 
+            box-sizing: border-box; 
+            display: flex; 
+            align-items: center; 
+            flex-shrink: 0; 
+        }
+ 
+        .rolling-list.original {
+            animation: rollingleft1 90s linear infinite;
+        }
+        .rolling-list.clone {
+            animation: rollingleft2 90s linear infinite;
+        }
+ 
+ 	/*시간이 n 초일때 비율  */
+        @keyframes rollingleft1 {
+            0% { transform: translateX(0); }
+            50% { transform: translateX(-100%); }
+            50.01% { transform: translateX(100%); }
+            100% { transform: translateX(0); }
+        }
+ 
+        @keyframes rollingleft2 {
+            0% { transition: translateX(0); }
+            100% { transform: translateX(-200%); }
+        }
+
+.btn1{
+    background-color: #A582CF; 
+    cursor:pointer;
+    margin-left:100px;
+    width:70px;
+    height:30px;
+    color: #fff;
+    border-radius:10px;
+  	text-align: center;
+	border-color:blue;
+}
+.btn1:hover {
+            border-color: aqua;
+            color: white;
+            box-shadow: 0 0.5em 0.5em -0.4em yellow;
+        }
 }

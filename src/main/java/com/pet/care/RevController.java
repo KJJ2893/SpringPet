@@ -39,7 +39,21 @@ public class RevController {
 		model.addAttribute("list", list);
 		return VIEW_PATH + "rev_main.jsp";
 	}
-
-    }
+	
+	@RequestMapping("rev_insert.do")
+	public String rev_insert(RevVO vo) {
+		
+		int res = rev_dao.rev_insert(vo);
+		
+		System.out.println(res);
+		
+		if(res > 0) {
+			return "redirect:rev_insert.do";
+		}
+			return null;
+	}
+}
+	
+    
 
 

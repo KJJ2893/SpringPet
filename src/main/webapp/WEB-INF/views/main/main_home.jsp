@@ -6,114 +6,8 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
- <style>
- 
-input[type="radio"]{
-display:none;
-}
-/*슬라이드 배너 css */
-.conbox{
-width:1500px;
-height:500px;
-background:#ffa500;
-display:none;
-position:absolute;
-top:200px;
-left:200px;}
-
-/* 체크버튼 css */
-.btn {
-padding:10px;
-text-align:center;
-position:absolute;
-top:700px;
-left:800px;
-}
-
-label[for*="tab"]{
-display:inline-block;
-padding:10px;
-background:#ccc;
-margin:5px;
-cursor:pointer;
-
-border-radius:100%;}
-
-input[id="tab01"]:checked ~ .con1{
-display:block;}
-input[id="tab02"]:checked ~ .con2{
-display:block;}
-input[id="tab03"]:checked ~ .con3{
-display:block;}
-
-/* 체크하는곳 체크시 색상지정*/
-input[id="tab01"]:checked ~ .btn >label[for="tab01"]{
-background:blue;}
-input[id="tab02"]:checked ~ .btn >label[for="tab02"]{
-background:blue;}
-input[id="tab03"]:checked ~ .btn >label[for="tab03"]{
-background:blue;}
-
-
-}
-/* 자동롤링배너 */
-
-.wrap {
-            border: 1px solid;
-            display: flex; 
-            overflow: hidden;
-        }
-        .wrap .rolling-list ul {
-            padding : 0px;
-            display: flex;
-        }
-        .wrap .rolling-list ul li { 
-            box-sizing: border-box; 
-            display: flex; 
-            align-items: center; 
-            flex-shrink: 0; 
-        }
- 
-        .rolling-list.original {
-            animation: rollingleft1 90s linear infinite;
-        }
-        .rolling-list.clone {
-            animation: rollingleft2 90s linear infinite;
-        }
- 
- 	/*시간이 n 초일때 비율  */
-        @keyframes rollingleft1 {
-            0% { transform: translateX(0); }
-            50% { transform: translateX(-100%); }
-            50.01% { transform: translateX(100%); }
-            100% { transform: translateX(0); }
-        }
- 
-        @keyframes rollingleft2 {
-            0% { transition: translateX(0); }
-            100% { transform: translateX(-200%); }
-        }
-
-.btn1{
-    background-color: #A582CF; 
-    cursor:pointer;
-    margin-left:100px;
-    width:70px;
-    height:30px;
-    color: #fff;
-    border-radius:10px;
-  	text-align: center;
-	border-color:blue;
-}
-.btn1:hover {
-            border-color: aqua;
-            color: white;
-            box-shadow: 0 0.5em 0.5em -0.4em yellow;
-        }
-    </style>
-    
 <link rel="stylesheet"
-	href="${pageContext.request.contextPath}/resources/css/main/main.css">
+	href="${pageContext.request.contextPath}/resources/css/main/main.css?after">
 <script type="text/javascript">
 	function go_pet(){
 		alert('로그인 필요');
@@ -157,14 +51,6 @@ background:blue;}
 	</div>
 	
 	
-	
-	<div>
-	<div class="sns">
-	<a href="https://www.instagram.com">
-	<img src="resources/img/insta.jpg" width="100px" height="100px">
-	</a>
-	</div>
-	
 	<div class="footer">
 	<li>병원이름: 동물병원</li>
 	<li> 주소  : 인천광역시 부평구 시장로 7 5층</li>
@@ -172,13 +58,18 @@ background:blue;}
 	<li> 이메일:email@naver.com</li>
 	ⓒ2023.hospital name All rights reserved.
 </div>
-
 <div class="footer1">
 	<li>대표자: 김재준</li>
 	<li>대표자 전화번호:000-0000-0000</li>
 	<li>사업자 등록번호:000-00-00000</li>
 	</div>
+	
+	<div class="sns">
+	<a href="https://www.instagram.com">
+	<img src="resources/img/insta.jpg" width="100px" height="100px">
+	</a>
 	</div>
+	
   <div class="tab_content">
 <input type="radio" name="tabmenu" id="tab01" checked>
 <input type="radio" name="tabmenu" id="tab02" >

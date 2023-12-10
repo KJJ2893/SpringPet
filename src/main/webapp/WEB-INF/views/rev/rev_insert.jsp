@@ -7,8 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-     <form>
-     펫 정보 수정화면
-     </form>
+아
 </body>
 </html>

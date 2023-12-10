@@ -7,7 +7,7 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link rel="stylesheet"
-	href="${pageContext.request.contextPath}/resources/css/review/review.css">
+	href="${pageContext.request.contextPath}/resources/css/review/reviewlist.css?after">
 <script type="text/javascript">
 	function go(f){
 		var u_idx = f.u_idx.value;
@@ -23,24 +23,24 @@
 
 </script>
 </head>
-<body>
+<body style="background-image:url('resources/img/review.jpg')">
 	<div class="logo">
 		<a href="main_home.do"><img src="resources/img/hos logo.jpg" width="100px" height="100px"> </a>
 	</div>
 	<div class="top">
 		<form >
-			<div class="r_bt">
-				<input id="bt" type="button" value="리뷰쓰기" onclick="go(this.form)">
-				<input id="bt" type="button" value="목록으로" onclick="location.href='review_main.do'">
-			</div>
+		
+				<input class="bt1" type="button" value="리뷰쓰기" onclick="go(this.form)">
+				<input class="bt1" type="button" value="목록으로" onclick="location.href='review_main.do'">
+		
 			<div class="list">
-				<table border="1">
+				<table border="1" align="center">
 					<c:choose>
 						<c:when test="${empty list }">
 							<h2>작성한 리뷰가 없습니다.</h2>
 						</c:when>
 						<c:when test="${not empty list }">
-							<caption>:::리뷰:::</caption>
+							<caption><h2>리뷰</h2></caption>
 							<c:forEach var="vo" items="${list }">
 							<input type="hidden" name="u_idx" value="${vo.u_idx}">
 								<input type="hidden" value="${vo.r_idx}" name="r_idx">
@@ -60,7 +60,7 @@
 								</tr>
 								<tr>
 									<td colspan="2" align="right">
-										<input type="button" value="보기" onclick="location.href='view.do?r_idx=${vo.r_idx}'">
+										<input type="button" value="수정"  class="bt2" onclick="location.href='view.do?r_idx=${vo.r_idx}'">
 									</td>
 								</tr>
 							</c:forEach>

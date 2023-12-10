@@ -49,9 +49,9 @@
 	
 	<div class="qna_wrapperBox">
 	
-		<hr background-color="orange">
+		<hr>
 		<c:forEach var="qna" items="${list }">
-			<div class="listBox">
+			<div class="listBox" onclick="location.href='qna_view.do'">
 			<a href="qna_view?q_idx=${qna.q_idx }">
 				<div class="table">
 					<span class="th">번호</span>

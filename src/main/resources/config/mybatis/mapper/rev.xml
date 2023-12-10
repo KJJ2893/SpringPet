@@ -8,5 +8,15 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 select * from reservation
 </select>
 
+<!--예약등록하기  -->
+<insert id="rev_insert" parameterType="vo.RevVO">
+		INSERT INTO RESERVATION VALUES(
+			SEQ_RESERVATION_IDX.NEXTVAL,
+			#{u_idx},
+			#{rv_time},
+			#{rv_day}
+			
+		)
+	</insert>
 
 </mapper>
