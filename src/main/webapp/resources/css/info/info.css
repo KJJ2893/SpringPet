@@ -102,12 +102,18 @@
 	left: 500px;
 	
 }
+.top {
+    position:absolute;
+    top:20px;
+    left:400px;
 
+
+}
 
 .btn{
     background-color: #A582CF; 
     cursor:pointer;
-    margin-left:200px;
+    margin-left:100px;
     margin-top:20px;
     width:70px;
     height:30px;

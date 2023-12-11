@@ -1,13 +1,20 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+	<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<script type="text/javascript">
+function go_pet(){
+	alert('로그인 필요');
+	location.href="login_main.do";
+} // go_pet()
 
+</script>
 <link rel="stylesheet"
-	href="${pageContext.request.contextPath}/resources/css/info/info.css?after">
+	href="${pageContext.request.contextPath}/resources/css/info/info.css">
 </head>
 <body style="background-image:url('resources/img/infoimg.jpg')">
 	<div class="wrap">
@@ -17,13 +24,31 @@
 						<h1>MY PET DOC</h1>
 						<img src="resources/img/hos logo.jpg" width="100px" height="100px">
 					</a>
-				<div>
-				<input type="button"  class="btn" value="정보수정" onclick="location.href='check_up.do'">
-					<input type="button" class="btn" value="리뷰"  onclick="location.href='review_main.do'">
-					<input type="button" class="btn" value="QNA" onclick="location.href='qna_main.do'" >
-					<input type="button" class="btn" value="예약" onclick="location.href='rev_main.do'">
-				</div>
-			</div>
+</div>
+
+	<div class="top">
+	<input type="button" value="소개" class="btn"  onclick="location.href='info_main.do'"  >
+	<input type="button" value="공지" class="btn" onclick=""  >
+	<input type="button" value="리뷰" class="btn" onclick="location.href='review_main.do'"  >
+	<input type="button" value="QNA"  class="btn" onclick="location.href='qna_main.do'"  >
+	<input type="button" value="예약"  class="btn" onclick="location.href='rev_main.do'"  >
+	<c:choose>
+			<c:when test="${empty id}">
+				
+				<input type="button" value="펫 등록" class="btn"  onclick="go_pet()">
+				<input type="button" value="정보수정" class="btn"  onclick="go_pet()">
+				<input type="button" value="로그인"class="btn"   onclick="location.href='login_main.do'">
+				
+			</c:when>
+			<c:when test="${not empty id}">
+				
+				<input type="button" value="펫 등록" class="btn"  onclick="location.href='petinfo_main.do'">
+				<input type="button" value="정보수정" class="btn"  onclick="location.href='check_up.do'">
+				<input type="button" value="로그아웃" class="btn"   onclick="location.href='logout.do'">
+			</c:when>
+		</c:choose>
+	</div>
+			
 			<div class="intro_text">
 				<h1>병원 소개</h1>
 				<h3 class="contents1">

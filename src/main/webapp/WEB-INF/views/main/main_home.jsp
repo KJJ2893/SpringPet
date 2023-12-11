@@ -26,6 +26,8 @@
 <div class="logo">
 <a href="main_home.do"><img src="resources/img/hos logo.jpg" width="100px" height="100px"> </a>
 </div>
+<div class="logo1">우리동물병원
+</div>
 
 	<div class="top">
 	<input type="button" value="소개" class="btn1"  onclick="location.href='info_main.do'"  >
@@ -75,8 +77,8 @@
 <input type="radio" name="tabmenu" id="tab02" >
 <input type="radio" name="tabmenu" id="tab03" >
 
-<div class="conbox con1">
-<<<<<<< HEAD
+<%-- <div class="conbox con1">
+
 	<table>
 		<tr>
 			<th>작성자 : ${list.get(0).u_nickName }</th>
@@ -92,12 +94,12 @@
 					id="reviewContents" placeholder="${list.get(0).r_content }" readonly></textarea></td>
 		</tr>
 	</table>
-=======
 
 
 
 
->>>>>>> origin/1211wogns
+
+
 </div> 
 
 
@@ -136,7 +138,7 @@
 					id="reviewContents" placeholder="${list.get(2).r_content }" readonly></textarea></td>
 		</tr>
 	</table>
-</div>
+</div> --%>
 
 
 

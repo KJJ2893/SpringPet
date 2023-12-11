@@ -5,10 +5,12 @@ table { border-collapse: collapse;
 		width:850px;
 		height:400px;
 		background-color:yellow;}
+	
+	/*bt1 목록으로 버튼  */
 	.bt1{
 	position:absolute;
-	left:500px;
-	top:150px;
+	left:300px;
+	top:160px;
 	background-color: #A582CF; 
     cursor:pointer;
     color: #fff;
@@ -19,47 +21,31 @@ table { border-collapse: collapse;
 	height:30px;
 }
 
-
-
 .bt1:hover {
             border-color: aqua;
             color: white;
             box-shadow: 0 0.5em 0.5em -0.4em yellow;
         }
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	/* -------------------- */	
-		.bt2{
+        
+	.bt2{
 	position:absolute;
-	left:1170px;
-	top:80px;
+	left:600px;
+	top:160px;
 	background-color: #A582CF; 
     cursor:pointer;
     color: #fff;
     border-radius:10px;
 	border-color:blue;
-	margin:70px;
+	margin-left:70px;
 	width:100px;
 	height:30px;
-}
+	}
+ textarea{
+ 		 width:600px;
+       	 height:100px; }
 
-
-
-.bt2:hover {
-            border-color: aqua;
-            color: white;
-            box-shadow: 0 0.5em 0.5em -0.4em yellow;
-        }
-        
-        textarea{
-        width:600px;
-        height:100px;
-        }
+     	 
+       	
+       	 
+       	 
 		

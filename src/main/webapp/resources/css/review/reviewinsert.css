@@ -1,4 +1,34 @@
 @charset "UTF-8";
+
+.top {
+    position:absolute;
+    top:20px;
+    left:400px;
+}
+.logo1{
+	color:fuchsia;
+	font-family:fantasy;
+	font-size:30px;
+	position:absolute;
+	top:20px;
+	left:125px;
+}
+.btn1{
+    background-color: #A582CF; 
+    cursor:pointer;
+    margin-left:100px;
+    width:70px;
+    height:30px;
+    color: #fff;
+    border-radius:10px;
+  	text-align: center;
+	border-color:blue;
+}
+	
+
+
+
+
 table, th, td { border: solid orange; }
 
 table { border-collapse: collapse; 

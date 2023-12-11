@@ -6,6 +6,14 @@
 
 
 }
+.logo1{
+	color:fuchsia;
+	font-family:fantasy;
+	font-size:30px;
+	position:absolute;
+	top:20px;
+	left:125px;
+}
  .footer{
         position:absolute;
         top:1400px;}
@@ -146,4 +154,3 @@ background:blue;}
             color: white;
             box-shadow: 0 0.5em 0.5em -0.4em yellow;
         }
-}
