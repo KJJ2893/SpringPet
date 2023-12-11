@@ -4,7 +4,6 @@ import java.io.File;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -15,10 +14,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.multipart.MultipartFile;
 
 import dao.ReviewDAO;
-import util.PetListPaging;
 import util.ReviewListPaging;
 import vo.ReviewVO;
-import vo.UserVO;
 
 @Controller
 public class ReviewController {
@@ -38,9 +35,19 @@ public class ReviewController {
 	@RequestMapping("review_main.do")
 	public String review_main(Model model, String page) {
 		
-		List<ReviewVO> rlist = review_dao.selectReviews();
+//		List<ReviewVO> rlist = review_dao.selectReviews();
+		HashMap<String, Object> map = ReviewListPaging.getPaging(5, page, review_dao);
 		
-		model.addAttribute("rlist", rlist);
+		
+		model.addAttribute("rlist",map.get("rlist"));
+        model.addAttribute("pagingCount", map.get("pagingCount"));
+        model.addAttribute("minpage", map.get("minpage"));
+        model.addAttribute("nowpage", map.get("nowpage"));
+        model.addAttribute("maxpage", map.get("maxpage"));
+        model.addAttribute("jumpgingPage", map.get("jumpgingPage"));
+		
+		
+//		model.addAttribute("rlist", rlist);
 	
 		return VIEW_PATH+"review.jsp";
 	}

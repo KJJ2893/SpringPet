@@ -5,13 +5,13 @@ import java.util.List;
 
 import dao.ReviewDAO;
 import vo.ReviewVO;
-import vo.UserVO;
 
 public class ReviewListPaging {
+
 	// page_product_quantity = 페이지당 보여줄 상품리스트 개수
 	// nowpage = 요청된 페이지 인덱스 정보
 	// Object dao = 데이터 조회에 사용되는 연결객체
-	public static HashMap<String, Object> getPaging(int page_product_quantity, String nowpage, ReviewDAO dao, UserVO userData) {
+	public static HashMap<String, Object> getPaging(int page_product_quantity, String nowpage, ReviewDAO dao) {
 
 		// 한페이지에서 현재 페이지의 전 후 최대 페이지 개수
 		int onePageSideCount = 2;
@@ -51,22 +51,19 @@ public class ReviewListPaging {
 		}
 
 		// 전체 데이터 조회해서 goodsList에 데이터 저장 <!!!!조회문 여기 수정!!!!>
-		HashMap<String, Integer> pagingSource = new HashMap<String, Integer>();
-		pagingSource.put("nowpage", intnowpage);
-		pagingSource.put("OnepageView", page_product_quantity);
-		pagingSource.put("user_idx", userData.getU_idx());
-		
-		goodsList = dao.loginUserReviewList(pagingSource);
+		goodsList = dao.loginUserReviewList(intnowpage, page_product_quantity);
+
 		// 총 데이터 수량을 저장
-		goodsCount = dao.userReviewListCount(userData);
+		goodsCount = dao.TotalListCount();
 
 		// 총 데이터를 한페이지에 표시할 개수만큼 나누어서 그 값을 저장
 		pagingMaxTag = goodsCount / page_product_quantity;
 
 		// 한페이지에 표시할개수보다 페이지가 적을 때 맥스 페이지 1개 추가하는 조건문
-		
-		  if (goodsCount % page_product_quantity != 0) { pagingMaxTag++; }
-		 
+		if (goodsCount % page_product_quantity != 0) {
+			pagingMaxTag++;
+		}
+
 		minpage = 1;
 
 		// 1 2 3 4 5 6 7 8 9 10 에서//
@@ -81,16 +78,12 @@ public class ReviewListPaging {
 		maxpage = intnowpage + onePageSideCount;
 
 		// 위의 반대로 다음페이지 관련 설명은 위랑 같음
-		
-		  if (maxpage > pagingMaxTag) { 
-			  maxpage = pagingMaxTag; 
-			  }
-		  
-		  
-		  
-		  pagingData.put("list", goodsList);
-		  pagingData.put("pagingCount",pagingMaxTag);
-		 
+		if (maxpage > pagingMaxTag) {
+			maxpage = pagingMaxTag;
+		}
+		System.out.println("sdfdsd : "+goodsList.get(0).getR_idx());
+		pagingData.put("rlist", goodsList);
+		pagingData.put("pagingCount", pagingMaxTag);
 		pagingData.put("minpage", minpage);
 		pagingData.put("nowpage", intnowpage);
 		pagingData.put("maxpage", maxpage);

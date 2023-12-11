@@ -13,7 +13,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<!-- 리뷰 추가 -->
 	<insert id="insert" parameterType="vo.ReviewVO">
 		INSERT INTO REVIEW VALUES(
-			SEQ_REVIEW_IDX.NEXTVAL,
+			R_IDX.NEXTVAL,
 			#{u_idx},
 			#{r_content},
 			 TO_DATE('2023-11-30', 'YYYY-MM-DD'),
@@ -56,8 +56,12 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	
 	<select id="reviewInfo_ListCheck" resultType="vo.ReviewVO" parameterType="java.util.HashMap">
 		SELECT U_IDX, R_IDX, R_CONTENT, R_REGDATE, R_PHOTO FROM 
-		(SELECT * FROM (SELECT r.*, RANK() OVER(ORDER BY r.R_IDX ASC) AS "RANK" FROM REVIEW r)
+		(SELECT * FROM (SELECT r.*, RANK() OVER(ORDER BY r.R_IDX DESC) AS "RANK" FROM REVIEW r)
 		) WHERE "RANK" BETWEEN #{minPage} AND #{maxPage}
+	</select>
+	
+	<select id="totalListCount" resultType="int">
+		SELECT COUNT(*) FROM REVIEW 
 	</select>
 	
 </mapper>
