@@ -5,6 +5,8 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/resources/css/pet/petupdate.css?after">
 	<script type="text/javascript">
 	function isImageFile(input) {
 	    // 허용된 이미지 파일의 MIME 타입 배열
@@ -90,11 +92,34 @@
 		}
 	</script>
 </head>
-<body>
+<body class="body" 
+style="background-image:url('resources/img/petback.jpg');
+					background-repeat: no-repeat;
+					background-size:100%;
+					background-color:lime;">
+					
+					<a href="main_home.do"><img src="resources/img/hos logo.jpg" width="80px" height="80px"> </a>
+					
+							<div class="top">
+	<input type="button" value="소개" class="btn1"  onclick="location.href='info_main.do'"  >
+	<input type="button" value="공지" class="btn1" onclick=""  >
+	<input type="button" value="리뷰" class="btn1" onclick="location.href='review_main.do'"  >
+	<input type="button" value="QNA"  class="btn1" onclick="location.href='qna_main.do'"  >
+	<input type="button" value="예약"  class="btn1" onclick="location.href='rev_main.do'"  >
+	<c:choose>
+		
+			<c:when test="${not empty id}">
+				
+				<input type="button" value="펫 등록" class="btn1"  onclick="location.href='petinfo_main.do'">
+				<input type="button" value="정보수정" class="btn1"  onclick="location.href='check_up.do'">
+				<input type="button" value="로그아웃" class="btn1"   onclick="location.href='logout.do'">
+			</c:when>
+		</c:choose>
+	</div>
      <form method="POST" enctype="multipart/form-data">
      	<input type="hidden" name="p_idx" value="${vo.p_idx}">
      	<table border="1" align="center">
-     		<caption>::: 반려동물 정보 수정 :::</caption>
+     		<caption> <h2>반려동물 정보 수정하기</h2></caption>
      		<tr>
      			<th>반려동물 사진</th>
      			<td><img src="${pageContext.request.contextPath}/resources/petImg/${vo.p_photo}"
@@ -137,8 +162,8 @@
      		</tr>
      		<tr>
      			<td colspan="2" align="center">
-     			<input type="button" value="수정하기" onclick="update(this.form)">
-     			<input type="button" value="수정취소" onclick="location.href='petinfo_main.do'">
+     			<input type="button" value="수정하기"  class="btn" onclick="update(this.form)">
+     			<input type="button" value="수정취소"  class="btn" onclick="location.href='petinfo_main.do'">
      		</tr>
      	</table>
      </form>

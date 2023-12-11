@@ -17,11 +17,11 @@
 						<h1>MY PET DOC</h1>
 						<img src="resources/img/hos logo.jpg" width="100px" height="100px">
 					</a>
-				<div >
-				<input type="button"  class="btn" value="정보수정" onclick="check_up.do">
-					<input type="button" class="btn" value="리뷰" onclick="review_main.do">
-					<input type="button" class="btn" value="QNA" onclick="qna_form.do">
-					<input type="button" class="btn" value="예약" onclick="rev_main.do">
+				<div>
+				<input type="button"  class="btn" value="정보수정" onclick="location.href='check_up.do'">
+					<input type="button" class="btn" value="리뷰"  onclick="location.href='review_main.do'">
+					<input type="button" class="btn" value="QNA" onclick="location.href='qna_main.do'" >
+					<input type="button" class="btn" value="예약" onclick="location.href='rev_main.do'">
 				</div>
 			</div>
 			<div class="intro_text">

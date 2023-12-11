@@ -19,4 +19,8 @@ select * from reservation
 		)
 	</insert>
 
+<!-- 예약 삭제 -->
+    <delete id="rev_delete" parameterType="int">
+        DELETE FROM RESERVATION WHERE RV_IDX = #{rv_idx}
+    </delete>
 </mapper>

@@ -52,6 +52,19 @@ public class RevController {
 		}
 			return null;
 	}
+	@RequestMapping("rev_del.do")
+    public String delete(int rv_idx) {
+        System.out.println(rv_idx);
+
+       int res = rev_dao.delete(rv_idx);
+
+       if(res == 0) {
+           System.out.println("실패");
+           return null;
+       }
+        return "redirect:rev_main.do";
+
+    }
 }
 	
     

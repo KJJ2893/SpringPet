@@ -7,7 +7,7 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link rel="stylesheet"
-	href="${pageContext.request.contextPath}/resources/css/pet/pet.css">
+	href="${pageContext.request.contextPath}/resources/css/pet/pet.css?after">
 	<script type="text/javascript">
 		function petinfo_del(p_idx){
 			if(!confirm("반려동물 정보를 삭제하시겠습니까?")){
@@ -45,6 +45,31 @@ style="background-image:url('resources/img/petback.jpg');
 					<img src="${pageContext.request.contextPath}/resources/img/dog1.jpg">
 					
 				</div>
+				
+				<div class="top">
+	<input type="button" value="소개" class="btn1"  onclick="location.href='info_main.do'"  >
+	<input type="button" value="공지" class="btn1" onclick=""  >
+	<input type="button" value="리뷰" class="btn1" onclick="location.href='review_main.do'"  >
+	<input type="button" value="QNA"  class="btn1" onclick="location.href='qna_main.do'"  >
+	<input type="button" value="예약"  class="btn1" onclick="location.href='rev_main.do'"  >
+	<c:choose>
+			<c:when test="${empty id}">
+				
+				<input type="button" value="펫 등록" class="btn1"  onclick="go_pet()">
+				<input type="button" value="정보수정" class="btn1"  onclick="go_pet()">
+				<input type="button" value="로그인"class="btn1"   onclick="location.href='login_main.do'">
+				
+			</c:when>
+			<c:when test="${not empty id}">
+				
+				<input type="button" value="펫 등록" class="btn1"  onclick="location.href='petinfo_main.do'">
+				<input type="button" value="정보수정" class="btn1"  onclick="location.href='check_up.do'">
+				<input type="button" value="로그아웃" class="btn1"   onclick="location.href='logout.do'">
+			</c:when>
+		</c:choose>
+	</div>
+	
+				
      <form>
      <h1 align="center">마이 펫 리스트</h1>
      	
