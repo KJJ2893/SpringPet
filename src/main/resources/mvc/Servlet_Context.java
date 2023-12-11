@@ -47,8 +47,8 @@ public class Servlet_Context implements WebMvcConfigurer {
 //	  resolver.setSuffix(".jsp"); return resolver; }
 
 	@Bean
-	public MainController mainController() {
-		return new MainController();
+	public MainController mainController(ReviewDAO review_dao) {
+		return new MainController(review_dao);
 	}
 	
 	@Bean

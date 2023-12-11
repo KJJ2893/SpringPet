@@ -75,13 +75,61 @@
 <input type="radio" name="tabmenu" id="tab02" >
 <input type="radio" name="tabmenu" id="tab03" >
 
-<div class="conbox con1"><li>사람</li></div> 
+<div class="conbox con1">
+	<table>
+		<tr>
+			<th>작성자 : ${list.get(0).u_nickName }</th>
+			<th>작성일 : ${list.get(0).r_regdate }</th>
+		</tr>
+		<tr>
+			<td><img
+				src="${pageContext.request.contextPath}/resources/reviewImg/${list.get(0).r_photo}"
+				width="100" height="100"
+				onclick="openImage('${pageContext.request.contextPath}/resources/reviewImg/${list.get(0).r_photo}')"
+				style="cursor: pointer;"></td>
+			<td><textarea class="col-auto form-control"
+					id="reviewContents" placeholder="${list.get(0).r_content }" readonly></textarea></td>
+		</tr>
+	</table>
+</div> 
 
 
-<div class="conbox con2"><li>나무</li></div>
+<div class="conbox con2">
+	<table>
+		<tr>
+			<th>작성자 : ${list.get(1).u_nickName }</th>
+			<th>작성일 : ${list.get(1).r_regdate }</th>
+		</tr>
+		<tr>
+			<td><img
+				src="${pageContext.request.contextPath}/resources/reviewImg/${list.get(1).r_photo}"
+				width="100" height="100"
+				onclick="openImage('${pageContext.request.contextPath}/resources/reviewImg/${list.get(1).r_photo}')"
+				style="cursor: pointer;"></td>
+			<td><textarea class="col-auto form-control"
+					id="reviewContents" placeholder="${list.get(1).r_content }" readonly></textarea></td>
+		</tr>
+	</table>
+</div>
 
 
-<div class="conbox con3"><li>집</li></div>
+<div class="conbox con3">
+	<table>
+		<tr>
+			<th>작성자 : ${list.get(2).u_nickName }</th>
+			<th>작성일 : ${list.get(2).r_regdate }</th>
+		</tr>
+		<tr>
+			<td><img
+				src="${pageContext.request.contextPath}/resources/reviewImg/${list.get(2).r_photo}"
+				width="100" height="100"
+				onclick="openImage('${pageContext.request.contextPath}/resources/reviewImg/${list.get(2).r_photo}')"
+				style="cursor: pointer;"></td>
+			<td><textarea class="col-auto form-control"
+					id="reviewContents" placeholder="${list.get(2).r_content }" readonly></textarea></td>
+		</tr>
+	</table>
+</div>
 
 
 
