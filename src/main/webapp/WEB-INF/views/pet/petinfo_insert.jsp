@@ -6,7 +6,7 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link rel="stylesheet"
-	href="${pageContext.request.contextPath}/resources/css/pet/petinsert.css">
+	href="${pageContext.request.contextPath}/resources/css/pet/petinsert.css?after">
 <script src="resources/js/httpRequest.js"></script>
 	<script type="text/javascript">
 		function insert_send(f){
@@ -84,6 +84,28 @@
 style="background-image:url('resources/img/petback.jpg');
 					background-repeat: no-repeat;
 					background-size:100%;">
+					
+						<a href="main_home.do"><img src="resources/img/hos logo.jpg" width="80px" height="80px"> </a>
+					
+		<div class="top">
+	<input type="button" value="소개" class="btn1"  onclick="location.href='info_main.do'"  >
+	<input type="button" value="공지" class="btn1" onclick=""  >
+	<input type="button" value="리뷰" class="btn1" onclick="location.href='review_main.do'"  >
+	<input type="button" value="QNA"  class="btn1" onclick="location.href='qna_main.do'"  >
+	<input type="button" value="예약"  class="btn1" onclick="location.href='rev_main.do'"  >
+	<c:choose>
+			<c:when test="${not empty id}">
+				
+				<input type="button" value="펫 등록" class="btn1"  onclick="location.href='petinfo_main.do'">
+				<input type="button" value="정보수정" class="btn1"  onclick="location.href='check_up.do'">
+				<input type="button" value="로그아웃" class="btn1"   onclick="location.href='logout.do'">
+			</c:when>
+		</c:choose>
+	</div>			
+
+	
+	
+					
 	<form method="POST" enctype="multipart/form-data">
 		<table border="1" align="center">
 			<caption><h2>마이 펫 등록하기</h2></caption>
@@ -129,5 +151,7 @@ style="background-image:url('resources/img/petback.jpg');
 			</tr>
 		</table>
 	</form>
+	
+	
 </body>
 </html>

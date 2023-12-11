@@ -26,7 +26,7 @@
 <div class="logo">
 <a href="main_home.do"><img src="resources/img/hos logo.jpg" width="100px" height="100px"> </a>
 </div>
-	
+
 	<div class="top">
 	<input type="button" value="소개" class="btn1"  onclick="location.href='info_main.do'"  >
 	<input type="button" value="공지" class="btn1" onclick=""  >
@@ -76,6 +76,7 @@
 <input type="radio" name="tabmenu" id="tab03" >
 
 <div class="conbox con1">
+<<<<<<< HEAD
 	<table>
 		<tr>
 			<th>작성자 : ${list.get(0).u_nickName }</th>
@@ -91,6 +92,12 @@
 					id="reviewContents" placeholder="${list.get(0).r_content }" readonly></textarea></td>
 		</tr>
 	</table>
+=======
+
+
+
+
+>>>>>>> origin/1211wogns
 </div> 
 
 

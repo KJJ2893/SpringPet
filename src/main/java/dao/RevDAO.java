@@ -23,4 +23,8 @@ SqlSession sqlSession;
 		public int rev_insert(RevVO vo) {
 			return sqlSession.insert("r.rev_insert", vo);
 		}
+		// 예약  삭제
+        public int delete(int rv_idx) {
+            return sqlSession.delete("r.rev_delete",rv_idx);
+        }
 }
