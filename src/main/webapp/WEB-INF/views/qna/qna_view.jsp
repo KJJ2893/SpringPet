@@ -29,7 +29,7 @@
 
 	<div class="qna_wrapperBox">
 		<span class="qna_category">
-			<a href="qna_view?q_idx=${qna.q_title }"> 상세보기
+			${qna.q_title } 상세보기
 		</span>
 	</div>
 	
@@ -38,6 +38,6 @@
 	</div>
 <body>
 	view
-	${qvo }
+	${qna.idx }
 </body>
 </html>
