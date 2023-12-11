@@ -51,6 +51,7 @@ function go_pet(){
 			
 			<div class="intro_text">
 				<h1>병원 소개</h1>
+				
 				<h3 class="contents1">
 					환자를 우선으로 생각하는 따뜻한 마음<br>
 					전문적인 수의의료서비스<br>
@@ -60,6 +61,7 @@ function go_pet(){
 					끊임없이 연구하는 최상의 치료방법<br>
 					
 					</h3>
+					
 			</div>
 		</div>
 	</div>

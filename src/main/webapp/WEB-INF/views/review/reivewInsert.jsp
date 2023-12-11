@@ -6,6 +6,12 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<style>
+/*작성하기 취소하기 버튼  */
+.bt1{
+		background-color:orange;
+		 cursor:pointer;}
+</style>
 <link rel="stylesheet"
 	href="${pageContext.request.contextPath}/resources/css/review/reviewinsert.css">
 
@@ -46,7 +52,7 @@
 <a href="main_home.do">
 <img src="resources/img/hos logo.jpg" width="100px" height="100px">
 </a>
-<div class="logo1">우리동물병원
+<div class="logo1">MY PET DOC
 </div>
 <div class="top">
 	<input type="button" value="소개" class="btn1"  onclick="location.href='info_main.do'"  >

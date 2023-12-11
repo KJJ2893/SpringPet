@@ -115,9 +115,9 @@ background:blue;}
             box-sizing: border-box; 
             display: flex; 
             align-items: center; 
-            flex-shrink: 0; 
+            flex-shrink: 0; /* 크기 유 지 */
         }
- 
+ /* n초동안 무한반복 */
         .rolling-list.original {
             animation: rollingleft1 90s linear infinite;
         }
@@ -153,4 +153,5 @@ background:blue;}
             border-color: aqua;
             color: white;
             box-shadow: 0 0.5em 0.5em -0.4em yellow;
+            /* 그림자의 수평위치,그림자의 수직위치,그림자의 흐림,그림자의 확산,그림자색상 */
         }

@@ -61,7 +61,7 @@
 		<a href="main_home.do"><img src="resources/img/hos logo.jpg"
 			width="100px" height="100px"> </a>
 	</div>
-	<div class="logo1">우리동물병원
+	<div class="logo1">MY PET DOC
 </div>
 
 <div class="top">

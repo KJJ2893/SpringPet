@@ -21,6 +21,7 @@ table { border-collapse: collapse;
 
 
 }
+/* 상단버튼 */
 .btn1{
     background-color: #A582CF; 
     cursor:pointer;

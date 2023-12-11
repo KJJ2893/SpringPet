@@ -26,7 +26,7 @@
 <div class="logo">
 <a href="main_home.do"><img src="resources/img/hos logo.jpg" width="100px" height="100px"> </a>
 </div>
-<div class="logo1">우리동물병원
+<div class="logo1">My PET DOC
 </div>
 
 	<div class="top">
@@ -170,6 +170,7 @@
     </div>
     <script type="text/javascript">
         // 롤링 배너 복제본 생성
+        /*rolling-list 인것을 선택  */
         let roller = document.querySelector('.rolling-list');
         roller.id = 'roller1'; // 아이디 부여
  

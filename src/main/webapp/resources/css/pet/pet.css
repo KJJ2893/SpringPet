@@ -1,6 +1,6 @@
 @charset "UTF-8";
 
-
+/* 상단버튼 */
 .top {
     position:absolute;
     top:20px;
@@ -58,7 +58,7 @@ table { border-collapse: collapse;
  td {
      text-align: center;
 }
-
+/*이미지위치  */
 .leftimg{
 	
 	position:absolute;
