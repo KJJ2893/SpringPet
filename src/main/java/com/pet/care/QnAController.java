@@ -31,6 +31,7 @@ public class QnAController {
 	
 	public QnAController(QnaDAO qna_dao) {
 		this.qna_dao = qna_dao;
+		System.out.println("qnaController 생성자");
 	}
 
 	@RequestMapping("qna_form.do")
@@ -40,13 +41,17 @@ public class QnAController {
 	
 	@RequestMapping("qna_main.do")
 	public String qna_main(Model model) {
-		List<QnaVO> list = qna_dao.select_qnaList();
+		List<QnaVO> list = qna_dao.qna_selectList();
 		model.addAttribute("list", list);
 		return VIEW_PATH + "qna_main.jsp";
 	}
 	
 	@RequestMapping("qna_view.do")
-	public String qna_view() {
+	public String qna_view(Model model, int q_idx) {
+		//게시물 한건 조회
+		QnaVO qnaVO = qna_dao.selectOne(q_idx);
+		
+		model.addAttribute("qnaVO", qnaVO);
 		return VIEW_PATH + "qna_view.jsp";
 	}
 	
@@ -62,10 +67,10 @@ public class QnAController {
 		System.out.println(savePath);
 
 		MultipartFile file = vo.getQ_file();
-		MultipartFile movie = vo.getQ_movie();
+//		MultipartFile movie = vo.getQ_movie();
 
 		String filename = "no_file";
-		String moviename = "no_file";
+//		String moviename = "no_file";
 		
 		//file
 		if(!file.isEmpty()) {
@@ -83,34 +88,34 @@ public class QnAController {
 			try {
 				file.transferTo(saveFile);
 			} catch (Exception e) {
-				// TODO: handle exception
+				System.out.println("파일저장 안된거같어");
 			}
 		}
 		
 		vo.setQ_filename(filename);      
 		
-		//movie
-		if(!movie.isEmpty()) {
-			moviename = movie.getOriginalFilename();
-			
-			File saveMovie = new File(savePath, moviename);
-			if(!saveMovie.exists()) {
-				saveMovie.mkdirs();
-			}else {
-				long time = System.currentTimeMillis();
-				moviename = String.format("%d_%s",  time, moviename);
-				saveMovie = new File(savePath, moviename);
-			}
-			
-			try {
-				movie.transferTo(saveMovie);
-			} catch (Exception e) {
-				// TODO: handle exception
-			}
-		}
+		//movie 실행되지 않음
+//		if(!movie.isEmpty()) {
+//			moviename = movie.getOriginalFilename();
+//			
+//			File saveMovie = new File(savePath, moviename);
+//			if(!saveMovie.exists()) {
+//				saveMovie.mkdirs();
+//			}else {
+//				long time = System.currentTimeMillis();
+//				moviename = String.format("%d_%s",  time, moviename);
+//				saveMovie = new File(savePath, moviename);
+//			}
+//			
+//			try {
+//				movie.transferTo(saveMovie);
+//			} catch (Exception e) {
+//				// TODO: handle exception
+//			}
+//		}
 		
 		vo.setQ_filename(filename); 
-		vo.setQ_moviename(moviename); 
+//		vo.setQ_moviename(moviename); 
 		
 		int res = qna_dao.qna_insert(vo);
 		

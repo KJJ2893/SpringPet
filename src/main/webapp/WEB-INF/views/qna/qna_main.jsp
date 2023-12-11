@@ -16,6 +16,10 @@
 	function send_list_form(f){
 		
 	}
+	
+	function qna_view_function(q_idx){
+		
+	}
 </script>
 </head>
 <body>
@@ -52,7 +56,7 @@
 		<hr>
 		<c:forEach var="qna" items="${list }">
 			<div class="listBox" onclick="location.href='qna_view.do'">
-			<a href="qna_view?q_idx=${qna.q_idx }">
+			<a href="qna_view.do?q_idx=${qna.q_idx }">
 				<div class="table">
 					<span class="th">번호</span>
 					<span class="align">${qna.q_idx }</span>
@@ -67,7 +71,7 @@
 				</div> 
 			</a>
 			</div>
-			
+			<input type="button" onclick="location.href='qna_view.do?q_idx=${qna.q_idx}'">
 		</c:forEach>
 	</div>
 </body>

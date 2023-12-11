@@ -76,7 +76,7 @@
 				사진 업로드
 			</span>
 			<div class="qna_imgContainer"></div>
-				<input type="file" name="q_file" value="사진첨부" class="inputBtn">
+				<input type="file" name="q_file" value="사진첨부" class="inputBtn"	 multiple>
 			<p><strong>개당 업로드 용량 : 10MB, 용량을 준수하여 업로드 부탁드립니다</strong></p>
 		</div>
 			

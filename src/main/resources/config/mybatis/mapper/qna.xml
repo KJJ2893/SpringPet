@@ -31,11 +31,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 			#{q_moviename}
 		)
 	</insert>
-	
-	<select id="select_qnaList" resultType="vo.QnaVO">
-		select * from qna
-	</select>
-	
+		
 	<select id="qna_view" parameterType="int" resultType="vo.QnaVO">
 		select * from qna where q_idx=#{q_idx}
 	</select>
