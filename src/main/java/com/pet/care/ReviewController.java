@@ -2,7 +2,9 @@ package com.pet.care;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -37,6 +39,12 @@ public class ReviewController {
 		
 		model.addAttribute("list", list);
 		
+//		Map<String, ReviewVO> map = new HashMap<String, ReviewVO>();
+//		
+//		for(ReviewVO vo : list) {
+//			map.put("r"+num, vo);
+//		}
+//		
 		return VIEW_PATH+"review.jsp";
 	}
 	

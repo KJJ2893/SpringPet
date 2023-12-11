@@ -1,5 +1,10 @@
 Manifest-Version: 1.0
+<<<<<<< HEAD
 Built-By: Administrator
 Build-Jdk: 11.0.16.1
+=======
+Built-By: kjy14
+Build-Jdk: 11.0.19
+>>>>>>> origin/12-11-kjj
 Created-By: Maven Integration for Eclipse
 
