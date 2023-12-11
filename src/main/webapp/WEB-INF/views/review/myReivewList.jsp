@@ -60,7 +60,7 @@
 								</tr>
 								<tr>
 									<td colspan="2" align="right">
-										<input type="button" value="수정"  class="bt2" onclick="location.href='view.do?r_idx=${vo.r_idx}'">
+										<input type="button" value="수정"   onclick="location.href='view.do?r_idx=${vo.r_idx}'">
 									</td>
 								</tr>
 							</c:forEach>

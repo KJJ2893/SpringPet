@@ -15,7 +15,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.multipart.MultipartFile;
 
 import dao.ReviewDAO;
+import util.PetListPaging;
+import util.ReviewListPaging;
 import vo.ReviewVO;
+import vo.UserVO;
 
 @Controller
 public class ReviewController {
@@ -33,18 +36,12 @@ public class ReviewController {
 	
 	// 리뷰 목록 가기
 	@RequestMapping("review_main.do")
-	public String review_main(Model model) {
+	public String review_main(Model model, String page) {
 		
-		List<ReviewVO> list = review_dao.selectReviews();
+		List<ReviewVO> rlist = review_dao.selectReviews();
 		
-		model.addAttribute("list", list);
-		
-//		Map<String, ReviewVO> map = new HashMap<String, ReviewVO>();
-//		
-//		for(ReviewVO vo : list) {
-//			map.put("r"+num, vo);
-//		}
-//		
+		model.addAttribute("rlist", rlist);
+	
 		return VIEW_PATH+"review.jsp";
 	}
 	
@@ -110,7 +107,6 @@ public class ReviewController {
 	public String myReivewList(Model model, int u_idx) {
 		
 		List<ReviewVO> list = review_dao.selectMyList(u_idx);
-		
 		model.addAttribute("list", list);
 		
 		return VIEW_PATH+"myReivewList.jsp";

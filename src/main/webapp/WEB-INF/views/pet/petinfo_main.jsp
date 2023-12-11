@@ -119,6 +119,7 @@ style="background-image:url('resources/img/petback.jpg');
 	                </td>
 	             </tr>
              </c:forEach>
+             
              <!-- 여기서부터 페이징 -->
              <tr>
              <td colspan="6">

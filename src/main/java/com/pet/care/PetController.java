@@ -51,7 +51,7 @@ public class PetController {
         model.addAttribute("nowpage", map.get("nowpage"));
         model.addAttribute("maxpage", map.get("maxpage"));
         model.addAttribute("jumpgingPage", map.get("jumpgingPage"));
-//		model.addAttribute("list", list);		
+//		model.addAttribute("list", list);
 
 		return VIEW_PATH + "petinfo_main.jsp";
 		

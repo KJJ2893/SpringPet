@@ -49,4 +49,15 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 					WHERE R_IDX = #{r_idx} AND U_IDX = #{u_idx}
 	</update>
 	
+	<!-- 개인의 리뷰 수 조회 -->
+	<select id="reviewInfo_List" resultType="int">
+		SELECT COUNT(*) FROM REVIEW U_IDX = #{u_idx}
+	</select>
+	
+	<select id="reviewInfo_ListCheck" resultType="vo.ReviewVO" parameterType="java.util.HashMap">
+		SELECT U_IDX, R_IDX, R_CONTENT, R_REGDATE, R_PHOTO FROM 
+		(SELECT * FROM (SELECT r.*, RANK() OVER(ORDER BY r.R_IDX ASC) AS "RANK" FROM REVIEW r)
+		) WHERE "RANK" BETWEEN #{minPage} AND #{maxPage}
+	</select>
+	
 </mapper>

@@ -78,12 +78,12 @@
 			<div class="list">
 				<table border="1">
 					<c:choose>
-						<c:when test="${empty list }">
+						<c:when test="${empty rlist }">
 							<h2>작성된 리뷰가 없습니다.</h2>
 						</c:when>
-						<c:when test="${not empty list }">
+						<c:when test="${not empty rlist }">
 							<caption><h2>리뷰목록</h2></caption>
-							<c:forEach var="vo" items="${list }">
+							<c:forEach var="vo" items="${rlist }">
 								<tr>
 									<th>작성자 : ${vo.u_nickName }</th>
 									<th>작성일 : ${vo.r_regdate }</th>
@@ -99,6 +99,43 @@
 								</tr>
 								<input type="hidden" value="${vo.r_idx}" name="r_idx">
 							</c:forEach>
+							<!-- 페이징 -->
+							<tr>
+				             <td colspan="6">
+				               <div class="paging">
+									<c:if test="${nowpage!=1}">
+										<c:choose>
+											<c:when test="${nowpage>jumpgingPage}">
+												<a href="review_main.do?page=${nowpage-jumpgingPage}">◀</a>
+											</c:when>
+											<c:otherwise>
+												<a href="review_main.do?page=1">◀</a>
+											</c:otherwise>
+										</c:choose>
+									</c:if>
+									<c:forEach var="index" begin="${minpage}" end="${maxpage}" step="1">
+										<c:choose>
+											<c:when test="${index==nowpage}">
+												<a href="review_main.do?page=${index}" class="bolder">${index}</a>
+											</c:when>
+											<c:otherwise>
+												<a href="review_main.do?page=${index}">${index}</a>
+											</c:otherwise>
+										</c:choose>
+									</c:forEach>
+									<c:if test="${nowpage!=maxpage}">
+										<c:choose>
+											<c:when test="${nowpage<pagingCount-jumpgingPage}">
+												<a href="review_main.do?page=${nowpage+jumpgingPage}">▶</a>
+											</c:when>
+											<c:otherwise>
+												<a href="review_main.do?page=${pagingCount}">▶</a>
+											</c:otherwise>
+										</c:choose>
+									</c:if>
+								</div>	
+				             </td>
+				             </tr>
 						</c:when>
 					</c:choose>
 				</table>

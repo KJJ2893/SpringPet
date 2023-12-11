@@ -70,35 +70,31 @@
 	</a>
 	</div>
 	
-  <div class="tab_content">
+ <div class="tab_content">
 <input type="radio" name="tabmenu" id="tab01" checked>
 <input type="radio" name="tabmenu" id="tab02" >
 <input type="radio" name="tabmenu" id="tab03" >
 
-<div class="conbox con1">
-<<<<<<< HEAD
+<%-- 
+<c:forEach var="vo" items="${list }">
+<div class="conbox">
 	<table>
 		<tr>
-			<th>작성자 : ${list.get(0).u_nickName }</th>
-			<th>작성일 : ${list.get(0).r_regdate }</th>
+			<th>작성자 : ${vo.u_nickName }</th>
+			<th>작성일 : ${vo.r_regdate }</th>
 		</tr>
 		<tr>
 			<td><img
-				src="${pageContext.request.contextPath}/resources/reviewImg/${list.get(0).r_photo}"
+				src="${pageContext.request.contextPath}/resources/reviewImg/${vo.r_photo}"
 				width="100" height="100"
-				onclick="openImage('${pageContext.request.contextPath}/resources/reviewImg/${list.get(0).r_photo}')"
+				onclick="openImage('${pageContext.request.contextPath}/resources/reviewImg/${vo.r_photo}')"
 				style="cursor: pointer;"></td>
 			<td><textarea class="col-auto form-control"
-					id="reviewContents" placeholder="${list.get(0).r_content }" readonly></textarea></td>
+					id="reviewContents" placeholder="${vo.r_content }" readonly></textarea></td>
 		</tr>
 	</table>
-=======
-
-
-
-
->>>>>>> origin/1211wogns
-</div> 
+</div>
+</c:forEach>
 
 
 <div class="conbox con2">
@@ -136,7 +132,7 @@
 					id="reviewContents" placeholder="${list.get(2).r_content }" readonly></textarea></td>
 		</tr>
 	</table>
-</div>
+</div> --%>
 
 
 
@@ -144,6 +140,8 @@
 <label for="tab01"></label>
 <label for="tab02"></label>
 <label for="tab03"></label>
+</div>
+
 </div>
 
     

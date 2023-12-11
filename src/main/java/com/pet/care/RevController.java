@@ -40,6 +40,13 @@ public class RevController {
 		return VIEW_PATH + "rev_main.jsp";
 	}
 	
+	// 예약 하기
+	@RequestMapping("revInsert.do")
+	public String revInsert() {
+		return VIEW_PATH + "revInsert.do";
+	}
+	
+	// 예약 정보 저장
 	@RequestMapping("rev_insert.do")
 	public String rev_insert(RevVO vo) {
 		
@@ -52,6 +59,7 @@ public class RevController {
 		}
 			return null;
 	}
+	
 	@RequestMapping("rev_del.do")
     public String delete(int rv_idx) {
         System.out.println(rv_idx);
