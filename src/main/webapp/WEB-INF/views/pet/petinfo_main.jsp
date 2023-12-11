@@ -67,9 +67,20 @@ style="background-image:url('resources/img/petback.jpg');
              </tr>
              <c:forEach var="vo" items="${list}">
 	             <tr>	             
-	             	<td><img src="${pageContext.request.contextPath}/resources/petImg/${vo.p_photo}"
-	             	         width="100" height="100" onclick="openImage('${pageContext.request.contextPath}/resources/petImg/${vo.p_photo}')"
-	             	         style="cursor: pointer;">
+	             	<td>
+	             		<c:choose>
+	             			<c:when test="${vo.p_photo == 'no_file' }">
+	             				<!-- 이미지를 등록하지 않으면 나오는 기본 이미지 -->
+           						 <img src="${pageContext.request.contextPath}/resources/petImg/defaultImg.jpg"
+                					  width="100" height="100" onclick="openImage('${pageContext.request.contextPath}/resources/petImg/defaultImg.jpg')"
+                					  style="cursor: pointer;">
+	             			</c:when>
+	             			<c:otherwise>
+	             				<img src="${pageContext.request.contextPath}/resources/petImg/${vo.p_photo}"
+	             	                 width="100" height="100" onclick="openImage('${pageContext.request.contextPath}/resources/petImg/${vo.p_photo}')"
+	             	          		 style="cursor: pointer;">
+	             			</c:otherwise>
+	             		</c:choose>
 	             	</td>
 	                <td><h5>${vo.p_name }</h5></td>
 	                <td><h5>${vo.p_type }</h5></td>
@@ -83,6 +94,7 @@ style="background-image:url('resources/img/petback.jpg');
 	                </td>
 	             </tr>
              </c:forEach>
+             <!-- 여기서부터 페이징 -->
              <tr>
              <td colspan="6">
                <div class="paging">
