@@ -47,18 +47,20 @@
 			</div>
 		</div> <!-- 헤더 -->
 		
+		<div class="immg">
+			<img src="${pageContext.request.contextPath}/resources/img/mainimg.jpg">
+		</div>
+		
+		<div class="line1"></div>
+		
 		<div class="mid">
-			<ul class="midd">
-			<li><div class="tab_content">
-				
-				<div class="slider">
+        <div class="tab_content">
+        	<div class="slider">
+        		<h2>리뷰</h2>
 					<c:if test="${list != null }">
 					<c:forEach var="vo" items="${list }">
 			        <div class="slide">
 			          	<table border="1" align="left">
-			          		<tr>
-			          		<th colspan="2"><h6>${vo.u_nickName }</h6></th>
-			          		</tr>
 			          		<tr>
 							<c:choose>
 								<c:when test="${vo.r_photo}!='no_file' || ${vo.r_photo}!=null">
@@ -68,13 +70,16 @@
 										width="100" height="100"></td>
 										</c:when>
 										<c:otherwise>
-										<td><img
+										<td id="timg"><img
 										src="${pageContext.request.contextPath}/resources/petImg/defaultImg.jpg"
 										width="100" height="100"></td>
 										</c:otherwise>
 										</c:choose>
-									<td><textarea class="col-auto form-control" width="100px;"
+									<td><textarea class="col-auto form-control"
 											id="reviewContents" placeholder="${vo.r_content }" readonly></textarea></td>
+			          		</tr>
+			          		<tr>
+			          			<th colspan="2" align="right">${vo.u_nickName}</th>
 			          		</tr>
 			          	</table>
 			        </div>
@@ -85,45 +90,56 @@
 		    		리뷰 없음
 		    	</c:if>
 		    	</div>
-		    		
-		    	
-				
-			</div></li>
-			
-			<li><div class="Qna">
+          <div class="qna">
+              <h2>자주 묻는 질문</h2>
+              <hr>
 				<ul>
+					<li>공지</li>
+					<li>공지</li>
 					<li>자주묻는 질문</li>
 					<li>자주묻는 질문</li>
 					<li>자주묻는 질문</li>
 				</ul>
-			</div></li>
-			</ul>
-			
-			<div class="banner">
-				
-		    </div>
-			
-		</div>
-	
-	
+			</div>
+          </div>
+        </div>
+        
+        <div class="line1"></div>
+        
+        <div class="where">
+        	<div class="here">
+        		<h2 align="left">찾아 오시는 길</h2>
+       			<p>부평역 지하상가 21-B출구<br>
+       			지하철 - 1호선, 인천1호선 <br>
+       			버스 - 90, 1, 123, 55<br>
+       			
+       			부평역에서 도보로 5분<br>
+       			주차 가능<br></p>
+      		</div>
+     		<div class="mapp">
+       			<img src="${pageContext.request.contextPath}/resources/img/mapp.jpg">
+       		</div>
+        </div>
+        
+        <div class="line"></div>
+      
 	<div class="footer">
-	<li>병원이름: 동물병원</li>
-	<li> 주소  : 인천광역시 부평구 시장로 7 5층</li>
-	<li>전화번호: 032-262-5890</li>
-	<li> 이메일:email@naver.com</li>
-	ⓒ2023.hospital name All rights reserved.
-</div>
-<div class="footer1">
-	<li>대표자: 김재준</li>
-	<li>대표자 전화번호:000-0000-0000</li>
-	<li>사업자 등록번호:000-00-00000</li>
-	</div>
+        <div>멍이 냥이 동물병원</div>
+        <div id="info">
+          CEO. 김가나다 <br>
+          Addr. 인천광역시 부평구 시장로 7 MH타워 5층 Fax/Tel. <br>
+          032-262-5890 <br>
+          ⓒ2023.hospital name All rights reserved.
+        </div>
+        <div class="sns">
+			<a href="https://www.instagram.com">
+				<img src="resources/img/insta.jpg" width="100px" height="100px">
+			</a>
+		</div>
+      </div>
+    </div>
 	
-	<div class="sns">
-	<a href="https://www.instagram.com">
-	<img src="resources/img/insta.jpg" width="100px" height="100px">
-	</a>
-	</div>
+	
 	
  
 
