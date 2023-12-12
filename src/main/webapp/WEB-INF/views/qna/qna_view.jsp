@@ -75,46 +75,47 @@
 	</div>
 	
 	<div class="qna_wrapperBox">
-		<table border="1">
-			<tr>
-				<th>제목</th>
-				<td>${qnaVO.q_title}</td>
-			</tr>
-			<tr>
-				<th>작성자</th>
-				<td>${qnaVO.q_idx }</td>
-			</tr>
-			<tr>
-				<th>작성일</th>
-				<td>${qnaVO.q_regdate }</td>
-			</tr>
-			<tr>
-				<th>사진</th>
-				<td>
+	
+		<hr />
+		<div class="listBox">
+			<div class="table">
+				<span class="th">제목</span>
+				<span class="align">${qnaVO.q_title}</span>
+			</div>
+			
+			<div class="table">
+				<span class="th">번호</span>
+				<span class="align">${qnaVO.q_idx }</span>
+			</div>
+			
+			<div class="table">
+				<span class="th">일자</span>
+				<span class="align">${qnaVO.q_regdate }</span>
+			</div>
+			
+			<div class="table">
+				<span class="th">내용</span>
+				<span class="align" width="500px" height="200px">
+					<div class="align">
 					<img src="${pageContext.request.contextPath}/resources/upload/qna/${qnaVO.q_filename}"
-					width="200px" height="200px">
-				</td>
-			</tr>
+					width="300px" height="300px">
+					</div>
+				</span>
+				<div class="align">${qnaVO.q_content }</div>
+			</div>
 			
+			<div class="table">
+				<span class="th">비밀번호</span>
+				<spqn class="align">	
+					<input type="text" id="c_pwd" placeholder="비밀번호를 입력하세요">
+				</spqn>
+			</div>
 			
-			<tr>
-				<th>내용</th>
-				<td width="500px" height="200px">${qnaVO.q_content }</td>
-			</tr>
-			<tr>
-				<th>비밀번호</th>
-				<td><input type="text" id="c_pwd"></td>
-			</tr>
-			<tr>
-				<td colspan="2">
-				<!-- 수정 -->
-					<img src="${pageContext.request.contextPath}/resources/img/testttt.png1" alt="수정" width="10px" height="10px" onclick="qna_edit_form()">
-				<!-- 삭제 -->
-					<img src="${pageContext.request.contextPath}/resources/img/testttt.png" width="10px" height="10px" onclick="qna_del()">
-				</td>
-			</tr>
-			
-		</table>
+			<div class="qna_category">
+				<input type="button" value="수정" class="Btn" onclick="qna_edit_form()">
+				<input type="button" value="삭제" class="Btn" onclick="qna_del()">
+			</div>
+		</div>
 	</div>
 </body>
 </html>

@@ -51,7 +51,7 @@
 		</span>
 	</div>	
 	<div class="qna_wrapperBox">
-		<input type="text" value="${id.u_nickName}" > <!-- 작성자 hidden -->
+		<input type="text" value="${id.u_idx}" > <!-- 작성자 hidden -->
 	</div>
 	
 	<form enctype="multipart/form-data">
@@ -65,11 +65,6 @@
 			</div>
 		</div>
 		
-		<div class="qna_wrapperBox"> 
-			<span class="qna_category">태그 입력</span>
-			<input class="titleBox" placeholder="태그를 입력해주세요">
-		</div>
-		
 		<!-- 사진, 동영상 첨부파일 업로드 폼 -->
 		<div class="qna_wrapperBox">
 			<span class="qna_category">
@@ -80,15 +75,6 @@
 			<p><strong>개당 업로드 용량 : 10MB, 용량을 준수하여 업로드 부탁드립니다</strong></p>
 		</div>
 			
-		<div class="qna_wrapperBox">
-			<span class="qna_category">
-				동영상 업로드
-			</span>
-			<div class="qna_imgContainer"></div>
-				<input type="file" name="q_movie" value="동영상첨부" class="inputBtn">
-				<p><strong>개당 업로드 용량 : 60MB, 동영상은 최대 1개 업로드 가능합니다</strong></p>
-		</div>
-	
 		<div class="qna_wrapperBox">
 			<span>
 				<input type="button" value="글 등록하기" class="inputBtn" onclick="send(this.form);">
