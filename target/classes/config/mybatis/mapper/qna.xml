@@ -6,7 +6,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 	<insert id="qna_insert" parameterType="vo.QnaVO">
 		INSERT INTO QNA VALUES(
-			SEQ_QNA_IDX.NEXTVAL,
+			Q_IDX.NEXTVAL,
 			#{u_idx},
 			#{q_title},
 			#{q_content},
@@ -22,7 +22,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	
 	<insert id="insert_qna2" parameterType="vo.QnaVO">
 		INSERT INTO qna VALUES (
-			seq_qna_idx.nextval,
+			Q_IDX.nextval,
 			#{u_idx},
 			#{q_title},
 			#{q_content},

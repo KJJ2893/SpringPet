@@ -16,7 +16,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 			R_IDX.NEXTVAL,
 			#{u_idx},
 			#{r_content},
-			 TO_DATE('2023-11-30', 'YYYY-MM-DD'),
+			 sysdate,
 			#{r_photo}
 		)
 	</insert>
