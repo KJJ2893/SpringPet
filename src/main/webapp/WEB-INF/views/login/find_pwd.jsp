@@ -5,6 +5,11 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<style>
+.checkbtn{
+	cursor:pointer;
+}
+</style>
 <link rel="stylesheet"
 	href="${pageContext.request.contextPath}/resources/css/login/find_pwd.css">
 <script src="resources/js/httpRequest.js"></script>
@@ -67,7 +72,7 @@
 			<form id="find_form">
 				<input type="text" name="u_name" placeholder="Name">
 				<input type="text" name="u_email" placeholder="Email">
-				<input type="button" value="Find!!" onclick="send(this.form)">
+				<input type="button" class="checkbtn" value="Find!!" onclick="send(this.form)">
 			</form>
 		</div>
 	</div>

@@ -60,6 +60,7 @@ body{
     font-size: 16px;
     background-color: #A582CF; /* 버튼 배경색 */
     margin-top: 20px;
+    cursor:pointer;
     
 }
 /* 기존의 checkbox를 없애고 label를 이용하여  디자인 시안과 동일하게 변경시켜줍니다. */

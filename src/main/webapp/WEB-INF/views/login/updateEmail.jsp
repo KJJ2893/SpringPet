@@ -5,6 +5,11 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<style>
+.checkbtn{
+	cursor:pointer;
+}
+</style>
 <link rel="stylesheet"
 	href="${pageContext.request.contextPath}/resources/css/login/update.css">
 <script src="resources/js/httpRequest.js"></script>
@@ -81,9 +86,9 @@
 				
 				<h3>새로운 이메일을 입력해주세요.</h3>
 				<input id="u_email" name="u_email" placeholder="Email" onchange="che()"> 
-				<input type="button" id="check_email" value="중복확인" onclick="emailCheck(this.form)">
+				<input type="button" class="checkbtn" id="check_email" value="중복확인" onclick="emailCheck(this.form)">
 			</div>
-			<input type="button" value="완료" onclick="done(this.form)">
+			<input type="button" class="checkbtn" value="완료" onclick="done(this.form)">
 		</form>
 		</div>
 	

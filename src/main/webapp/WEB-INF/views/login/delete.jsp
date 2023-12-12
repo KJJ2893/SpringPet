@@ -4,7 +4,13 @@
 <html>
 <head>
 <meta charset="UTF-8">
+
 <title>Insert title here</title>
+<style>
+.checkbtn{
+	cursor:pointer;
+}
+</style>
 <link rel="stylesheet"
 	href="${pageContext.request.contextPath}/resources/css/login/update.css">
 <script type="text/javascript">
@@ -37,7 +43,7 @@
 				<h4>회원 탈퇴시 가입시 사용한 모든 정보와 <br>
 				이용 내역이 사라집니다.?</h4>
 			</div>
-			<input type="button" value="탈퇴하기" onclick="done(this.form)">
+			<input type="button" class="checkbtn" value="탈퇴하기" onclick="done(this.form)">
 		</form>
 		</div>
 </body>

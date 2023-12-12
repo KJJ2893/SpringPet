@@ -5,6 +5,11 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<style>
+.checkbtn{
+	cursor:pointer;
+}
+</style>
 <link rel="stylesheet"
 	href="${pageContext.request.contextPath}/resources/css/login/find_idCheck.css">
 </head>
@@ -25,7 +30,7 @@
 			<form id="id_form">
 				<h3 align="center"></h3>
 				<h3 align="center">${u_pwd}</h3>
-				<input type="button" value="로그인 하러가기" onclick="location.href='login_main.do'">
+				<input type="button" class="checkbtn" value="로그인 하러가기" onclick="location.href='login_main.do'">
 			</form>
 		</div>
 	</div>

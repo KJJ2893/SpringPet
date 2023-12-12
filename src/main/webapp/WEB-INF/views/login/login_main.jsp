@@ -6,6 +6,11 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<style>
+.checkbtn{
+	cursor:pointer;
+}
+</style>
 <link rel="stylesheet"
 	href="${pageContext.request.contextPath}/resources/css/login/login.css">
 <script src="resources/js/httpRequest.js"></script>
@@ -84,7 +89,7 @@
 					<a href="find_pwd.do" class="findPwd">비밀번호 찾기</a> |
 					<a href="regster_insert.do" class="reg_a">회원가입</a> 
 				</div>
-				<input type="button" value="Login" onclick="send(this.form)">
+				<input type="button" class="checkbtn" value="Login" onclick="send(this.form)">
 			</form>
 		</div>
 	</div>

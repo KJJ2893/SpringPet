@@ -47,7 +47,7 @@
 
 </style>
 <link rel="stylesheet"
-	href="${pageContext.request.contextPath}/resources/css/review/reviewlist.css?after">
+	href="${pageContext.request.contextPath}/resources/css/review/reviewlist.css">
 <script type="text/javascript">
 	function go(f){
 		var u_idx = f.u_idx.value;
@@ -129,11 +129,11 @@
 								</tr>
 								<tr>
 									<td colspan="2" align="right">
-<<<<<<< HEAD
-										<input type="button" value="수정"   onclick="location.href='view.do?r_idx=${vo.r_idx}'">
-=======
+
+										
+
 										<input type="button"  value="수정" class="btn2" onclick="location.href='view.do?r_idx=${vo.r_idx}'">
->>>>>>> origin/1211_JIN_dClass
+
 									</td>
 								</tr>
 							</c:forEach>

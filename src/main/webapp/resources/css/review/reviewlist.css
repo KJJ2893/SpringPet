@@ -9,8 +9,8 @@ table { border-collapse: collapse;
 	/*bt1 목록으로 버튼  */
 	.bt1{
 	position:absolute;
-	left:300px;
-	top:160px;
+	left:500px;
+	top:130px;
 	background-color: #A582CF; 
     cursor:pointer;
     color: #fff;
@@ -42,7 +42,7 @@ table { border-collapse: collapse;
 	}
  textarea{
  		 width:600px;
-       	 height:100px; }
+       	 height:200px; }
 
      	 
        	

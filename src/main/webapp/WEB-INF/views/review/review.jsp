@@ -119,7 +119,7 @@ function go_pet(){
 							</c:forEach>
 							<!-- 페이징 -->
 							<tr>
-				             <td colspan="6">
+				             <td colspan="6"  style="text-align: center;">
 				               <div class="paging">
 									<c:if test="${nowpage!=1}">
 										<c:choose>
@@ -127,7 +127,7 @@ function go_pet(){
 												<a href="review_main.do?page=${nowpage-jumpgingPage}">◀</a>
 											</c:when>
 											<c:otherwise>
-												<a href="review_main.do?page=1">◀</a>
+												<a href="review_main.do?page=1" >◀</a>
 											</c:otherwise>
 										</c:choose>
 									</c:if>
@@ -160,5 +160,6 @@ function go_pet(){
 			</div>
 		</form>
 	</div>
+	
 </body>
 </html>

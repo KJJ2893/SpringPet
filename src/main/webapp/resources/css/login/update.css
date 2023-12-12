@@ -57,7 +57,7 @@ body{
     
 }
 
-.update > input{ /* 중복체크 버튼 */
+ /* .update > input{ 중복체크 버튼
 	width: 76%;
     height: 48px;
     padding: 0 auto;
@@ -72,7 +72,7 @@ body{
 }
 
 
-.update > input[type="button"]{ /* 중복체크 버튼 */
+ .update > input[type="button"]{ 중복체크 버튼
 	width: 20%;
     height: 48px;
     padding: 0 auto;
@@ -84,22 +84,24 @@ body{
     color: #535159;
     font-size: 13px;
 	font-weight: bold;
-}
+	
+}  
 
-#update_form > input::placeholder{ /* 입력창의 가이드 글자 */
-    color: #535159; /* 글자색 */
+#update_form > input::placeholder{ 입력창의 가이드 글자
+    color: #535159; 글자색
 }
-#update_form > input[type="button"]{ /* 버튼 */
-    color: #171717; /* 버튼 글자색 */
+ #update_form > input[type="button"]{ 버튼
+    color: #171717; 버튼 글자색
     font-size: 16px;
-    background-color: #A582CF; /* 버튼 배경색 */
+    background-color: #A582CF; 버튼 배경색
     margin-top: 20px;
-    
-}
+    cursor:pointer;
+} 
 
-/*버튼 눌리는 효과*/
-#update_form > input[type="button"]:active {
+버튼 눌리는 효과
+  #update_form > input[type="button"]:active {
     box-shadow: inset -2px -2px  #6B4C73, inset 2px 2px 2px #6B4C73; 
     cursor: pointer;
+}  */
 
-}
+
