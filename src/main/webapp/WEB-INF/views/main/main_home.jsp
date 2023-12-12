@@ -50,30 +50,43 @@
 		<div class="mid">
 			<ul class="midd">
 			<li><div class="tab_content">
-
+				
 				<div class="slider">
+					<c:if test="${list != null }">
+					<c:forEach var="vo" items="${list }">
 			        <div class="slide">
-			          	<table border="1" align="center">
+			          	<table border="1" align="left">
 			          		<tr>
-			          		<th>리뷰1</th>
+			          		<th colspan="2"><h6>${vo.u_nickName }</h6></th>
 			          		</tr>
 			          		<tr>
-			          		<td>가가가가</td>
+							<c:choose>
+								<c:when test="${vo.r_photo}!='no_file' || ${vo.r_photo}!=null">
+								
+									<td><img
+										src="${pageContext.request.contextPath}/resources/reviewImg/${vo.r_photo}"
+										width="100" height="100"></td>
+										</c:when>
+										<c:otherwise>
+										<td><img
+										src="${pageContext.request.contextPath}/resources/petImg/defaultImg.jpg"
+										width="100" height="100"></td>
+										</c:otherwise>
+										</c:choose>
+									<td><textarea class="col-auto form-control" width="100px;"
+											id="reviewContents" placeholder="${vo.r_content }" readonly></textarea></td>
 			          		</tr>
-			          		
 			          	</table>
 			        </div>
-			        <div class="slide">
-			            <table>
-			          		<tr>리뷰2</tr>
-			          	</table>
-			        </div>
-			        <div class="slide">
-			            <table>
-			          		<tr>리뷰3</tr>
-			          	</table>
-			        </div>
+			        </c:forEach>
+			   
+		    	</c:if>
+		    	<c:if test="${list == null }">
+		    		리뷰 없음
+		    	</c:if>
 		    	</div>
+		    		
+		    	
 				
 			</div></li>
 			
