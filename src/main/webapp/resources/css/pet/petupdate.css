@@ -33,3 +33,20 @@ table { border-collapse: collapse;
   	text-align: center;
 	border-color:blue;
 }
+
+.footer{
+	position:absolute;
+	left:10px;
+	top:850px;
+	
+}
+.footer1{
+	position:absolute;
+	left: 450px;
+	top:850px;
+}
+.sns{
+	position:absolute;
+	left: 770px;
+	top:850px;
+}

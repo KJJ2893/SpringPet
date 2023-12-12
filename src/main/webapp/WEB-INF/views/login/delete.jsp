@@ -17,7 +17,10 @@
 	}
 </script>
 </head>
-<body>
+<body class="body"  style="background-image:url('resources/img/loginback.jpg');
+					background-repeat: no-repeat;
+					background-size:100%;
+					background-color:fuchsia;">
 	<div class="header_wrapper">
 			<div class="logo_wrapper">
 				<a href="main_home.do" class="logo">

@@ -161,7 +161,7 @@ style="background-image:url('resources/img/petback.jpg');
           
      </form>
    
-     <div class="footer">
+	<div class="footer">
 	<li>병원이름: 동물병원</li>
 	<li> 주소  : 인천광역시 부평구 시장로 7 5층</li>
 	<li>전화번호: 032-262-5890</li>
@@ -177,6 +177,12 @@ style="background-image:url('resources/img/petback.jpg');
 	<div class="sns">
 	<a href="https://www.instagram.com">
 	<img src="resources/img/insta.jpg" width="100px" height="100px">
+	</a>
+	<a href="https://www.kakaocorp.com/page/service/service/KakaoTalk">
+	<img src="resources/img/talk.jpg" width="100px" height="100px">
+	</a>
+	<a href="https://www.facebook.com/">
+	<img src="resources/img/facebook.jpg" width="100px" height="100px">
 	</a>
 	</div>
      

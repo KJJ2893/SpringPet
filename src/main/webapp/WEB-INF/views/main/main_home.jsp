@@ -21,8 +21,8 @@
 <body class="body"  style="background-image:url('resources/img/back.jpg');
 					background-repeat: no-repeat;
 					background-size:100%;
-					background-color:fuchsia;
-					">
+					background-color:fuchsia;"
+					>
 <div class="logo">
 <a href="main_home.do"><img src="resources/img/hos logo.jpg" width="100px" height="100px"> </a>
 </div>
@@ -70,6 +70,12 @@
 	<a href="https://www.instagram.com">
 	<img src="resources/img/insta.jpg" width="100px" height="100px">
 	</a>
+	<a href="https://www.kakaocorp.com/page/service/service/KakaoTalk">
+	<img src="resources/img/talk.jpg" width="100px" height="100px">
+	</a>
+	<a href="https://www.facebook.com/">
+	<img src="resources/img/facebook.jpg" width="100px" height="100px">
+	</a>
 	</div>
 	
  <div class="tab_content">
@@ -81,10 +87,10 @@
 <%-- 
 <c:forEach var="vo" items="${list }">
 <div class="conbox">
-=======
+
 <%-- <div class="conbox con1">
 
->>>>>>> origin/1211_JIN_dClass
+
 	<table>
 		<tr>
 			<th>작성자 : ${vo.u_nickName }</th>

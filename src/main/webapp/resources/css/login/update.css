@@ -37,6 +37,7 @@ body{
     padding: 40px;
     box-sizing: border-box;
    	margin: 0 auto;
+   	
 }
 
 .update_wrapper > h2{ /* Login 글자 */
@@ -53,6 +54,7 @@ body{
     margin-bottom: 16px;
     border-radius: 6px;
     background-color: #E7DAFF; /* 입력창 색 */
+    
 }
 
 .update > input{ /* 중복체크 버튼 */

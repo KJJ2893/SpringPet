@@ -12,50 +12,83 @@
 	function upNname(){
 		
 		var url = "updateNname.do";
-		var size = "width=450px;, height=500px;, scrollbars=no;";
-		
-		window.open(url, '닉네임변경', size);
+	    var size = "width=450px, height=500px, scrollbars=no";
+
+	    var leftPosition = (window.screen.width - 450) / 2; // 화면 가로 중앙
+	    var topPosition = (window.screen.height - 500) / 2; // 화면 세로 중앙
+
+	    var windowFeatures = size + ", top=" + topPosition + ", left=" + leftPosition;
+
+	    window.open(url, '닉네임변경', windowFeatures);
 	}
 	
 	function upName(){
-		var url = "updateName.do";
-		var size = "width=450px;, height=500px;, scrollbars=no;";
-		
-		window.open(url, '이름변경', size);
+		var url = "updateNname.do";
+	    var size = "width=450px, height=500px, scrollbars=no";
+
+	    var leftPosition = (window.screen.width - 450) / 2; // 화면 가로 중앙
+	    var topPosition = (window.screen.height - 500) / 2; // 화면 세로 중앙
+
+	    var windowFeatures = size + ", top=" + topPosition + ", left=" + leftPosition;
+
+	    window.open(url, '이름변경', windowFeatures);
 	}
 	
 	function upEmail(){
-		var url = "updateEmail.do";
-		var size = "width=450px;, height=500px;, scrollbars=no;";
-		
-		window.open(url, '이메일변경', size);
+		var url = "updateNname.do";
+	    var size = "width=450px, height=500px, scrollbars=no";
+
+	    var leftPosition = (window.screen.width - 450) / 2; // 화면 가로 중앙
+	    var topPosition = (window.screen.height - 500) / 2; // 화면 세로 중앙
+
+	    var windowFeatures = size + ", top=" + topPosition + ", left=" + leftPosition;
+
+	    window.open(url, '이메일변경', windowFeatures);
 	}
 	
 	function upPwd(){
-		var url = "updatePwd.do";
-		var size = "width=450px;, height=500px;, scrollbars=no;";
-		
-		window.open(url, '비밀번호변경', size);
+		var url = "updateNname.do";
+	    var size = "width=450px, height=500px, scrollbars=no";
+
+	    var leftPosition = (window.screen.width - 450) / 2; // 화면 가로 중앙
+	    var topPosition = (window.screen.height - 500) / 2; // 화면 세로 중앙
+
+	    var windowFeatures = size + ", top=" + topPosition + ", left=" + leftPosition;
+
+	    window.open(url, '비밀번호변경', windowFeatures);
 	}
 	
 	function upTel(){
-		var url = "updateTel.do";
-		var size = "width=450px;, height=500px;, scrollbars=no;";
-		
-		window.open(url, '전화번호변경', size);
+		var url = "updateNname.do";
+	    var size = "width=450px, height=500px, scrollbars=no";
+
+	    var leftPosition = (window.screen.width - 450) / 2; // 화면 가로 중앙
+	    var topPosition = (window.screen.height - 500) / 2; // 화면 세로 중앙
+
+	    var windowFeatures = size + ", top=" + topPosition + ", left=" + leftPosition;
+
+	    window.open(url, '전화번호변경', windowFeatures);
 	}
 	
 	function upAddr(){
-		var url = "updateAddr.do";
-		var size = "width=450px;, height=500px;, scrollbars=no;";
-		
-		window.open(url, '주소변경', size);
+		var url = "updateNname.do";
+	    var size = "width=450px, height=500px, scrollbars=no";
+
+	    var leftPosition = (window.screen.width - 450) / 2; // 화면 가로 중앙
+	    var topPosition = (window.screen.height - 500) / 2; // 화면 세로 중앙
+
+	    var windowFeatures = size + ", top=" + topPosition + ", left=" + leftPosition;
+
+	    window.open(url, '주소변경', windowFeatures);
 	}
 
 
 </script>
 </head>
-<body>
+<body class="body"  style="background-image:url('resources/img/loginback.jpg');
+					background-repeat: no-repeat;
+					background-size:100%;
+					background-color:fuchsia;">
 	<div class="wrapper">
 		<div class="header_wrapper">
 			<div class="logo_wrapper">
