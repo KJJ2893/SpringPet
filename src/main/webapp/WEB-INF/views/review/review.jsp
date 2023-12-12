@@ -7,9 +7,16 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link rel="stylesheet"
-	href="${pageContext.request.contextPath}/resources/css/review/review.css?after">
+	href="${pageContext.request.contextPath}/resources/css/review/review.css">
 <script src="resources/js/httpRequest.js"></script>
 <script type="text/javascript">
+
+function go_pet(){
+	alert('로그인 필요');
+	location.href="login_main.do";
+} // go_pet()
+
+
 	function go(f) {
 		var u_idx = f.u_idx.value;
 
@@ -45,6 +52,8 @@
 		<a href="main_home.do"><img src="resources/img/hos logo.jpg"
 			width="100px" height="100px"> </a>
 	</div>
+	<div class="logo1">MY PET DOC
+</div>
 	
 	<div class="top">
 	<input type="button" value="소개" class="btn1"  onclick="location.href='info_main.do'"  >

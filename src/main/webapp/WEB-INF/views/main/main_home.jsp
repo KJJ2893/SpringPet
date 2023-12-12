@@ -26,6 +26,8 @@
 <div class="logo">
 <a href="main_home.do"><img src="resources/img/hos logo.jpg" width="100px" height="100px"> </a>
 </div>
+<div class="logo1">My PET DOC
+</div>
 
 	<div class="top">
 	<input type="button" value="소개" class="btn1"  onclick="location.href='info_main.do'"  >
@@ -75,9 +77,14 @@
 <input type="radio" name="tabmenu" id="tab02" >
 <input type="radio" name="tabmenu" id="tab03" >
 
+<<<<<<< HEAD
 <%-- 
 <c:forEach var="vo" items="${list }">
 <div class="conbox">
+=======
+<%-- <div class="conbox con1">
+
+>>>>>>> origin/1211_JIN_dClass
 	<table>
 		<tr>
 			<th>작성자 : ${vo.u_nickName }</th>
@@ -93,8 +100,18 @@
 					id="reviewContents" placeholder="${vo.r_content }" readonly></textarea></td>
 		</tr>
 	</table>
+<<<<<<< HEAD
 </div>
 </c:forEach>
+=======
+
+
+
+
+
+
+</div> 
+>>>>>>> origin/1211_JIN_dClass
 
 
 <div class="conbox con2">
@@ -166,6 +183,7 @@
     </div>
     <script type="text/javascript">
         // 롤링 배너 복제본 생성
+        /*rolling-list 인것을 선택  */
         let roller = document.querySelector('.rolling-list');
         roller.id = 'roller1'; // 아이디 부여
  

@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -94,6 +95,14 @@ style="background-image:url('resources/img/petback.jpg');
 	<input type="button" value="QNA"  class="btn1" onclick="location.href='qna_main.do'"  >
 	<input type="button" value="예약"  class="btn1" onclick="location.href='rev_main.do'"  >
 	<c:choose>
+	<c:when test="${empty id}">
+				
+				<input type="button" value="펫 등록" class="btn"  onclick="go_pet()">
+				<input type="button" value="정보수정" class="btn"  onclick="go_pet()">
+				<input type="button" value="로그인"class="btn"   onclick="location.href='login_main.do'">
+				
+			</c:when>
+	
 			<c:when test="${not empty id}">
 				
 				<input type="button" value="펫 등록" class="btn1"  onclick="location.href='petinfo_main.do'">

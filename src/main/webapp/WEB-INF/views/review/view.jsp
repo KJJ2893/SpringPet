@@ -1,12 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+	<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link rel="stylesheet"
-	href="${pageContext.request.contextPath}/resources/css/review/view.css?after">
+	href="${pageContext.request.contextPath}/resources/css/review/view.css">
 <script type="text/javascript">
 	
 	function del(f){
@@ -60,7 +61,32 @@
 		<a href="main_home.do"><img src="resources/img/hos logo.jpg"
 			width="100px" height="100px"> </a>
 	</div>
-	<div class="top">
+	<div class="logo1">MY PET DOC
+</div>
+
+<div class="top">
+	<input type="button" value="소개" class="btn1"  onclick="location.href='info_main.do'"  >
+	<input type="button" value="공지" class="btn1" onclick=""  >
+	<input type="button" value="리뷰" class="btn1" onclick="location.href='review_main.do'"  >
+	<input type="button" value="QNA"  class="btn1" onclick="location.href='qna_form.do'"  >
+	<input type="button" value="예약"  class="btn1" onclick="location.href='rev_main.do'"  >
+	<c:choose>
+	<c:when test="${empty id}">
+				
+				<input type="button" value="펫 등록" class="btn"  onclick="go_pet()">
+				<input type="button" value="정보수정" class="btn"  onclick="go_pet()">
+				<input type="button" value="로그인"class="btn"   onclick="location.href='login_main.do'">
+				
+			</c:when>
+			<c:when test="${not empty id}">
+				
+				<input type="button" value="펫 등록" class="btn1"  onclick="location.href='petinfo_main.do'">
+				<input type="button" value="정보수정" class="btn1"  onclick="location.href='check_up.do'">
+				<input type="button" value="로그아웃" class="btn1"   onclick="location.href='logout.do'">
+			</c:when>
+		</c:choose>
+	</div>
+	<div class="top1">
 		<form method="POST" enctype="multipart/form-data">
 			<input type="hidden" value="${vo.u_idx}" name="u_idx">
 			<input type="hidden" value="${vo.r_idx}" name="r_idx">
@@ -90,8 +116,8 @@
 				</tr>
 					<tr>
 						<td colspan="2" align="right">
-							<input type="button" value="수정하기" onclick="re(this.form)">
-							<input type="button" value="삭제하기" onclick="del(this.form)">
+							<input type="button" class="btn" value="수정하기" onclick="re(this.form)">
+							<input type="button" class="btn" value="삭제하기" onclick="del(this.form)">
 						</td>
 					</tr>
 				</table>

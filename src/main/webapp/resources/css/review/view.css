@@ -12,3 +12,47 @@ textarea{
     	width:600px;
         height:200px;}
         
+        
+ .logo1{
+	color:fuchsia;
+	font-family:fantasy;
+	font-size:30px;
+	position:absolute;
+	top:20px;
+	left:125px;
+}
+.btn{
+    background-color: #A582CF; 
+    cursor:pointer;
+    
+    color: #fff;
+    border-radius:10px;
+  	text-align: center;
+	border-color:blue;
+}
+.top {
+    position:absolute;
+    top:20px;
+    left:400px;
+
+
+}
+.btn1{
+    background-color: #A582CF; 
+    cursor:pointer;
+    margin-left:100px;
+    width:70px;
+    height:30px;
+    color: #fff;
+    border-radius:10px;
+  	text-align: center;
+	border-color:blue;
+}
+.btn1:hover {
+            border-color: aqua;
+            color: white;
+            box-shadow: 0 0.5em 0.5em -0.4em yellow;
+            
+            
+        }
+        

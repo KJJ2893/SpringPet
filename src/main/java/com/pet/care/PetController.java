@@ -37,7 +37,7 @@ public class PetController {
 	@RequestMapping(value = { "petinfo_main.do" })
 	public String list(Model model,String page) {
 		UserVO userInfo =(UserVO)request.getSession().getAttribute("id");
-		HashMap<String, Object> map = PetListPaging.getPaging(3, page, pet_dao,userInfo);
+		HashMap<String, Object> map = PetListPaging.getPaging(5, page, pet_dao,userInfo);
 		
 		
 

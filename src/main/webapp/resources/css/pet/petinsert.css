@@ -1,6 +1,6 @@
 @charset "UTF-8";
 
-
+/* 하단버튼 */
 .btn{
 	background-color: #deb887;
 	cursor:pointer;
@@ -17,7 +17,7 @@
 
 
 }
-
+/* 상단버튼 */
 .btn1{
     background-color: #A582CF; 
     cursor:pointer;
