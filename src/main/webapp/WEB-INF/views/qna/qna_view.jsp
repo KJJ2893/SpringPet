@@ -7,6 +7,7 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link href="${pageContext.request.contextPath}/resources/css/qna/qna_view.css" rel="stylesheet">
+<script src="${pageContext.request.contextPath}/resources/js/httpRequest.js"></script>
 <script type="text/javascript">
 
 	function refresh(){
@@ -34,7 +35,7 @@
 	
 	function delCheck(){
 		if(xhr.readyState == 4 && xhr.status == 200){
-			var data =xhr.responseText; //xhr 뭐야 : 비동기 어쩌구해서 쓰는거 
+			var data =xhr.responseText; //xhr = new XMLHttpRequest(); 를 담는 변수
 			
 			var json = eval(data);
 			
@@ -45,6 +46,11 @@
 				alert("삭제 실패");
 			}
 		}
+	}
+	
+	function qna_edit_form(){
+		let q_idx = ${qnaVO.q_idx};
+		location.href="qna_edit_form.do?q_idx="+q_idx;
 	}
 	
 
@@ -83,9 +89,14 @@
 				<td>${qnaVO.q_regdate }</td>
 			</tr>
 			<tr>
-				<th>ip</th>
-				<td>${qnaVO.q_idx }</td>
+				<th>사진</th>
+				<td>
+					<img src="${pageContext.request.contextPath}/resources/upload/qna/${qnaVO.q_filename}"
+					width="200px" height="200px">
+				</td>
 			</tr>
+			
+			
 			<tr>
 				<th>내용</th>
 				<td width="500px" height="200px">${qnaVO.q_content }</td>
@@ -97,9 +108,9 @@
 			<tr>
 				<td colspan="2">
 				<!-- 수정 -->
-					<img src="resources/img/btn_reply.gif" onclick="correction()">
+					<img src="${pageContext.request.contextPath}/resources/img/testttt.png1" alt="수정" width="10px" height="10px" onclick="qna_edit_form()">
 				<!-- 삭제 -->
-					<img src="resources/img/btn_delete.gif" onclick="qna_del()">
+					<img src="${pageContext.request.contextPath}/resources/img/testttt.png" width="10px" height="10px" onclick="qna_del()">
 				</td>
 			</tr>
 			

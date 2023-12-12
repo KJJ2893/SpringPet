@@ -23,10 +23,6 @@ public class QnaDAO {
 	public List<QnaVO> qna_selectList(){
 		return sqlSession.selectList("q.qna_selectList");
 	}
-
-	public int insert_qna1(QnaVO qnaVO) {
-		return sqlSession.insert("q.insert_qna2", qnaVO);
-	}
 	
 	//게시글 한건조회 : qna_view에서 selectOne 변경
 	public QnaVO selectOne(int q_idx) {
@@ -34,9 +30,18 @@ public class QnaDAO {
 	}
 	
 	//게시글 삭제
-	public int qna_del(QnaVO qnaVO) {
-		return sqlSession.update("q.qna_del", qnaVO);
+	public int qna_del(int q_idx) {
+		return sqlSession.delete("q.qna_del", q_idx);
 	}
 	
+	//게시글 수정할때 조회
+	public QnaVO qna_edit_form(int q_idx) {
+		return sqlSession.selectOne("q.qna_edit_form", q_idx);
+	}
+	
+	//게시글 업데이트(수정)
+	public int qna_update(QnaVO qnaVO) {
+		return sqlSession.update("q.qna_update", qnaVO);
+	}
 
 }
