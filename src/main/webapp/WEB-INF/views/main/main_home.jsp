@@ -77,7 +77,7 @@
 <input type="radio" name="tabmenu" id="tab02" >
 <input type="radio" name="tabmenu" id="tab03" >
 
-<<<<<<< HEAD
+
 <%-- 
 <c:forEach var="vo" items="${list }">
 <div class="conbox">
@@ -100,10 +100,10 @@
 					id="reviewContents" placeholder="${vo.r_content }" readonly></textarea></td>
 		</tr>
 	</table>
-<<<<<<< HEAD
+
 </div>
 </c:forEach>
-=======
+
 
 
 
@@ -111,7 +111,7 @@
 
 
 </div> 
->>>>>>> origin/1211_JIN_dClass
+
 
 
 <div class="conbox con2">
