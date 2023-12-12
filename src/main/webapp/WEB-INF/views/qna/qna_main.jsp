@@ -71,7 +71,6 @@
 				</div> 
 			</a>
 			</div>
-			<input type="button" onclick="location.href='qna_view.do?q_idx=${qna.q_idx}'">
 		</c:forEach>
 	</div>
 </body>

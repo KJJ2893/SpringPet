@@ -10,6 +10,6 @@ import lombok.Setter;
 public class QnaVO {
 
 	private int q_idx, u_idx;
-	private String q_title, q_content, q_regdate, q_filename, q_moviename;
-	private MultipartFile q_file, q_movie;
+	private String q_title, q_content, q_regdate, q_filename;
+	private MultipartFile q_file;
 }

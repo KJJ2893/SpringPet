@@ -12,28 +12,33 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 			#{q_content},
 			sysdate,
 			#{q_filename},
-			#{q_moviename}
+			NULL
 		)
 	</insert>	
 
 	<select id="qna_selectList" resultType="vo.QnaVO">
 		SELECT * FROM QNA ORDER BY q_regdate DESC
 	</select>
-	
-	<insert id="insert_qna2" parameterType="vo.QnaVO">
-		INSERT INTO qna VALUES (
-			seq_qna_idx.nextval,
-			#{u_idx},
-			#{q_title},
-			#{q_content},
-			sysdate,
-			#{q_filename},
-			#{q_moviename}
-		)
-	</insert>
 		
 	<select id="qna_view" parameterType="int" resultType="vo.QnaVO">
 		select * from qna where q_idx=#{q_idx}
 	</select>
-
+	
+	<delete id="qna_del" parameterType="int">
+		delete qna
+		where q_idx=#{q_idx}
+	</delete>
+	
+	<select id="qna_edit_form" parameterType="int" resultType="vo.QnaVO">
+		select * from qna where q_idx=#{q_idx}
+	</select>
+	
+	<update id="qna_update" parameterType="vo.QnaVO">
+		update qna
+		set q_title = #{q_title},
+			q_content = #{q_content},
+			q_regdate = sysdate
+		where q_idx=#{q_idx}
+	</update>
+	
 </mapper>

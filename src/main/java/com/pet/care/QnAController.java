@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
 import dao.QnaDAO;
@@ -55,6 +56,38 @@ public class QnAController {
 		return VIEW_PATH + "qna_view.jsp";
 	}
 	
+	//삭제
+	@RequestMapping("qna_del.do")
+	@ResponseBody 
+	//view의 var url=qna_del.do의 DB를 갔다오기 위한 경유지
+	//그 화면을 유지하기 위해서 사용
+	public String qna_del(int q_idx) {
+		int result = qna_dao.qna_del(q_idx);
+		
+		if(result == 1) {
+			return "[{'result':'yes'}]";
+		} else {
+			return "[{'result':'no'}]";
+		}	
+	}
+	
+	//수정하는 form으로 보내기
+	@RequestMapping("qna_edit_form.do")
+	public String qna_edit_form(Model model, int q_idx) {
+		
+		QnaVO qnaVO = qna_dao.qna_edit_form(q_idx);
+		model.addAttribute("qnaVO", qnaVO);
+		return VIEW_PATH + "qna_edit_form.jsp";
+	}
+	
+	//수정완료
+	@RequestMapping("qna_edit_finish.do")
+	public String qna_edit_finish(QnaVO qnaVO) {
+		int result = qna_dao.qna_update(qnaVO);
+		
+		return "redirect:qna_main.do";
+	}
+	
 	@RequestMapping("qna_insert.do")
 	public String qna_insert(QnaVO vo) {
 		
@@ -67,10 +100,8 @@ public class QnAController {
 		System.out.println(savePath);
 
 		MultipartFile file = vo.getQ_file();
-//		MultipartFile movie = vo.getQ_movie();
 
 		String filename = "no_file";
-//		String moviename = "no_file";
 		
 		//file
 		if(!file.isEmpty()) {
@@ -94,29 +125,6 @@ public class QnAController {
 		
 		vo.setQ_filename(filename);      
 		
-		//movie 실행되지 않음
-//		if(!movie.isEmpty()) {
-//			moviename = movie.getOriginalFilename();
-//			
-//			File saveMovie = new File(savePath, moviename);
-//			if(!saveMovie.exists()) {
-//				saveMovie.mkdirs();
-//			}else {
-//				long time = System.currentTimeMillis();
-//				moviename = String.format("%d_%s",  time, moviename);
-//				saveMovie = new File(savePath, moviename);
-//			}
-//			
-//			try {
-//				movie.transferTo(saveMovie);
-//			} catch (Exception e) {
-//				// TODO: handle exception
-//			}
-//		}
-		
-		vo.setQ_filename(filename); 
-//		vo.setQ_moviename(moviename); 
-		
 		int res = qna_dao.qna_insert(vo);
 		
 		if(res > 0) {
@@ -125,4 +133,8 @@ public class QnAController {
 			return null;
 		}
 	}
+	
+	
+	
+	
 }

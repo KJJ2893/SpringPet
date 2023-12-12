@@ -54,7 +54,7 @@
 		<input type="text" value="${id.u_nickName}" > <!-- 작성자 hidden -->
 	</div>
 	
-	<form enctype="mulipart/form-data">
+	<form enctype="multipart/form-data">
 		<div class="qna_wrapperBox">
 			<input class="titleBox" name="q_title" placeholder="제목을 입력해 주세요">
 			<div class="qna_space"></div>
