@@ -14,7 +14,6 @@
 		<div class="intro_bg">
 			<div class="header">
 	  		<a href="main_home.do" class="logo">
-						<h1>MY PET DOC</h1>
 						<img src="resources/img/hos logo.jpg" width="100px" height="100px">
 					</a>
 				<div>

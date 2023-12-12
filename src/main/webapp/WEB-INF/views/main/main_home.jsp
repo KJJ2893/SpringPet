@@ -16,7 +16,7 @@
 <body class="body"  
 	style="	background-repeat: no-repeat;
 			background-size:100%;
-			background-color:#D9B66C;">
+			background-color:#F5C67B;">
 					
 	<div class="wrapper">
 		<div class="intro-bg">
@@ -56,11 +56,11 @@
 		<div class="mid">
         <div class="tab_content">
         	<div class="slider">
-        		<h2>리뷰</h2>
+        		<h2 align="center">이용 후기</h2>
 					<c:if test="${list != null }">
 					<c:forEach var="vo" items="${list }">
 			        <div class="slide">
-			          	<table border="1" align="left">
+			          	<table>
 			          		<tr>
 							<c:choose>
 								<c:when test="${vo.r_photo}!='no_file' || ${vo.r_photo}!=null">
@@ -91,7 +91,7 @@
 		    	</c:if>
 		    	</div>
           <div class="qna">
-              <h2>자주 묻는 질문</h2>
+              <h2 align="center">자주 묻는 질문</h2>
               <hr>
 				<ul>
 					<li>공지</li>
@@ -105,7 +105,59 @@
         </div>
         
         <div class="line1"></div>
+
+		<div class="text1">
+			<h1>반가워요!!</h1>
+			<div class="text2">
+				<h3>저희를 찾아주신 반려동물 보호자님께 감사의 말씀을 전합니다.</h3>
+			</div>
+		</div>
         
+        <div class="line1"></div>
+        
+        <div class="main_text0">
+        <h1>ABOUT</h1>
+        <div class="contents1">우리는 재규어처럼 재빠르게, 남들과는 다르게 오징어를 낚아챕니다.</div>
+        
+        <ul class="icons">
+          <li>
+            <div class="icon_img">
+              <img src="${pageContext.request.contextPath}/resources/img/img1.jpg" width="100" height="100">
+            </div>
+            <div class="contents1_bold">최고의 수의 의료서비스</div>
+            <div class="contents2">
+               반려동물과 보호자님께 한번도 느껴보지 못한 최고의 수의 의료서비스를 제공
+            </div>
+          </li>
+
+          <li>
+            <div class="icon_img">
+              <img src="${pageContext.request.contextPath}/resources/img/img1.jpg" width="100" height="100">
+            </div>
+            <div class="contents1_bold">본원만의 진료 및 치료 노하우</div>
+            <div class="contents2">
+                차별화된 진료 서비스와 다수의 경력을 통한 노하우를 느껴보세요
+            </div>
+          </li>
+          
+          <li>
+            <div class="icon_img">
+              <img src="${pageContext.request.contextPath}/resources/img/img1.jpg" width="100" height="100">
+            </div>
+            <div class="contents1_bold">첨단 장비를 통한 정확한 진단</div>
+            <div class="contents2">
+                첨단 장비를 사용하여 보다 정확한 진료를 진행합니다
+            </div>
+          </li>
+        </ul>
+      </div>
+        
+        <div class="line1"></div>
+        
+       	<h2 align="center">마음이 따뜻하고 실력있는 의료진들이 소중한 반려동물과 함께 하겠습니다.</h2>
+        
+        <div class="line1"></div>
+
         <div class="where">
         	<div class="here">
         		<h2 align="left">찾아 오시는 길</h2>
