@@ -42,9 +42,9 @@ function go_pet(){
 		}
 	}
 
-	/* 	function openImage(imageSrc){
+	function openImage(imageSrc){
 	 window.open(imageSrc, '_blank', 'width=1000, height=800');
-	 } */
+	 } 
 </script>
 </head>
 <body style="background-image:url('resources/img/review.jpg')">
