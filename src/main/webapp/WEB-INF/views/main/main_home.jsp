@@ -8,7 +8,7 @@
 <title>Insert title here</title>
 
 <link rel="stylesheet"
-	href="${pageContext.request.contextPath}/resources/css/main/main.css">
+	href="${pageContext.request.contextPath}/resources/css/main/main.css?after">
 <script type="text/javascript">
 </script>
 </head>
