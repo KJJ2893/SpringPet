@@ -14,26 +14,34 @@ public class QnaDAO {
 		this.sqlSession = sqlSession;
 	}
 	
+	//게시글 추가
 	public int qna_insert(QnaVO qnaVO) {
 		return sqlSession.insert("q.qna_insert", qnaVO);
 	}
 	
+	//전체 글 조회
 	public List<QnaVO> qna_selectList(){
 		return sqlSession.selectList("q.qna_selectList");
 	}
-
-	public int insert_qna1(QnaVO qnaVO) {
-		return sqlSession.insert("q.insert_qna2", qnaVO);
-	}
 	
-	public List<QnaVO> select_qnaList(){
-		return sqlSession.selectList("q.select_qnaList");
-	}
-	
-	public QnaVO qna_view(int q_idx) {
+	//게시글 한건조회 : qna_view에서 selectOne 변경
+	public QnaVO selectOne(int q_idx) {
 		return sqlSession.selectOne("q.qna_view", q_idx);
-		
 	}
 	
+	//게시글 삭제
+	public int qna_del(int q_idx) {
+		return sqlSession.delete("q.qna_del", q_idx);
+	}
+	
+	//게시글 수정할때 조회
+	public QnaVO qna_edit_form(int q_idx) {
+		return sqlSession.selectOne("q.qna_edit_form", q_idx);
+	}
+	
+	//게시글 업데이트(수정)
+	public int qna_update(QnaVO qnaVO) {
+		return sqlSession.update("q.qna_update", qnaVO);
+	}
 
 }

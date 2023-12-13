@@ -7,11 +7,52 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link href="${pageContext.request.contextPath}/resources/css/qna/qna_view.css" rel="stylesheet">
+<script src="${pageContext.request.contextPath}/resources/js/httpRequest.js"></script>
 <script type="text/javascript">
 
 	function refresh(){
 		location.reload();
 	}
+	
+	function qna_del(){
+		if(!confirm("삭제하시겠습니까?")){
+			return;
+		}
+		
+		var pwd = "${id.u_pwd}"; //관리자 비번?
+		var c_pwd = document.getElementById("c_pwd").value; //입력한 비밀번호
+		
+		if(pwd != c_pwd){
+			alert("비밀번호 불일치");
+			return;
+		}
+		
+		var url = "qna_del.do"; //현재 구현안되있음
+		var param = "q_idx=${qnaVO.q_idx}";
+		
+		sendRequest(url,param,delCheck,"POST");
+	}
+	
+	function delCheck(){
+		if(xhr.readyState == 4 && xhr.status == 200){
+			var data =xhr.responseText; //xhr = new XMLHttpRequest(); 를 담는 변수
+			
+			var json = eval(data);
+			
+			if(json[0].result == 'yes'){
+				alert("삭제 성공");
+				location.href="qna_main.do";  
+			} else {
+				alert("삭제 실패");
+			}
+		}
+	}
+	
+	function qna_edit_form(){
+		let q_idx = ${qnaVO.q_idx};
+		location.href="qna_edit_form.do?q_idx="+q_idx;
+	}
+	
 
 </script>
 </head>
@@ -29,15 +70,52 @@
 
 	<div class="qna_wrapperBox">
 		<span class="qna_category">
-			<a href="qna_view?q_idx=${qna.q_title }"> 상세보기
+			공지사항 상세보기
 		</span>
 	</div>
 	
 	<div class="qna_wrapperBox">
-		div
+	
+		<hr />
+		<div class="listBox">
+			<div class="table">
+				<span class="th">제목</span>
+				<span class="align">${qnaVO.q_title}</span>
+			</div>
+			
+			<div class="table">
+				<span class="th">번호</span>
+				<span class="align">${qnaVO.q_idx }</span>
+			</div>
+			
+			<div class="table">
+				<span class="th">일자</span>
+				<span class="align">${qnaVO.q_regdate }</span>
+			</div>
+			
+			<div class="table">
+				<span class="th">내용</span>
+				<span class="align" width="500px" height="200px">
+					<div class="align">
+					<img src="${pageContext.request.contextPath}/resources/upload/qna/${qnaVO.q_filename}"
+					width="300px" height="300px">
+					</div>
+				</span>
+				<div class="align">${qnaVO.q_content }</div>
+			</div>
+			
+			<div class="table">
+				<span class="th">비밀번호</span>
+				<spqn class="align">	
+					<input type="text" id="c_pwd" placeholder="비밀번호를 입력하세요">
+				</spqn>
+			</div>
+			
+			<div class="qna_category">
+				<input type="button" value="수정" class="Btn" onclick="qna_edit_form()">
+				<input type="button" value="삭제" class="Btn" onclick="qna_del()">
+			</div>
+		</div>
 	</div>
-<body>
-	view
-	${qvo }
 </body>
 </html>
