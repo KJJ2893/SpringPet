@@ -17,6 +17,13 @@
 		//검색창에 조회했을때 조회값 가져오기
 		
 	}
+	
+	function testfn(){
+		document.getElementById("test").style.maxHeight = "100%";
+		
+		document.getElementById("testBtn").style.display = "none"
+		
+	}
 </script>
 </head>
 <body>
@@ -41,44 +48,51 @@
 			<form class="searchform" name="list_search_form" onclick="send_list_form(this.form)">
 				<fieldset>
 					<select id="">
+						<option values="title">글 번호</option>
 						<option values="title">제목</option>
 						<option values="content">내용</option>
 					</select>
-					<input class="search" type="text" placeholder="검색어를 입력하세요" style="width:900px;">
+					<input class="search" type="text" placeholder="검색어를 입력하세요">
 					<button class="submit" type="submit" ><img src="https://www.coffeebeankorea.com/images/btn/btn_list_search.png"></button>
 				</fieldset>
 			</form>
+			<p class="bestSearch"><strong>BEST 검색어 : </strong>예약 리뷰 펫등록</p>
 		</div>
 	</div>
 	
 	
-	<div class="qna_wrapperBox">
+	<div class="qna_wrapperBox" id="center">
 	
-		<hr />
-		<c:forEach var="qna" items="${list }">
-			<div class="listBox" onclick="location.href='qna_view.do'">
-			<a href="qna_view.do?q_idx=${qna.q_idx }">
-				<div class="table">
-					<span class="th">번호</span>
-					<span class="align">${qna.q_idx }</span>
+		<hr>
+		<div id="test">
+			<c:forEach var="qna" items="${list }">
+				<div class="listBox" onclick="location.href='qna_view.do'">
+					
+					
+					<a href="qna_view.do?q_idx=${qna.q_idx }">
+						<div class="table">
+							<span class="th">번호</span>
+							<span class="align">${qna.q_idx }</span>
+						</div>
+						<div class="table">
+							<span class="th">제목</span>
+							<span class="align">${qna.q_title }</span>
+						</div>
+						<div class="table">
+							<span class="th">일자</span>
+							<span class="align">${qna.q_regdate }</span>
+						</div> 
+						<div class="table">
+							<span class="th">파일</span>
+							<span class="align">
+								<img src="${pageContext.request.contextPath}/resources/upload/qna/${qna.q_filename}" width="100px" height="100px">
+							</span>
+						</div> 
+					</a>
 				</div>
-				<div class="table">
-					<span class="th">제목</span>
-					<span class="align">${qna.q_title }</span>
-				</div>
-				<div class="table">
-					<span class="th">일자</span>
-					<span class="align">${qna.q_regdate }</span>
-				</div> 
-				<div class="table">
-					<span class="th">파일</span>
-					<span class="align">
-						<img src="${pageContext.request.contextPath}/resources/upload/qna/${qna.q_filename}" width="100px" height="100px">
-					</span>
-				</div> 
-			</a>
-			</div>
-		</c:forEach>
+			</c:forEach>
+		</div>
+		<input id="testBtn" type="button" class="inputBtn" value="더보기 +" onclick="testfn()">
 	</div>
 </body>
 </html>

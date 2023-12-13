@@ -32,7 +32,6 @@ p {
 
 fieldset {
 	border-radius: 10px;
-	width:100%;
 }
 
 a {
@@ -112,5 +111,22 @@ a {
 	padding: 10px 0;
 	font: 18px Noto Sans CJK KR;
 	font-weight: bold;
+}
+
+.bestSearch {
+	color: black;
+	font: 14px Noto Sans CJK KR;
+	font-weight: bold;
+	padding: 0 20px;
+	margin-top: 10px;
+}
+
+#test{
+	max-height: 610px;
+	overflow: hidden;
+}
+
+#center{
+	text-align:center;
 }
 
