@@ -14,12 +14,40 @@
 		location.reload();
 	}
 	
-	
-	
+	//이거 뭔가 잘못된거 같다
+	function qna_edit_finish(f){
+		
+		alert('수정완료 하시겠습니까?')
+		/* if(!confirm("수정완료 하시겠습니까?")){
+			return; //이거 뭐 리턴함?
+		} */
+		
+		f.method="POST";
+		f.action="qna_insert.do";
+		f.submit();	
+		
+		//잘보내졌으면 수정완료 띄우고 싶은데 if에 뭐가 들어가야되지?
+		/* if(json[0].result == 'yes'){
+			alert("수정 완료");
+			location.href="qna_main.do";  
+		} */
+		
+		alert('수정 완료 !')
+		
+		let url = "qna_main.do"; 
+		let param = "q_idx=${qnaVO.q_idx}";
+		
+		sendRequest(url,param,delCheck,"POST");
+
+		
+			
+	}
+
 
 </script>
 </head>
 <body>
+	<!-- Q&A 수정 글쓰기 -->
 	<div class="qna_wrapperBox">
 		<span class="qna_category">Q&A 카테고리</span>	
 		<div class="qna_category">
@@ -37,7 +65,7 @@
 	</div>
 	
 	<div class="qna_wrapperBox">
-		<input type="text" value="${id.u_idx}" > <!-- 작성자 hidden -->
+		<input type="hidden" value="${id.u_idx}" >
 	</div>
 	
 	<form enctype="multipart/form-data">
@@ -45,11 +73,11 @@
 			<input class="titleBox" name="q_title" value="${qnaVO.q_title}">
 				
 			<div class="qna_upload_text">
-				<textarea class="titleBox_long" name="q_content" value="${qnaVO.q_content}"></textarea> 
+				<textarea class="titleBox_long" name="q_content" >${qnaVO.q_content}</textarea> 
 			</div>
 		</div>
 		
-		<!-- 사진, 동영상 첨부파일 업로드 폼 -->
+		<!-- 사진 첨부파일 업로드 폼 -->
 		<div class="qna_wrapperBox">
 			<span class="qna_category">
 				사진 업로드
@@ -65,9 +93,9 @@
 				<input type="button" value="수정완료" class="inputBtn" onclick="qna_edit_finish(this.form);">
 			</span>
 			<span>
-				<input type="button" value="삭제하기" class="inputBtn" onclick="qna_del();">
+				<input type="button" value="돌아가기" class="inputBtn" onclick="location.href='qna_view.do?q_idx=${qnaVO.q_idx}'">
 		</div>
-	</form> <!-- 사진, 동영상 첨부파일 업로드 폼 -->
+	</form> <!-- 사진 첨부파일 업로드 폼 -->
 	
 	
 	<div class="qna_wrapperBox">

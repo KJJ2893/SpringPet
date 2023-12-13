@@ -28,7 +28,7 @@
 			return;
 		}
 		
-		let url = "qna_del.do"; //현재 구현안되있음
+		let url = "qna_del.do"; 
 		let param = "q_idx=${qnaVO.q_idx}";
 		
 		sendRequest(url,param,delCheck,"POST");
@@ -51,9 +51,6 @@
 	
 	//수정시
 	function qna_edit_form(){
-		let q_idx = ${qnaVO.q_idx};
-		location.href="qna_edit_form.do?q_idx="+q_idx;
-		
 		if(!confirm("수정하시겠습니까?")){
 			return;
 		}
@@ -62,28 +59,17 @@
 		let c_pwd = document.getElementById("c_pwd").value; //입력한 비밀번호
 		
 		if(pwd != c_pwd){
-			alert("비밀번호 불일치");
+			alert("비밀번호를 입력하세요");
 			return;
 		}
 		
-		let url = "qna_del.do"; //현재 구현안되있음
-		let param = "q_idx=${qnaVO.q_idx}";
+		let q_idx = ${qnaVO.q_idx};
+		location.href="qna_edit_form.do?q_idx="+q_idx;
 		
 		sendRequest(url,param,delCheck,"POST");
 	}
 	
-	function editCheck(){
-		if(xhr.readyState == 4 && xhr.status == 200){
-			let data =xhr.responseText; 
-			
-			let json = eval(data);
-			
-			if(json[0].result == 'yes'){
-				alert("수정 완료");
-				location.href="qna_main.do";  
-			}
-		}
-	}
+	
 
 </script>
 </head>

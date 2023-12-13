@@ -57,7 +57,7 @@ public class QnAController {
 		return VIEW_PATH + "qna_view.jsp";
 	}
 	
-	//삭제
+	//게시글 삭제하기
 	@RequestMapping("qna_del.do")
 	@ResponseBody 
 	//view의 var url=qna_del.do의 DB를 갔다오기 위한 경유지
@@ -72,7 +72,7 @@ public class QnAController {
 		}	
 	}
 	
-	//수정하는 form으로 보내기
+	//edit form으로 보내기
 	@RequestMapping("qna_edit_form.do")
 	public String qna_edit_form(Model model, int q_idx) {
 		
@@ -89,6 +89,7 @@ public class QnAController {
 		return "redirect:qna_main.do";
 	}
 	
+	//게시글 추가
 	@RequestMapping("qna_insert.do")
 	public String qna_insert(QnaVO vo) {
 		
