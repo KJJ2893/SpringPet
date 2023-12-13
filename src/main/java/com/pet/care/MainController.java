@@ -30,6 +30,7 @@ public class MainController {
 		model.addAttribute("list", list);
 		
 		
+		
 		return VIEW_PATH+"main_home.jsp";
 	}
 }
