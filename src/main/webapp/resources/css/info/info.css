@@ -91,9 +91,10 @@ a:visited {
 }
 
 .info {
-	width: 100%;
+	width: 90%;
 	height: 200px;
-	margin-top: 200px;
+	margin:0 auto;
+	margin-top: 170px;
 	align-content: center;
 	background-color: #FFFAEE;
 	border-radius: 10px;
@@ -110,8 +111,9 @@ a:visited {
 
 /* 인사말 */
 .insamal{
+	margin: 0 auto;
 	margin-top: -40px;
-	width: 100%;
+	width: 90%;
 	height: 700px;
 	background-size : cover;
 	border-radius: 10px;
