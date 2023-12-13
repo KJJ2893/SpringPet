@@ -16,7 +16,7 @@
 <body class="body"  
 	style="	background-repeat: no-repeat;
 			background-size:100%;
-			background-color:#F5C67B;">
+			background-color:#E7D7B2;">
 					
 	<div class="wrapper">
 		<div class="intro-bg">
@@ -62,21 +62,24 @@
 			        <div class="slide">
 			          	<table>
 			          		<tr>
-							<c:choose>
-								<c:when test="${vo.r_photo}!='no_file' || ${vo.r_photo}!=null">
-								
-									<td><img
-										src="${pageContext.request.contextPath}/resources/reviewImg/${vo.r_photo}"
-										width="100" height="100"></td>
-										</c:when>
-										<c:otherwise>
-										<td id="timg"><img
-										src="${pageContext.request.contextPath}/resources/petImg/defaultImg.jpg"
-										width="100" height="100"></td>
-										</c:otherwise>
-										</c:choose>
-									<td><textarea class="col-auto form-control"
-											id="reviewContents" placeholder="${vo.r_content }" readonly></textarea></td>
+								<c:choose>
+									<c:when test="${vo.r_photo != 'no_file' and vo.r_photo!=null}">
+										<td id="timg">
+											<img src="${pageContext.request.contextPath}/resources/reviewImg/${vo.r_photo}"
+											width="100" height="100">
+										</td>
+									</c:when>
+									<c:when test="${vo.r_photo == 'no_file' or vo.r_photo==null}">
+										<td id="timg">
+											<img src="${pageContext.request.contextPath}/resources/petImg/defaultImg.jpg"
+											width="100" height="100">
+										</td>
+									</c:when>
+								</c:choose>
+								<td>
+									<textarea class="col-auto form-control"
+										id="reviewContents" placeholder="${vo.r_content }" readonly></textarea>
+								</td>
 			          		</tr>
 			          		<tr>
 			          			<th colspan="2" align="right">${vo.u_nickName}</th>

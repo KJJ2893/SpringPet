@@ -12,7 +12,7 @@
 <body class="body"  
 	style="	background-repeat: no-repeat;
 			background-size:100%;
-			background-color:#F5C67B;">
+			background-color:#E7D7B2;">
 			
 	<div class="wrapper">
 		<div class="intro-bg">
@@ -52,7 +52,7 @@
 		</div>
 		<div class="insamal"
 		style="
-		background-image: url('${pageContext.request.contextPath}/resources/img/infoimg2.jpg');">
+		background-image: url('${pageContext.request.contextPath}/resources/img/infoimg3.jpg');">
 			<div class="context2">
 				<h1>안녕하십니까</h1>
 				
