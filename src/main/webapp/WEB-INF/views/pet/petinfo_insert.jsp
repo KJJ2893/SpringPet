@@ -7,7 +7,7 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link rel="stylesheet"
-	href="${pageContext.request.contextPath}/resources/css/pet/petinsert.css?after">
+	href="${pageContext.request.contextPath}/resources/css/pet/petinsert.css">
 <script src="resources/js/httpRequest.js"></script>
 	<script type="text/javascript">
 		function insert_send(f){
@@ -161,6 +161,29 @@ style="background-image:url('resources/img/petback.jpg');
 		</table>
 	</form>
 	
+	<div class="footer">
+	<li>병원이름: 동물병원</li>
+	<li> 주소  : 인천광역시 부평구 시장로 7 5층</li>
+	<li>전화번호: 032-262-5890</li>
+	<li> 이메일:email@naver.com</li>
+	ⓒ2023.hospital name All rights reserved.
+</div>
+<div class="footer1">
+	<li>대표자: 김재준</li>
+	<li>대표자 전화번호:000-0000-0000</li>
+	<li>사업자 등록번호:000-00-00000</li>
+	</div>
 	
+	<div class="sns">
+	<a href="https://www.instagram.com">
+	<img src="resources/img/insta.jpg" width="100px" height="100px">
+	</a>
+	<a href="https://www.kakaocorp.com/page/service/service/KakaoTalk">
+	<img src="resources/img/talk.jpg" width="100px" height="100px">
+	</a>
+	<a href="www.facebook.com">
+	<img src="resources/img/facebook.jpg" width="100px" height="100px">
+	</a>
+	</div>
 </body>
 </html>

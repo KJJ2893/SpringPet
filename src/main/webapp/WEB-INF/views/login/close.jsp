@@ -5,6 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+
 <style type="text/css">
 
 div{
@@ -33,14 +34,19 @@ div{
   	  	font-size: 16px;
    	 	background-color: #A582CF; /* 버튼 배경색 */
    	 	margin-top: 20px;
+   	 	
 	}
+	
+.checkbtn{
+	cursor:pointer;
+}
 </style>
 </head>
 <body>
 	<div>
 		<div class="wrapper">
 			<h2 align="center">완료되었습니다.</h2>
-			<input type="button" value="닫기" onclick="window.close()">
+			<input type="button" class="checkbtn" value="닫기" onclick="window.close()">
 		</div>
 	</div>
 </body>

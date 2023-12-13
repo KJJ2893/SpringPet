@@ -13,7 +13,7 @@
 		 cursor:pointer;}
 </style>
 <link rel="stylesheet"
-	href="${pageContext.request.contextPath}/resources/css/review/reviewinsert.css">
+	href="${pageContext.request.contextPath}/resources/css/review/reviewinsert.css?after">
 
 
 

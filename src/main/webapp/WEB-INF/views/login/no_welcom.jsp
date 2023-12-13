@@ -5,10 +5,18 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<style>
+.checkbtn{
+	cursor:pointer;
+}
+</style>
 <link rel="stylesheet"
 	href="${pageContext.request.contextPath}/resources/css/login/welcom.css">
 </head>
-<body>
+<body class="body"  style="background-image:url('resources/img/loginback.jpg');
+					background-repeat: no-repeat;
+					background-size:100%;
+					background-color:fuchsia;">
 	<div class="wrapper">
 		<div class="header_wrapper">
 			<div class="logo_wrapper">
@@ -22,7 +30,7 @@
 			<div id="id_div">
 				<h3 align="center">회원가입 실패... </h3>
 				<h3 align="center">다시 시도해주세요 </h3>
-				<input type="button" value="회원가입 하러가기" onclick="location.href='regster_insert.do'">
+				<input type="button" class="checkbtn" value="회원가입 하러가기" onclick="location.href='regster_insert.do'">
 			</div>
 		</div>
 	</div>

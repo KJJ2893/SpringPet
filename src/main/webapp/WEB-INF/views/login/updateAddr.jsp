@@ -97,12 +97,12 @@
 				
 				<h3>주소를 변경할 계정을 입력해주세요.</h3>
 				<input id="u_email" name="u_email" placeholder="Email" onchange="che()"> 
-				<input type="button" id="check_email" value="계정 확인" onclick="emailCheck(this.form)">
+				<input type="button" class="checkbtn" id="check_email" value="계정 확인" onclick="emailCheck(this.form)">
 			
 				<h3>변경할 주소를 입력해주세요.</h3>
 				<input id="u_addr" name="u_addr" placeholder="Address">
 			</div>
-			<input type="button" value="완료" onclick="done(this.form)">
+			<input type="button" class="checkbtn" value="완료" onclick="done(this.form)">
 		</form>
 		</div>
 </body>

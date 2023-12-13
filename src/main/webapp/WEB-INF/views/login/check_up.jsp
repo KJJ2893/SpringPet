@@ -5,6 +5,11 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<style>
+.checkbtn{
+	cursor:pointer;
+}
+</style>
 <link rel="stylesheet"
 	href="${pageContext.request.contextPath}/resources/css/login/login.css">
 <script type="text/javascript">
@@ -27,7 +32,10 @@
 	
 </script>
 </head>
-<body>
+<body class="body"  style="background-image:url('resources/img/loginback.jpg');
+					background-repeat: no-repeat;
+					background-size:100%;
+					background-color:fuchsia;">
 	<div class="wrapper">
 		<div class="header_wrapper">
 			<div class="logo_wrapper">
@@ -40,7 +48,7 @@
 			<h2>비밀번호 확인</h2>
 			<form id="login-form">
 				<input type="password" name="u_pwd" placeholder="Password"> 
-				<input type="button" value="확인" onclick="send(this.form)">
+				<input type="button" class="checkbtn" value="확인" onclick="send(this.form)">
 			</form>
 		</div>
 	</div>

@@ -91,24 +91,22 @@
 }
 
 /* 하단 소개 */
+
 .footer{
 	position:absolute;
 	left:10px;
-	
+	top:1300px;
 	
 }
 .footer1{
 	position:absolute;
-	left: 500px;
-	
+	left: 450px;
+	top:1300px;
 }
-/* 버튼위치 */
-.top {
-    position:absolute;
-    top:20px;
-    left:400px;
-
-
+.sns{
+	position:absolute;
+	left: 770px;
+	top:1300px;
 }
 
 /* 상단버튼 */
@@ -129,3 +127,8 @@
             color: white;
             box-shadow: 0 0.5em 0.5em -0.4em yellow;
         }
+  .top {
+	position:absolute;
+	top:20px;
+	left:300px;	 
+}

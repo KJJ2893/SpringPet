@@ -189,7 +189,10 @@
 
 </script>
 </head>
-<body>
+<body class="body"  style="background-image:url('resources/img/loginback.jpg');
+					background-repeat: no-repeat;
+					background-size:100%;
+					background-color:fuchsia;">
 	<div class="wrapper">
 		<div class="header_wrapper">
 			<div class="logo_wrapper">
@@ -204,7 +207,7 @@
 				<div class="id_input">
 					<h3>NickName</h3>
 					<input type="text" id="u_Nname" name="u_nickName" placeholder="NickName" onchange="che2()"> 
-					<input type="button" id="check_nName" value="중복확인" onclick="nNameCheck(this.form)">
+					<input type="button"  class="checkbtn" id="check_nName" value="중복확인" onclick="nNameCheck(this.form)">
 				</div>
 				
 				<h3>Name</h3>
@@ -213,7 +216,7 @@
 				<div class="id_input">
 					<h3>Email</h3>
 					<input type="text" id="u_email" name="u_email" placeholder="Email" onchange="che()"> 
-					<input type="button" id="check_id" value="Check ID" onclick="idCheck(this.form)">
+					<input type="button" class="checkbtn" id="check_id" value="Check ID" onclick="idCheck(this.form)">
 				</div>
 				
 				<h3>Password</h3>
@@ -223,12 +226,12 @@
 				<div class="id_input">
 					<h3>Tel</h3>
 					<input id="u_tel" name="u_tel" placeholder="Tel" onchange="che3()">
-					<input type="button" id="check_tel" value="Check Tel" onclick="telCheck(this.form)">
+					<input type="button" class="checkbtn" id="check_tel" value="Check Tel" onclick="telCheck(this.form)">
 				</div>
 				<h3>Address</h3>
 				<input type="text" name="u_addr" placeholder="Address">
 				
-				<input type="button" value="Sign Up" onclick="send(this.form)">
+				<input type="button"  class="checkbtn" value="Sign Up" onclick="send(this.form)">
 			</form>
 		</div>
 	</div>

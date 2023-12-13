@@ -6,9 +6,7 @@
 .top {
 	position:absolute;
 	top:20px;
-	left:300px;
-	
-	 
+	left:300px;	 
 }
 .logo1{
 	color:fuchsia;
@@ -105,3 +103,4 @@ table { border-collapse: collapse;
             color: white;
             box-shadow: 0 0.5em 0.5em -0.4em yellow;
         }
+

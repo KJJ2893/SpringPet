@@ -14,7 +14,7 @@ function go_pet(){
 
 </script>
 <link rel="stylesheet"
-	href="${pageContext.request.contextPath}/resources/css/info/info.css">
+	href="${pageContext.request.contextPath}/resources/css/info/info.css?after">
 </head>
 <body style="background-image:url('resources/img/infoimg.jpg')">
 	<div class="wrap">
@@ -65,6 +65,7 @@ function go_pet(){
 			</div>
 		</div>
 	</div>
+	
 	<div class="main_text1">
 		<h1>SERVICE</h1>
 		<div class="contents1">
@@ -83,25 +84,10 @@ function go_pet(){
 					<li>검단사거리에 위치한 경인지역 서부권 중심병원</li><br>
 					<br>
 					<h2>마음이 따뜻하고 실력있는 의료진들이 소중한 반려동물과 함께 하겠습니다.</h2>
-					
-				
 			</div>
 		</div>
 	</div>
-
-	<div class="main_text2" align="center">
-					<h1>INSTARGRAM</h1>
-				<div class="more2"  >
-				<a href="https://www.instagram.com">
-	<img src="resources/img/insta.jpg" width="100px"; height="100px"; >
-	</a>	
-			</div>
-			</div>
-		
 	
-
-	
-		<div>
 		<div class="footer">
 		<li>병원이름: 동물병원</li>
 	<li> 주소  : 인천광역시 부평구 시장로 7 5층</li>
@@ -110,11 +96,21 @@ function go_pet(){
 	ⓒ2023.hospital name All rights reserved.
 	</div>
 	
-	
 	<div class="footer1">
 	<li>대표자: 김재준</li>
 	<li>대표자 전화번호:000-0000-0000</li>
 	<li>사업자 등록번호:000-00-00000</li>
+	</div>
+		<div class="sns">
+	<a href="https://www.instagram.com">
+	<img src="resources/img/insta.jpg" width="100px" height="100px">
+	</a>
+	<a href="https://www.kakaocorp.com/page/service/service/KakaoTalk">
+	<img src="resources/img/talk.jpg" width="100px" height="100px">
+	</a>
+	<a href="www.facebook.com">
+	<img src="resources/img/facebook.jpg" width="100px" height="100px">
+	</a>
 	</div>
 </body>
 </html>

@@ -6,13 +6,21 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<style>
+.checkbtn{
+	cursor:pointer;
+}
+</style>
 <link rel="stylesheet"
 	href="${pageContext.request.contextPath}/resources/css/login/find_idCheck.css">
 <script type="text/javascript">
 
 </script>
 </head>
-<body>
+<body class="body"  style="background-image:url('resources/img/loginback.jpg');
+					background-repeat: no-repeat;
+					background-size:100%;
+					background-color:fuchsia;">
 	<div class="wrapper">
 		<div class="header_wrapper">
 			<div class="logo_wrapper">
@@ -27,7 +35,7 @@
 			<!-- <input type="hidden" name="email" value="${finded_email}">  -->
 				<h3 align="center">이 계정이 맞나요??</h3>
 				<h3 align="center">${u_email}</h3>
-				<input type="button" value="로그인 하러가기" onclick="location.href='login_main.do'">
+				<input type="button" class="checkbtn" value="로그인 하러가기" onclick="location.href='login_main.do'">
 			</form>
 		</div>
 	</div>
