@@ -9,6 +9,9 @@ public class RevVO {
 	private int u_idx;
 	private String rv_time;
 	private String rv_day;
-	
+	String year = "";
+	String month = "";
+	String date = "";
+	String value = "";
 	
 }

@@ -113,27 +113,28 @@
 									<th>작성일 : ${vo.r_regdate }</th>
 								</tr>
 								<tr>
-								<td>
-									<img src="${pageContext.request.contextPath}/resources/reviewImg/${vo.r_photo}"
-				             	         width="100" height="100" onclick="openImage('${pageContext.request.contextPath}/resources/reviewImg/${vo.r_photo}')"
-				             	         style="cursor: pointer;">
-				             	</td>
+								<c:choose>
+								<c:when test="${vo.r_photo != 'no_file' and vo.r_photo!=null}">
+								
+									<td><img
+										src="${pageContext.request.contextPath}/resources/reviewImg/${vo.r_photo}"
+										width="100" height="100" onclick="openImg('${pageContext.request.contextPath}/resources/reviewImg/${vo.r_photo}')"
+										style="cursor: pointer;"></td>
+										</c:when>
+										
+										<c:when test="${vo.r_photo == 'no_file' or vo.r_photo==null}">
+										<td><img
+										src="${pageContext.request.contextPath}/resources/reviewImg/defaultImg.jpg"
+										width="100" height="100"></td>
+										</c:when>
+										</c:choose>
 									<td>
 									<textarea class="col-auto form-control" id="reviewContents"
 								 	 placeholder="${vo.r_content }" readonly></textarea></td>
 								</tr>
 								<tr>
 									<td colspan="2" align="right">
-
-										<input type="button" value="수정"   onclick="location.href='view.do?r_idx=${vo.r_idx}'">
 										<input type="button"  value="수정" class="btn2" onclick="location.href='view.do?r_idx=${vo.r_idx}'">
-
-
-										
-
-										<input type="button"  value="수정" class="btn2" onclick="location.href='view.do?r_idx=${vo.r_idx}'">
-
-
 									</td>
 								</tr>
 							</c:forEach>

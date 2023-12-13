@@ -87,31 +87,32 @@ function go_pet(){
 			<div class="list">
 				<table border="1">
 					<c:choose>
-						<c:when test="${empty rlist }">
+						<c:when test="${empty rlist}">
 							<h2>작성된 리뷰가 없습니다.</h2>
 						</c:when>
-						<c:when test="${not empty rlist }">
+						<c:when test="${not empty rlist}">
 							<caption><h2>리뷰목록</h2></caption>
-							<c:forEach var="vo" items="${rlist }">
+							<c:forEach var="vo" items="${rlist}">
 								<tr>
-									<th>작성자 : ${vo.u_nickName }</th>
-									<th>작성일 : ${vo.r_regdate }</th>
+									<th>작성자 : ${vo.u_nickName}</th>
+									<th>작성일 : ${vo.r_regdate}</th>
 								</tr>
 								<tr>
 								
 								<c:choose>
-								<c:when test="${vo.r_photo}!='no_file' || ${vo.r_photo}!=null">
+								<c:when test="${vo.r_photo != 'no_file' and vo.r_photo!=null}">
 								
 									<td><img
 										src="${pageContext.request.contextPath}/resources/reviewImg/${vo.r_photo}"
 										width="100" height="100" onclick="openImg('${pageContext.request.contextPath}/resources/reviewImg/${vo.r_photo}')"
 										style="cursor: pointer;"></td>
 										</c:when>
-										<c:otherwise>
+										
+										<c:when test="${vo.r_photo == 'no_file' or vo.r_photo==null}">
 										<td><img
-										src="${pageContext.request.contextPath}/resources/petImg/defaultImg.jpg"
+										src="${pageContext.request.contextPath}/resources/reviewImg/defaultImg.jpg"
 										width="100" height="100"></td>
-										</c:otherwise>
+										</c:when>
 										</c:choose>
 									<td><textarea class="col-auto form-control"
 											id="reviewContents" placeholder="${vo.r_content }" readonly></textarea></td>

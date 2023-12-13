@@ -98,13 +98,21 @@
 						<th>작성일 : ${vo.r_regdate }</th>
 					</tr>
 					<tr>
-						<td>
-							<img
-							src="${pageContext.request.contextPath}/resources/reviewImg/${vo.r_photo}"
-							width="150" height="200"
-							onclick="openImage('${pageContext.request.contextPath}/resources/reviewImg/${vo.r_photo}')"
-							style="cursor: pointer;">
-						</td>
+						<c:choose>
+								<c:when test="${vo.r_photo != 'no_file' and vo.r_photo!=null}">
+								
+									<td><img
+										src="${pageContext.request.contextPath}/resources/reviewImg/${vo.r_photo}"
+										width="100" height="100" onclick="openImg('${pageContext.request.contextPath}/resources/reviewImg/${vo.r_photo}')"
+										style="cursor: pointer;"></td>
+										</c:when>
+										
+										<c:when test="${vo.r_photo == 'no_file' or vo.r_photo==null}">
+										<td><img
+										src="${pageContext.request.contextPath}/resources/reviewImg/defaultImg.jpg"
+										width="100" height="100"></td>
+										</c:when>
+										</c:choose>
 						<td>
 							<textarea name="r_content"class="col-auto form-control"
 								id="reviewContents" placeholder="${vo.r_content }"></textarea>

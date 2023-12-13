@@ -55,9 +55,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</select>
 	
 	<select id="reviewInfo_ListCheck" resultType="vo.ReviewVO" parameterType="java.util.HashMap">
-		SELECT U_IDX, R_IDX, R_CONTENT, R_REGDATE, R_PHOTO FROM 
-		(SELECT * FROM (SELECT r.*, RANK() OVER(ORDER BY r.R_IDX DESC) AS "RANK" FROM REVIEW r)
-		) WHERE "RANK" BETWEEN #{minPage} AND #{maxPage}
+		SELECT R_IDX,U_IDX,R_CONTENT,R_REGDATE,R_PHOTO,U_NICKNAME FROM (SELECT R.*, U.U_NICKNAME, RANK() OVER(ORDER BY R.R_IDX DESC) AS "RANK" FROM REVIEW R
+		INNER JOIN USERINFO U ON U.U_IDX = R.U_IDX) WHERE "RANK" BETWEEN #{minPage} AND #{maxPage}
 	</select>
 	
 	<select id="totalListCount" resultType="int">
