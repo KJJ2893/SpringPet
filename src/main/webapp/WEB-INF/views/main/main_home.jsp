@@ -13,18 +13,6 @@
 </script>
 </head>
 
-
-<!-- <body class="body"  style="background-image:url('resources/img/back.jpg');
-					background-repeat: no-repeat;
-					background-size:200%;
-					"
-					> -->
-<!-- <div class="logo">
-<a href="main_home.do"><img src="resources/img/hos logo.jpg" width="100px" height="100px"> </a>
-</div>
-<div class="logo1">My PET DOC
-</div> -->
-
 <body class="body"  
 	style="	background-repeat: no-repeat;
 			background-size:100%;
@@ -38,7 +26,7 @@
 		        </div>
 			<div class="title">
 		        	<ul class="nav">
-			            <li><a href="info_main.do">소개</a></li>
+			            <li><a href="info_main.do">병원소개</a></li>
 			            <li><a href="review_main.do">리뷰</a></li>
 			            <li><a href="qna_main.do">QNA</a></li>
 			            <li><a href="rev_main.do">예약</a></li>
@@ -118,7 +106,6 @@
         
         <div class="line1"></div>
 
-
 		<div class="text1">
 			<h1>반가워요!!</h1>
 			<div class="text2">
@@ -129,8 +116,8 @@
         <div class="line1"></div>
         
         <div class="main_text0">
-        <h1>ABOUT</h1>
-        <div class="contents1">우리는 재규어처럼 재빠르게, 남들과는 다르게 오징어를 낚아챕니다.</div>
+        <h1>멍이 냥이 동물병원</h1>
+        <div class="contents1">저희 동물병원은 과별 전문 의료진과 첨단 장비를 보유하고 있어요</div>
         
         <ul class="icons">
           <li>
@@ -169,21 +156,33 @@
         
        	<h2 align="center">마음이 따뜻하고 실력있는 의료진들이 소중한 반려동물과 함께 하겠습니다.</h2>
         
-        <div class="line1"></div>
+        <div class="line"></div>
 
         <div class="where">
-        	<div class="here">
-        		<h2 align="left">찾아 오시는 길</h2>
-       			<p>부평역 지하상가 21-B출구<br>
-       			지하철 - 1호선, 인천1호선 <br>
-       			버스 - 90, 1, 123, 55<br>
-       			
-       			부평역에서 도보로 5분<br>
-       			주차 가능<br></p>
-      		</div>
-     		<div class="mapp">
-       			<img src="${pageContext.request.contextPath}/resources/img/mapp.jpg">
-       		</div>
+        	<ul class="here">
+        		<li>
+        			<label id="i">찾아 오시는 길</label>
+		     		<div class="mapp">
+		       			<img src="${pageContext.request.contextPath}/resources/img/mapp.jpg">
+		       		</div>
+		       	</li>
+		       	<li>
+		       		<label>
+		       			> 주소안내 : 
+		       		</label>
+		       		<strong>
+		       			인천광역시 부평구 시장로 7 MH타워 5층
+		       		</strong>
+		       	</li>	
+	       		<li>
+	       		<label>
+	       			> 지하철 : 
+	       		</label>
+	       		<strong>
+	       			부평역 (21-B출구)
+	       		</strong>
+		       	</li>	
+       		</ul>
         </div>
         
         <div class="line"></div>
@@ -192,124 +191,18 @@
         <div>멍이 냥이 동물병원</div>
         <div id="info">
           CEO. 김가나다 <br>
-          Addr. 인천광역시 부평구 시장로 7 MH타워 5층 Fax/Tel. <br>
-          032-262-5890 <br>
+          Addr. 인천광역시 부평구 시장로 7 MH타워 5층 <br>
+          Fax/Tel. 032-262-5890 <br>
           ⓒ2023.hospital name All rights reserved.
         </div>
         <div class="sns">
-	<a href="https://www.instagram.com">
-	<img src="resources/img/insta.jpg" width="100px" height="100px">
-	</a>
-	<a href="https://www.kakaocorp.com/page/service/service/KakaoTalk">
-	<img src="resources/img/talk.jpg" width="100px" height="100px">
-	</a>
-	<a href="https://www.facebook.com/">
-	<img src="resources/img/facebook.jpg" width="100px" height="100px">
-	</a>
-	</div>
+			<a href="https://www.instagram.com">
+				<img src="resources/img/insta.jpg" width="100px" height="100px">
+			</a>
+		</div>
       </div>
     </div>
 	
-
-	
-	
-<!--  <div class="tab_content">
-<input type="radio" name="tabmenu" id="tab01" checked>
-<input type="radio" name="tabmenu" id="tab02" >
-<input type="radio" name="tabmenu" id="tab03" >
- -->
-
-
-
-<%-- 
-<c:forEach var="vo" items="${list }">
-<div class="conbox">
-
-<%-- <div class="conbox con1">
-
-
-	<table>
-		<tr>
-			<th>작성자 : ${vo.u_nickName }</th>
-			<th>작성일 : ${vo.r_regdate }</th>
-		</tr>
-		<tr>
-			<td><img
-				src="${pageContext.request.contextPath}/resources/reviewImg/${vo.r_photo}"
-				width="100" height="100"
-				onclick="openImage('${pageContext.request.contextPath}/resources/reviewImg/${vo.r_photo}')"
-				style="cursor: pointer;"></td>
-			<td><textarea class="col-auto form-control"
-					id="reviewContents" placeholder="${vo.r_content }" readonly></textarea></td>
-		</tr>
-	</table>
-
-</div>
-</c:forEach>
-
-
-
-
-
-
-
-</div> 
-
-
-
-<div class="conbox con2">
-	<table>
-		<tr>
-			<th>작성자 : ${list.get(1).u_nickName }</th>
-			<th>작성일 : ${list.get(1).r_regdate }</th>
-		</tr>
-		<tr>
-			<td><img
-				src="${pageContext.request.contextPath}/resources/reviewImg/${list.get(1).r_photo}"
-				width="100" height="100"
-				onclick="openImage('${pageContext.request.contextPath}/resources/reviewImg/${list.get(1).r_photo}')"
-				style="cursor: pointer;"></td>
-			<td><textarea class="col-auto form-control"
-					id="reviewContents" placeholder="${list.get(1).r_content }" readonly></textarea></td>
-		</tr>
-	</table>
-</div>
-
-
-<div class="conbox con3">
-	<table>
-		<tr>
-			<th>작성자 : ${list.get(2).u_nickName }</th>
-			<th>작성일 : ${list.get(2).r_regdate }</th>
-		</tr>
-		<tr>
-			<td><img
-				src="${pageContext.request.contextPath}/resources/reviewImg/${list.get(2).r_photo}"
-				width="100" height="100"
-				onclick="openImage('${pageContext.request.contextPath}/resources/reviewImg/${list.get(2).r_photo}')"
-				style="cursor: pointer;"></td>
-			<td><textarea class="col-auto form-control"
-					id="reviewContents" placeholder="${list.get(2).r_content }" readonly></textarea></td>
-		</tr>
-	</table>
-</div> --%>
-
-
-
-<div class="btn">
-<label for="tab01"></label>
-<label for="tab02"></label>
-<label for="tab03"></label>
-</div>
-
-</div>
-
-	
-	
- 
-
-
-    
 
 
 <!-- 	<!-- 자동롤링배너 
@@ -335,7 +228,6 @@
 	
 	 <script type="text/javascript">
         // 롤링 배너 복제본 생성
-        /*rolling-list 인것을 선택  */
         let roller = document.querySelector('.rolling-list');
         roller.id = 'roller1'; // 아이디 부여
  
@@ -377,9 +269,5 @@
 	        setInterval(nextSlide, 3000); // 3초마다 자동 슬라이드                
 	    });
     </script>
-    
-    
-    
-	</div>
 </body>
 </html>

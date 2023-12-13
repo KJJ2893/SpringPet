@@ -6,110 +6,127 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<script type="text/javascript">
-function go_pet(){
-	alert('로그인 필요');
-	location.href="login_main.do";
-} // go_pet()
-
-</script>
 <link rel="stylesheet"
-	href="${pageContext.request.contextPath}/resources/css/info/info.css?after">
+	href="${pageContext.request.contextPath}/resources/css/info/info.css">
 </head>
-<body style="background-image:url('resources/img/infoimg.jpg')">
-	<div class="wrap">
-		<div class="intro_bg">
-			<div class="header">
-	  		<a href="main_home.do" class="logo">
-						<img src="resources/img/hos logo.jpg" width="100px" height="100px">
-					</a>
-</div>
-
-	<div class="top">
-	<input type="button" value="소개" class="btn"  onclick="location.href='info_main.do'"  >
-	<input type="button" value="공지" class="btn" onclick=""  >
-	<input type="button" value="리뷰" class="btn" onclick="location.href='review_main.do'"  >
-	<input type="button" value="QNA"  class="btn" onclick="location.href='qna_main.do'"  >
-	<input type="button" value="예약"  class="btn" onclick="location.href='rev_main.do'"  >
-	<c:choose>
-			<c:when test="${empty id}">
-				
-				<input type="button" value="펫 등록" class="btn"  onclick="go_pet()">
-				<input type="button" value="정보수정" class="btn"  onclick="go_pet()">
-				<input type="button" value="로그인"class="btn"   onclick="location.href='login_main.do'">
-				
-			</c:when>
-			<c:when test="${not empty id}">
-				
-				<input type="button" value="펫 등록" class="btn"  onclick="location.href='petinfo_main.do'">
-				<input type="button" value="정보수정" class="btn"  onclick="location.href='check_up.do'">
-				<input type="button" value="로그아웃" class="btn"   onclick="location.href='logout.do'">
-			</c:when>
-		</c:choose>
-	</div>
+<body class="body"  
+	style="	background-repeat: no-repeat;
+			background-size:100%;
+			background-color:#F5C67B;">
 			
-			<div class="intro_text">
-				<h1>병원 소개</h1>
-				
-				<h3 class="contents1">
-					환자를 우선으로 생각하는 따뜻한 마음<br>
-					전문적인 수의의료서비스<br>
-					경인지역 서부권에서 가장 신뢰받는 병원
-					지역주민을 위한 봉사활동<br>
-					다년간 축적된 노하우<br>
-					끊임없이 연구하는 최상의 치료방법<br>
-					
-					</h3>
-					
+	<div class="wrapper">
+		<div class="intro-bg">
+			<div class="header">
+				<div class="logo">
+					<a href="main_home.do" id="logoa"><img src="resources/img/titleLogo.jpg" width="130px" height="130px"></a>
+		        </div>
+			<div class="title">
+		        	<ul class="nav">
+			            <li><a href="info_main.do">병원소개</a></li>
+			            <li><a href="review_main.do">리뷰</a></li>
+			            <li><a href="qna_main.do">QNA</a></li>
+			            <li><a href="rev_main.do">예약</a></li>
+			          	<c:choose>
+							<c:when test="${empty id}">
+								<li><a href="login_main.do">펫 등록</a></li>
+								<li><a href="login_main.do">정보수정</a></li>
+								<li><a href="login_main.do">로그인</a></li>
+							</c:when>
+							<c:when test="${not empty id}">
+								<li><a href="petinfo_main.do">펫 등록</a></li>
+								<li><a href="check_up.do">정보수정</a></li>
+								<li><a href="logout.do">로그아웃</a></li>
+							</c:when>
+						</c:choose>
+					</ul>
+				</div>
+			</div>
+		</div> <!-- 헤더 -->
+		
+		<div class="info">
+			<div class="context1">
+				<div class="line"></div>
+				<h2 align="center">멍이 냥이 동물병원 인사말</h2>
+				<div class="line"></div>
 			</div>
 		</div>
-	</div>
-	
-	<div class="main_text1">
-		<h1>SERVICE</h1>
-		<div class="contents1">
+		<div class="insamal"
+		style="
+		background-image: url('${pageContext.request.contextPath}/resources/img/infoimg2.jpg');">
+			<div class="context2">
+				<h1>안녕하십니까</h1>
+				
+				<p>멍이 냥이 동물병원 원장입니다.</p>
+					
+				<p>멍이 냥이 동물병원은 2023년 개원 이래 각 전공 분야의 실력있는 수의사들이<br>
+				1년 365일 24시간 최선을 다해 진료하는 반려동물 임상 클리닉 센터입니다.</p>
+				
+				<h1>우리 동물병원은</h1>
+				
+				<p>- 환자를 우선으로 생각하는 따뜻한 마음<br>
+			    - 전문적인 수의의료서비스<br>
+				- 경인지역 서부권에서 가장 신뢰받는 병원<br>
+				- 지역주민을 위한 봉사활동<br>
+				- 다년간 축적된 노하우<br>
+				- 끊임없이 연구하는 최상의 치료방법으로<br>
+				항상 좋은 결과를 통해 보답하겠습니다.</p>
+			</div>
+		</div>
+		
+		<div class="line"></div>
+
+	<div class="last">
+		<h1>마지막으로</h1>
+		<div class="context3">
 			저희 동물의료센터를 찾아주신 반려동물 보호자님께 감사의 말씀을 전합니다.
 		</div>
-		<div class="service">
-			<div class="food_photo">
-				<img src="${pageContext.request.contextPath}/resources/img/puppy.jpg">
-			</div>
-			<div class="contents2">
-				<h2>우리 동물병원은</h2>
-					<li> 과별 분과 진료와</li>
-					<li>첨단 장비를 통한 정확한 진단</li> 
-					<li> 본원만의 진료 및 치료 노하우</li>
-					<li>반려동물과 보호자님께 최고의 수의 의료서비스</li> 
-					<li>검단사거리에 위치한 경인지역 서부권 중심병원</li><br>
-					<br>
-					<h2>마음이 따뜻하고 실력있는 의료진들이 소중한 반려동물과 함께 하겠습니다.</h2>
-			</div>
+		<div class="line"></div>
+	</div>
+	
+	 <div class="where">
+        	<ul class="here">
+        		<li>
+        			<label id="i">찾아 오시는 길</label>
+		     		<div class="mapp">
+		       			<img src="${pageContext.request.contextPath}/resources/img/mapp.jpg">
+		       		</div>
+		       	</li>
+		       	<li>
+		       		<label>
+		       			> 주소안내 : 
+		       		</label>
+		       		<strong>
+		       			인천광역시 부평구 시장로 7 MH타워 5층
+		       		</strong>
+		       	</li>	
+	       		<li>
+	       		<label>
+	       			> 지하철 : 
+	       		</label>
+	       		<strong>
+	       			부평역 (21-B출구)
+	       		</strong>
+		       	</li>	
+       		</ul>
+        </div>
+        
+        <div class="line"></div>
+	
+	<div class="footer">
+        <div>멍이 냥이 동물병원</div>
+        <div id="info">
+          CEO. 김가나다 <br>
+          Addr. 인천광역시 부평구 시장로 7 MH타워 5층 <br>
+          Fax/Tel. 032-262-5890 <br>
+          ⓒ2023.hospital name All rights reserved.
+        </div>
+        <div class="sns">
+			<a href="https://www.instagram.com">
+				<img src="resources/img/insta.jpg" width="100px" height="100px">
+			</a>
 		</div>
-	</div>
-	
-		<div class="footer">
-		<li>병원이름: 동물병원</li>
-	<li> 주소  : 인천광역시 부평구 시장로 7 5층</li>
-	<li>전화번호: 032-262-5890</li>
-	<li> 이메일:email@naver.com</li>
-	ⓒ2023.hospital name All rights reserved.
-	</div>
-	
-	<div class="footer1">
-	<li>대표자: 김재준</li>
-	<li>대표자 전화번호:000-0000-0000</li>
-	<li>사업자 등록번호:000-00-00000</li>
-	</div>
-		<div class="sns">
-	<a href="https://www.instagram.com">
-	<img src="resources/img/insta.jpg" width="100px" height="100px">
-	</a>
-	<a href="https://www.kakaocorp.com/page/service/service/KakaoTalk">
-	<img src="resources/img/talk.jpg" width="100px" height="100px">
-	</a>
-	<a href="www.facebook.com">
-	<img src="resources/img/facebook.jpg" width="100px" height="100px">
-	</a>
+      </div>
+
 	</div>
 </body>
 </html>
