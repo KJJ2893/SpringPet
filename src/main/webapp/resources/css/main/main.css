@@ -55,7 +55,7 @@
 
 
 }
-<<<<<<< HEAD
+
 .logo1{
 	color:fuchsia;
 	font-family:fantasy;
@@ -64,19 +64,19 @@
 	top:20px;
 	left:125px;
 }
- .footer{
+/*  .footer{
         position:absolute;
-        top:1400px;}
+        top:1900px;}
         .sns{
         position:absolute;
-        top:1400px;
+        top:1950px;
         left:650px;
         			}
        .footer1{
        position:absolute;
-       top:1400px;
-       left:400px;}
-=======
+       top:1950px;
+       left:400px;} */
+
 
 .nav > li > a {
   color: #black;
@@ -258,10 +258,11 @@ a:visited {
 }
 
 .where{
+	
 	margin-left: 800px;
 	width: 600px;
 	height: 300px;
->>>>>>> origin/12-12-ㅏㅓㅓ
+
 	
 }
 
@@ -316,7 +317,7 @@ a:visited {
 	
 }
 
-<<<<<<< HEAD
+
 /* 자동롤링배너 */
 .wrap {
             border: 1px solid;
@@ -371,9 +372,9 @@ a:visited {
             box-shadow: 0 0.5em 0.5em -0.4em yellow;
             /* 그림자의 수평위치,그림자의 수직위치,그림자의 흐림,그림자의 확산,그림자색상 */
         }
-=======
+
 .wrapper{
 	background-color: #F5C67B;
 }
 
->>>>>>> origin/12-12-ㅏㅓㅓ
+

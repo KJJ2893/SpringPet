@@ -5,17 +5,10 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<style>
-.checkbtn{
-	cursor:pointer;
-}
-.btn{
-cursor:pointer;
 
-}
-</style>
+
 <link rel="stylesheet"
-	href="${pageContext.request.contextPath}/resources/css/login/update.css">
+	href="${pageContext.request.contextPath}/resources/css/login/update.css?after">
 <script src="resources/js/httpRequest.js"></script>
 <script type="text/javascript">
 	function upNname(){
@@ -113,31 +106,31 @@ cursor:pointer;
 				<div class="update">
 					<h3>NickName</h3>
 					<input id="u_Nname" value="${id.u_nickName }" readOnly>
-					<input type="button" class="btn"  value="수정" onclick="upNname()">
+					<input type="button"  value="수정" onclick="upNname()">
 				
 					<h3>Name</h3>
 					<input id="u_name" value="${id.u_name }" readOnly>
-					<input type="button" class="btn"  value="수정" onclick="upName()">
+					<input type="button"   value="수정" onclick="upName()">
 					
 					<h3>Email</h3>
 					<input id="u_email" value="${id.u_email }" readOnly>
-					<input type="button" class="btn"   value="수정" onclick="upEmail()">
+					<input type="button"    value="수정" onclick="upEmail()">
 
 					<h3>Password</h3>
 					<input type="password" value="${id.u_pwd }" readOnly>
-					<input type="button" class="btn"  value="수정" onclick="upPwd()">
+					<input type="button"   value="수정" onclick="upPwd()">
 					
 					<h3>Tel</h3>
 					<input id="u_tel" value="${id.u_tel }" readOnly>
-					<input type="button" class="btn"  value="수정" onclick="upTel()">
+					<input type="button"   value="수정" onclick="upTel()">
 					
 					<h3>Address</h3>
 					<input id="u_addr" value="${id.u_addr }" readOnly>
-					<input type="button"  class="btn" value="수정" onclick="upAddr()">
+					<input type="button"   value="수정" onclick="upAddr()">
 					
 					
 				</div>
-				<input type="button"  class="checkbtn"  value="완료" onclick="location.href='main_home.do'">
+				<input type="button"   value="완료" onclick="location.href='main_home.do'">
 			</form>
 		</div>
 	</div>

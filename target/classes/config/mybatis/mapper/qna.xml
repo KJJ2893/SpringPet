@@ -19,7 +19,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<select id="qna_selectList" resultType="vo.QnaVO">
 		SELECT * FROM QNA ORDER BY q_regdate DESC
 	</select>
-<<<<<<< HEAD
+
 	
 	<insert id="insert_qna2" parameterType="vo.QnaVO">
 		INSERT INTO qna VALUES (
@@ -37,9 +37,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		select * from qna
 	</select>
 	
-=======
+
 		
->>>>>>> origin/1211_yar
+
 	<select id="qna_view" parameterType="int" resultType="vo.QnaVO">
 		select * from qna where q_idx=#{q_idx}
 	</select>

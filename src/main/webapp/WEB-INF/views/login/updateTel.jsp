@@ -5,13 +5,9 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<style>
-.checkbtn{
-	cursor:pointer;
-}
-</style>
+
 <link rel="stylesheet"
-	href="${pageContext.request.contextPath}/resources/css/login/update.css">
+	href="${pageContext.request.contextPath}/resources/css/login/update.css?after">
 <script src="resources/js/httpRequest.js"></script>
 <script type="text/javascript">
 	var b_telCheck = false;
@@ -85,9 +81,9 @@
 				
 				<h3>새로운 전화번호를 입력해주세요.</h3>
 				<input id="u_tel" name="u_tel" placeholder="Tel" onchange="che()"> 
-				<input type="button" class="checkbtn" id="check_tel" value="전화번호 확인" onclick="telCheck(this.form)">
+				<input type="button"  id="check_tel" value="전화번호 확인" onclick="telCheck(this.form)">
 			</div>
-			<input type="button"  class="checkbtn" value="완료" onclick="done(this.form)">
+			<input type="button"  value="완료" onclick="done(this.form)">
 		</form>
 		</div>
 </body>

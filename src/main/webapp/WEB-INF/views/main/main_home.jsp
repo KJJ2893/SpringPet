@@ -13,18 +13,18 @@
 </script>
 </head>
 
-<<<<<<< HEAD
-<body class="body"  style="background-image:url('resources/img/back.jpg');
+
+<!-- <body class="body"  style="background-image:url('resources/img/back.jpg');
 					background-repeat: no-repeat;
-					background-size:100%;
-					background-color:fuchsia;"
-					>
-<div class="logo">
+					background-size:200%;
+					"
+					> -->
+<!-- <div class="logo">
 <a href="main_home.do"><img src="resources/img/hos logo.jpg" width="100px" height="100px"> </a>
 </div>
 <div class="logo1">My PET DOC
-</div>
-=======
+</div> -->
+
 <body class="body"  
 	style="	background-repeat: no-repeat;
 			background-size:100%;
@@ -117,7 +117,7 @@
         </div>
         
         <div class="line1"></div>
->>>>>>> origin/12-12-ㅏㅓㅓ
+
 
 		<div class="text1">
 			<h1>반가워요!!</h1>
@@ -197,15 +197,6 @@
           ⓒ2023.hospital name All rights reserved.
         </div>
         <div class="sns">
-			<a href="https://www.instagram.com">
-				<img src="resources/img/insta.jpg" width="100px" height="100px">
-			</a>
-		</div>
-      </div>
-    </div>
-	
-<<<<<<< HEAD
-	<div class="sns">
 	<a href="https://www.instagram.com">
 	<img src="resources/img/insta.jpg" width="100px" height="100px">
 	</a>
@@ -216,16 +207,20 @@
 	<img src="resources/img/facebook.jpg" width="100px" height="100px">
 	</a>
 	</div>
+      </div>
+    </div>
 	
- <div class="tab_content">
+
+	
+	
+<!--  <div class="tab_content">
 <input type="radio" name="tabmenu" id="tab01" checked>
 <input type="radio" name="tabmenu" id="tab02" >
 <input type="radio" name="tabmenu" id="tab03" >
+ -->
 
-<<<<<<< HEAD
-=======
 
->>>>>>> origin/1212wogns2
+
 <%-- 
 <c:forEach var="vo" items="${list }">
 <div class="conbox">
@@ -308,11 +303,11 @@
 </div>
 
 </div>
-=======
+
 	
 	
  
->>>>>>> origin/12-12-ㅏㅓㅓ
+
 
     
 

@@ -124,16 +124,16 @@
 								</tr>
 								<tr>
 									<td colspan="2" align="right">
-<<<<<<< HEAD:src/main/webapp/WEB-INF/views/review/myReviewList.jsp
+
 										<input type="button" value="수정"   onclick="location.href='view.do?r_idx=${vo.r_idx}'">
 										<input type="button"  value="수정" class="btn2" onclick="location.href='view.do?r_idx=${vo.r_idx}'">
-=======
+
 
 										
 
 										<input type="button"  value="수정" class="btn2" onclick="location.href='view.do?r_idx=${vo.r_idx}'">
 
->>>>>>> origin/1212wogns2:src/main/webapp/WEB-INF/views/review/myReivewList.jsp
+
 									</td>
 								</tr>
 							</c:forEach>
