@@ -6,48 +6,8 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<style>
-.top {
-    position:absolute;
-    top:20px;
-    left:400px;
-
-
-}
-.btn1{
-    background-color: #A582CF; 
-    cursor:pointer;
-    margin-left:100px;
-    width:70px;
-    height:30px;
-    color: #fff;
-    border-radius:10px;
-  	text-align: center;
-	border-color:blue;
-}
-.btn1:hover {
-            border-color: aqua;
-            color: white;
-            box-shadow: 0 0.5em 0.5em -0.4em yellow;
-            
-            
-        }
-        .btn2{
-        background-color: #A582CF; 
-    cursor:pointer;
-    color: #fff;
-    border-color:blue;
-    border-radius:10px;
-        }
-        .btn2:hover {
-            border-color: aqua;
-            color: white;
-            box-shadow: 0 0.5em 0.5em -0.4em yellow;
-        }  
-
-</style>
 <link rel="stylesheet"
-	href="${pageContext.request.contextPath}/resources/css/review/reviewlist.css">
+	href="${pageContext.request.contextPath}/resources/css/review/review_main.css">
 <script type="text/javascript">
 	function go(f){
 		var u_idx = f.u_idx.value;
@@ -61,81 +21,107 @@
 		}
 	}
 
+	function openImage(imageSrc) {
+	 	window.open(imageSrc, '_blank', 'width=1000, height=800');
+	 } 
 </script>
 </head>
-<body style="background-image:url('resources/img/review.jpg')">
-	<div class="logo">
+<body class="body"  
+	style="	background-repeat: no-repeat;
+			background-size:100%;
+			background-color:#E7D7B2;">
+					
+	<div class="wrapper">
+		<div class="intro-bg">
+		<div class="header">
+			<div class="logo">
+					<a href="main_home.do" id="logoa"><img src="resources/img/titleLogo.jpg" width="130px" height="130px"></a>
+		        </div>
+			<div class="title">
+		        	<ul class="nav">
+			            <li><a href="info_main.do">병원소개</a></li>
+			            <li><a href="review_main.do">리뷰</a></li>
+			            <li><a href="qna_main.do">QNA</a></li>
+			            <li><a href="rev_main.do">예약</a></li>
+			          	<c:choose>
+							<c:when test="${empty id}">
+								<li><a href="login_main.do">펫 등록</a></li>
+								<li><a href="login_main.do">정보수정</a></li>
+								<li><a href="login_main.do">로그인</a></li>
+							</c:when>
+							<c:when test="${not empty id}">
+								<li><a href="petinfo_main.do">펫 등록</a></li>
+								<li><a href="check_up.do">정보수정</a></li>
+								<li><a href="logout.do">로그아웃</a></li>
+							</c:when>
+						</c:choose>
+					</ul>
+				</div>
+			</div>
+		</div> <!-- 헤더 -->
 	
-
-		<a href="main_home.do"><img src="resources/img/hos logo.jpg" width="100px" height="100px"> </a>
-	</div>
-	<div class="top">
-	<input type="button" value="소개" class="btn1"  onclick="location.href='info_main.do'"  >
-	<input type="button" value="공지" class="btn1" onclick=""  >
-	<input type="button" value="리뷰" class="btn1" onclick="location.href='review_main.do'"  >
-	<input type="button" value="QNA"  class="btn1" onclick="location.href='qna_main.do'"  >
-	<input type="button" value="예약"  class="btn1" onclick="location.href='rev_main.do'"  >
-	<c:choose>
-			<c:when test="${empty id}">
-				
-				<input type="button" value="펫 등록" class="btn1"  onclick="go_pet()">
-				<input type="button" value="정보수정" class="btn1"  onclick="go_pet()">
-				<input type="button" value="로그인"class="btn1"   onclick="location.href='login_main.do'">
-				
-			</c:when>
-			<c:when test="${not empty id}">
-				
-				<input type="button" value="펫 등록" class="btn1"  onclick="location.href='petinfo_main.do'">
-				<input type="button" value="정보수정" class="btn1"  onclick="location.href='check_up.do'">
-				<input type="button" value="로그아웃" class="btn1"   onclick="location.href='logout.do'">
-			</c:when>
-		</c:choose>
-	</div>
-	
-	<div class="top1">
-		<form >
-		
-				<input class="bt1" type="button" value="목록으로" onclick="location.href='review_main.do'">
-		
+		<div class="content">
+			<form >
+				<div class="r_bt">
+					<input class="bt" type="button" value="목록으로" onclick="location.href='review_main.do'">
+				</div>	
 			<div class="list">
-				<table border="1" align="center">
+				<table class="rrr">
 					<c:choose>
 						<c:when test="${empty list }">
 							<h2>작성한 리뷰가 없습니다.</h2>
 						</c:when>
 						<c:when test="${not empty list }">
-							<caption><h2>리뷰</h2></caption>
+							<caption><h2>내가 쓴 리뷰</h2></caption>
+							<tr>
+								<td colspan="2"><div class="line"></div></td>
+							</tr>
 							<c:forEach var="vo" items="${list }">
-							<input type="hidden" name="u_idx" value="${vo.u_idx}">
+								<input type="hidden" name="u_idx" value="${vo.u_idx}">
 								<input type="hidden" value="${vo.r_idx}" name="r_idx">
-								<tr>
-									<th>작성자 : ${vo.u_nickName }</th>
-									<th>작성일 : ${vo.r_regdate }</th>
-								</tr>
-								<tr>
-								<c:choose>
-								<c:when test="${vo.r_photo != 'no_file' and vo.r_photo!=null}">
 								
-									<td><img
-										src="${pageContext.request.contextPath}/resources/reviewImg/${vo.r_photo}"
-										width="100" height="100" onclick="openImg('${pageContext.request.contextPath}/resources/reviewImg/${vo.r_photo}')"
-										style="cursor: pointer;"></td>
+								<tr>
+									<td colspan="2" id="n">작성자 : ${vo.u_nickName}</td>
+								</tr>
+								
+								<tr>
+									<c:choose>
+										<c:when test="${vo.r_photo != 'no_file' and vo.r_photo!=null}">
+											<td>
+												<img src="${pageContext.request.contextPath}/resources/reviewImg/${vo.r_photo}"
+												width="150" height="150" onclick="openImage('${pageContext.request.contextPath}/resources/reviewImg/${vo.r_photo}')"
+												style="cursor: pointer;">
+											</td>
 										</c:when>
 										
 										<c:when test="${vo.r_photo == 'no_file' or vo.r_photo==null}">
-										<td><img
-										src="${pageContext.request.contextPath}/resources/reviewImg/defaultImg.jpg"
-										width="100" height="100"></td>
+											<td>
+												<img src="${pageContext.request.contextPath}/resources/reviewImg/defaultImg.jpg"
+												width="150" height="150">
+											</td>
 										</c:when>
-										</c:choose>
-									<td>
-									<textarea class="col-auto form-control" id="reviewContents"
-								 	 placeholder="${vo.r_content }" readonly></textarea></td>
+									</c:choose>
+									<td id="c">
+										<textarea class="col-auto form-control"
+											id="reviewContents" placeholder="${vo.r_content }" readonly></textarea>
+									</td>
 								</tr>
+								<tr>
+									<td colspan="2" id="d">작성일 : ${vo.r_regdate}</td>
+								</tr>
+								
+								<tr>
+									<td colspan="2"><div class="line"></div></td>
+								</tr>
+								
 								<tr>
 									<td colspan="2" align="right">
 										<input type="button"  value="수정" class="btn2" onclick="location.href='view.do?r_idx=${vo.r_idx}'">
 									</td>
+								</tr>
+								
+								<tr>
+									<td colspan="2"><div class="line"></div></td>
 								</tr>
 							</c:forEach>
 						</c:when>
@@ -143,6 +129,25 @@
 				</table>
 			</div>
 		</form>
+	</div>
+	
+	<div class="line"></div>
+      
+	<div class="footer">
+        <div>멍이 냥이 동물병원</div>
+        <div id="info">
+          CEO. 김가나다 <br>
+          Addr. 인천광역시 부평구 시장로 7 MH타워 5층 <br>
+          Fax/Tel. 032-262-5890 <br>
+          ⓒ2023.hospital name All rights reserved.
+        </div>
+        <div class="sns">
+			<a href="https://www.instagram.com">
+				<img src="resources/img/insta.jpg" width="100px" height="100px">
+			</a>
+		</div>
+      </div>
+	
 	</div>
 </body>
 </html>

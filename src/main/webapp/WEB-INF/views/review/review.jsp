@@ -81,7 +81,7 @@ function go_pet(){
 			</div>
 		</div> <!-- 헤더 -->
 		
-	<div class="post">
+	<div class="content">
 		<form>
 			<input type="hidden" name="u_idx" value="${id.u_idx}">
 			<div class="r_bt">

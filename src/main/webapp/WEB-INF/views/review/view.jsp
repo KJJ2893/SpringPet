@@ -7,9 +7,9 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link rel="stylesheet"
-	href="${pageContext.request.contextPath}/resources/css/review/view.css">
+	href="${pageContext.request.contextPath}/resources/css/review/reviewinsert.css">
 <script type="text/javascript">
-	
+		
 	function del(f){
 		var u_idx = f.u_idx.value;
 		var r_idx = f.r_idx.value;
@@ -25,11 +25,12 @@
 	
 	function re(f){
 		var r_content = f.r_content.value.trim();
+		var r_content2 = f.r_content.value;
 		var u_idx = f.u_idx.value;
 		var r_idx = f.r_idx.value;
 		var photoInput = f.photo;
 		
-		if(r_content == ''){
+		if(r_content == '' && r_content != r_content2){
 			alert('리뷰를 작성해주세요 ㅠ');
 			return;
 		}
@@ -54,83 +55,131 @@
 		var allowedTypes = ['image/jpeg', 'image/png', 'image/gif'];
 		return input.files.length > 0 && allowedTypes.includes(input.files[0].type);
 	}
+	
+	function openImage(imageSrc) {
+	 	window.open(imageSrc, '_blank', 'width=1000, height=800');
+	 } 
 </script>
 </head>
-<body style="background-image:url('resources/img/review.jpg')">
-	<div class="logo">
-		<a href="main_home.do"><img src="resources/img/hos logo.jpg"
-			width="100px" height="100px"> </a>
-	</div>
-	<div class="logo1">MY PET DOC
-</div>
-
-<div class="top">
-	<input type="button" value="소개" class="btn1"  onclick="location.href='info_main.do'"  >
-	<input type="button" value="공지" class="btn1" onclick=""  >
-	<input type="button" value="리뷰" class="btn1" onclick="location.href='review_main.do'"  >
-	<input type="button" value="QNA"  class="btn1" onclick="location.href='qna_form.do'"  >
-	<input type="button" value="예약"  class="btn1" onclick="location.href='rev_main.do'"  >
-	<c:choose>
-	<c:when test="${empty id}">
-				
-				<input type="button" value="펫 등록" class="btn"  onclick="go_pet()">
-				<input type="button" value="정보수정" class="btn"  onclick="go_pet()">
-				<input type="button" value="로그인"class="btn"   onclick="location.href='login_main.do'">
-				
-			</c:when>
-			<c:when test="${not empty id}">
-				
-				<input type="button" value="펫 등록" class="btn1"  onclick="location.href='petinfo_main.do'">
-				<input type="button" value="정보수정" class="btn1"  onclick="location.href='check_up.do'">
-				<input type="button" value="로그아웃" class="btn1"   onclick="location.href='logout.do'">
-			</c:when>
-		</c:choose>
-	</div>
-	<div class="top1">
+<body class="body"  
+	style="	background-repeat: no-repeat;
+			background-size:100%;
+			background-color:#E7D7B2;">
+					
+	<div class="wrapper">
+		<div class="intro-bg">
+		<div class="header">
+			<div class="logo">
+				<a href="main_home.do" id="logoa"><img src="resources/img/titleLogo.jpg" width="130px" height="130px"></a>
+		    </div>
+			<div class="title">
+		        	<ul class="nav">
+			            <li><a href="info_main.do">병원소개</a></li>
+			            <li><a href="review_main.do">리뷰</a></li>
+			            <li><a href="qna_main.do">QNA</a></li>
+			            <li><a href="rev_main.do">예약</a></li>
+			          	<c:choose>
+							<c:when test="${empty id}">
+								<li><a href="login_main.do">펫 등록</a></li>
+								<li><a href="login_main.do">정보수정</a></li>
+								<li><a href="login_main.do">로그인</a></li>
+							</c:when>
+							<c:when test="${not empty id}">
+								<li><a href="petinfo_main.do">펫 등록</a></li>
+								<li><a href="check_up.do">정보수정</a></li>
+								<li><a href="logout.do">로그아웃</a></li>
+							</c:when>
+						</c:choose>
+					</ul>
+				</div>
+			</div>
+		</div> <!-- 헤더 -->
+		
+		
+	<div class="content">
 		<form method="POST" enctype="multipart/form-data">
 			<input type="hidden" value="${vo.u_idx}" name="u_idx">
 			<input type="hidden" value="${vo.r_idx}" name="r_idx">
+			
 			<div class="list">
-				<table border="1" align="center">
-					<caption><h2>리뷰</h2></caption>
+				<table class="rrr">
+					<caption><h2>리뷰 수정하기</h2></caption>
 					<tr>
-						<th>작성자 : ${vo.u_nickName }</th>
-						<th>작성일 : ${vo.r_regdate }</th>
+						<td colspan="2"><div class="line"></div></td>
+					</tr>
+					<tr>
+						<td colspan="2" id="n">작성자 : ${vo.u_nickName}</td>
 					</tr>
 					<tr>
 						<c:choose>
 								<c:when test="${vo.r_photo != 'no_file' and vo.r_photo!=null}">
 								
-									<td><img
-										src="${pageContext.request.contextPath}/resources/reviewImg/${vo.r_photo}"
-										width="100" height="100" onclick="openImg('${pageContext.request.contextPath}/resources/reviewImg/${vo.r_photo}')"
-										style="cursor: pointer;"></td>
-										</c:when>
-										
-										<c:when test="${vo.r_photo == 'no_file' or vo.r_photo==null}">
-										<td><img
-										src="${pageContext.request.contextPath}/resources/reviewImg/defaultImg.jpg"
-										width="100" height="100"></td>
-										</c:when>
-										</c:choose>
-						<td>
-							<textarea name="r_content"class="col-auto form-control"
+									<td>
+										<img src="${pageContext.request.contextPath}/resources/reviewImg/${vo.r_photo}"
+										width="150" height="150" onclick="openImage('${pageContext.request.contextPath}/resources/reviewImg/${vo.r_photo}')"
+										style="cursor: pointer;">
+									</td>
+								</c:when>
+								<c:when test="${vo.r_photo == 'no_file' or vo.r_photo==null}">
+									<td>
+										<img src="${pageContext.request.contextPath}/resources/reviewImg/defaultImg.jpg"
+										width="150" height="150">
+									</td>
+								</c:when>
+						</c:choose>
+						<td id="c">
+							<textarea name="r_content" class="col-auto form-control"
 								id="reviewContents" placeholder="${vo.r_content }"></textarea>
 						</td>
 					</tr>
+					
 					<tr>
-					<th>이미지 수정</th>
-					<td><input type="file" name="photo"></td>
-				</tr>
+						<td colspan="2"><div class="line"></div></td>
+					</tr>
+					
+					<tr>
+						<th>이미지 수정</th>
+						<td align="left" class="btn3">
+							<label for="file">파일찾기</label>
+							<input type="file" name="photo" id="file" >
+						</td>
+					</tr>
+					
+					<tr>
+						<td colspan="2"><div class="line"></div></td>
+					</tr>
+					
 					<tr>
 						<td colspan="2" align="right">
-							<input type="button" class="btn" value="수정하기" onclick="re(this.form)">
-							<input type="button" class="btn" value="삭제하기" onclick="del(this.form)">
+							<input type="button" class="btn2" value="수정하기" onclick="re(this.form)">
+							<input type="button" class="btn2" value="삭제하기" onclick="del(this.form)">
 						</td>
+					</tr>
+					<tr>
+						<td colspan="2"><div class="line"></div></td>
 					</tr>
 				</table>
 			</div>
 		</form>
+	</div>
+	
+	<div class="line"></div>
+	
+	<div class="footer">
+        <div>멍이 냥이 동물병원</div>
+        <div id="info">
+          CEO. 김가나다 <br>
+          Addr. 인천광역시 부평구 시장로 7 MH타워 5층 <br>
+          Fax/Tel. 032-262-5890 <br>
+          ⓒ2023.hospital name All rights reserved.
+        </div>
+        <div class="sns">
+			<a href="https://www.instagram.com">
+				<img src="resources/img/insta.jpg" width="100px" height="100px">
+			</a>
+		</div>
+      </div>
+	
 	</div>
 </body>
 </html>
