@@ -83,7 +83,10 @@
 <input type="radio" name="tabmenu" id="tab02" >
 <input type="radio" name="tabmenu" id="tab03" >
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/1212_JIN
 <%-- 
 <c:forEach var="vo" items="${list }">
 <div class="conbox">

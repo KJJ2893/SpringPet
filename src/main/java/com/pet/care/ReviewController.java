@@ -110,13 +110,13 @@ public class ReviewController {
 	
 	//////////////
 	// 내가 쓴 글
-	@RequestMapping("myReivewList.do")
-	public String myReivewList(Model model, int u_idx) {
+	@RequestMapping("myReviewList.do")
+	public String myReviewList(Model model, int u_idx) {
 		
 		List<ReviewVO> list = review_dao.selectMyList(u_idx);
 		model.addAttribute("list", list);
 		
-		return VIEW_PATH+"myReivewList.jsp";
+		return VIEW_PATH+"myReviewList.jsp";
 	}
 	
 	// 리뷰 상세보기
@@ -137,7 +137,7 @@ public class ReviewController {
 		int res = review_dao.delReviw(r_idx);
 		
 		if(res == 1) {
-			return "redirect:myReivewList.do?u_idx="+u_idx;
+			return "redirect:myReviewList.do?u_idx="+u_idx;
 			
 		} else {
 			return null;

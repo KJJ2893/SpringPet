@@ -37,14 +37,14 @@ function go_pet(){
 			alert('로그인이 필요합니다.');
 			location.href = " login_main.do";
 		} else {
-			f.action = "myReivewList.do";
+			f.action = "myReviewList.do";
 			f.submit();
 		}
 	}
 
-	/* 	function openImage(imageSrc){
+	function openImage(imageSrc){
 	 window.open(imageSrc, '_blank', 'width=1000, height=800');
-	 } */
+	 } 
 </script>
 </head>
 <body style="background-image:url('resources/img/review.jpg')">
@@ -104,7 +104,8 @@ function go_pet(){
 								
 									<td><img
 										src="${pageContext.request.contextPath}/resources/reviewImg/${vo.r_photo}"
-										width="100" height="100"></td>
+										width="100" height="100" onclick="openImg('${pageContext.request.contextPath}/resources/reviewImg/${vo.r_photo}')"
+										style="cursor: pointer;"></td>
 										</c:when>
 										<c:otherwise>
 										<td><img

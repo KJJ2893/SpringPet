@@ -92,14 +92,9 @@
 		</c:choose>
 	</div>
 	
-	
-	
-	
-	
 	<div class="top1">
 		<form >
 		
-				
 				<input class="bt1" type="button" value="목록으로" onclick="location.href='review_main.do'">
 		
 			<div class="list">
@@ -129,11 +124,16 @@
 								</tr>
 								<tr>
 									<td colspan="2" align="right">
+<<<<<<< HEAD:src/main/webapp/WEB-INF/views/review/myReivewList.jsp
 
 										
 
 										<input type="button"  value="수정" class="btn2" onclick="location.href='view.do?r_idx=${vo.r_idx}'">
 
+=======
+										<input type="button" value="수정"   onclick="location.href='view.do?r_idx=${vo.r_idx}'">
+										<input type="button"  value="수정" class="btn2" onclick="location.href='view.do?r_idx=${vo.r_idx}'">
+>>>>>>> origin/1212_JIN:src/main/webapp/WEB-INF/views/review/myReviewList.jsp
 									</td>
 								</tr>
 							</c:forEach>

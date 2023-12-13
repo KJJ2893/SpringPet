@@ -81,7 +81,6 @@ public class ReviewListPaging {
 		if (maxpage > pagingMaxTag) {
 			maxpage = pagingMaxTag;
 		}
-		System.out.println("sdfdsd : "+goodsList.get(0).getR_idx());
 		pagingData.put("rlist", goodsList);
 		pagingData.put("pagingCount", pagingMaxTag);
 		pagingData.put("minpage", minpage);

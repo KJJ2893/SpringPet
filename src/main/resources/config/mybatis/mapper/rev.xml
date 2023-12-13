@@ -11,7 +11,7 @@ select * from reservation
 <!--예약등록하기  -->
 <insert id="rev_insert" parameterType="vo.RevVO">
 		INSERT INTO RESERVATION VALUES(
-			SEQ_RESERVATION_IDX.NEXTVAL,
+			RV_IDX.NEXTVAL,
 			#{u_idx},
 			#{rv_time},
 			#{rv_day}
