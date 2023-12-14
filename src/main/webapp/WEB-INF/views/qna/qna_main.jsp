@@ -38,10 +38,10 @@
 		</span>
 	</div>
 	
-	<div class="qna_wrapperBox">
-		<div class="list_search">
+	<div class="qna_wrapperBox" >
+		<div class="list_search" style="background-color:white">
 			<form class="searchform" name="list_search_form" onclick="send_list_form(this.form)">
-				<fieldset>
+				<fieldset >
 					<select id="">
 						<option values="title">제목</option>
 						<option values="content">내용</option>
