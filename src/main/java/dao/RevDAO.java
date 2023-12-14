@@ -19,6 +19,12 @@ SqlSession sqlSession;
 		return sqlSession.selectList("r.rev_list");
 	
 	}
+	
+	public List<String> rev_selectList2(String rv_day){
+		return sqlSession.selectList("r.rev_list2", rv_day);
+		
+	}
+	
 	// 예약 등록하기
 		public int rev_insert(RevVO vo) {
 			return sqlSession.insert("r.rev_insert", vo);

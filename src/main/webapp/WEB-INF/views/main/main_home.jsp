@@ -17,6 +17,7 @@
 	style="	background-repeat: no-repeat;
 			background-size:100%;
 			background-color:#E7D7B2;">
+			
 					
 	<div class="wrapper">
 		<div class="intro-bg">
@@ -272,5 +273,6 @@
 	        setInterval(nextSlide, 3000); // 3초마다 자동 슬라이드                
 	    });
     </script>
+    
 </body>
 </html>

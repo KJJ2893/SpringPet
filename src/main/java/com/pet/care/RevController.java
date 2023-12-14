@@ -1,5 +1,7 @@
 package com.pet.care;
 
+import java.sql.Date;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.HashMap;
 import java.util.List;
@@ -11,7 +13,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 
 import dao.RevDAO;
 import vo.RevVO;
@@ -46,9 +47,53 @@ public class RevController {
 	
 	// 예약 하기
 	@RequestMapping("revInsert.do")
-	public String revInsert() {
-		return VIEW_PATH + "revInsert.do";
+	public String revInsert(Model model) {
+		
+		Calendar cal = Calendar.getInstance();
+		
+		int year = cal.get(Calendar.YEAR);
+		int month = cal.get(Calendar.MONTH) + 1;
+		int date = cal.get(Calendar.DATE);
+		
+		String toDay = year+"-"+month+"-"+date;
+		
+		model.addAttribute("today", toDay);
+		
+		return VIEW_PATH + "rev_insert.jsp";
 	}
+	
+	// 예약 시간 설정
+	@RequestMapping("rev_time.do")
+	public String rev_time(Model model, String rv_day , String userId) {
+		
+		List<String> time = new ArrayList<String>();
+		
+		int s = 10;
+		
+		for(int i = 0; i < 11; i++) {
+			time.add((s+i)+":00");
+		}
+		
+		List<String> list = rev_dao.rev_selectList2(rv_day);
+		
+		for(int i = 0; i <time.size(); i++) {
+			for(int j=0; j < list.size(); j++) {
+				if(time.get(i).equals(list.get(j))) {
+					time.remove(i);
+				} 
+			}
+		}
+		
+		/*
+		 * if(list != null) { model.addAttribute("list", list); }
+		 */
+		model.addAttribute("time", time);
+		
+		return VIEW_PATH + "rev_time.jsp";
+		
+	}
+	
+	
 	
 	// 예약 정보 저장
 	@RequestMapping("rev_insert.do")
@@ -77,6 +122,8 @@ public class RevController {
         return "redirect:rev_main.do";
 
     }
+	
+	
 	
 }
 	

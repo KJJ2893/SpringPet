@@ -6,13 +6,25 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<script type="text/javascript">
+	function go(){
+		var url = "revInsert.do";
+	    var size = "width=450px, height=500px, scrollbars=no";
 
+	    var leftPosition = (window.screen.width - 450) / 2; // 화면 가로 중앙
+	    var topPosition = (window.screen.height - 500) / 2; // 화면 세로 중앙
 
+	    var windowFeatures = size + ", top=" + topPosition + ", left=" + leftPosition;
+
+	    window.open(url, '예약하기', windowFeatures);
+	    
+	    }
+	</script>
 </head>
 <body>
 	<form>
 		<input type="button" value="예약하기"
-			onclick="location.href='revInsert.do'"> 
+			onclick="go()"> 
 		<input type="button" value="예약조회" onclick="">
 		
 		
