@@ -1,11 +1,8 @@
 package com.pet.care;
 
-import java.sql.Date;
 import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -38,6 +35,7 @@ public class RevController {
 	 * return VIEW_PATH + "rev_main.jsp"; }
 	 */
 	
+	// 예약 확인 화면
 	@RequestMapping("rev_main.do")
 	public String rev_list(Model model) {
 		List<RevVO> list = rev_dao.rev_selectList();
@@ -45,7 +43,7 @@ public class RevController {
 		return VIEW_PATH + "rev_main.jsp";
 	}
 	
-	// 예약 하기
+	// 예약 하는 화면
 	@RequestMapping("revInsert.do")
 	public String revInsert(Model model) {
 		
@@ -109,6 +107,7 @@ public class RevController {
 			return null;
 	}
 	
+	// 예약 취소
 	@RequestMapping("rev_del.do")
     public String delete(int rv_idx) {
         System.out.println(rv_idx);
@@ -122,6 +121,8 @@ public class RevController {
         return "redirect:rev_main.do";
 
     }
+	
+	
 	
 	
 	

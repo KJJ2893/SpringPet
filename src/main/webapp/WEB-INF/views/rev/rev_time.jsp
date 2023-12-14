@@ -13,6 +13,9 @@
 		console.log(rr);
 		alert(rr);
 	}
+	
+	t.action = "rev_insert.do";
+	t.submit();
 </script>
 </head>
 <body>
@@ -23,22 +26,11 @@
 			<div class="timearea">
 				<ul>
 					<c:forEach var="time" items="${time}">
-						<%-- <c:forEach var="list" items="${list}">
-							<c:choose>
-							<c:when test="${time eq list.rv_time}">
-								<li><input type="button" disabled="disabled" id="${time}" value="${time}" class="equal"></li>
-							</c:when>
-							<c:otherwise> --%>
 								<li><input type="button" id="${time}" value="${time}" onClick="time(this.form['${time}'].value)"></li>
-							<%-- </c:otherwise>
-							</c:choose>
-						</c:forEach> --%>
 					</c:forEach>
 				</ul>
 			</div>
 		</form>
-	</div>
-	
-	
+	</div>	
 </body>
 </html>
