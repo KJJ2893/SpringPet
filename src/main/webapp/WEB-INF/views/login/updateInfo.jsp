@@ -5,7 +5,10 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-
+<style>
+.btn{
+cursor:pointer;}
+</style>
 
 <link rel="stylesheet"
 	href="${pageContext.request.contextPath}/resources/css/login/update.css?after">
@@ -87,10 +90,9 @@
 
 </script>
 </head>
-<body class="body"  style="background-image:url('resources/img/loginback.jpg');
-					background-repeat: no-repeat;
-					background-size:100%;
-					background-color:fuchsia;">
+<body class="body"  style="	background-repeat: no-repeat;
+			background-size:100%;
+			background-color:#E7D7B2;">
 	<div class="wrapper">
 		<div class="header_wrapper">
 			<div class="logo_wrapper">
@@ -106,27 +108,27 @@
 				<div class="update">
 					<h3>NickName</h3>
 					<input id="u_Nname" value="${id.u_nickName }" readOnly>
-					<input type="button"  value="수정" onclick="upNname()">
+					<input type="button" class="btn" value="수정" onclick="upNname()">
 				
 					<h3>Name</h3>
 					<input id="u_name" value="${id.u_name }" readOnly>
-					<input type="button"   value="수정" onclick="upName()">
+					<input type="button" class="btn"  value="수정" onclick="upName()">
 					
 					<h3>Email</h3>
 					<input id="u_email" value="${id.u_email }" readOnly>
-					<input type="button"    value="수정" onclick="upEmail()">
+					<input type="button" class="btn"   value="수정" onclick="upEmail()">
 
 					<h3>Password</h3>
 					<input type="password" value="${id.u_pwd }" readOnly>
-					<input type="button"   value="수정" onclick="upPwd()">
+					<input type="button"  class="btn" value="수정" onclick="upPwd()">
 					
 					<h3>Tel</h3>
 					<input id="u_tel" value="${id.u_tel }" readOnly>
-					<input type="button"   value="수정" onclick="upTel()">
+					<input type="button" class="btn"  value="수정" onclick="upTel()">
 					
 					<h3>Address</h3>
 					<input id="u_addr" value="${id.u_addr }" readOnly>
-					<input type="button"   value="수정" onclick="upAddr()">
+					<input type="button" class="btn"  value="수정" onclick="upAddr()">
 					
 					
 				</div>
