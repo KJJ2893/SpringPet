@@ -7,7 +7,8 @@
 <title>Insert title here</title>
 <style>
 .btn{
-cursor:pointer;}
+cursor:pointer;
+}
 </style>
 
 <link rel="stylesheet"
