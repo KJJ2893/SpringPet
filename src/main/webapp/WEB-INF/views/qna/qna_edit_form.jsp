@@ -14,35 +14,37 @@
 		location.reload();
 	}
 	
-	//이거 뭔가 잘못된거 같다
 	function qna_edit_finish(f){
 		
-		alert('수정완료 하시겠습니까?')
-		/* if(!confirm("수정완료 하시겠습니까?")){
-			return; //이거 뭐 리턴함?
-		} */
+		 if(!confirm("수정완료 하시겠습니까?")){
+			return;
+		} 
 		
 		f.method="POST";
-		f.action="qna_insert.do";
+		f.action="qna_update.do";
 		f.submit();	
 		
-		//잘보내졌으면 수정완료 띄우고 싶은데 if에 뭐가 들어가야되지?
-		/* if(json[0].result == 'yes'){
-			alert("수정 완료");
-			location.href="qna_main.do";  
-		} */
 		
-		alert('수정 완료 !')
-		
-		let url = "qna_main.do"; 
-		let param = "q_idx=${qnaVO.q_idx}";
-		
-		sendRequest(url,param,delCheck,"POST");
-
-		
-			
+		//sendRequest(url,param,delCheck,"POST");
+		//(어디에서, 어떤값을가지고, (컨트롤러 가서 처리후) 받아온 값을 처리할 함수, 전달방식)
 	}
-
+	
+	function displayImg(){
+		let fileInput = document.getElementById('q_file');
+		let img = document.getElementById('img_id');
+		
+		let file = fileInput.files[0];
+		
+		if(file){
+			let reader = new FileReader();
+			
+			reader.onload = function(e){
+				img.src = e.target.result;
+			};
+			
+			reader.readAsDataURL(file);
+		}
+	}
 
 </script>
 </head>
@@ -64,12 +66,16 @@
 		</span>
 	</div>
 	
+	
 	<div class="qna_wrapperBox">
-		<input type="hidden" value="${id.u_idx}" >
+		<hr>	
+		
+		<!-- input id.u_idx가 과연 필요한가? -->
 	</div>
 	
 	<form enctype="multipart/form-data">
 		<div class="qna_wrapperBox">
+		
 			<input class="titleBox" name="q_title" value="${qnaVO.q_title}">
 				
 			<div class="qna_upload_text">
@@ -82,9 +88,10 @@
 			<span class="qna_category">
 				사진 업로드
 			</span>
+			<img id="img_id" src="${pageContext.request.contextPath}/resources/upload/qna/${qnaVO.q_filename}">
 			<div class="qna_imgContainer"></div>
-				<input type="file" name="q_file" value="${pageContext.request.contextPath}/resources/upload/qna/${qnaVO.q_filename}"
-						width="200px" height="200px" class="inputBtn" multiple>
+				<input type="file" id="q_file" onchange="displayImg()" name="q_file" value="${pageContext.request.contextPath}/resources/upload/qna/${qnaVO.q_filename}"
+						width="200px" height="200px" class="inputBtn">
 			<p><strong>개당 업로드 용량 : 10MB, 용량을 준수하여 업로드 부탁드립니다</strong></p>
 		</div>
 			

@@ -65,6 +65,7 @@
 		
 		let q_idx = ${qnaVO.q_idx};
 		location.href="qna_edit_form.do?q_idx="+q_idx;
+		//이거 idx값 삭제하라는 말인가?
 		
 		sendRequest(url,param,delCheck,"POST");
 	}

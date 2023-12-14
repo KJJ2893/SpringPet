@@ -33,7 +33,12 @@
 		<div class="qna_category">
 				<input type="button" value="공지사항" class="inputBtn" onclick="location.reload()">
 				<input type="button" value="메인으로 돌아가기" class="inputBtn" onclick="location.href='main_home.do'">
-				<input type="button" value="글쓰기" class="inputBtn" onclick="location.href='qna_form.do'">
+				
+				<c:if test="${ id.u_type == 1}">
+					<input type="button" value="글쓰기" class="inputBtn" onclick="location.href='qna_form.do'">
+				</c:if>
+				
+				
 		</div>
 	</div> <!-- qna_wrapperBox -->
 

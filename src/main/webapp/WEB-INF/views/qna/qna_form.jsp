@@ -53,7 +53,7 @@
 	
 	
 	<div class="qna_wrapperBox">
-		<span>${id.u_idx}</span>
+		<span>${id.u_nickName}</span>
 	</div>
 	
 	<form enctype="multipart/form-data">
