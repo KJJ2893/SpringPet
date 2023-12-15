@@ -27,6 +27,13 @@
 			return;
 		}
 		
+		// 이메일 정규식
+        var emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+        if (!emailRegex.test(u_email)) {
+            alert('올바른 이메일 형식이 아닙니다.');
+            return;
+        }
+		
 		f.action = "update_email.do";
 		f.submit();
 		

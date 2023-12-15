@@ -24,7 +24,14 @@
 		if(!b_telCheck){
 			alert('전화번호 확인 필요!');
 			return;
-		}	
+		}
+		
+		// 전화번호 정규식: 숫자만 허용
+        var telRegex = /^\d+$/;
+        if (!telRegex.test(u_tel)) {
+            alert('전화번호는 - 없이 숫자로만 입력 가능합니다.');
+            return;
+        }
 		
 		f.action = "update_tel.do";
 		f.submit();

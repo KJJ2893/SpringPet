@@ -24,7 +24,7 @@
             // 닉네임 정규식: 한글만 허용
             var nicknameRegex = /^[가-힣]+$/;
             if (!nicknameRegex.test(u_nickName)) {
-                alert('한글만 입력 가능한 닉네임을 사용해주세요.');
+                alert('닉네임은 한글만 사용 가능합니다.');
                 return;
             }
 
@@ -38,21 +38,21 @@
             // 비밀번호 정규식: 최소 8자 이상, 영문과 숫자 포함
             var passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d@$!%*?&]{8,}$/;
             if (!passwordRegex.test(u_pwd)) {
-                alert('올바른 비밀번호 형식이 아닙니다.');
+                alert('비밀번호는 영문과 숫자를 조합하여 8자이상 입력가능합니다.');
                 return;
             }
 
             // 이름 정규식: 한글 또는 영문 대소문자만 허용
             var nameRegex = /^[가-힣a-zA-Z]+$/;
             if (!nameRegex.test(u_name)) {
-                alert('올바른 이름 형식이 아닙니다.');
+                alert('이름은 한글 또는 영문만 입력 가능합니다.');
                 return;
             }
 
             // 전화번호 정규식: 숫자만 허용
             var telRegex = /^\d+$/;
             if (!telRegex.test(u_tel)) {
-                alert('올바른 전화번호 형식이 아닙니다.');
+                alert('전화번호는 - 없이 숫자로만 입력 가능합니다.');
                 return;
             }
 
@@ -226,7 +226,7 @@
                 <input type="password" name="pwd2" placeholder="Password Check">
 
                 <div class="id_input">
-                    <h3>Tel</h3>
+                    <h3>Tel (-없이 입력해주세요)</h3>
                     <input id="u_tel" name="u_tel" placeholder="Tel" onchange="che3()">
                     <input type="button" class="checkbtn" id="check_tel" value="Check Tel" onclick="telCheck(this.form)">
                 </div>
