@@ -15,8 +15,8 @@ SqlSession sqlSession;
 		this.sqlSession = sqlSession;
 	}
 	//예약리스트
-	public List<RevVO> rev_selectList(){
-		return sqlSession.selectList("r.rev_list");
+	public List<RevVO> rev_selectList(int u_idx){
+		return sqlSession.selectList("r.rev_list", u_idx);
 	
 	}
 	

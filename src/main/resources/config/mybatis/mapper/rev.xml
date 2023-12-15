@@ -5,12 +5,13 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 <mapper namespace="r">
 
 	<!-- 예약리스트 불러오기 -->
-	<select id="rev_list" resultType="vo.RevVO">
-		select * from reservation
+	<select id="rev_list" resultType="vo.RevVO" parameterType="int">
+		SELECT * FROM RESERVATION R
+		INNER JOIN USERINFO U ON U.U_IDX = R.U_IDX WHERE U.U_IDX = #{u_idx}
 	</select>
 
-	<select id="rev_list2" resultType="String"
-		parameterType="String">
+	<!-- 예약 일정 불러오기 -->
+	<select id="rev_list2" resultType="String" parameterType="String">
 		SELECT RV_TIME FROM RESERVATION WHERE RV_DAY = #{rv_day}
 	</select>
 

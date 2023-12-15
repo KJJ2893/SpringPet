@@ -5,6 +5,7 @@ import java.util.Calendar;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -23,23 +24,21 @@ public class RevController {
 	
 	 @Autowired
 	    HttpServletRequest request;
+	 
+	 
+	 @Autowired
+	  	HttpSession session;
 
 	
 	public RevController(RevDAO rev_dao) {
 		this.rev_dao = rev_dao;
 		System.out.println("예약컨트롤러");
 	}
-	/*
-	 * @RequestMapping("rev_main.do") public String rev_main() {
-	 * 
-	 * return VIEW_PATH + "rev_main.jsp"; }
-	 */
 	
-	// 예약 확인 화면
+	// 예약 메인 화면
 	@RequestMapping("rev_main.do")
-	public String rev_list(Model model) {
-		List<RevVO> list = rev_dao.rev_selectList();
-		model.addAttribute("list", list);
+	public String rev_list() {
+		
 		return VIEW_PATH + "rev_main.jsp";
 	}
 	
@@ -82,16 +81,35 @@ public class RevController {
 			}
 		}
 		
-		/*
-		 * if(list != null) { model.addAttribute("list", list); }
-		 */
 		model.addAttribute("time", time);
+		model.addAttribute("rv_day", rv_day);
+		
 		
 		return VIEW_PATH + "rev_time.jsp";
-		
 	}
 	
+	@RequestMapping("rev_info.do")
+	public String rev_info(Model model, String rv_day, String rv_time) {
+
+		System.out.println(rv_time);
+		String date[] = {rv_day, rv_time};
+		
+		model.addAttribute("date", date);
+		
+		
+		
+		return VIEW_PATH + "rev_info.jsp";
+	}
 	
+	// 예약조회
+	@RequestMapping("rev_select.do")
+	public String rev_select(Model model, int u_idx) {
+		
+		List<RevVO> list = rev_dao.rev_selectList(u_idx);
+		model.addAttribute("list", list);
+		
+		return VIEW_PATH + "rev_select.jsp";
+	}
 	
 	// 예약 정보 저장
 	@RequestMapping("rev_insert.do")
@@ -108,7 +126,7 @@ public class RevController {
 	}
 	
 	// 예약 취소
-	@RequestMapping("rev_del.do")
+	@RequestMapping("rev_cancle.do")
     public String delete(int rv_idx) {
         System.out.println(rv_idx);
 
