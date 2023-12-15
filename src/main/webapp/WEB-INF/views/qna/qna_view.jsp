@@ -12,32 +12,33 @@
 
 	function refresh(){
 		location.reload();
-	}
+	}	
 	
+	//삭제시
 	function qna_del(){
 		if(!confirm("삭제하시겠습니까?")){
 			return;
 		}
 		
-		var pwd = "${id.u_pwd}"; //관리자 비번?
-		var c_pwd = document.getElementById("c_pwd").value; //입력한 비밀번호
+		let pwd = "${id.u_pwd}"; //관리자 비번?
+		let c_pwd = document.getElementById("c_pwd").value; //입력한 비밀번호
 		
 		if(pwd != c_pwd){
 			alert("비밀번호 불일치");
 			return;
 		}
 		
-		var url = "qna_del.do"; //현재 구현안되있음
-		var param = "q_idx=${qnaVO.q_idx}";
+		let url = "qna_del.do"; 
+		let param = "q_idx=${qnaVO.q_idx}";
 		
 		sendRequest(url,param,delCheck,"POST");
 	}
 	
 	function delCheck(){
 		if(xhr.readyState == 4 && xhr.status == 200){
-			var data =xhr.responseText; //xhr = new XMLHttpRequest(); 를 담는 변수
+			let data =xhr.responseText; //xhr = new XMLHttpRequest(); 를 담는 변수
 			
-			var json = eval(data);
+			let json = eval(data);
 			
 			if(json[0].result == 'yes'){
 				alert("삭제 성공");
@@ -48,10 +49,27 @@
 		}
 	}
 	
+	//수정시
 	function qna_edit_form(){
+		if(!confirm("수정하시겠습니까?")){
+			return;
+		}
+		
+		let pwd = "${id.u_pwd}"; //관리자 비번?
+		let c_pwd = document.getElementById("c_pwd").value; //입력한 비밀번호
+		
+		if(pwd != c_pwd){
+			alert("비밀번호를 입력하세요");
+			return;
+		}
+		
 		let q_idx = ${qnaVO.q_idx};
 		location.href="qna_edit_form.do?q_idx="+q_idx;
+		//이거 idx값 삭제하라는 말인가?
+		
+		sendRequest(url,param,delCheck,"POST");
 	}
+	
 	
 
 </script>
@@ -98,12 +116,14 @@
 			<div class="table">
 				<span class="th">내용</span>
 				<span class="align" width="500px" height="200px">
-					<div class="align">
+					<div class="nopadding">
 					<img src="${pageContext.request.contextPath}/resources/upload/qna/${qnaVO.q_filename}"
 					width="300px" height="300px">
+					
 					</div>
+					${qnaVO.q_content }
 				</span>
-				<div class="align">${qnaVO.q_content }</div>
+				
 			</div>
 			
 			<div class="table">
@@ -113,7 +133,7 @@
 				</spqn>
 			</div>
 			
-			<div class="qna_category">
+			<div class="btnBox">
 				<input type="button" value="수정" class="Btn" onclick="qna_edit_form()">
 				<input type="button" value="삭제" class="Btn" onclick="qna_del()">
 			</div>

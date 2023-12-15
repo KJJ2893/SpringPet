@@ -19,6 +19,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<select id="qna_selectList" resultType="vo.QnaVO">
 		SELECT * FROM QNA ORDER BY q_regdate DESC
 	</select>
+<<<<<<< HEAD
 
 	
 	<insert id="insert_qna2" parameterType="vo.QnaVO">
@@ -32,13 +33,18 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 			#{q_moviename}
 		)
 	</insert>
+=======
+>>>>>>> origin/1215_yar
 	
 	<select id="select_qnaList" resultType="vo.QnaVO">
 		select * from qna
 	</select>
+<<<<<<< HEAD
 	
 
 		
+=======
+>>>>>>> origin/1215_yar
 
 	<select id="qna_view" parameterType="int" resultType="vo.QnaVO">
 		select * from qna where q_idx=#{q_idx}
@@ -57,8 +63,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		update qna
 		set q_title = #{q_title},
 			q_content = #{q_content},
-			q_regdate = sysdate
-		where q_idx=#{q_idx}
+			q_regdate = sysdate,
+			q_filename = #{q_filename}
+		where q_idx = #{q_idx}
 	</update>
 	
 </mapper>
