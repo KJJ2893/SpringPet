@@ -153,6 +153,7 @@
 						<td colspan="2" align="right">
 							<input type="button" class="btn2" value="수정하기" onclick="re(this.form)">
 							<input type="button" class="btn2" value="삭제하기" onclick="del(this.form)">
+							<input type="button" class="btn2" value="목록으로" onclick="location.href='review_main.do'">
 						</td>
 					</tr>
 					<tr>
