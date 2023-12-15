@@ -6,8 +6,16 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<style>
+.rrr{font-family: 'Gamja Flower', sans-serif;
+	font-size:20px;
+}
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gamja+Flower&display=swap" rel="stylesheet">
 <link rel="stylesheet"
-	href="${pageContext.request.contextPath}/resources/css/pet/petupdate.css?after">
+	href="${pageContext.request.contextPath}/resources/css/pet/petupdate.css">
 	<script type="text/javascript">
 	function isImageFile(input) {
 	    // 허용된 이미지 파일의 MIME 타입 배열
@@ -93,39 +101,44 @@
 		}
 	</script>
 </head>
-<body class="body" 
-style="background-image:url('resources/img/petback.jpg');
-					background-repeat: no-repeat;
-					background-size:100%;
-					background-color:lime;">
+<body class="body"  
+	style="	background-repeat: no-repeat;
+			background-size:100%;
+			background-color:#E7D7B2;">
 					
-					<a href="main_home.do"><img src="resources/img/hos logo.jpg" width="80px" height="80px"> </a>
-					
-							<div class="top">
-	<input type="button" value="소개" class="btn1"  onclick="location.href='info_main.do'"  >
-	<input type="button" value="공지" class="btn1" onclick=""  >
-	<input type="button" value="리뷰" class="btn1" onclick="location.href='review_main.do'"  >
-	<input type="button" value="QNA"  class="btn1" onclick="location.href='qna_main.do'"  >
-	<input type="button" value="예약"  class="btn1" onclick="location.href='rev_main.do'"  >
-	<c:choose>
-		<c:when test="${empty id}">
-				
-				<input type="button" value="펫 등록" class="btn"  onclick="go_pet()">
-				<input type="button" value="정보수정" class="btn"  onclick="go_pet()">
-				<input type="button" value="로그인"class="btn"   onclick="location.href='login_main.do'">
-				
-			</c:when>
-			<c:when test="${not empty id}">
-				
-				<input type="button" value="펫 등록" class="btn1"  onclick="location.href='petinfo_main.do'">
-				<input type="button" value="정보수정" class="btn1"  onclick="location.href='check_up.do'">
-				<input type="button" value="로그아웃" class="btn1"   onclick="location.href='logout.do'">
-			</c:when>
-		</c:choose>
+	<div class="wrapper">
+		<div class="intro-bg">
+		<div class="header">
+			<div class="logo">
+					<a href="main_home.do" id="logoa"><img src="resources/img/titleLogo.jpg" width="130px" height="130px"></a>
+		        </div>
+			<div class="title">
+		        	<ul class="nav">
+			            <li><a href="info_main.do">병원소개</a></li>
+			            <li><a href="review_main.do">리뷰</a></li>
+			            <li><a href="qna_main.do">QNA</a></li>
+			            <li><a href="rev_main.do">예약</a></li>
+			          	<c:choose>
+							<c:when test="${empty id}">
+								<li><a href="login_main.do">펫 등록</a></li>
+								<li><a href="login_main.do">정보수정</a></li>
+								<li><a href="login_main.do">로그인</a></li>
+							</c:when>
+							<c:when test="${not empty id}">
+								<li><a href="petinfo_main.do">펫 등록</a></li>
+								<li><a href="check_up.do">정보수정</a></li>
+								<li><a href="logout.do">로그아웃</a></li>
+							</c:when>
+						</c:choose>
+					</ul>
+				</div>
+			</div>
+		</div>
 	</div>
+				
      <form method="POST" enctype="multipart/form-data">
      	<input type="hidden" name="p_idx" value="${vo.p_idx}">
-     	<table border="1" align="center">
+     	<table border="1" align="center" class="rrr">
      		<caption> <h2>반려동물 정보 수정하기</h2></caption>
      		<tr>
      			<th>반려동물 사진</th>
@@ -175,28 +188,18 @@ style="background-image:url('resources/img/petback.jpg');
      	</table>
      </form>
      	<div class="footer">
-	<li>병원이름: 동물병원</li>
-	<li> 주소  : 인천광역시 부평구 시장로 7 5층</li>
-	<li>전화번호: 032-262-5890</li>
-	<li> 이메일:email@naver.com</li>
-	ⓒ2023.hospital name All rights reserved.
-</div>
-<div class="footer1">
-	<li>대표자: 김재준</li>
-	<li>대표자 전화번호:000-0000-0000</li>
-	<li>사업자 등록번호:000-00-00000</li>
-	</div>
-	
-	<div class="sns">
-	<a href="https://www.instagram.com">
-	<img src="resources/img/insta.jpg" width="100px" height="100px">
-	</a>
-	<a href="https://www.kakaocorp.com/page/service/service/KakaoTalk">
-	<img src="resources/img/talk.jpg" width="100px" height="100px">
-	</a>
-	<a href="https://www.facebook.com/">
-	<img src="resources/img/facebook.jpg" width="100px" height="100px">
-	</a>
-	</div>
+        <div>멍이 냥이 동물병원</div>
+        <div id="info">
+          CEO. 김가나다 <br>
+          Addr. 인천광역시 부평구 시장로 7 MH타워 5층 <br>
+          Fax/Tel. 032-262-5890 <br>
+          ⓒ2023.hospital name All rights reserved.
+        </div>
+        <div class="sns">
+			<a href="https://www.instagram.com">
+				<img src="resources/img/insta.jpg" width="100px" height="100px">
+			</a>
+		</div>
+      </div>
 </body>
 </html>

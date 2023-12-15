@@ -7,7 +7,7 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link rel="stylesheet"
-	href="${pageContext.request.contextPath}/resources/css/info/info.css">
+	href="${pageContext.request.contextPath}/resources/css/info/info.css?after">
 </head>
 <body class="body"  
 	style="	background-repeat: no-repeat;
@@ -52,6 +52,7 @@
 		</div>
 		<div class="insamal"
 		style="
+		
 		background-image: url('${pageContext.request.contextPath}/resources/img/infoimg3.jpg');">
 			<div class="context2">
 				<h1>안녕하십니까</h1>

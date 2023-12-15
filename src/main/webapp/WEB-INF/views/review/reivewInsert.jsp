@@ -6,6 +6,13 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<style>
+.footer{
+position:fixed;
+bottom:0;
+width:1870px;
+}
+</style>
 <link rel="stylesheet"
 	href="${pageContext.request.contextPath}/resources/css/review/reviewinsert.css">
 <script src="resources/js/httpRequest.js"></script>

@@ -55,13 +55,13 @@
 		<div class="line1"></div>
 		
 		<div class="mid">
-        <div class="tab_content">
-        	<div class="slider">
+        <div class="tab_content" >
+        	<div class="slider" onclick="location.href='review_main.do';" style="cursor:pointer;">
         		<h2 align="center">이용 후기</h2>
 					<c:if test="${list != null }">
 					<c:forEach var="vo" items="${list }">
 			        <div class="slide">
-			          	<table>
+			          	<table >
 			          		<tr>
 								<c:choose>
 									<c:when test="${vo.r_photo != 'no_file' and vo.r_photo!=null}">
@@ -94,7 +94,7 @@
 		    		리뷰 없음
 		    	</c:if>
 		    	</div>
-          <div class="qna">
+          <div class="qna" onclick="location.href='qna_main.do';" style="cursor:pointer;">
               <h2 align="center">자주 묻는 질문</h2>
               <hr>
 				<ul>
@@ -214,7 +214,7 @@
 		        <div class="rolling-list"> 원본배너
 		            <ul>
 		                <li>
-		                    <div class="image-wrap"><img src="https://images.unsplash.com/photo-1471922694854-ff1b63b20054?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200" alt=""></div>
+		                    <div class="image-wrap"><img src="https://images.unsplash.com/photo-1471922694854-ff1b63b20054?ixlib=rb-4.0.3&ixid=M3wxM jA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200" alt=""></div>
 		                </li>
 		                <li>
 		                    <div class="image-wrap"><img src="https://images.unsplash.com/photo-1493246507139-91e8fad9978e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200" alt=""></div>

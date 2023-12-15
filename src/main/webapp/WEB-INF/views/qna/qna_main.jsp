@@ -19,7 +19,9 @@
 	}
 </script>
 </head>
-<body>
+<body style="	background-repeat: no-repeat;
+			background-size:100%;
+			background-color:#E7D7B2;">
 	
 	<div class="qna_wrapperBox">
 		<span class="qna_category">Q&A 카테고리</span>	
@@ -36,10 +38,10 @@
 		</span>
 	</div>
 	
-	<div class="qna_wrapperBox">
-		<div class="list_search">
+	<div class="qna_wrapperBox" >
+		<div class="list_search" style="background-color:white">
 			<form class="searchform" name="list_search_form" onclick="send_list_form(this.form)">
-				<fieldset>
+				<fieldset >
 					<select id="">
 						<option values="title">제목</option>
 						<option values="content">내용</option>

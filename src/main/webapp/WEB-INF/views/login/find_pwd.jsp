@@ -55,10 +55,9 @@
 	
 </script>
 </head>
-<body class="body"  style="background-image:url('resources/img/loginback.jpg');
-					background-repeat: no-repeat;
-					background-size:100%;
-					background-color:fuchsia;">
+<body class="body"  style="	background-repeat: no-repeat;
+			background-size:100%;
+			background-color:#E7D7B2;">
 	<div class="wrapper">
 		<div class="header_wrapper">
 			<div class="logo_wrapper">
