@@ -1,6 +1,7 @@
 package com.pet.care;
 
 import java.io.File;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -182,5 +183,34 @@ public class QnAController {
 		}else {
 			return null;
 		}
-	}	
+	}
+	
+	@RequestMapping("qna_search.do")
+	public String qna_search(Model model, String searchField, String searchWord) {
+		
+		//검색어가 없을때
+		if(searchWord.equals("")) {
+			return "redirect:qna_main.do";
+		}
+		
+		List<QnaVO> list= new ArrayList<>();
+		
+		switch(searchField) {
+		case "idx" : 
+			QnaVO qnaVO = qna_dao.selectOne(Integer.parseInt(searchWord));
+			list.add(qnaVO);
+			break;
+		case "title" :
+			searchWord = "%"+searchWord+"%";
+			list = qna_dao.selectListTitle(searchWord);
+			break;
+		case "content" :
+			searchWord = "%"+searchWord+"%";
+			list = qna_dao.selectListContent(searchWord);
+			break;
+		}
+		
+		model.addAttribute("list", list);
+		return VIEW_PATH + "qna_main.jsp";
+	}
 }

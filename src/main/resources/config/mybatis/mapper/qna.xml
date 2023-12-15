@@ -64,4 +64,11 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		where q_idx = #{q_idx}
 	</update>
 
+	<select id="selectListTitle" parameterType="String" resultType="vo.QnaVO">
+		select * from qna where q_title like #{searchWord}
+	</select>
+	
+	<select id="selectListContent" parameterType="String" resultType="vo.QnaVO">
+		select * from qna where q_content like #{searchWord}
+	</select>
 </mapper>

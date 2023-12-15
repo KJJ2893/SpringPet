@@ -74,9 +74,7 @@
 
 </script>
 </head>
-<body style="	background-repeat: no-repeat;
-			background-size:100%;
-			background-color:#E7D7B2;">
+<body>
 	
 	<div class="qna_wrapperBox">
 		<span class="qna_category">Q&A 카테고리</span>	
