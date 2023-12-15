@@ -34,7 +34,7 @@
 			background-size:100%;
 			background-color:#E7D7B2;">
 					
-	<%-- <div class="wrapper">
+ <div class="wrapper">
 		<div class="intro-bg">
 		<div class="header">
 			<div class="logo">
@@ -61,20 +61,23 @@
 					</ul>
 				</div>
 			</div>
-		</div>
-	</div> --%>
-	<form>
-		<input type="button" value="예약하기" onclick="go()">
-		
-		<c:choose>
-			<c:when test="${empty id}">
-				<input type="button" value="예약조회" onclick="location.href='login_main.do'">
-			</c:when>
-			<c:when test="${not empty id}">
-				<input type="hidden" name="u_idx" value="${id.u_idx}" >
-				<input type="button" value="예약조회" onclick="rev_select(this.form)">
-			</c:when>
-		</c:choose>
-	</form>
+			</div>
+
+			<div class="rev">
+			<form>
+				<c:choose>
+					<c:when test="${empty id}">
+						<input type="button" value="예약하기" onclick="location.href='login_main.do'">
+						<input type="button" value="예약조회" onclick="location.href='login_main.do'">
+					</c:when>
+					<c:when test="${not empty id}">
+						<input type="hidden" name="u_idx" value="${id.u_idx}" >
+						<input type="button" value="예약하기" onclick="go()">
+						<input type="button" value="예약조회" onclick="rev_select(this.form)">
+					</c:when>
+				</c:choose>
+			</form>
+		</div> 
+	</div>
 </body>
 </html>

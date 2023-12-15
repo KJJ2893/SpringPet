@@ -7,7 +7,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<!-- 예약리스트 불러오기 -->
 	<select id="rev_list" resultType="vo.RevVO" parameterType="int">
 		SELECT * FROM RESERVATION R
-		INNER JOIN USERINFO U ON U.U_IDX = R.U_IDX WHERE U.U_IDX = #{u_idx}
+		INNER JOIN USERINFO U ON U.U_IDX = R.U_IDX 
+		WHERE U.U_IDX = #{u_idx}
 	</select>
 
 	<!-- 예약 일정 불러오기 -->
@@ -17,8 +18,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 	<!--예약등록하기 -->
 	<insert id="rev_insert" parameterType="vo.RevVO">
-		INSERT INTO RESERVATION
-		VALUES(
+		INSERT INTO RESERVATION VALUES(
 		RV_IDX.NEXTVAL,
 		#{u_idx},
 		#{rv_time},

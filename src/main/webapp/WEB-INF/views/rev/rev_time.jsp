@@ -30,7 +30,6 @@ function go(f) {
     	return;
     }
     
-    // 여기서 rv_time을 파라미터로 넘기고, rv_day도 함께 넘길 수 있습니다.
     f.action = "rev_info.do";
     f.submit();
 }
@@ -42,15 +41,22 @@ function go(f) {
 	<div class="wrapper">
 		<form>
 			<input type="hidden" value="${rv_day}" name="rv_day">
-			 <input type="hidden" value="${rv_time}" name="rv_time">
+			 
 			<div class="timearea">
-				<ul>
-					<c:forEach var="time" items="${time}">
-						<li><input type="button" id="${time}" value="${time}" onClick="time('${time}')"></li>
-					</c:forEach>
-					<li><input name="rv_time" id="rv_time" value="" readonly></li>
-				</ul>
-				<input type="button" value="다음" onclick="go(this.form)">
+				<c:choose>
+					<c:when test="${empty time}">
+						예약이 모두 끝났습니다 ㅠ
+					</c:when>
+					<c:when test="${not empty time}">
+						<ul>
+							<c:forEach var="time" items="${time}">
+								<li><input type="button" id="${time}" value="${time}" onClick="time('${time}')"></li>
+							</c:forEach>
+							<li><input name="rv_time" id="rv_time" readonly></li>
+						</ul>
+						<input type="button" value="다음" onclick="go(this.form)">
+					</c:when>
+				</c:choose>
 			</div>
 		</form>
 	</div>	

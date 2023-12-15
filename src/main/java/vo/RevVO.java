@@ -14,4 +14,7 @@ public class RevVO {
 	String date = "";
 	String value = "";
 	
+	private String u_name;
+	private String u_tel;
+	
 }
