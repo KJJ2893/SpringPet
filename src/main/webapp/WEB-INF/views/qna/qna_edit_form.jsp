@@ -7,14 +7,13 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link href="${pageContext.request.contextPath}/resources/css/qna/qna_form.css" rel="stylesheet">
-<script src="${pageContext.request.contextPath}/resources/js/httpRequest.js"></script>
 <script type="text/javascript">
 
 	function refresh(){
 		location.reload();
 	}
 	
-	function qna_edit_finish(f){
+	function qna_update(f){
 		
 		 if(!confirm("수정완료 하시겠습니까?")){
 			return;
@@ -70,13 +69,13 @@
 	<div class="qna_wrapperBox">
 		<hr>	
 		
-		<!-- input id.u_idx가 과연 필요한가? -->
 	</div>
 	
 	<form enctype="multipart/form-data">
 		<div class="qna_wrapperBox">
 		
 			<input class="titleBox" name="q_title" value="${qnaVO.q_title}">
+			<input type="hidden" name="q_idx" value="${qnaVO.q_idx}">
 				
 			<div class="qna_upload_text">
 				<textarea class="titleBox_long" name="q_content" >${qnaVO.q_content}</textarea> 
@@ -97,7 +96,7 @@
 			
 		<div class="qna_wrapperBox">
 			<span>
-				<input type="button" value="수정완료" class="inputBtn" onclick="qna_edit_finish(this.form);">
+				<input type="button" value="수정완료" class="inputBtn" onclick="qna_update(this.form);">
 			</span>
 			<span>
 				<input type="button" value="돌아가기" class="inputBtn" onclick="location.href='qna_view.do?q_idx=${qnaVO.q_idx}'">

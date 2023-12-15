@@ -43,7 +43,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 			q_content = #{q_content},
 			q_regdate = sysdate,
 			q_filename = #{q_filename}
-		where q_idx=#{q_idx}
+		where q_idx = #{q_idx}
 	</update>
 	
 </mapper>

@@ -136,14 +136,51 @@ public class QnAController {
 	}
 	
 	//게시글 수정완료
-		@RequestMapping("qna_update.do")
-		public String qna_edit_finish(QnaVO qnaVO) {
-			int result = qna_dao.qna_update(qnaVO);
+	@RequestMapping("qna_update.do")
+	public String qna_update(QnaVO qnaVO) {
+		//int result = qna_dao.qna_update(qnaVO);
+		//result 에 왜담아? 어따써?
+		
+		UserVO userVO = (UserVO)session.getAttribute("id");
+		int u_idx = userVO.getU_idx();
+		qnaVO.setU_idx(u_idx);
+		
+		String webPath = "/resources/upload/qna";
+		String savePath = request.getServletContext().getRealPath(webPath);
+		System.out.println(savePath);
+
+		MultipartFile file = qnaVO.getQ_file();
+
+		String filename = "no_file";
+		
+		//file
+		if(!file.isEmpty() && (file != null)) {
+			filename = file.getOriginalFilename();
 			
-			return "redirect:qna_main.do";
+			File saveFile = new File(savePath, filename);
+			if(!saveFile.exists()) {
+				saveFile.mkdirs();
+			}else {
+				long time = System.currentTimeMillis();
+				filename = String.format("%d_%s",  time, filename);
+				saveFile = new File(savePath, filename);
+			}
+			
+			try {
+				file.transferTo(saveFile);
+			} catch (Exception e) {
+				System.out.println("파일저장 안된거같어");
+			}
 		}
-	
-	
-	
-	
+		
+		qnaVO.setQ_filename(filename);      
+		
+		int res = qna_dao.qna_update(qnaVO);
+		
+		if(res > 0) {
+			return "redirect:qna_main.do";
+		}else {
+			return null;
+		}
+	}	
 }
