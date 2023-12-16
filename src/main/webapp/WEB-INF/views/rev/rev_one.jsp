@@ -22,7 +22,8 @@
 			감사합니다.
 		</div>
 		<div class="next">
-			<input type="button" value="확인" onclick="window.close()">
+			<input type="button" value="확인" onclick="window.close()"
+				   style="cursor: pointer;">
 		</div>
 	</div>
 </body>

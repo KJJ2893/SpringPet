@@ -78,8 +78,10 @@
 							</c:when>
 							<c:when test="${not empty id}">
 								<input type="hidden" name="u_idx" value="${id.u_idx}" >
-								<input type="button" value="예약하기" onclick="go()">
-								<input type="button" value="예약조회" onclick="rev_select(this.form)">
+								<input type="button" value="예약하기" onclick="go()"
+									   style="cursor: pointer;">
+								<input type="button" value="예약조회" onclick="rev_select(this.form)"
+									   style="cursor: pointer;">
 							</c:when>
 						</c:choose>
 					</form>

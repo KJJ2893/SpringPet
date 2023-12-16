@@ -88,7 +88,7 @@
 	             <tr>	             
 	             	<td>
 	             		<c:choose>
-	             			<c:when test="${vo.p_photo == 'no_file' }">
+	             			<c:when test="${vo.p_photo == 'no_file'}">
 	             				<!-- 이미지를 등록하지 않으면 나오는 기본 이미지 -->
            						 <img src="${pageContext.request.contextPath}/resources/petImg/defaultImg.jpg"
                 					  width="100" height="100" onclick="openImage('${pageContext.request.contextPath}/resources/petImg/defaultImg.jpg')"
@@ -101,13 +101,13 @@
 	             			</c:otherwise>
 	             		</c:choose>
 	             	</td>
-	                <td><h5>${vo.p_name }</h5></td>
-	                <td><h5>${vo.p_type }</h5></td>
-	                <td><h5>${vo.p_age }</h5></td>
-	                <td><h5>${vo.p_gender }</h5></td>
+	                <td><h5>${vo.p_name}</h5></td>
+	                <td><h5>${vo.p_type}</h5></td>
+	                <td><h5>${vo.p_age}</h5></td>
+	                <td><h5>${vo.p_gender}</h5></td>
 	                <td>
 	                <input type="hidden" name="p_idx" value="${vo.p_idx}">
-	                <input type="hidden" name="u_idx" value="${vo.u_idx }">	
+	                <input type="hidden" name="u_idx" value="${vo.u_idx}">	
                     <input type="button" class="btn" value="수정하기" onclick="location.href='petinfo_updateForm.do?p_idx=${vo.p_idx}'">
 	                <input type="button" class="btn" value="삭제하기" onclick="petinfo_del(${vo.p_idx})"> 
 	                </td>

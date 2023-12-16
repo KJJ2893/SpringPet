@@ -60,12 +60,14 @@
 						<div class="btnarea">
 						<ul class="btl">
 							<c:forEach var="time" items="${time}">
-								<li class="li"><input type="button" id="${time}" value="${time}" onClick="time('${time}')"></li>
+								<li class="li"><input type="button" id="${time}" value="${time}" onClick="time('${time}')"
+									style="cursor:pointer";></li>
 							</c:forEach>
 						</ul>
 						</div>
 						<div class="next2">
-							<input type="button" value="다음" onclick="go(this.form)">
+							<input type="button" value="다음" onclick="go(this.form)"
+								   style="cursor: pointer;">
 						</div>
 					</c:when>
 				</c:choose>

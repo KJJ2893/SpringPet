@@ -152,7 +152,7 @@ public class QnAController {
 
 		MultipartFile file = qnaVO.getQ_file();
 
-		String filename = "no_file";
+		String filename = qnaVO.getQ_filename();
 		
 		//file
 		if(!file.isEmpty() && (file != null)) {
@@ -198,7 +198,8 @@ public class QnAController {
 		switch(searchField) {
 		case "idx" : 
 			QnaVO qnaVO = qna_dao.selectOne(Integer.parseInt(searchWord));
-			list.add(qnaVO);
+			if(qnaVO != null)
+				list.add(qnaVO);
 			break;
 		case "title" :
 			searchWord = "%"+searchWord+"%";

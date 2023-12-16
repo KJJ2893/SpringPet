@@ -42,7 +42,8 @@
 		        <input type="date" min="${today}" name="rv_day" id="rev_Date">
 	        </div>
 	        <div class="next">
-	        	<input type="button" value="다음" onclick="next(this.form)">
+	        	<input type="button" value="다음" onclick="next(this.form)"
+	        	       style="cursor:pointer;">
 	        </div>
 			</form>
 		</div>

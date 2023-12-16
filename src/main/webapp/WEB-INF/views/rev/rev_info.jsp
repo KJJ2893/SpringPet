@@ -47,7 +47,8 @@
 							<td><input type="text"  name="rv_time" value="${date[1]}"readonly>
 						</tr>
 						<tr>
-							<td colspan="2"><input type="button" value="다음" onclick="send(this.form)"></td>
+							<td colspan="2"><input type="button" value="다음" onclick="send(this.form)"
+												   style="cursor: pointer;"></td>
 						</tr>
 					</table>
 				</div>

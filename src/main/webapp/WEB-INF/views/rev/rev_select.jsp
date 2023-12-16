@@ -68,12 +68,16 @@
 				<div class="line"></div>
 				
 				<div class="next">
-					<input type="button" value="완료" onclick="location.href='rev_main.do'">
+					<input type="button" value="완료" onclick="location.href='rev_main.do'"
+					       style="cursor: pointer;">
 				</div>
 			</div>
 				
 			
 			<div class="txt2">
+				<c:if test="${empty list }">
+					<p>예약된 정보가 없습니다.</p>
+				</c:if>
 				<table class="table">
 					<c:forEach var="vo" items="${list}">
 						<tr>
@@ -98,7 +102,8 @@
 						<tr>
 							<td colspan="2" align="right">
 								<input type="hidden" name="rv_idx" value="${vo.rv_idx}" >
-								<input type="button" value="예약취소" onclick="rev_cancle(this.form)">
+								<input type="button" value="예약취소" onclick="rev_cancle(this.form)"
+									   style="cursor: pointer;">
 							</td>
 						</tr>
 						<tr>
