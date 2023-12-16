@@ -199,10 +199,18 @@ public class QnAController {
 		}
 		
 		List<QnaVO> list= new ArrayList<>();
+		int idx;
+		try {
+			idx= Integer.parseInt(searchWord);
+		}catch (Exception e) {
+			e.printStackTrace();
+			return VIEW_PATH+"notnumber.jsp";
+		}
+		 
 		
 		switch(searchField) {
 		case "idx" : 
-			QnaVO qnaVO = qna_dao.selectOne(Integer.parseInt(searchWord));
+			QnaVO qnaVO = qna_dao.selectOne(idx);
 			if(qnaVO != null)
 				list.add(qnaVO);
 			break;
