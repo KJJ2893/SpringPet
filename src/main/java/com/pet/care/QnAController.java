@@ -52,6 +52,11 @@ public class QnAController {
 	public String qna_main(Model model) {
 		List<QnaVO> list = qna_dao.qna_selectList();
 		model.addAttribute("list", list);
+		if(list.size()>2) {
+			model.addAttribute("big",true);
+		}
+		
+		
 		return VIEW_PATH + "qna_main.jsp";
 	}
 	
@@ -212,6 +217,9 @@ public class QnAController {
 		}
 		
 		model.addAttribute("list", list);
+		if(list.size()>2) {
+			model.addAttribute("big",true);
+		}
 		return VIEW_PATH + "qna_main.jsp";
 	}
 }

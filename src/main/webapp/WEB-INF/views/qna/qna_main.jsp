@@ -101,7 +101,9 @@
 				</div>
 			</c:forEach>
 		</div>
-		<input id="testBtn" type="button" class="inputBtn" value="더보기 +" onclick="testfn()">
+		<c:if test="${not empty big}">
+			<input id="testBtn" type="button" class="inputBtn" value="더보기 +" onclick="testfn()">
+		</c:if>
 	</div>
 	
 </body>
