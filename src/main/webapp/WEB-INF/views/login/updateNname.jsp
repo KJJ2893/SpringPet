@@ -31,6 +31,13 @@
 			return;
 		}
 		
+		// 닉네임 정규식: 한글만 허용
+        var nicknameRegex = /^[가-힣]+$/;
+        if (!nicknameRegex.test(u_nickName)) {
+            alert('닉네임은 한글만 사용 가능합니다.');
+            return;
+        }
+		
 		f.action = "update_Nname.do";
 		f.submit();
 		

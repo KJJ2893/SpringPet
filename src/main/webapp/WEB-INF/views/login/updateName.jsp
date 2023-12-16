@@ -32,6 +32,13 @@
 			return;
 		}
 		
+		// 이름 정규식: 한글 또는 영문 대소문자만 허용
+        var nameRegex = /^[가-힣a-zA-Z]+$/;
+        if (!nameRegex.test(u_name)) {
+            alert('이름은 한글 또는 영문만 입력 가능합니다.');
+            return;
+        }
+		
 		f.action = "update_name.do";
 		f.submit();
 		

@@ -29,7 +29,7 @@ cursor:pointer;
 	}
 	
 	function upName(){
-		var url = "updateNname.do";
+		var url = "updateName.do";
 	    var size = "width=450px, height=500px, scrollbars=no";
 
 	    var leftPosition = (window.screen.width - 450) / 2; // 화면 가로 중앙
@@ -41,7 +41,7 @@ cursor:pointer;
 	}
 	
 	function upEmail(){
-		var url = "updateNname.do";
+		var url = "updateEmail.do";
 	    var size = "width=450px, height=500px, scrollbars=no";
 
 	    var leftPosition = (window.screen.width - 450) / 2; // 화면 가로 중앙
@@ -53,7 +53,7 @@ cursor:pointer;
 	}
 	
 	function upPwd(){
-		var url = "updateNname.do";
+		var url = "updatePwd.do";
 	    var size = "width=450px, height=500px, scrollbars=no";
 
 	    var leftPosition = (window.screen.width - 450) / 2; // 화면 가로 중앙
@@ -65,7 +65,7 @@ cursor:pointer;
 	}
 	
 	function upTel(){
-		var url = "updateNname.do";
+		var url = "updateTel.do";
 	    var size = "width=450px, height=500px, scrollbars=no";
 
 	    var leftPosition = (window.screen.width - 450) / 2; // 화면 가로 중앙
@@ -77,7 +77,7 @@ cursor:pointer;
 	}
 	
 	function upAddr(){
-		var url = "updateNname.do";
+		var url = "updateAddr.do";
 	    var size = "width=450px, height=500px, scrollbars=no";
 
 	    var leftPosition = (window.screen.width - 450) / 2; // 화면 가로 중앙

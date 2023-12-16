@@ -24,6 +24,16 @@ public class QnaDAO {
 		return sqlSession.selectList("q.qna_selectList");
 	}
 	
+	//제목에 search 단어 검색
+	public List<QnaVO> selectListTitle(String searchWord){
+		return sqlSession.selectList("q.selectListTitle", searchWord);
+	}
+	
+	//컨텐츠에 search 단어 검색
+	public List<QnaVO> selectListContent(String searchWord){
+		return sqlSession.selectList("q.selectListContent", searchWord);
+	}
+	
 	//게시글 한건조회 : qna_view에서 selectOne 변경
 	public QnaVO selectOne(int q_idx) {
 		return sqlSession.selectOne("q.qna_view", q_idx);

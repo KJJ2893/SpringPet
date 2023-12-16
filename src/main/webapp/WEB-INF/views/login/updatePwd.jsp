@@ -55,6 +55,13 @@
 			return;
 		}
 		
+		// 비밀번호 정규식: 최소 8자 이상, 영문과 숫자 포함
+        var passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d@$!%*?&]{8,}$/;
+        if (!passwordRegex.test(u_pwd)) {
+            alert('비밀번호는 영문과 숫자를 조합하여 8자이상 입력가능합니다.');
+            return;
+        }
+		
 		f.action = "update_pwd.do";
 		f.submit();
 		
