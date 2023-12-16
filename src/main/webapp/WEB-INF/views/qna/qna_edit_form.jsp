@@ -47,14 +47,9 @@
 
 </script>
 </head>
-<<<<<<< HEAD
-<body style="	background-repeat: no-repeat;
-			background-size:100%;
-			background-color:#E7D7B2;">
-=======
+
 <body>
 	<!-- Q&A 수정 글쓰기 -->
->>>>>>> origin/1215_yar
 	<div class="qna_wrapperBox">
 		<span class="qna_category">Q&A 카테고리</span>	
 		<div class="qna_category">

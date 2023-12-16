@@ -67,7 +67,7 @@
 									<c:when test="${vo.r_photo != 'no_file' and vo.r_photo!=null}">
 										<td id="timg">
 											<img src="${pageContext.request.contextPath}/resources/reviewImg/${vo.r_photo}"
-											width="100" height="100">
+											width="101" height="101">
 										</td>
 									</c:when>
 									<c:when test="${vo.r_photo == 'no_file' or vo.r_photo==null}">

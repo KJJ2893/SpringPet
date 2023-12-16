@@ -13,8 +13,12 @@
 		location.reload();
 	}
 
-	function send_list_form(f){
+	function send(){
 		//검색창에 조회했을때 조회값 가져오기
+		let searchField = document.getElementById('searchField').value;
+		let searchWord = document.getElementById('searchWord').value;
+
+		location.href ="qna_search.do?searchField="+ searchField + "&searchWord="+ searchWord ;
 		
 	}
 	
@@ -26,9 +30,7 @@
 	}
 </script>
 </head>
-<body style="	background-repeat: no-repeat;
-			background-size:100%;
-			background-color:#E7D7B2;">
+	<body>
 	
 	<div class="qna_wrapperBox">
 		<span class="qna_category">Q&A 카테고리</span>	
@@ -52,15 +54,15 @@
 	
 	<div class="qna_wrapperBox" >
 		<div class="list_search" style="background-color:white">
-			<form class="searchform" name="list_search_form" onclick="send_list_form(this.form)">
+			<form class="searchform" name="list_search_form">
 				<fieldset >
-					<select id="">
-						<option values="title">글 번호</option>
-						<option values="title">제목</option>
-						<option values="content">내용</option>
+					<select id="searchField">
+						<option value="idx">글 번호</option>
+						<option value="title">제목</option>
+						<option value="content">내용</option>
 					</select>
-					<input class="search" type="text" placeholder="검색어를 입력하세요">
-					<button class="submit" type="submit" ><img src="https://www.coffeebeankorea.com/images/btn/btn_list_search.png"></button>
+					<input class="search" id="searchWord" type="text" placeholder="검색어를 입력하세요">
+					<button class="submit" type="button" onclick="send()" ><img src="https://www.coffeebeankorea.com/images/btn/btn_list_search.png"></button>
 				</fieldset>
 			</form>
 			<p class="bestSearch"><strong>BEST 검색어 : </strong>예약 리뷰 펫등록</p>
@@ -101,5 +103,6 @@
 		</div>
 		<input id="testBtn" type="button" class="inputBtn" value="더보기 +" onclick="testfn()">
 	</div>
+	
 </body>
 </html>
