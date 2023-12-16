@@ -1,18 +1,16 @@
 package com.pet.care;
 
-import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
-
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import dao.RevDAO;
+import util.TimeSet;
 import vo.RevVO;
 
 @Controller
@@ -22,13 +20,8 @@ public class RevController {
 	
 	RevDAO rev_dao;
 	
-	 @Autowired
-	    HttpServletRequest request;
-	 
-	 
-	 @Autowired
-	  	HttpSession session;
-
+//	 @Autowired
+//	    HttpServletRequest request;
 	
 	public RevController(RevDAO rev_dao) {
 		this.rev_dao = rev_dao;
@@ -62,28 +55,11 @@ public class RevController {
 	// 예약 시간 설정
 	@RequestMapping("rev_time.do")
 	public String rev_time(Model model, String rv_day , String userId) {
-		
-		List<String> time = new ArrayList<String>();
-		
-		int s = 10;
-		
-		for(int i = 0; i < 11; i++) {
-			time.add((s+i)+":00");
-		}
-		
+
 		List<String> list = rev_dao.rev_selectList2(rv_day);
-		
-		for(int i = 0; i <time.size(); i++) {
-			for(int j=0; j < list.size(); j++) {
-				if(time.get(i).equals(list.get(j))) {
-					time.remove(i);
-				} 
-			}
-		}
-		
-		model.addAttribute("time", time);
+
+		model.addAttribute("time", TimeSet.timeSet(list));
 		model.addAttribute("rv_day", rv_day);
-		
 		
 		return VIEW_PATH + "rev_time.jsp";
 	}
@@ -92,18 +68,30 @@ public class RevController {
 	public String rev_info(Model model, String rv_day, String rv_time) {
 
 		System.out.println(rv_time);
-		String date[] = {rv_day, rv_time};
-		
+
+		String date[] = { rv_day, rv_time/* .substring(1) */};
+
 		model.addAttribute("date", date);
-		
-		
 		
 		return VIEW_PATH + "rev_info.jsp";
 	}
 	
+	// 예약 추가하기
+	@RequestMapping("rev_done.do")
+	public String rev_done(RevVO vo) {
+		
+		int res = rev_dao.rev_insert(vo);
+		
+		if(res == 1) {
+			return VIEW_PATH + "rev_one.jsp";
+		}
+		return null;
+		
+	}
+	
 	// 예약조회
 	@RequestMapping("rev_select.do")
-	public String rev_select(Model model, int u_idx) {
+	public String rev_select (Model model, @RequestParam("u_idx") int u_idx) {
 		
 		List<RevVO> list = rev_dao.rev_selectList(u_idx);
 		model.addAttribute("list", list);
@@ -111,39 +99,23 @@ public class RevController {
 		return VIEW_PATH + "rev_select.jsp";
 	}
 	
-	// 예약 정보 저장
-	@RequestMapping("rev_insert.do")
-	public String rev_insert(RevVO vo) {
-		
-		int res = rev_dao.rev_insert(vo);
-		
-		System.out.println(res);
-		
-		if(res > 0) {
-			return "redirect:rev_insert.do";
-		}
-			return null;
-	}
-	
 	// 예약 취소
-	@RequestMapping("rev_cancle.do")
-    public String delete(int rv_idx) {
-        System.out.println(rv_idx);
+	@RequestMapping("rev_cancle.do") 
+	public String delete(RedirectAttributes redirect, int rv_idx, int u_idx) {
+		
+		System.out.println(rv_idx);
+	  
+		int res = rev_dao.delete(rv_idx);
+	 
+		if(res == 1) { 
+			
+			redirect.addAttribute("u_idx", u_idx);
+			return "redirect:rev_select.do";
+		} 
+		
+		return null;
+	}
 
-       int res = rev_dao.delete(rv_idx);
-
-       if(res == 0) {
-           System.out.println("실패");
-           return null;
-       }
-        return "redirect:rev_main.do";
-
-    }
-	
-	
-	
-	
-	
 }
 	
     

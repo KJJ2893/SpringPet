@@ -31,6 +31,6 @@ SqlSession sqlSession;
 		}
 		// 예약  삭제
         public int delete(int rv_idx) {
-            return sqlSession.delete("r.rev_delete",rv_idx);
+            return sqlSession.delete("r.rev_delete", rv_idx);
         }
 }
