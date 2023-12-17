@@ -51,6 +51,8 @@ public class QnAController {
 	@RequestMapping("qna_main.do")
 	public String qna_main(Model model) {
 		List<QnaVO> list = qna_dao.qna_selectList();
+		int size = list.size();
+		model.addAttribute("size", size);
 		model.addAttribute("list", list);
 		return VIEW_PATH + "qna_main.jsp";
 	}
@@ -152,7 +154,7 @@ public class QnAController {
 
 		MultipartFile file = qnaVO.getQ_file();
 
-		String filename = "no_file";
+		String filename = qnaVO.getQ_filename();
 		
 		//file
 		if(!file.isEmpty() && (file != null)) {
@@ -197,8 +199,16 @@ public class QnAController {
 		
 		switch(searchField) {
 		case "idx" : 
-			QnaVO qnaVO = qna_dao.selectOne(Integer.parseInt(searchWord));
-			list.add(qnaVO);
+			int idx;
+			try {
+				idx = Integer.parseInt(searchWord);
+			} catch (Exception e) {
+				return VIEW_PATH + "alert_only_number.jsp";
+			}
+			
+			searchWord = "%"+idx+"%";
+			list = qna_dao.selectListIdx(searchWord);
+			
 			break;
 		case "title" :
 			searchWord = "%"+searchWord+"%";
@@ -210,6 +220,8 @@ public class QnAController {
 			break;
 		}
 		
+		int size = list.size();
+		model.addAttribute("size", size);
 		model.addAttribute("list", list);
 		return VIEW_PATH + "qna_main.jsp";
 	}

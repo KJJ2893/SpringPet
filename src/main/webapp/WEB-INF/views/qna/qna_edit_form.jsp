@@ -77,6 +77,7 @@
 		
 			<input class="titleBox" name="q_title" value="${qnaVO.q_title}">
 			<input type="hidden" name="q_idx" value="${qnaVO.q_idx}">
+			<input type="hidden" name="q_filename" value="${qnaVO.q_filename}">
 				
 			<div class="qna_upload_text">
 				<textarea class="titleBox_long" name="q_content" >${qnaVO.q_content}</textarea> 
