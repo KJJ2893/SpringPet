@@ -200,7 +200,7 @@
           ⓒ2023.hospital name All rights reserved.
         </div>
         <div class="sns">
-			<a href="https://www.instagram.com">
+			<a href="https://www.instagram.com/projecttest0103?igshid=NGVhN2U2NjQ0Yg%3D%3D&utm_source=qr">
 				<img src="resources/img/insta.jpg" width="100px" height="100px">
 			</a>
 		</div>
