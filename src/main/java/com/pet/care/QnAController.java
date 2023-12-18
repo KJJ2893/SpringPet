@@ -51,6 +51,8 @@ public class QnAController {
 	@RequestMapping("qna_main.do")
 	public String qna_main(Model model) {
 		List<QnaVO> list = qna_dao.qna_selectList();
+		int size = list.size();
+		model.addAttribute("size", size);
 		model.addAttribute("list", list);
 		if(list.size()>2) {
 			model.addAttribute("big",true);
@@ -210,9 +212,22 @@ public class QnAController {
 		
 		switch(searchField) {
 		case "idx" : 
+<<<<<<< HEAD
 			QnaVO qnaVO = qna_dao.selectOne(idx);
 			if(qnaVO != null)
 				list.add(qnaVO);
+=======
+			int idx;
+			try {
+				idx = Integer.parseInt(searchWord);
+			} catch (Exception e) {
+				return VIEW_PATH + "alert_only_number.jsp";
+			}
+			
+			searchWord = "%"+idx+"%";
+			list = qna_dao.selectListIdx(searchWord);
+			
+>>>>>>> f1f72a95ff001c5b3ea802c0d86a38a65ab74afc
 			break;
 		case "title" :
 			searchWord = "%"+searchWord+"%";
@@ -224,6 +239,8 @@ public class QnAController {
 			break;
 		}
 		
+		int size = list.size();
+		model.addAttribute("size", size);
 		model.addAttribute("list", list);
 		if(list.size()>2) {
 			model.addAttribute("big",true);

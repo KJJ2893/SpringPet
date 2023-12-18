@@ -24,6 +24,11 @@ public class QnaDAO {
 		return sqlSession.selectList("q.qna_selectList");
 	}
 	
+	//글번호 search 단어 검색
+	public List<QnaVO> selectListIdx(String searchWord){
+		return sqlSession.selectList("q.selectListIdx", searchWord);
+	}
+	
 	//제목에 search 단어 검색
 	public List<QnaVO> selectListTitle(String searchWord){
 		return sqlSession.selectList("q.selectListTitle", searchWord);

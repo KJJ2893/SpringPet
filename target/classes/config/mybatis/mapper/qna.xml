@@ -63,12 +63,19 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		q_filename = #{q_filename}
 		where q_idx = #{q_idx}
 	</update>
+	
+	<select id="selectListIdx" parameterType="String" resultType="vo.QnaVO">
+		select * from qna where q_idx like #{searchWord}
+		order by q_idx desc
+	</select>
 
 	<select id="selectListTitle" parameterType="String" resultType="vo.QnaVO">
 		select * from qna where q_title like #{searchWord}
+		order by q_idx desc
 	</select>
 	
 	<select id="selectListContent" parameterType="String" resultType="vo.QnaVO">
 		select * from qna where q_content like #{searchWord}
+		order by q_idx desc
 	</select>
 </mapper>
